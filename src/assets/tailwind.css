@@ -49,7 +49,9 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 60vh;
+  align-items: center;
+  min-height: 100vh;
+  padding-top: 120px;
 }
 
 .slideshow-container {

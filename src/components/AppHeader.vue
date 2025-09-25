@@ -42,9 +42,6 @@ header {
   width: 100%;
   z-index: 1000;
   background: transparent;
-  backdrop-filter: blur(2px);
-  mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
 }
 
 .header-content {
@@ -56,7 +53,10 @@ header {
 
 .page-title {
   margin: 0;
-  font-size: 1.5rem;
+  font-size: 4rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  letter-spacing: 0.02em;
 }
 
 nav ul {
