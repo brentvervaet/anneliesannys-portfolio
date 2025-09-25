@@ -1,24 +1,31 @@
 <template>
   <header>
-    <nav>
-      <ul>
-        <li>
-          <RouterLink to="/" class="nav-link" :class="{ active: $route.path === '/' }">
-            home
-          </RouterLink>
-        </li>
-        <li>
-          <RouterLink to="/portfolio" class="nav-link" :class="{ active: $route.path === '/portfolio' }">
-            portfolio
-          </RouterLink>
-        </li>
-        <li>
-          <RouterLink to="/about" class="nav-link" :class="{ active: $route.path === '/about' }">
-            about
-          </RouterLink>
-        </li>
-      </ul>
-    </nav>
+    <div class="header-content">
+      <h1 class="page-title">Annelies Annys</h1>
+      <nav>
+        <ul>
+          <li>
+            <RouterLink to="/" class="nav-link" :class="{ active: $route.path === '/' }">
+              home
+            </RouterLink>
+          </li>
+          <li>
+            <RouterLink
+              to="/portfolio"
+              class="nav-link"
+              :class="{ active: $route.path === '/portfolio' }"
+            >
+              portfolio
+            </RouterLink>
+          </li>
+          <li>
+            <RouterLink to="/about" class="nav-link" :class="{ active: $route.path === '/about' }">
+              about
+            </RouterLink>
+          </li>
+        </ul>
+      </nav>
+    </div>
   </header>
 </template>
 
@@ -28,7 +35,6 @@ import { RouterLink } from 'vue-router'
 
 <style scoped>
 header {
-  text-align: right;
   padding: 20px;
   position: absolute;
   top: 0;
@@ -41,9 +47,21 @@ header {
   -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
 }
 
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 50px;
+}
+
+.page-title {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
 nav ul {
   list-style: none;
-  margin: 20px 50px 0 0;
+  margin: 0;
   padding: 0;
   display: inline-flex;
   gap: 40px;
