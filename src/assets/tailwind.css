@@ -59,14 +59,14 @@ body {
 }
 
 .carousel-image {
-  height: 300px;
+  height: 250px;
   width: auto;
   object-fit: cover;
   margin-right: 0;
   border-radius: 0;
   flex-shrink: 0;
   display: block;
-  min-width: 450px;
+  min-width: 375px;
 }
 
 @keyframes scroll-left {
@@ -90,24 +90,24 @@ body {
 }
 
 .animate-scroll-left {
-  animation: scroll-left 60s linear infinite;
+  animation: scroll-left 90s linear infinite;
 }
 
 .animate-scroll-right {
-  animation: scroll-right 45s linear infinite;
+  animation: scroll-right 75s linear infinite;
 }
 
 @media (max-width: 768px) {
   .carousel-image {
-    height: 220px;
-    min-width: 330px;
+    height: 185px;
+    min-width: 275px;
   }
 }
 
 @media (max-width: 480px) {
   .carousel-image {
-    height: 180px;
-    min-width: 270px;
+    height: 150px;
+    min-width: 225px;
   }
 }
 
