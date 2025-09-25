@@ -31,6 +31,16 @@
           />
         </div>
       </div>
+
+      <!-- Scroll indicator arrow -->
+      <div class="scroll-indicator" @click="scrollToPortfolio">
+        <div class="scroll-arrow">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <span class="scroll-text">Portfolio</span>
+      </div>
     </section>
 
     <!-- Portfolio Section -->
@@ -125,12 +135,60 @@ const handleScroll = () => {
   }
 }
 
+// Smooth scroll to portfolio section
+const scrollToPortfolio = () => {
+  const portfolioElement = portfolioSection.value
+  if (portfolioElement) {
+    portfolioElement.scrollIntoView({ 
+      behavior: 'smooth',
+      block: 'start'
+    })
+  }
+}
+
+// Auto-scroll snap functionality
+let isScrolling = false
+let scrollTimer: number | null = null
+
+const handleScrollSnap = () => {
+  if (isScrolling) return
+  
+  const scrollY = window.scrollY
+  const viewportHeight = window.innerHeight
+  const snapThreshold = viewportHeight * 0.3 // 30% of viewport height
+  
+  // Clear existing timer
+  if (scrollTimer) {
+    clearTimeout(scrollTimer)
+  }
+  
+  // Set a timer to trigger snap after scrolling stops
+  scrollTimer = setTimeout(() => {
+    if (scrollY > snapThreshold && scrollY < viewportHeight) {
+      isScrolling = true
+      scrollToPortfolio()
+      setTimeout(() => {
+        isScrolling = false
+      }, 1000) // Reset after animation completes
+    }
+  }, 150) // Wait 150ms after scroll stops
+}
+
+// Combined scroll handler
+const handleAllScrollEvents = () => {
+  handleScroll()
+  handleScrollSnap()
+}
+
 onMounted(() => {
-  window.addEventListener('scroll', handleScroll)
+  window.addEventListener('scroll', handleAllScrollEvents)
   handleScroll() // Initial calculation
 })
 
 onUnmounted(() => {
-  window.removeEventListener('scroll', handleScroll)
+  window.removeEventListener('scroll', handleAllScrollEvents)
+  if (scrollTimer) {
+    clearTimeout(scrollTimer)
+  }
 })
 </script>
