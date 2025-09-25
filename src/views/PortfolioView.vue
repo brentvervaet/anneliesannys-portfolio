@@ -15,20 +15,8 @@
 
 <script setup lang="ts">
 import projectsData from '@/data/projects.json'
+import type { Project } from '@/types/project'
 import { RouterLink } from 'vue-router'
-
-interface ProjectImage {
-  src: string
-  alt: string
-}
-
-interface Project {
-  slug: string
-  title: string
-  description: string[]
-  images: ProjectImage[]
-  thumbnailImage: string
-}
 
 const projects = projectsData as Project[]
 </script>

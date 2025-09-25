@@ -16,21 +16,9 @@
 <script setup lang="ts">
 import ProjectDetail from '@/components/ProjectDetail.vue'
 import projectsData from '@/data/projects.json'
+import type { Project } from '@/types/project'
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
-
-interface ProjectImage {
-  src: string
-  alt: string
-}
-
-interface Project {
-  slug: string
-  title: string
-  description: string[]
-  images: ProjectImage[]
-  thumbnailImage: string
-}
 
 const route = useRoute()
 const slug = computed(() => route.params.slug as string)

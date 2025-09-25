@@ -1,7 +1,5 @@
 <template>
   <div class="project-detail">
-    <h1 class="page-title">Annelies Annys</h1>
-    <div class="hero-section"></div>
     <section class="project-content">
       <h2 class="project-title">{{ title }}</h2>
       <div class="project-description">
