@@ -52,21 +52,39 @@
     <!-- Portfolio Section -->
     <section id="portfolio" ref="portfolioSection" class="portfolio-section min-h-screen bg-white">
       <div class="portfolio-container">
-        <h2 class="portfolio-title">Portfolio</h2>
-        <div class="portfolio-grid">
+        <h2 class="portfolio-title">Featured Projects</h2>
+        <div class="portfolio-single-column">
           <div
             v-for="(project, index) in projects"
             :key="project.id"
-            class="portfolio-item-card"
-            :style="{ animationDelay: `${index * 100}ms` }"
+            class="project-showcase"
+            :style="{ animationDelay: `${index * 200}ms` }"
           >
-            <RouterLink :to="project.route" class="portfolio-link">
-              <div class="portfolio-image-container">
-                <img :src="project.image" :alt="project.title" class="portfolio-image" />
-              </div>
-              <h3 class="portfolio-item-title">{{ project.title }}</h3>
-            </RouterLink>
+            <div class="project-image-container">
+              <img :src="project.image" :alt="project.title" class="project-showcase-image" />
+            </div>
+            <div class="project-content">
+              <h3 class="project-showcase-title">{{ project.title }}</h3>
+              <p class="project-description">
+                {{ project.description }}
+              </p>
+              <RouterLink :to="project.route" class="detail-button">
+                View Details
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M5 12H19M19 12L12 5M19 12L12 19"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </RouterLink>
+            </div>
           </div>
+        </div>
+        <div class="portfolio-overview-link">
+          <RouterLink to="/portfolio" class="overview-button"> View All Projects </RouterLink>
         </div>
       </div>
     </section>
@@ -87,36 +105,48 @@ const projects = [
     title: 'LOST BEFORE MORNING',
     route: '/portfolio/lost-before-morning',
     image: 'https://placehold.co/500x400',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.',
   },
   {
     id: 2,
     title: 'SPLIT MYSELF IN TWO',
     route: '/portfolio/split-myself-in-two',
     image: '/images/Project01/collectie-samen.jpg',
+    description:
+      'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse.',
   },
   {
     id: 3,
     title: 'STUDIE VAN DE JURK',
     route: '/portfolio/studie-van-de-jurk',
     image: '/images/Project02/studie-van-de-jurk-6.jpg',
+    description:
+      'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.',
   },
   {
     id: 4,
     title: 'JEANS',
     route: '/portfolio/jeans',
     image: 'https://placehold.co/500x400',
+    description:
+      'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit.',
   },
   {
     id: 5,
     title: 'STUDIES',
     route: '/portfolio/studies',
     image: 'https://placehold.co/500x400',
+    description:
+      'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et.',
   },
   {
     id: 6,
     title: 'PAPERSTUDIE',
     route: '/portfolio/papierstudie',
     image: 'https://placehold.co/500x400',
+    description:
+      'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint.',
   },
 ]
 

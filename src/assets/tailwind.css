@@ -220,6 +220,217 @@ body {
   transform: scale(1.05);
 }
 
+/* Single Column Portfolio Styles */
+.portfolio-single-column {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  padding: 0 20px;
+}
+
+.project-showcase {
+  display: flex;
+  gap: 60px;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: slideInUp 1s ease-out forwards;
+  transition: all 0.3s ease;
+}
+
+.project-showcase:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.project-showcase:hover {
+  transform: translateY(-5px);
+}
+
+.project-image-container {
+  flex: 1;
+  max-width: 500px;
+}
+
+.project-showcase-image {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 16px;
+  transition: transform 0.5s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.project-showcase:hover .project-showcase-image {
+  transform: scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.project-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.project-showcase-title {
+  font-size: 32px;
+  font-weight: 300;
+  color: black;
+  font-family: var(--font-family-sans);
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.project-description {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #666;
+  font-family: var(--font-family-sans);
+  margin: 0;
+}
+
+.detail-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 24px;
+  background: transparent;
+  border: 2px solid black;
+  color: black;
+  text-decoration: none;
+  font-family: var(--font-family-sans);
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+}
+
+.detail-button:hover {
+  background: black;
+  color: white;
+  transform: translateX(5px);
+}
+
+.detail-button svg {
+  transition: transform 0.3s ease;
+}
+
+.detail-button:hover svg {
+  transform: translateX(5px);
+}
+
+.portfolio-overview-link {
+  text-align: center;
+  margin-top: 60px;
+  padding-top: 60px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.overview-button {
+  display: inline-block;
+  padding: 16px 32px;
+  background: var(--color-pink-custom);
+  color: white;
+  text-decoration: none;
+  font-family: var(--font-family-sans);
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.overview-button:hover {
+  background: rgba(250, 150, 220, 0.9);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(250, 150, 220, 0.3);
+}
+
+/* Portfolio Overview Page Styles */
+.portfolio-gallery .portfolio-item {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: slideInUp 0.8s ease-out forwards;
+}
+
+.portfolio-item-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease;
+}
+
+.portfolio-item-link:hover {
+  transform: translateY(-5px);
+}
+
+.portfolio-img-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  margin-bottom: 16px;
+}
+
+.portfolio-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.portfolio-item-link:hover .portfolio-overlay {
+  opacity: 1;
+}
+
+.view-project {
+  color: white;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  font-family: var(--font-family-sans);
+}
+
+/* Responsive Design for Single Column */
+@media (max-width: 768px) {
+  .portfolio-single-column {
+    gap: 60px;
+  }
+
+  .project-showcase,
+  .project-showcase:nth-child(even) {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .project-showcase-image {
+    height: 250px;
+  }
+
+  .project-showcase-title {
+    font-size: 28px;
+  }
+
+  .project-description {
+    font-size: 16px;
+  }
+
+  .detail-button {
+    align-self: center;
+  }
+}
+
 .portfolio-item-title {
   font-size: 24px;
   font-weight: 300;

@@ -10,14 +10,13 @@
             </RouterLink>
           </li>
           <li>
-            <a
-              href="#portfolio"
+            <RouterLink
+              to="/portfolio"
               class="nav-link"
-              :class="{ active: isPortfolioVisible }"
-              @click="scrollToPortfolio"
+              :class="{ active: $route.path === '/portfolio' || isPortfolioVisible }"
             >
               portfolio
-            </a>
+            </RouterLink>
           </li>
           <li>
             <RouterLink to="/about" class="nav-link" :class="{ active: $route.path === '/about' }">
