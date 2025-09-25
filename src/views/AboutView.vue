@@ -1,7 +1,7 @@
 <template>
   <div class="about">
     <section class="about-hero">
-      <h1 class="about-title">Annelies Annys</h1>
+      <h1 class="page-title">Annelies Annys</h1>
     </section>
 
     <section class="about-content">
@@ -42,40 +42,3 @@
 </template>
 
 <script setup lang="ts"></script>
-
-<style scoped>
-.about-content {
-  display: flex;
-  gap: 60px;
-  padding: 60px 54px 0 54px;
-  align-items: flex-start;
-  position: relative;
-}
-
-.about-image {
-  min-width: 320px;
-  height: 400px;
-  background: #d9d9d9;
-  border-radius: 8px;
-}
-
-.about-text {
-  color: #000;
-  font-size: 24px;
-  font-family: 'Helvetica Neue', sans-serif;
-  font-weight: 400;
-  line-height: 1.5;
-}
-
-@media (max-width: 900px) {
-  .about-content {
-    flex-direction: column;
-    gap: 30px;
-  }
-
-  .about-image {
-    width: 100%;
-    height: 240px;
-  }
-}
-</style>

@@ -1,7 +1,7 @@
 <template>
   <div class="portfolio">
     <section>
-      <h1>Annelies Annys</h1>
+      <h1 class="page-title">Annelies Annys</h1>
     </section>
 
     <section class="portfolio-gallery">
@@ -63,50 +63,3 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router'
 </script>
-
-<style scoped>
-.portfolio-gallery {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: min(75px, 6vw);
-  padding: 60px 54px 0 54px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.portfolio-img {
-  width: 100%;
-  height: auto;
-  background: #d9d9d9;
-  border-radius: 10px;
-  object-fit: cover;
-  display: block;
-}
-
-.portfolio-label {
-  color: black;
-  font-size: 32px;
-  font-family: 'Helvetica Neue', sans-serif;
-  font-weight: 200;
-  letter-spacing: 0.48px;
-  text-decoration: none;
-  margin: 0;
-  display: block;
-  text-align: center;
-}
-
-.portfolio-item {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-/* Responsive: 1 column on small screens */
-@media (max-width: 1200px) {
-  .portfolio-gallery {
-    grid-template-columns: 1fr;
-    padding: 20px 8px;
-    gap: 20px;
-  }
-}
-</style>

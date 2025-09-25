@@ -1,0 +1,263 @@
+@import "tailwindcss";
+
+@theme {
+  --color-pink-custom: rgb(250 150 220);
+  --font-family-sans: 'Helvetica Neue', sans-serif;
+}
+
+/* Base styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family-sans);
+}
+
+/* Component styles */
+.nav-link {
+  color: black;
+  font-family: var(--font-family-sans);
+  font-size: 28px;
+  font-weight: 100;
+  line-height: 20px;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  color: var(--color-pink-custom);
+}
+
+.nav-link.active {
+  color: var(--color-pink-custom);
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.page-title {
+  margin-left: 50px;
+  margin-bottom: 20px;
+  margin-top: 70px;
+  color: black;
+  font-size: 70px;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+.slideshow {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 60vh;
+}
+
+.slideshow-container {
+  display: flex;
+  overflow: hidden;
+  width: 400%;
+  animation: scroll1 120s linear infinite;
+}
+
+.slideshow-container2 {
+  overflow: hidden;
+  display: flex;
+  width: 400%;
+  animation: scroll2 100s linear infinite reverse;
+}
+
+.main-image,
+.main-image2 {
+  flex-shrink: 0;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.portfolio-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: min(75px, 6vw);
+  padding: 60px 54px 0 54px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.portfolio-img {
+  width: 100%;
+  height: auto;
+  background: #d9d9d9;
+  border-radius: 10px;
+  object-fit: cover;
+  display: block;
+}
+
+.portfolio-label {
+  color: black;
+  font-size: 32px;
+  font-family: var(--font-family-sans);
+  font-weight: 200;
+  letter-spacing: 0.48px;
+  text-decoration: none;
+  margin: 0;
+  display: block;
+  text-align: center;
+}
+
+.portfolio-item {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+@media (max-width: 1200px) {
+  .portfolio-gallery {
+    grid-template-columns: 1fr;
+    padding: 20px 8px;
+    gap: 20px;
+  }
+}
+
+.about-content {
+  display: flex;
+  gap: 60px;
+  padding: 60px 54px 0 54px;
+  align-items: flex-start;
+  position: relative;
+}
+
+.about-image {
+  min-width: 320px;
+  height: 400px;
+  background: #d9d9d9;
+  border-radius: 8px;
+}
+
+.about-text {
+  color: black;
+  font-size: 24px;
+  font-family: var(--font-family-sans);
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+  .about-content {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .about-image {
+    width: 100%;
+    height: 240px;
+    min-width: 0;
+  }
+}
+
+.hero-section {
+  height: 200px;
+  background: #f5f5f5;
+  margin: 0 50px;
+  margin-bottom: 40px;
+}
+
+.project-content {
+  padding: 0 50px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.project-title {
+  font-family: var(--font-family-sans);
+  font-size: 48px;
+  font-weight: 200;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.project-description {
+  margin-bottom: 50px;
+}
+
+.project-description p {
+  font-family: var(--font-family-sans);
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.image-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .project-content {
+    padding: 0 20px;
+  }
+  
+  .hero-section {
+    margin: 0 20px 20px;
+    height: 150px;
+  }
+  
+  .project-title {
+    font-size: 36px;
+  }
+  
+  .project-description p {
+    font-size: 20px;
+  }
+  
+  .image-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+@keyframes scroll1 {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scroll2 {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scroll1 {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scroll2 {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

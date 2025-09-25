@@ -29,7 +29,7 @@ import AppHeader from './components/AppHeader.vue'
 main {
   flex: 1;
   text-align: left;
-  padding: 0px 0px;
+  padding: 0;
   background: #fff;
 }
 </style>
