@@ -25,7 +25,11 @@
 
       <div class="portfolio-item">
         <RouterLink to="/portfolio/studie-van-de-jurk">
-          <img class="portfolio-img" src="/images/Project02/studie-van-de-jurk-6.jpg" alt="Project 3" />
+          <img
+            class="portfolio-img"
+            src="/images/Project02/studie-van-de-jurk-6.jpg"
+            alt="Project 3"
+          />
         </RouterLink>
         <RouterLink class="portfolio-label" to="/portfolio/studie-van-de-jurk">
           STUDIE VAN DE JURK
@@ -57,7 +61,7 @@
 </template>
 
 <script setup lang="ts">
-import { RouterLink } from 'vue-router';
+import { RouterLink } from 'vue-router'
 </script>
 
 <style scoped>
@@ -82,7 +86,7 @@ import { RouterLink } from 'vue-router';
 .portfolio-label {
   color: black;
   font-size: 32px;
-  font-family: 'Advent Pro', sans-serif;
+  font-family: 'Helvetica Neue', sans-serif;
   font-weight: 200;
   letter-spacing: 0.48px;
   text-decoration: none;

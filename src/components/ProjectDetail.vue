@@ -10,12 +10,7 @@
         </p>
       </div>
       <div class="image-grid">
-        <img
-          v-for="image in images"
-          :key="image.src"
-          :src="image.src"
-          :alt="image.alt"
-        />
+        <img v-for="image in images" :key="image.src" :src="image.src" :alt="image.alt" />
       </div>
     </section>
   </div>
@@ -51,7 +46,7 @@ defineProps<Props>()
 }
 
 .project-title {
-  font-family: 'Advent Pro', sans-serif;
+  font-family: 'Helvetica Neue', sans-serif;
   font-size: 48px;
   font-weight: 200;
   margin-bottom: 30px;
@@ -63,7 +58,7 @@ defineProps<Props>()
 }
 
 .project-description p {
-  font-family: 'Advent Pro', sans-serif;
+  font-family: 'Helvetica Neue', sans-serif;
   font-size: 24px;
   font-weight: 400;
   line-height: 1.6;

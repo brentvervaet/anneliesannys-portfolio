@@ -1,11 +1,7 @@
 <template>
   <footer>
     <p>
-      <a
-        href="https://www.instagram.com/annelies_annys"
-        target="_blank"
-        aria-label="Instagram"
-      >
+      <a href="https://www.instagram.com/annelies_annys" target="_blank" aria-label="Instagram">
         <i class="fab fa-instagram"></i>
       </a>
       <a
@@ -28,7 +24,7 @@ footer {
   margin-right: 30px;
   margin-bottom: 10px;
   color: black;
-  font-family: 'Advent Pro', sans-serif;
+  font-family: 'Helvetica Neue', sans-serif;
   font-size: 20px;
   font-style: normal;
   font-weight: 200;

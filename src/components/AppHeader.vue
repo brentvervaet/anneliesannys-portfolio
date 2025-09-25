@@ -19,7 +19,7 @@
 </template>
 
 <script setup lang="ts">
-import { RouterLink } from 'vue-router';
+import { RouterLink } from 'vue-router'
 </script>
 
 <style scoped>
@@ -49,7 +49,7 @@ nav ul {
 nav ul li a {
   text-decoration: none;
   color: #000;
-  font-family: 'Advent Pro', sans-serif;
+  font-family: 'Helvetica Neue', sans-serif;
   font-size: 28px;
   font-style: normal;
   font-weight: 100;
