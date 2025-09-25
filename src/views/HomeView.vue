@@ -45,7 +45,6 @@
             />
           </svg>
         </div>
-        <span class="scroll-text">Portfolio</span>
       </div>
     </section>
 
