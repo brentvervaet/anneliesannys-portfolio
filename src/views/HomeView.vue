@@ -36,7 +36,13 @@
       <div class="scroll-indicator" @click="scrollToPortfolio">
         <div class="scroll-arrow">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path
+              d="M7 10L12 15L17 10"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
           </svg>
         </div>
         <span class="scroll-text">Portfolio</span>
@@ -139,9 +145,9 @@ const handleScroll = () => {
 const scrollToPortfolio = () => {
   const portfolioElement = portfolioSection.value
   if (portfolioElement) {
-    portfolioElement.scrollIntoView({ 
+    portfolioElement.scrollIntoView({
       behavior: 'smooth',
-      block: 'start'
+      block: 'start',
     })
   }
 }
@@ -152,16 +158,16 @@ let scrollTimer: number | null = null
 
 const handleScrollSnap = () => {
   if (isScrolling) return
-  
+
   const scrollY = window.scrollY
   const viewportHeight = window.innerHeight
   const snapThreshold = viewportHeight * 0.3 // 30% of viewport height
-  
+
   // Clear existing timer
   if (scrollTimer) {
     clearTimeout(scrollTimer)
   }
-  
+
   // Set a timer to trigger snap after scrolling stops
   scrollTimer = setTimeout(() => {
     if (scrollY > snapThreshold && scrollY < viewportHeight) {

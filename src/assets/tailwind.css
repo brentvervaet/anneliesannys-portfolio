@@ -303,12 +303,19 @@ body {
 }
 
 @keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
+
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
     transform: translateY(0);
   }
+
   40% {
     transform: translateY(-8px);
   }
+
   60% {
     transform: translateY(-4px);
   }
@@ -318,12 +325,12 @@ body {
   .scroll-indicator {
     bottom: 30px;
   }
-  
+
   .scroll-arrow {
     width: 40px;
     height: 40px;
   }
-  
+
   .scroll-text {
     font-size: 12px;
   }
