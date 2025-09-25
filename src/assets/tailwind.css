@@ -31,16 +31,6 @@ body {
   text-decoration: none;
 }
 
-.nav-link:hover {
-  color: var(--color-pink-custom);
-}
-
-.nav-link.active {
-  color: var(--color-pink-custom);
-  font-weight: bold;
-  text-decoration: underline;
-}
-
 .page-title {
   margin-left: 50px;
   margin-bottom: 20px;

@@ -199,7 +199,7 @@ header {
   z-index: 1000;
   background: transparent;
   backdrop-filter: blur(20px);
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
 }
 
 .header-content {
@@ -342,12 +342,13 @@ nav ul {
   text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
   transition: all 0.3s ease;
   position: relative;
+  display: inline-block;
   padding: 8px 0;
 }
 
 .nav-link:hover {
   color: #34495e;
-  transform: translateY(-1px);
+  transform: translateY(-3px);
 }
 
 .nav-link.active {
