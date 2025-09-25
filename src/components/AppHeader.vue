@@ -10,13 +10,14 @@
             </RouterLink>
           </li>
           <li>
-            <RouterLink
-              to="/portfolio"
+            <a
+              href="#portfolio"
               class="nav-link"
-              :class="{ active: $route.path === '/portfolio' }"
+              :class="{ active: isPortfolioVisible }"
+              @click="scrollToPortfolio"
             >
               portfolio
-            </RouterLink>
+            </a>
           </li>
           <li>
             <RouterLink to="/about" class="nav-link" :class="{ active: $route.path === '/about' }">
@@ -30,7 +31,53 @@
 </template>
 
 <script setup lang="ts">
-import { RouterLink } from 'vue-router'
+import { onMounted, onUnmounted, ref } from 'vue'
+import { RouterLink, useRoute } from 'vue-router'
+
+const route = useRoute()
+const isPortfolioVisible = ref(false)
+
+const scrollToPortfolio = (e: Event) => {
+  e.preventDefault()
+
+  // If not on home page, navigate to home first
+  if (route.path !== '/') {
+    window.location.href = '/#portfolio'
+    return
+  }
+
+  // Smooth scroll to portfolio section
+  const portfolioSection = document.querySelector('.portfolio-section')
+  if (portfolioSection) {
+    portfolioSection.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    })
+  }
+}
+
+const checkPortfolioVisibility = () => {
+  if (route.path !== '/') {
+    isPortfolioVisible.value = false
+    return
+  }
+
+  const portfolioSection = document.querySelector('.portfolio-section')
+  if (!portfolioSection) return
+
+  const rect = portfolioSection.getBoundingClientRect()
+  const isVisible = rect.top < window.innerHeight * 0.5 && rect.bottom > 0
+  isPortfolioVisible.value = isVisible
+}
+
+onMounted(() => {
+  window.addEventListener('scroll', checkPortfolioVisibility)
+  checkPortfolioVisibility() // Initial check
+})
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', checkPortfolioVisibility)
+})
 </script>
 
 <style scoped>
