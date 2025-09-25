@@ -1,9 +1,5 @@
 <template>
   <div class="about">
-    <section class="about-hero">
-      <h1 class="page-title">Annelies Annys</h1>
-    </section>
-
     <section class="about-content">
       <div class="about-image"></div>
       <div class="about-text">

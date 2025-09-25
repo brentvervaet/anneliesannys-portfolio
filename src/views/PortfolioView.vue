@@ -1,9 +1,5 @@
 <template>
   <div class="portfolio">
-    <section>
-      <h1 class="page-title">Annelies Annys</h1>
-    </section>
-
     <section class="portfolio-gallery">
       <div class="portfolio-item">
         <RouterLink to="/portfolio/lost-before-morning">
