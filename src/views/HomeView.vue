@@ -51,7 +51,6 @@
     <!-- Portfolio Section -->
     <section id="portfolio" ref="portfolioSection" class="portfolio-section min-h-screen bg-white">
       <div class="portfolio-container">
-        <h2 class="portfolio-title">Featured Projects</h2>
         <div class="portfolio-single-column">
           <div
             v-for="(project, index) in projects"
@@ -81,9 +80,6 @@
               </RouterLink>
             </div>
           </div>
-        </div>
-        <div class="portfolio-overview-link">
-          <RouterLink to="/portfolio" class="overview-button"> View All Projects </RouterLink>
         </div>
       </div>
     </section>

@@ -1,41 +1,14 @@
 <template>
   <header>
     <div class="header-content">
+      <!-- TODO: make name and routes fit -->
       <!-- Left side: Title -->
       <div class="left-section">
         <h1 class="page-title">Annelies Annys</h1>
       </div>
 
-      <!-- Center: Search bar -->
-      <div class="center-section">
-        <div class="search-container">
-          <input
-            v-model="searchQuery"
-            type="text"
-            placeholder="Search"
-            class="search-input"
-            @input="handleSearch"
-            @focus="showSearchResults = true"
-            @blur="hideSearchResults"
-          />
-          <div v-if="showSearchResults && searchQuery" class="search-results">
-            <div
-              v-for="project in filteredProjects"
-              :key="project.slug"
-              class="search-result-item"
-              @mousedown="navigateToProject(project.slug)"
-            >
-              <img :src="project.thumbnailImage" :alt="project.title" class="search-thumb" />
-              <span>{{ project.title }}</span>
-            </div>
-            <div v-if="filteredProjects.length === 0" class="search-no-results">
-              Geen projecten gevonden
-            </div>
-          </div>
-        </div>
-      </div>
-
       <!-- Right side: Navigation and Social Icons -->
+      <!-- TODO: socials in footer -->
       <div class="right-section">
         <nav>
           <ul>
@@ -45,13 +18,7 @@
               </RouterLink>
             </li>
             <li>
-              <RouterLink
-                to="/portfolio"
-                class="nav-link"
-                :class="{ active: $route.path === '/portfolio' || isPortfolioVisible }"
-              >
-                portfolio
-              </RouterLink>
+              <div @click="scrollToPortfolio" class="nav-link">portfolio</div>
             </li>
             <li>
               <RouterLink
@@ -105,46 +72,12 @@
 </template>
 
 <script setup lang="ts">
-import projectsData from '@/data/projects.json'
-import type { Project } from '@/types/project'
-import { computed, onMounted, onUnmounted, ref } from 'vue'
+import { onMounted, onUnmounted, ref } from 'vue'
 import { RouterLink, useRoute, useRouter } from 'vue-router'
 
 const route = useRoute()
 const router = useRouter()
 const isPortfolioVisible = ref(false)
-
-// Search functionality
-const searchQuery = ref('')
-const showSearchResults = ref(false)
-const projects = projectsData as Project[]
-
-const filteredProjects = computed(() => {
-  if (!searchQuery.value) return []
-
-  const query = searchQuery.value.toLowerCase()
-  return projects.filter(
-    (project) =>
-      project.title.toLowerCase().includes(query) ||
-      project.description.some((desc) => desc.toLowerCase().includes(query)),
-  )
-})
-
-const handleSearch = () => {
-  showSearchResults.value = searchQuery.value.length > 0
-}
-
-const hideSearchResults = () => {
-  setTimeout(() => {
-    showSearchResults.value = false
-  }, 150) // Small delay to allow click on results
-}
-
-const navigateToProject = (slug: string) => {
-  router.push(`/portfolio/${slug}`)
-  searchQuery.value = ''
-  showSearchResults.value = false
-}
 
 const scrollToPortfolio = (e: Event) => {
   e.preventDefault()
@@ -203,10 +136,10 @@ header {
 }
 
 .header-content {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  display: flex;
   align-items: center;
-  gap: 40px;
+  justify-content: space-between;
+  gap: 50px;
   max-width: 1400px;
   margin: 0 auto;
   width: 100%;
@@ -215,12 +148,6 @@ header {
 .left-section {
   display: flex;
   justify-content: flex-start;
-  align-items: center;
-}
-
-.center-section {
-  display: flex;
-  justify-content: center;
   align-items: center;
 }
 
@@ -239,89 +166,6 @@ header {
   text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.4);
   letter-spacing: 0.02em;
   white-space: nowrap;
-}
-
-/* Search Styles */
-.search-container {
-  position: relative;
-  width: 320px;
-}
-
-.search-input {
-  width: 100%;
-  padding: 12px 20px;
-  border: 2px solid rgba(44, 62, 80, 0.15);
-  border-radius: 30px;
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(15px);
-  color: #2c3e50;
-  font-size: 15px;
-  outline: none;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(255, 182, 193, 0.1);
-}
-
-.search-input::placeholder {
-  color: rgba(44, 62, 80, 0.5);
-  font-style: italic;
-}
-
-.search-input:focus {
-  border-color: rgba(255, 182, 193, 0.4);
-  background: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 6px 25px rgba(255, 182, 193, 0.2);
-  transform: translateY(-1px);
-}
-
-.search-results {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  background: rgba(255, 255, 255, 0.96);
-  backdrop-filter: blur(25px);
-  border-radius: 15px;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-  max-height: 320px;
-  overflow-y: auto;
-  z-index: 1001;
-  margin-top: 8px;
-  border: 1px solid rgba(255, 192, 203, 0.2);
-}
-
-.search-result-item {
-  display: flex;
-  align-items: center;
-  padding: 12px 20px;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  color: #2c3e50;
-  gap: 12px;
-  border-bottom: 1px solid rgba(255, 192, 203, 0.1);
-}
-
-.search-result-item:last-child {
-  border-bottom: none;
-}
-
-.search-result-item:hover {
-  background-color: rgba(255, 192, 203, 0.1);
-  transform: translateX(3px);
-}
-
-.search-thumb {
-  width: 45px;
-  height: 35px;
-  object-fit: cover;
-  border-radius: 6px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.search-no-results {
-  padding: 20px;
-  text-align: center;
-  color: #7f8c8d;
-  font-style: italic;
 }
 
 /* Navigation Styles */
@@ -404,7 +248,7 @@ nav ul {
   }
 
   .header-content {
-    gap: 30px;
+    gap: 40px;
   }
 
   .page-title {
@@ -430,29 +274,24 @@ nav ul {
   }
 
   .header-content {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto;
-    gap: 20px;
-    text-align: center;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 25px;
   }
 
-  .left-section,
-  .center-section,
+  .left-section {
+    justify-content: center;
+  }
   .right-section {
     justify-content: center;
   }
 
   .page-title {
     font-size: 2.5rem;
-    order: 1;
-  }
-
-  .center-section {
-    order: 2;
+    text-align: center;
   }
 
   .right-section {
-    order: 3;
     flex-direction: column;
     gap: 20px;
   }
