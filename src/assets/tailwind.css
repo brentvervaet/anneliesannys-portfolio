@@ -470,35 +470,18 @@ body {
 .scroll-arrow {
   width: 48px;
   height: 48px;
-  border: 2px solid black;
-  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(10px);
   transition: all 0.3s ease;
-  animation: bounce 2s infinite;
 }
 
 .scroll-indicator:hover .scroll-arrow {
   border-color: var(--color-pink-custom);
   color: var(--color-pink-custom);
   background: rgba(255, 255, 255, 0.95);
-}
-
-.scroll-text {
-  font-size: 14px;
-  font-weight: 300;
-  letter-spacing: 1px;
-  color: black;
-  font-family: var(--font-family-sans);
-  text-transform: uppercase;
-  transition: color 0.3s ease;
-}
-
-.scroll-indicator:hover .scroll-text {
-  color: var(--color-pink-custom);
 }
 
 @keyframes bounce {
@@ -528,10 +511,6 @@ body {
   .scroll-arrow {
     width: 40px;
     height: 40px;
-  }
-
-  .scroll-text {
-    font-size: 12px;
   }
 }
 
