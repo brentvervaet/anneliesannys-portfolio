@@ -86,8 +86,12 @@
   color: #34495e;
 }
 
-copyright {
+.copyright {
   font-size: 14px;
+  color: #52525c;
+  text-align: center;
+  user-select: none;
+  letter-spacing: 0.5px;
 }
 
 @media (max-width: 600px) {
