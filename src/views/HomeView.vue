@@ -215,4 +215,33 @@ onUnmounted(() => {
 .no-radius {
   border-radius: 0 !important;
 }
+
+/* Make project images smaller */
+.project-showcase-image {
+  height: 260px; /* was 350px */
+  max-width: 420px; /* constrain width a bit */
+  margin: 0 auto; /* center inside container */
+}
+
+/* Increase spacing between images */
+.portfolio-single-column {
+  display: flex;
+  flex-direction: column;
+  gap: 120px; /* increased vertical spacing */
+}
+
+/* Ensure each showcase has no extra internal spacing now that content removed */
+.project-showcase {
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .project-showcase-image {
+    height: 220px;
+    max-width: 100%;
+  }
+  .portfolio-single-column {
+    gap: 80px;
+  }
+}
 </style>
