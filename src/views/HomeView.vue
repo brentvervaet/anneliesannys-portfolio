@@ -58,27 +58,13 @@
             class="project-showcase"
             :style="{ animationDelay: `${index * 200}ms` }"
           >
-            <div class="project-image-container">
-              <img :src="project.image" :alt="project.title" class="project-showcase-image" />
-            </div>
-            <div class="project-content">
-              <h3 class="project-showcase-title">{{ project.title }}</h3>
-              <p class="project-description">
-                {{ project.description }}
-              </p>
-              <RouterLink :to="project.route" class="detail-button">
-                View Details
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                  <path
-                    d="M5 12H19M19 12L12 5M19 12L12 19"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </RouterLink>
-            </div>
+            <RouterLink :to="project.route" class="block project-image-container">
+              <img
+                :src="project.image"
+                :alt="project.title"
+                class="project-showcase-image no-radius"
+              />
+            </RouterLink>
           </div>
         </div>
       </div>
@@ -223,3 +209,10 @@ onUnmounted(() => {
   }
 })
 </script>
+
+<style scoped>
+/* Remove border radius from images in this view */
+.no-radius {
+  border-radius: 0 !important;
+}
+</style>
