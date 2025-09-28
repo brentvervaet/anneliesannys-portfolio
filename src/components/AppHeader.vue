@@ -1,10 +1,11 @@
 <template>
   <header>
     <div class="header-content">
-      <!-- TODO: make name and routes fit -->
       <!-- Left side: Title -->
       <div class="left-section">
-        <h1 class="page-title">Annelies Annys</h1>
+        <h1 class="page-title">
+          <RouterLink to="/">Annelies Annys</RouterLink>
+        </h1>
       </div>
 
       <!-- Right side: Navigation -->
