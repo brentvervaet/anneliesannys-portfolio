@@ -2,7 +2,7 @@
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="social-icons">
-        <a href="mailto:annelies@example.com" class="social-icon" aria-label="Email">
+        <a href="mailto:annelies.annys@icloud.com" class="social-icon" aria-label="Email">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
             <path
               d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.89 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
@@ -10,7 +10,7 @@
           </svg>
         </a>
         <a
-          href="https://linkedin.com/in/anneliesannys"
+          href="https://www.linkedin.com/in/annelies-annys-4257b7276"
           target="_blank"
           class="social-icon"
           aria-label="LinkedIn"
@@ -22,7 +22,7 @@
           </svg>
         </a>
         <a
-          href="https://instagram.com/anneliesannys"
+          href="https://instagram.com/annelies_annys"
           target="_blank"
           class="social-icon"
           aria-label="Instagram"
