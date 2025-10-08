@@ -96,8 +96,6 @@ header {
   width: 100%;
   z-index: 1000;
   background: transparent;
-  backdrop-filter: blur(20px);
-  /* box-sizing: border-box; */
 }
 
 .header-content {

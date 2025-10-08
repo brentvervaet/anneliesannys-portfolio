@@ -1,7 +1,9 @@
 <template>
   <div class="about">
     <section class="about-content">
-      <div class="about-image"></div>
+      <div class="about-image">
+        <img src="/images/About/anneliesannys.jpeg" alt="Annelies Annys" />
+      </div>
       <div class="about-text">
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt
