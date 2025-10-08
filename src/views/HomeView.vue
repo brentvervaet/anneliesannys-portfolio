@@ -51,7 +51,7 @@
     <!-- Portfolio Section -->
     <section id="portfolio" ref="portfolioSection" class="portfolio-section min-h-screen bg-white">
       <div class="portfolio-container">
-        <div class="portfolio-single-column">
+        <div class="portfolio-grid">
           <div
             v-for="(project, index) in projects"
             :key="project.id"
@@ -216,32 +216,39 @@ onUnmounted(() => {
   border-radius: 0 !important;
 }
 
-/* Make project images smaller */
+/* Grid layout for projects */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 60px 40px; /* row gap, column gap */
+  padding: 60px 20px;
+}
+
+/* Make project images fit grid */
 .project-showcase-image {
-  height: 260px; /* was 350px */
-  max-width: 420px; /* constrain width a bit */
-  margin: 0 auto; /* center inside container */
+  height: 280px;
+  width: 100%;
+  object-fit: cover;
 }
 
-/* Increase spacing between images */
-.portfolio-single-column {
-  display: flex;
-  flex-direction: column;
-  gap: 120px; /* increased vertical spacing */
-}
-
-/* Ensure each showcase has no extra internal spacing now that content removed */
 .project-showcase {
+  display: flex;
   justify-content: center;
 }
 
+.project-image-container {
+  width: 100%;
+}
+
 @media (max-width: 768px) {
-  .project-showcase-image {
-    height: 220px;
-    max-width: 100%;
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+    padding: 40px 20px;
   }
-  .portfolio-single-column {
-    gap: 80px;
+
+  .project-showcase-image {
+    height: 240px;
   }
 }
 </style>
