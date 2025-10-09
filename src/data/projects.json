@@ -142,121 +142,63 @@
     "images": [
       {
         "src": "/images/BA1/studies101.webp",
-        "alt": "Studie van de jurk 01"
+        "alt": "Study of the dress 01"
       },
       {
         "src": "/images/BA1/studies102.webp",
-        "alt": "Studie van de jurk 02"
+        "alt": "Study of the dress 02"
       },
       {
         "src": "/images/BA1/studies103.webp",
-        "alt": "Studie van de jurk 03"
+        "alt": "Study of the dress 03"
       },
       {
         "src": "/images/BA1/studies104.webp",
-        "alt": "Studie van de jurk 04"
+        "alt": "Study of the dress 04"
       },
       {
         "src": "/images/BA1/studies105.webp",
-        "alt": "Studie van de jurk 05"
+        "alt": "Study of the dress 05"
       },
       {
         "src": "/images/BA1/studies106.webp",
-        "alt": "Studie van de jurk 06"
+        "alt": "Study of the dress 06"
       },
       {
         "src": "/images/BA1/studies107.webp",
-        "alt": "Studie van de jurk 07"
+        "alt": "Study of the dress 07"
       },
       {
         "src": "/images/BA1/studies108.webp",
-        "alt": "Studie van de jurk 08"
+        "alt": "Study of the dress 08"
       },
       {
         "src": "/images/BA1/studies109.webp",
-        "alt": "Studie van de jurk 09"
+        "alt": "Study of the dress 09"
       },
 
       {
         "src": "/images/BA1/studies201.webp",
-        "alt": "Papier studie 01"
+        "alt": "Paper study 01"
       },
       {
         "src": "/images/BA1/studies202.webp",
-        "alt": "Papier studie 02"
+        "alt": "Paper study 02"
       },
       {
         "src": "/images/BA1/studies203.webp",
-        "alt": "Papier studie 03"
+        "alt": "Paper study 03"
       },
 
       {
         "src": "/images/BA1/studies301.webp",
-        "alt": "Jeans studie 01"
+        "alt": "Jeans study 01"
       },
       {
         "src": "/images/BA1/studies302.webp",
-        "alt": "Jeans studie 02"
+        "alt": "Jeans study 02"
       }
     ],
     "thumbnailImage": "/images/BA1/studies101.webp"
-  },
-
-  {
-    "slug": "jeans",
-    "title": "Jeans",
-    "description": [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, eu consectetur nisl nisi euismod nisi.",
-      "Morbi facilibus, sapien non commodo cursus, erat erat dictum urna, nec dictum erat erat nec urna."
-    ],
-    "images": [
-      {
-        "src": "https://placehold.co/500x600/f0f0f0/333333?text=Coming+Soon",
-        "alt": "Jeans Project 01"
-      },
-      {
-        "src": "https://placehold.co/500x600/f0f0f0/333333?text=Coming+Soon",
-        "alt": "Jeans Project 02"
-      }
-    ],
-    "thumbnailImage": "https://placehold.co/500x400"
-  },
-  {
-    "slug": "studies",
-    "title": "Studies",
-    "description": [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, eu consectetur nisl nisi euismod nisi.",
-      "Collection of various fashion studies and experimental works."
-    ],
-    "images": [
-      {
-        "src": "https://placehold.co/500x600/f0f0f0/333333?text=Coming+Soon",
-        "alt": "Studies 01"
-      },
-      {
-        "src": "https://placehold.co/500x600/f0f0f0/333333?text=Coming+Soon",
-        "alt": "Studies 02"
-      }
-    ],
-    "thumbnailImage": "https://placehold.co/500x400"
-  },
-  {
-    "slug": "papierstudie",
-    "title": "Papierstudie",
-    "description": [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, eu consectetur nisl nisi euismod nisi.",
-      "Paper studies exploring form, texture, and materiality in fashion design."
-    ],
-    "images": [
-      {
-        "src": "https://placehold.co/500x600/f0f0f0/333333?text=Coming+Soon",
-        "alt": "Papierstudie 01"
-      },
-      {
-        "src": "https://placehold.co/500x600/f0f0f0/333333?text=Coming+Soon",
-        "alt": "Papierstudie 02"
-      }
-    ],
-    "thumbnailImage": "https://placehold.co/500x400"
   }
 ]
