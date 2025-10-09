@@ -10,15 +10,84 @@
     "video": "/images/BA2/lbm.mp4",
     "images": [
       {
+<<<<<<< HEAD
         "src": "https://placehold.co/500x600/f0f0f0/333333?text=Coming+Soon",
         "alt": "Lost Before Morning 01"
       },
       {
         "src": "https://placehold.co/500x600/f0f0f0/333333?text=Coming+Soon",
         "alt": "Lost Before Morning 02"
+=======
+        "src": "/images/BA3/lbm01.webp",
+        "alt": "Lost Before Morning 01"
+      },
+      {
+        "src": "/images/BA3/lbm02.webp",
+        "alt": "Lost Before Morning 02"
+      },
+      {
+        "src": "/images/BA3/lbm03.webp",
+        "alt": "Lost Before Morning 03"
+      },
+      {
+        "src": "/images/BA3/lbm04.webp",
+        "alt": "Lost Before Morning 04"
+      },
+      {
+        "src": "/images/BA3/lbm05.webp",
+        "alt": "Lost Before Morning 05"
+      },
+      {
+        "src": "/images/BA3/lbm06.webp",
+        "alt": "Lost Before Morning 06"
+      },
+      {
+        "src": "/images/BA3/lbm07.webp",
+        "alt": "Lost Before Morning 07"
+      },
+      {
+        "src": "/images/BA3/lbm08.webp",
+        "alt": "Lost Before Morning 08"
+      },
+      {
+        "src": "/images/BA3/lbm09.webp",
+        "alt": "Lost Before Morning 09"
+      },
+      {
+        "src": "/images/BA3/lbm10.webp",
+        "alt": "Lost Before Morning 10"
+      },
+      {
+        "src": "/images/BA3/lbm11.webp",
+        "alt": "Lost Before Morning 11"
+      },
+      {
+        "src": "/images/BA3/lbm12.webp",
+        "alt": "Lost Before Morning 12"
+      },
+      {
+        "src": "/images/BA3/lbm13.webp",
+        "alt": "Lost Before Morning 13"
+      },
+      {
+        "src": "/images/BA3/lbm14.webp",
+        "alt": "Lost Before Morning 14"
+      },
+      {
+        "src": "/images/BA3/lbm15.webp",
+        "alt": "Lost Before Morning 15"
+      },
+      {
+        "src": "/images/BA3/lbm16.webp",
+        "alt": "Lost Before Morning 16"
+      },
+      {
+        "src": "/images/BA3/lbm17.webp",
+        "alt": "Lost Before Morning 17"
+>>>>>>> d100afc (jpeg -> webp)
       }
     ],
-    "thumbnailImage": "/images/BA3/lbm01.JPG"
+    "thumbnailImage": "/images/BA3/lbm01.webp"
   },
 
   {
@@ -32,6 +101,7 @@
     "video": "/images/BA2/smsit.mp4",
     "images": [
       {
+<<<<<<< HEAD
         "src": "/images/Project01/lookbook-03.jpg",
         "alt": "lookbook01"
       },
@@ -50,9 +120,46 @@
       {
         "src": "/images/Project01/collectie-samen.jpg",
         "alt": "lookbook05"
+=======
+        "src": "/images/BA2/smsit01.webp",
+        "alt": "Split myself in two 01"
+      },
+      {
+        "src": "/images/BA2/smsit02.webp",
+        "alt": "Split myself in two 02"
+      },
+      {
+        "src": "/images/BA2/smsit03.webp",
+        "alt": "Split myself in two 03"
+      },
+      {
+        "src": "/images/BA2/smsit04.webp",
+        "alt": "Split myself in two 04"
+      },
+
+      {
+        "src": "/images/BA2/smsit05.webp",
+        "alt": "Split myself in two 05"
+      },
+      {
+        "src": "/images/BA2/smsit06.webp",
+        "alt": "Split myself in two 06"
+      },
+      {
+        "src": "/images/BA2/smsit07.webp",
+        "alt": "Split myself in two 07"
+      },
+      {
+        "src": "/images/BA2/smsit08.webp",
+        "alt": "Split myself in two 08"
+      },
+      {
+        "src": "/images/BA2/smsit09.webp",
+        "alt": "Split myself in two 09"
+>>>>>>> d100afc (jpeg -> webp)
       }
     ],
-    "thumbnailImage": "/images/BA2/smsit01.jpeg"
+    "thumbnailImage": "/images/BA2/smsit01.webp"
   },
 
   {

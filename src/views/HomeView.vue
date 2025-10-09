@@ -12,7 +12,7 @@
           <img
             v-for="n in 8"
             :key="`row1-${n}`"
-            src="/images/collages.png"
+            src="/images/collages.webp"
             alt="Project collage"
             class="carousel-image"
           />
@@ -25,7 +25,7 @@
           <img
             v-for="n in 8"
             :key="`row2-${n}`"
-            src="/images/collages.png"
+            src="/images/collages.webp"
             alt="Project collage"
             class="carousel-image"
           />
