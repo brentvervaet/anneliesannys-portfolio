@@ -1,0 +1,220 @@
+[
+  {
+    "slug": "lost-before-morning",
+    "title": "Lost Before Morning",
+    "description": [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, eu consectetur nisl nisi euismod nisi.",
+      "Morbi facilisis, sapien non commodo cursus, erat erat dictum urna, nec dictum erat erat nec urna. Etiam euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi."
+    ],
+    "date": "2025",
+    "video": "/images/BA2/lbm.mp4",
+    "images": [
+      {
+        "src": "/images/BA3/lbm01.webp",
+        "alt": "Lost Before Morning 01"
+      },
+      {
+        "src": "/images/BA3/lbm02.webp",
+        "alt": "Lost Before Morning 02"
+      },
+      {
+        "src": "/images/BA3/lbm03.webp",
+        "alt": "Lost Before Morning 03"
+      },
+      {
+        "src": "/images/BA3/lbm04.webp",
+        "alt": "Lost Before Morning 04"
+      },
+      {
+        "src": "/images/BA3/lbm05.webp",
+        "alt": "Lost Before Morning 05"
+      },
+      {
+        "src": "/images/BA3/lbm06.webp",
+        "alt": "Lost Before Morning 06"
+      },
+      {
+        "src": "/images/BA3/lbm07.webp",
+        "alt": "Lost Before Morning 07"
+      },
+      {
+        "src": "/images/BA3/lbm08.webp",
+        "alt": "Lost Before Morning 08"
+      },
+      {
+        "src": "/images/BA3/lbm09.webp",
+        "alt": "Lost Before Morning 09"
+      },
+      {
+        "src": "/images/BA3/lbm10.webp",
+        "alt": "Lost Before Morning 10"
+      },
+      {
+        "src": "/images/BA3/lbm11.webp",
+        "alt": "Lost Before Morning 11"
+      },
+      {
+        "src": "/images/BA3/lbm12.webp",
+        "alt": "Lost Before Morning 12"
+      },
+      {
+        "src": "/images/BA3/lbm13.webp",
+        "alt": "Lost Before Morning 13"
+      },
+      {
+        "src": "/images/BA3/lbm14.webp",
+        "alt": "Lost Before Morning 14"
+      },
+      {
+        "src": "/images/BA3/lbm15.webp",
+        "alt": "Lost Before Morning 15"
+      },
+      {
+        "src": "/images/BA3/lbm16.webp",
+        "alt": "Lost Before Morning 16"
+      },
+      {
+        "src": "/images/BA3/lbm17.webp",
+        "alt": "Lost Before Morning 17"
+      }
+    ],
+    "thumbnailImage": "/images/BA3/lbm01.webp"
+  },
+
+  {
+    "slug": "split-myself-in-two",
+    "title": "Split myself in two",
+    "description": [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, eu consectetur nisl nisi euismod nisi.",
+      "Morbi facilisis, sapien non commodo cursus, erat erat dictum urna, nec dictum erat erat nec urna. Etiam euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi."
+    ],
+    "date": "2024",
+    "video": "/images/BA2/smsit.mp4",
+    "images": [
+      {
+        "src": "/images/BA2/smsit01.webp",
+        "alt": "Split myself in two 01"
+      },
+      {
+        "src": "/images/BA2/smsit02.webp",
+        "alt": "Split myself in two 02"
+      },
+      {
+        "src": "/images/BA2/smsit03.webp",
+        "alt": "Split myself in two 03"
+      },
+      {
+        "src": "/images/BA2/smsit04.webp",
+        "alt": "Split myself in two 04"
+      },
+
+      {
+        "src": "/images/BA2/smsit05.webp",
+        "alt": "Split myself in two 05"
+      },
+      {
+        "src": "/images/BA2/smsit06.webp",
+        "alt": "Split myself in two 06"
+      },
+      {
+        "src": "/images/BA2/smsit07.webp",
+        "alt": "Split myself in two 07"
+      },
+      {
+        "src": "/images/BA2/smsit08.webp",
+        "alt": "Split myself in two 08"
+      },
+      {
+        "src": "/images/BA2/smsit09.webp",
+        "alt": "Split myself in two 09"
+      }
+    ],
+    "thumbnailImage": "/images/BA2/smsit01.webp"
+  },
+
+  {
+    "slug": "studies",
+    "title": "Studies",
+    "description": [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, eu consectetur nisl nisi euismod nisi.",
+      "Morbi facilisis, sapien non commodo cursus, erat erat dictum urna, nec dictum erat erat nec urna. Etiam euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi."
+    ],
+    "images": [
+      {
+        "src": "/images/Project02/studie-van-de-jurk-2.jpg",
+        "alt": "studie-van-de-jurk 01"
+      },
+      {
+        "src": "/images/Project02/studie-van-de-jurk-4.jpg",
+        "alt": "studie-van-de-jurk 02"
+      },
+      {
+        "src": "/images/Project02/studie-van-de-jurk-8.jpg",
+        "alt": "studie-van-de-jurk 03"
+      },
+      {
+        "src": "/images/Project02/studie-van-de-jurk-6.jpg",
+        "alt": "studie-van-de-jurk 04"
+      }
+    ],
+    "thumbnailImage": "/images/Project02/studie-van-de-jurk-6.jpg"
+  },
+
+  {
+    "slug": "jeans",
+    "title": "Jeans",
+    "description": [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, eu consectetur nisl nisi euismod nisi.",
+      "Morbi facilibus, sapien non commodo cursus, erat erat dictum urna, nec dictum erat erat nec urna."
+    ],
+    "images": [
+      {
+        "src": "https://placehold.co/500x600/f0f0f0/333333?text=Coming+Soon",
+        "alt": "Jeans Project 01"
+      },
+      {
+        "src": "https://placehold.co/500x600/f0f0f0/333333?text=Coming+Soon",
+        "alt": "Jeans Project 02"
+      }
+    ],
+    "thumbnailImage": "https://placehold.co/500x400"
+  },
+  {
+    "slug": "studies",
+    "title": "Studies",
+    "description": [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, eu consectetur nisl nisi euismod nisi.",
+      "Collection of various fashion studies and experimental works."
+    ],
+    "images": [
+      {
+        "src": "https://placehold.co/500x600/f0f0f0/333333?text=Coming+Soon",
+        "alt": "Studies 01"
+      },
+      {
+        "src": "https://placehold.co/500x600/f0f0f0/333333?text=Coming+Soon",
+        "alt": "Studies 02"
+      }
+    ],
+    "thumbnailImage": "https://placehold.co/500x400"
+  },
+  {
+    "slug": "papierstudie",
+    "title": "Papierstudie",
+    "description": [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, eu consectetur nisl nisi euismod nisi.",
+      "Paper studies exploring form, texture, and materiality in fashion design."
+    ],
+    "images": [
+      {
+        "src": "https://placehold.co/500x600/f0f0f0/333333?text=Coming+Soon",
+        "alt": "Papierstudie 01"
+      },
+      {
+        "src": "https://placehold.co/500x600/f0f0f0/333333?text=Coming+Soon",
+        "alt": "Papierstudie 02"
+      }
+    ],
+    "thumbnailImage": "https://placehold.co/500x400"
+  }
+]
