@@ -183,7 +183,8 @@ onUnmounted(() => {
 /* Make project images fit grid */
 .project-showcase-image {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
   display: block;
 }
 
@@ -194,6 +195,10 @@ onUnmounted(() => {
 
 .project-image-container {
   width: 100%;
+  aspect-ratio: 3 / 4;
+  max-width: 340px;
+  margin: 0 auto;
+  overflow: hidden;
 }
 
 @media (max-width: 768px) {
