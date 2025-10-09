@@ -182,8 +182,8 @@ onUnmounted(() => {
 
 /* Make project images fit grid */
 .project-showcase-image {
-  width: 100%;
-  height: 100%;
+  width: 66%;
+  height: 66%;
   object-fit: cover;
   display: block;
 }
