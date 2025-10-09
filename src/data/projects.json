@@ -136,85 +136,69 @@
     "slug": "studies",
     "title": "Studies",
     "description": [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, eu consectetur nisl nisi euismod nisi.",
+      "BA1: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, eu consectetur nisl nisi euismod nisi.",
       "Morbi facilisis, sapien non commodo cursus, erat erat dictum urna, nec dictum erat erat nec urna. Etiam euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi."
     ],
     "images": [
       {
-        "src": "/images/Project02/studie-van-de-jurk-2.jpg",
-        "alt": "studie-van-de-jurk 01"
+        "src": "/images/BA1/studies101.webp",
+        "alt": "Study of the dress 01"
       },
       {
-        "src": "/images/Project02/studie-van-de-jurk-4.jpg",
-        "alt": "studie-van-de-jurk 02"
+        "src": "/images/BA1/studies102.webp",
+        "alt": "Study of the dress 02"
       },
       {
-        "src": "/images/Project02/studie-van-de-jurk-8.jpg",
-        "alt": "studie-van-de-jurk 03"
+        "src": "/images/BA1/studies103.webp",
+        "alt": "Study of the dress 03"
       },
       {
-        "src": "/images/Project02/studie-van-de-jurk-6.jpg",
-        "alt": "studie-van-de-jurk 04"
-      }
-    ],
-    "thumbnailImage": "/images/Project02/studie-van-de-jurk-6.jpg"
-  },
+        "src": "/images/BA1/studies104.webp",
+        "alt": "Study of the dress 04"
+      },
+      {
+        "src": "/images/BA1/studies105.webp",
+        "alt": "Study of the dress 05"
+      },
+      {
+        "src": "/images/BA1/studies106.webp",
+        "alt": "Study of the dress 06"
+      },
+      {
+        "src": "/images/BA1/studies107.webp",
+        "alt": "Study of the dress 07"
+      },
+      {
+        "src": "/images/BA1/studies108.webp",
+        "alt": "Study of the dress 08"
+      },
+      {
+        "src": "/images/BA1/studies109.webp",
+        "alt": "Study of the dress 09"
+      },
 
-  {
-    "slug": "jeans",
-    "title": "Jeans",
-    "description": [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, eu consectetur nisl nisi euismod nisi.",
-      "Morbi facilibus, sapien non commodo cursus, erat erat dictum urna, nec dictum erat erat nec urna."
-    ],
-    "images": [
       {
-        "src": "https://placehold.co/500x600/f0f0f0/333333?text=Coming+Soon",
-        "alt": "Jeans Project 01"
+        "src": "/images/BA1/studies201.webp",
+        "alt": "Paper study 01"
       },
       {
-        "src": "https://placehold.co/500x600/f0f0f0/333333?text=Coming+Soon",
-        "alt": "Jeans Project 02"
-      }
-    ],
-    "thumbnailImage": "https://placehold.co/500x400"
-  },
-  {
-    "slug": "studies",
-    "title": "Studies",
-    "description": [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, eu consectetur nisl nisi euismod nisi.",
-      "Collection of various fashion studies and experimental works."
-    ],
-    "images": [
-      {
-        "src": "https://placehold.co/500x600/f0f0f0/333333?text=Coming+Soon",
-        "alt": "Studies 01"
+        "src": "/images/BA1/studies202.webp",
+        "alt": "Paper study 02"
       },
       {
-        "src": "https://placehold.co/500x600/f0f0f0/333333?text=Coming+Soon",
-        "alt": "Studies 02"
-      }
-    ],
-    "thumbnailImage": "https://placehold.co/500x400"
-  },
-  {
-    "slug": "papierstudie",
-    "title": "Papierstudie",
-    "description": [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, eu consectetur nisl nisi euismod nisi.",
-      "Paper studies exploring form, texture, and materiality in fashion design."
-    ],
-    "images": [
+        "src": "/images/BA1/studies203.webp",
+        "alt": "Paper study 03"
+      },
+
       {
-        "src": "https://placehold.co/500x600/f0f0f0/333333?text=Coming+Soon",
-        "alt": "Papierstudie 01"
+        "src": "/images/BA1/studies301.webp",
+        "alt": "Jeans study 01"
       },
       {
-        "src": "https://placehold.co/500x600/f0f0f0/333333?text=Coming+Soon",
-        "alt": "Papierstudie 02"
+        "src": "/images/BA1/studies302.webp",
+        "alt": "Jeans study 02"
       }
     ],
-    "thumbnailImage": "https://placehold.co/500x400"
+    "thumbnailImage": "/images/BA1/studies101.webp"
   }
 ]

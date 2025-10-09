@@ -172,11 +172,6 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
-/* Remove border radius from images in this view */
-.no-radius {
-  border-radius: 0 !important;
-}
-
 /* Grid layout for projects */
 .portfolio-grid {
   display: grid;
@@ -187,9 +182,10 @@ onUnmounted(() => {
 
 /* Make project images fit grid */
 .project-showcase-image {
-  height: 280px;
-  width: 100%;
+  width: 66%;
+  height: 66%;
   object-fit: cover;
+  display: block;
 }
 
 .project-showcase {
@@ -199,6 +195,10 @@ onUnmounted(() => {
 
 .project-image-container {
   width: 100%;
+  aspect-ratio: 3 / 4;
+  max-width: 340px;
+  margin: 0 auto;
+  overflow: hidden;
 }
 
 @media (max-width: 768px) {
