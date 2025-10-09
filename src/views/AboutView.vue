@@ -2,7 +2,7 @@
   <div class="about">
     <section class="about-content">
       <div class="about-image">
-        <img src="/images/About/anneliesannys.webp" alt="Annelies Annys" />
+        <!-- <img src="/images/About/anneliesannys.webp" alt="Annelies Annys" /> -->
       </div>
       <div class="about-text">
         <p>
