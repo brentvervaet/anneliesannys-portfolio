@@ -16,7 +16,6 @@ import AppHeader from './components/AppHeader.vue'
 
 <style scoped>
 #app {
-  font-family: 'Helvetica Neue', sans-serif;
   margin: 0;
   overflow-x: hidden;
   padding: 0;
