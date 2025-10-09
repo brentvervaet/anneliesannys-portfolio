@@ -59,7 +59,11 @@
             :style="{ animationDelay: `${index * 200}ms` }"
           >
             <RouterLink :to="project.route" class="block project-image-container">
-              <img :src="project.image" :alt="project.title" class="project-showcase-image" />
+              <img
+                :src="project.image"
+                :alt="project.title"
+                class="project-showcase-image no-radius"
+              />
             </RouterLink>
           </div>
         </div>
@@ -69,63 +73,24 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, onUnmounted, ref } from 'vue'
+import projectsData from '@/data/projects.json'
+import { computed, onMounted, onUnmounted, ref } from 'vue'
 import { RouterLink } from 'vue-router'
 
 const heroSection = ref<HTMLElement>()
 const portfolioSection = ref<HTMLElement>()
 const heroOpacity = ref(1)
 
-const projects = [
-  {
-    id: 1,
-    title: 'LOST BEFORE MORNING',
-    route: '/portfolio/lost-before-morning',
-    image: 'https://placehold.co/500x400',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.',
-  },
-  {
-    id: 2,
-    title: 'SPLIT MYSELF IN TWO',
-    route: '/portfolio/split-myself-in-two',
-    image: '/images/Project01/collectie-samen.jpg',
-    description:
-      'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse.',
-  },
-  {
-    id: 3,
-    title: 'STUDIE VAN DE JURK',
-    route: '/portfolio/studie-van-de-jurk',
-    image: '/images/Project02/studie-van-de-jurk-6.jpg',
-    description:
-      'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.',
-  },
-  {
-    id: 4,
-    title: 'JEANS',
-    route: '/portfolio/jeans',
-    image: 'https://placehold.co/500x400',
-    description:
-      'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit.',
-  },
-  {
-    id: 5,
-    title: 'STUDIES',
-    route: '/portfolio/studies',
-    image: 'https://placehold.co/500x400',
-    description:
-      'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et.',
-  },
-  {
-    id: 6,
-    title: 'PAPERSTUDIE',
-    route: '/portfolio/papierstudie',
-    image: 'https://placehold.co/500x400',
-    description:
-      'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint.',
-  },
-]
+// Transform projects data from JSON to match the format needed for the view
+const projects = computed(() => {
+  return projectsData.map((project, index) => ({
+    id: index + 1,
+    title: project.title.toUpperCase(),
+    route: `/portfolio/${project.slug}`,
+    image: project.thumbnailImage,
+    description: Array.isArray(project.description) ? project.description[0] : project.description,
+  }))
+})
 
 const handleScroll = () => {
   const scrollY = window.scrollY
@@ -207,6 +172,11 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
+/* Remove border radius from images in this view */
+.no-radius {
+  border-radius: 0 !important;
+}
+
 /* Grid layout for projects */
 .portfolio-grid {
   display: grid;
