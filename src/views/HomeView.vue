@@ -172,11 +172,6 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
-/* Remove border radius from images in this view */
-.no-radius {
-  border-radius: 0 !important;
-}
-
 /* Grid layout for projects */
 .portfolio-grid {
   display: grid;
