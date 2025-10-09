@@ -4,7 +4,7 @@
       <!-- Left side: Title -->
       <div class="left-section">
         <h1 class="page-title">
-          <RouterLink to="/">Annelies Annys</RouterLink>
+          <RouterLink to="/">ANNELIES ANNYS</RouterLink>
         </h1>
       </div>
 
