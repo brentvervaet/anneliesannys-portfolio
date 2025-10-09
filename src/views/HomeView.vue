@@ -59,11 +59,7 @@
             :style="{ animationDelay: `${index * 200}ms` }"
           >
             <RouterLink :to="project.route" class="block project-image-container">
-              <img
-                :src="project.image"
-                :alt="project.title"
-                class="project-showcase-image no-radius"
-              />
+              <img :src="project.image" :alt="project.title" class="project-showcase-image" />
             </RouterLink>
           </div>
         </div>
@@ -211,11 +207,6 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
-/* Remove border radius from images in this view */
-.no-radius {
-  border-radius: 0 !important;
-}
-
 /* Grid layout for projects */
 .portfolio-grid {
   display: grid;
