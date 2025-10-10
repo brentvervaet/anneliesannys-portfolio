@@ -7,7 +7,7 @@
       "Morbi facilisis, sapien non commodo cursus, erat erat dictum urna, nec dictum erat erat nec urna. Etiam euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi."
     ],
     "date": "2025",
-    "video": "/images/BA2/lbm.mp4",
+    "video": "/videos/BA3/lbmFilm.webm",
     "images": [
       {
         "src": "/images/BA3/lbm01.webp",
@@ -89,7 +89,7 @@
       "Morbi facilisis, sapien non commodo cursus, erat erat dictum urna, nec dictum erat erat nec urna. Etiam euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi."
     ],
     "date": "2024",
-    "video": "/images/BA2/smsit.mp4",
+    "video": "/videos/BA2/smsitFilm.webm",
     "images": [
       {
         "src": "/images/BA2/smsit01.webp",
@@ -139,6 +139,8 @@
       "BA1: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, eu consectetur nisl nisi euismod nisi.",
       "Morbi facilisis, sapien non commodo cursus, erat erat dictum urna, nec dictum erat erat nec urna. Etiam euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi."
     ],
+    "video": "/videos/BA1/studiesFilm.webm",
+    "date": "2023",
     "images": [
       {
         "src": "/images/BA1/studies101.webp",
