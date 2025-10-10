@@ -42,9 +42,9 @@ const props = defineProps<Props>()
 // Compute the appropriate MIME type based on the video file extension
 const videoType = computed(() => {
   if (!props.video) return ''
-  
+
   const extension = props.video.split('.').pop()?.toLowerCase()
-  
+
   switch (extension) {
     case 'webm':
       return 'video/webm'
