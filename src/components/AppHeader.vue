@@ -38,13 +38,13 @@
 
 <script setup lang="ts">
 import { inject, onMounted, onUnmounted, ref } from 'vue'
-import { RouterLink, useRoute, useRouter } from 'vue-router'
+import { RouterLink, useRoute } from 'vue-router'
 
 // Inject the hasHeroVideo property, defaulting to false
 const hasHeroVideo = inject('hasHeroVideo', ref(false))
 
 const route = useRoute()
-const router = useRouter()
+// const router = useRouter()
 const isPortfolioVisible = ref(false)
 
 const scrollToPortfolio = (e: Event) => {
