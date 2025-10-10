@@ -1,7 +1,25 @@
 <script setup lang="ts">
-import { RouterView } from 'vue-router'
+import { provide, ref, watch } from 'vue'
+import { RouterView, useRoute } from 'vue-router'
 import AppFooter from './components/AppFooter.vue'
 import AppHeader from './components/AppHeader.vue'
+
+// Create a ref for the hasHeroVideo state
+const hasHeroVideo = ref(false)
+
+// Provide the hasHeroVideo value so AppHeader can inject it
+provide('hasHeroVideo', hasHeroVideo)
+
+// Update hasHeroVideo based on route changes
+const route = useRoute()
+watch(
+  () => route.path,
+  (path) => {
+    // Set hasHeroVideo to true only if the path starts with /portfolio/
+    hasHeroVideo.value = path.startsWith('/portfolio/')
+  },
+  { immediate: true },
+)
 </script>
 
 <template>
@@ -16,7 +34,6 @@ import AppHeader from './components/AppHeader.vue'
 
 <style scoped>
 #app {
-  font-family: 'Helvetica Neue', sans-serif;
   margin: 0;
   overflow-x: hidden;
   padding: 0;
