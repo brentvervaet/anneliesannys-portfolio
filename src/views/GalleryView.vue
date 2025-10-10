@@ -291,7 +291,8 @@ onUnmounted(() => {
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 30px;
+  /* TODO: mabye gap */
+  gap: 0px;
   margin-bottom: 80px;
 }
 
@@ -468,7 +469,7 @@ onUnmounted(() => {
 
   .gallery-grid {
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 25px;
+    gap: 0px;
   }
 }
 
@@ -487,7 +488,7 @@ onUnmounted(() => {
 
   .gallery-grid {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
+    gap: 0px;
   }
 
   .modal-navigation {
@@ -509,7 +510,7 @@ onUnmounted(() => {
 
   .gallery-grid {
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 15px;
+    gap: 0px;
   }
 
   .modal-navigation {
