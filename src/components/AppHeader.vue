@@ -101,18 +101,14 @@ header {
   background: transparent;
 }
 
-header.over-video {
-  background: rgba(255, 255, 255, 0.1);
-}
-
 header.over-video .page-title {
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  color: #fff;
+  /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); */
+  color: white;
 }
 
 header.over-video .nav-link {
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  color: #fff;
+  /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); */
+  color: white;
 }
 
 .header-content {
