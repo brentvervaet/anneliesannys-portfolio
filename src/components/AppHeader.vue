@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <header :class="{ 'over-video': hasHeroVideo }">
     <div class="header-content">
       <!-- Left side: Title -->
       <div class="left-section">
@@ -37,8 +37,11 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, onUnmounted, ref } from 'vue'
+import { inject, onMounted, onUnmounted, ref } from 'vue'
 import { RouterLink, useRoute, useRouter } from 'vue-router'
+
+// Inject the hasHeroVideo property, defaulting to false
+const hasHeroVideo = inject('hasHeroVideo', ref(false))
 
 const route = useRoute()
 const router = useRouter()
@@ -96,6 +99,20 @@ header {
   width: 100%;
   z-index: 1000;
   background: transparent;
+}
+
+header.over-video {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+header.over-video .page-title {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+
+header.over-video .nav-link {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  color: #fff;
 }
 
 .header-content {

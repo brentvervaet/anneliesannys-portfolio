@@ -4,6 +4,7 @@
       :title="project.title"
       :description="project.description"
       :images="project.images"
+      :video="project.video"
     />
   </div>
   <div v-else class="project-not-found">
@@ -17,7 +18,7 @@
 import ProjectDetail from '@/components/ProjectDetail.vue'
 import projectsData from '@/data/projects.json'
 import type { Project } from '@/types/project'
-import { computed } from 'vue'
+import { computed, provide } from 'vue'
 import { useRoute } from 'vue-router'
 
 const route = useRoute()
@@ -26,6 +27,12 @@ const slug = computed(() => route.params.slug as string)
 const project = computed(() => {
   return (projectsData as Project[]).find((p) => p.slug === slug.value)
 })
+
+// Provide a boolean indicating whether the current project has a video
+provide(
+  'hasHeroVideo',
+  computed(() => !!project.value?.video),
+)
 </script>
 
 <style scoped>

@@ -9,4 +9,5 @@ export interface Project {
   description: string[]
   images: ProjectImage[]
   thumbnailImage: string
+  video?: string
 }
