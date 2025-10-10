@@ -22,6 +22,15 @@
             </li>
             <li>
               <RouterLink
+                to="/gallery"
+                class="nav-link"
+                :class="{ active: $route.path === '/gallery' }"
+              >
+                gallery
+              </RouterLink>
+            </li>
+            <li>
+              <RouterLink
                 to="/about"
                 class="nav-link"
                 :class="{ active: $route.path === '/about' }"
