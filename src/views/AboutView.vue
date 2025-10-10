@@ -21,19 +21,6 @@
           est euismod turpis, id tincidunt sapien risus a quam. Maecenas fermentum consequat mi.
           Donec fermentum. Pellentesque malesuada nulla a mi.
         </p>
-        <p>
-          Duis sapien sem, aliquet nec, commodo eget, consequat quis, neque. Aliquam faucibus, elit
-          ut dictum aliquet, felis nisl adipiscing sapien, sed malesuada diam lacus eget erat. Cras
-          mollis scelerisque nunc. Nulla nec massa. Sed sit amet diam. Proin magna. In hac habitasse
-          platea dictumst. Praesent nec nisl a purus blandit viverra. Praesent ac massa at ligula
-          laoreet iaculis.
-        </p>
-        <p>
-          Morbi ac felis. Nunc egestas, augue at pellentesque laoreet, felis eros vehicula leo, at
-          malesuada velit leo quis pede. Donec interdum, metus et hendrerit aliquet, dolor diam
-          sagittis ligula, eget egestas libero turpis vel mi. Mauris sollicitudin fermentum libero.
-          Praesent nonummy mi in odio. Nunc interdum lacus sit amet orci.
-        </p>
       </div>
     </section>
   </div>
