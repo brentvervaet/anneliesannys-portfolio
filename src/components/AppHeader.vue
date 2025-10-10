@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <header :class="{ 'over-video': hasHeroVideo }">
     <div class="header-content">
       <!-- Left side: Title -->
       <div class="left-section">
@@ -37,8 +37,11 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, onUnmounted, ref } from 'vue'
+import { inject, onMounted, onUnmounted, ref } from 'vue'
 import { RouterLink, useRoute, useRouter } from 'vue-router'
+
+// Inject the hasHeroVideo property, defaulting to false
+const hasHeroVideo = inject('hasHeroVideo', ref(false))
 
 const route = useRoute()
 const router = useRouter()
@@ -98,6 +101,16 @@ header {
   background: transparent;
 }
 
+header.over-video .page-title {
+  /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); */
+  color: white;
+}
+
+header.over-video .nav-link {
+  /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); */
+  color: white;
+}
+
 .header-content {
   display: flex;
   align-items: center;
@@ -121,16 +134,6 @@ header {
   gap: 35px;
 }
 
-.page-title {
-  margin: 0;
-  font-size: 3.5rem;
-  font-weight: bold;
-  color: #2c3e50;
-  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.4);
-  letter-spacing: 0.02em;
-  white-space: nowrap;
-}
-
 /* Navigation Styles */
 nav ul {
   list-style: none;
@@ -139,39 +142,6 @@ nav ul {
   display: flex;
   gap: 35px;
   align-items: center;
-}
-
-.nav-link {
-  color: #2c3e50;
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 17px;
-  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
-  transition: all 0.3s ease;
-  position: relative;
-  display: inline-block;
-  padding: 8px 0;
-}
-
-.nav-link:hover {
-  color: #34495e;
-  transform: translateY(-3px);
-}
-
-.nav-link.active {
-  color: #2c3e50;
-  font-weight: 600;
-}
-
-.nav-link.active::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, rgba(255, 182, 193, 0.8), rgba(255, 192, 203, 0.6));
-  border-radius: 2px;
 }
 
 /* Responsive Design */
