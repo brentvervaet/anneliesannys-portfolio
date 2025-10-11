@@ -49,21 +49,22 @@
     </section>
 
     <!-- Portfolio Section -->
-    <section id="portfolio" ref="portfolioSection" class="portfolio-section min-h-screen bg-white">
+    <section id="portfolio" ref="portfolioSection" class="portfolio-section">
       <div class="portfolio-container">
         <div class="portfolio-grid">
           <div
             v-for="(project, index) in projects"
             :key="project.id"
-            class="project-showcase"
-            :style="{ animationDelay: `${index * 200}ms` }"
+            class="project-card"
+            :style="{ animationDelay: `${index * 150}ms` }"
           >
-            <RouterLink :to="project.route" class="block project-image-container">
-              <img
-                :src="project.image"
-                :alt="project.title"
-                class="project-showcase-image no-radius"
-              />
+            <RouterLink :to="project.route" class="project-link">
+              <div class="project-image-wrapper">
+                <img :src="project.image" :alt="project.title" class="project-image" />
+                <div class="project-overlay">
+                  <span class="view-text">view</span>
+                </div>
+              </div>
             </RouterLink>
           </div>
         </div>
@@ -172,44 +173,165 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
-/* Grid layout for projects */
+/* Portfolio Section Styles */
+.portfolio-section {
+  min-height: 100vh;
+  background: white;
+  padding: 100px 0;
+  margin-top: 100vh;
+}
+
+.portfolio-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 60px;
+}
+
 .portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 60px 40px; /* row gap, column gap */
-  padding: 60px 20px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 200px 120px;
+  align-items: start;
+  padding: 120px 0;
 }
 
-/* Make project images fit grid */
-.project-showcase-image {
-  width: 66%;
-  height: 66%;
-  object-fit: cover;
+/* TODO: only load in when in viewport */
+.project-card {
+  opacity: 0;
+  animation: fadeIn 0.8s ease-out forwards;
+  transition: transform 0.4s ease;
+}
+/* TODO */
+/* Creative scattered positioning */
+.project-card:nth-child(1) {
+  transform: translateX(0px) translateY(0px);
+}
+
+.project-card:nth-child(2) {
+  transform: translateX(0px) translateY(0px);
+}
+
+.project-card:nth-child(3) {
+  transform: translateX(0px) translateY(0px);
+}
+
+/* TODO */
+/*
+.project-card:nth-child(4) {
+  transform: translateX(-90px) translateY(60px);
+}
+
+.project-card:nth-child(5) {
+  transform: translateX(100px) translateY(-80px);
+}
+
+.project-card:nth-child(6) {
+  transform: translateX(-50px) translateY(100px);
+}
+
+.project-card:nth-child(7) {
+  transform: translateX(70px) translateY(-120px);
+}
+
+.project-card:nth-child(8) {
+  transform: translateX(-80px) translateY(40px);
+}
+
+.project-card:nth-child(9) {
+  transform: translateX(90px) translateY(-60px);
+} */
+
+.project-link {
   display: block;
+  text-decoration: none;
+  color: inherit;
 }
 
-.project-showcase {
-  display: flex;
-  justify-content: center;
-}
-
-.project-image-container {
-  width: 100%;
+.project-image-wrapper {
+  position: relative;
   aspect-ratio: 3 / 4;
-  max-width: 340px;
-  margin: 0 auto;
   overflow: hidden;
+  background: #f5f5f5;
+  margin-bottom: 24px;
+  border-radius: 2px;
+  max-width: 280px;
+  margin: 0 auto;
 }
 
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition:
+    transform 0.6s ease,
+    filter 0.3s ease;
+}
+
+.project-card:hover .project-image {
+  transform: scale(1.05);
+}
+
+.project-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-card:hover .project-overlay {
+  opacity: 1;
+}
+
+.view-text {
+  color: white;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-family: 'Helvetica Neue', sans-serif;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive - Mobile styles will be added later */
 @media (max-width: 768px) {
   .portfolio-grid {
     grid-template-columns: 1fr;
-    gap: 60px;
-    padding: 40px 20px;
+    gap: 40px;
   }
 
-  .project-showcase-image {
-    height: 240px;
+  .portfolio-container {
+    padding: 0 20px;
+  }
+
+  .portfolio-title {
+    font-size: 2.5rem;
   }
 }
 </style>
