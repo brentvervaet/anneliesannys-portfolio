@@ -3,7 +3,7 @@
     <!-- Hero video section -->
     <div class="video-hero" v-if="video">
       <video autoplay muted loop playsinline class="fullscreen-video">
-        <source :src="video" :type="videoType" />
+        <source :src="video" type="video/webm" />
         Your browser does not support the video tag.
       </video>
     </div>
@@ -16,15 +16,18 @@
         </p>
       </div>
       <div class="image-grid">
-        <img v-for="image in images" :key="image.src" :src="image.src" :alt="image.alt" />
+        <img
+          v-for="image in images"
+          :key="image.src"
+          :src="getMediumImagePath(image.src)"
+          :alt="image.alt"
+        />
       </div>
     </section>
   </div>
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
-
 interface ProjectImage {
   src: string
   alt: string
@@ -39,23 +42,14 @@ interface Props {
 
 const props = defineProps<Props>()
 
-// Compute the appropriate MIME type based on the video file extension
-const videoType = computed(() => {
-  if (!props.video) return ''
-
-  const extension = props.video.split('.').pop()?.toLowerCase()
-
-  switch (extension) {
-    case 'webm':
-      return 'video/webm'
-    case 'mp4':
-      return 'video/mp4'
-    case 'ogg':
-      return 'video/ogg'
-    default:
-      return 'video/mp4' // Default fallback
-  }
-})
+// Convert image path to use medium-sized version
+const getMediumImagePath = (originalPath: string): string => {
+  // Split the path and insert 'med' before the filename
+  // e.g., "/images/BA3/lbm01.webp" -> "/images/BA3/med/lbm01.webp"
+  const pathParts = originalPath.split('/')
+  const filename = pathParts.pop()
+  return [...pathParts, 'med', filename].join('/')
+}
 </script>
 
 <style scoped>
