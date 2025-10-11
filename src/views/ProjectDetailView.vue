@@ -17,11 +17,6 @@
       :video="project.video"
     />
   </div>
-  <div v-else class="project-not-found">
-    <h1>Project niet gevonden</h1>
-    <p>Het project dat je zoekt bestaat niet.</p>
-    <RouterLink to="/" class="back-link">← Terug naar home</RouterLink>
-  </div>
 </template>
 
 <script setup lang="ts">
@@ -47,31 +42,5 @@ provide(
 </script>
 
 <style scoped>
-.project-not-found {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 50vh;
-  text-align: center;
-}
-
-.project-not-found h1 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-.project-not-found p {
-  margin-bottom: 2rem;
-  color: #666;
-}
-
-.back-link {
-  color: #333;
-  text-decoration: underline;
-}
-
-.back-link:hover {
-  color: #000;
-}
+/* No styles needed for this component */
 </style>
