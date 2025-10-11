@@ -71,6 +71,7 @@ const currentModalIndex = ref(0)
 const currentModalImage = ref<GalleryImage | null>(null)
 
 // Gallery images data
+// TODO: juiste mapjes
 const allImages = ref<GalleryImage[]>([
   // BA3 Images
   { src: '/images/BA3o/lbm01.webp', alt: 'LBM 01', title: '01', category: 'Lost before morning' },
