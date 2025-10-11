@@ -117,6 +117,62 @@ const allImages = computed<GalleryImage[]>(() => {
         })
       })
     })
+=======
+    // Handle projects with studies (like the studies project)
+    if (project.studies) {
+      project.studies.forEach((study) => {
+        study.images.forEach((image, index) => {
+          // Extract number from filename for title, or use index + 1
+          const filename = image.src.split('/').pop() || ''
+          const titleMatch = filename.match(/(\d+)/)
+          const title = titleMatch?.[1]?.padStart(2, '0') || String(index + 1).padStart(2, '0')
+
+          // Convert the image path to use small images for gallery, large for modal
+          // Original: /images/BA1/studies101.webp -> Small: /images/BA1/sm/studies101.webp, Large: /images/BA1/lg/studies101.webp
+          const pathParts = image.src.split('/')
+          const filename_only = pathParts[pathParts.length - 1]
+          const basePath = pathParts.slice(0, -1).join('/')
+
+          const smallSrc = `${basePath}/sm/${filename_only}`
+          const largeSrc = `${basePath}/lg/${filename_only}`
+
+          images.push({
+            src: smallSrc,
+            srcLarge: largeSrc,
+            alt: image.alt,
+            title,
+            category: `${project.title} - ${study.title}`,
+          })
+        })
+      })
+    }
+    // Handle regular projects with images
+    else if (project.images) {
+      project.images.forEach((image, index) => {
+        // Extract number from filename for title, or use index + 1
+        const filename = image.src.split('/').pop() || ''
+        const titleMatch = filename.match(/(\d+)/)
+        const title = titleMatch?.[1]?.padStart(2, '0') || String(index + 1).padStart(2, '0')
+
+        // Convert the image path to use small images for gallery, large for modal
+        // Original: /images/BA1/studies101.webp -> Small: /images/BA1/sm/studies101.webp, Large: /images/BA1/lg/studies101.webp
+        const pathParts = image.src.split('/')
+        const filename_only = pathParts[pathParts.length - 1]
+        const basePath = pathParts.slice(0, -1).join('/')
+
+        const smallSrc = `${basePath}/sm/${filename_only}`
+        const largeSrc = `${basePath}/lg/${filename_only}`
+
+        images.push({
+          src: smallSrc,
+          srcLarge: largeSrc,
+          alt: image.alt,
+          title,
+          category: project.title,
+        })
+      })
+    }
+>>>>>>> dev
   })
 
   return images
