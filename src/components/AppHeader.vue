@@ -305,11 +305,11 @@ header.over-video .hamburger-line {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
-  /* background-color: rgba(0, 0, 0, 0.5); */
+  height: 100%;
   z-index: 999;
   opacity: 0;
   visibility: hidden;
+  backdrop-filter: blur(20px);
   transition: all 0.3s ease;
 }
 
@@ -323,9 +323,6 @@ header.over-video .hamburger-line {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(5px);
-  padding: 1000px;
   min-width: 200px;
 }
 
