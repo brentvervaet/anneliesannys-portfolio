@@ -306,7 +306,7 @@ header.over-video .hamburger-line {
   left: 0;
   width: 100%;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5);
+  /* background-color: rgba(0, 0, 0, 0.5); */
   z-index: 999;
   opacity: 0;
   visibility: hidden;
@@ -323,10 +323,10 @@ header.over-video .hamburger-line {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: white;
-  padding: 40px;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(5px);
+  padding: 1000px;
   min-width: 200px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .mobile-nav ul {
@@ -385,15 +385,6 @@ header.over-video .hamburger-line {
 @media (max-width: 480px) {
   .page-title {
     font-size: 1.5rem;
-  }
-
-  .mobile-nav {
-    padding: 1000px;
-    min-width: 200px;
-  }
-
-  .mobile-nav .nav-link {
-    font-size: 1rem;
   }
 }
 </style>
