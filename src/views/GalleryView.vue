@@ -260,7 +260,6 @@ onUnmounted(() => {
 <style scoped>
 .gallery {
   min-height: 100vh;
-  padding-top: 20px;
   background: white;
 }
 
@@ -474,10 +473,6 @@ onUnmounted(() => {
 }
 
 @media (max-width: 900px) {
-  .gallery {
-    padding-top: 70px;
-  }
-
   .gallery-content {
     padding: 0 20px;
   }
@@ -504,6 +499,10 @@ onUnmounted(() => {
 }
 
 @media (max-width: 480px) {
+  .gallery {
+    padding-top: 0px;
+  }
+
   .gallery-header h1 {
     font-size: 2rem;
   }
