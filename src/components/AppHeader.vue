@@ -354,10 +354,6 @@ header.over-video .hamburger-line {
 
 /* Responsive Styles */
 @media (max-width: 950px) {
-  header {
-    padding: 20px 25px;
-  }
-
   .header-content {
     gap: 20px;
   }
