@@ -71,7 +71,6 @@ const currentModalIndex = ref(0)
 const currentModalImage = ref<GalleryImage | null>(null)
 
 // Gallery images data
-// TODO: juiste mapjes
 const allImages = ref<GalleryImage[]>([
   // BA3 Images
   { src: '/images/BA3o/lbm01.webp', alt: 'LBM 01', title: '01', category: 'Lost before morning' },
@@ -150,65 +149,65 @@ const allImages = ref<GalleryImage[]>([
 
   // BA1 Studies
   {
-    src: '/images/BA1/studies101.webp',
+    src: '/images/BA1o/studies101.webp',
     alt: 'Study 101',
     title: '01',
     category: 'Study of the dress',
   },
   {
-    src: '/images/BA1/studies102.webp',
+    src: '/images/BA1o/studies102.webp',
     alt: 'Study 102',
     title: '02',
     category: 'Study of the dress',
   },
   {
-    src: '/images/BA1/studies103.webp',
+    src: '/images/BA1o/studies103.webp',
     alt: 'Study 103',
     title: '03',
     category: 'Study of the dress',
   },
   {
-    src: '/images/BA1/studies104.webp',
+    src: '/images/BA1o/studies104.webp',
     alt: 'Study 104',
     title: '04',
     category: 'Study of the dress',
   },
   {
-    src: '/images/BA1/studies105.webp',
+    src: '/images/BA1o/studies105.webp',
     alt: 'Study 105',
     title: '05',
     category: 'Study of the dress',
   },
   {
-    src: '/images/BA1/studies106.webp',
+    src: '/images/BA1o/studies106.webp',
     alt: 'Study 106',
     title: '06',
     category: 'Study of the dress',
   },
   {
-    src: '/images/BA1/studies107.webp',
+    src: '/images/BA1o/studies107.webp',
     alt: 'Study 107',
     title: '07',
     category: 'Study of the dress',
   },
   {
-    src: '/images/BA1/studies108.webp',
+    src: '/images/BA1o/studies108.webp',
     alt: 'Study 108',
     title: '08',
     category: 'Study of the dress',
   },
   {
-    src: '/images/BA1/studies109.webp',
+    src: '/images/BA1o/studies109.webp',
     alt: 'Study 109',
     title: '09',
     category: 'Study of the dress',
   },
-  { src: '/images/BA1/studies201.webp', alt: 'Study 201', title: '01', category: 'Jeans study' },
-  { src: '/images/BA1/studies202.webp', alt: 'Study 202', title: '02', category: 'Jeans study' },
-  { src: '/images/BA1/studies203.webp', alt: 'Study 203', title: '03', category: 'Jeans study' },
+  { src: '/images/BA1o/studies201.webp', alt: 'Study 201', title: '01', category: 'Jeans study' },
+  { src: '/images/BA1o/studies202.webp', alt: 'Study 202', title: '02', category: 'Jeans study' },
+  { src: '/images/BA1o/studies203.webp', alt: 'Study 203', title: '03', category: 'Jeans study' },
 
-  { src: '/images/BA1/studies301.webp', alt: 'Study 301', title: '01', category: 'Paper study' },
-  { src: '/images/BA1/studies302.webp', alt: 'Study 302', title: '02', category: 'Paper study' },
+  { src: '/images/BA1o/studies301.webp', alt: 'Study 301', title: '01', category: 'Paper study' },
+  { src: '/images/BA1o/studies302.webp', alt: 'Study 302', title: '02', category: 'Paper study' },
 ])
 
 const openModal = (image: GalleryImage, index: number) => {
