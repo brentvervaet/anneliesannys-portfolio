@@ -93,7 +93,7 @@
         "alt": "Lost Before Morning 17"
       }
     ],
-    "thumbnailImage": "/images/BA3/lbm01.webp"
+    "thumbnailImage": "/images/BA3/med/lbm01.webp"
   },
 
   {
@@ -144,7 +144,7 @@
         "alt": "Split myself in two 09"
       }
     ],
-    "thumbnailImage": "/images/BA2/smsit01.webp"
+    "thumbnailImage": "/images/BA2/med/smsit01.webp"
   },
   {
     "slug": "studies",
@@ -213,6 +213,6 @@
         "alt": "Jeans study 02"
       }
     ],
-    "thumbnailImage": "/images/BA1/studies101.webp"
+    "thumbnailImage": "/images/BA1/med/studies101.webp"
   }
 ]
