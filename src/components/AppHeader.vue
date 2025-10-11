@@ -10,7 +10,8 @@
 
       <!-- Right side: Navigation -->
       <div class="right-section">
-        <nav>
+        <!-- Desktop Navigation -->
+        <nav class="desktop-nav">
           <ul>
             <li>
               <RouterLink to="/" class="nav-link" :class="{ active: $route.path === '/' }">
@@ -40,13 +41,66 @@
             </li>
           </ul>
         </nav>
+
+        <!-- Mobile Hamburger Menu -->
+        <button
+          class="mobile-menu-toggle"
+          @click="toggleMobileMenu"
+          :class="{ 'menu-open': isMobileMenuOpen }"
+          aria-label="Toggle navigation menu"
+        >
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
       </div>
+    </div>
+
+    <!-- Mobile Navigation Overlay -->
+    <div class="mobile-nav-overlay" :class="{ active: isMobileMenuOpen }" @click="closeMobileMenu">
+      <nav class="mobile-nav" @click.stop>
+        <ul>
+          <li>
+            <RouterLink
+              to="/"
+              class="nav-link"
+              :class="{ active: $route.path === '/' }"
+              @click="closeMobileMenu"
+            >
+              home
+            </RouterLink>
+          </li>
+          <li>
+            <div @click="handleMobilePortfolioClick" class="nav-link">portfolio</div>
+          </li>
+          <li>
+            <RouterLink
+              to="/gallery"
+              class="nav-link"
+              :class="{ active: $route.path === '/gallery' }"
+              @click="closeMobileMenu"
+            >
+              gallery
+            </RouterLink>
+          </li>
+          <li>
+            <RouterLink
+              to="/about"
+              class="nav-link"
+              :class="{ active: $route.path === '/about' }"
+              @click="closeMobileMenu"
+            >
+              about
+            </RouterLink>
+          </li>
+        </ul>
+      </nav>
     </div>
   </header>
 </template>
 
 <script setup lang="ts">
-import { inject, onMounted, onUnmounted, ref } from 'vue'
+import { inject, onMounted, onUnmounted, ref, watch } from 'vue'
 import { RouterLink, useRoute } from 'vue-router'
 
 // Inject the hasHeroVideo property, defaulting to false
@@ -55,6 +109,7 @@ const hasHeroVideo = inject('hasHeroVideo', ref(false))
 const route = useRoute()
 // const router = useRouter()
 const isPortfolioVisible = ref(false)
+const isMobileMenuOpen = ref(false)
 
 const scrollToPortfolio = (e: Event) => {
   e.preventDefault()
@@ -75,6 +130,19 @@ const scrollToPortfolio = (e: Event) => {
   }
 }
 
+const toggleMobileMenu = () => {
+  isMobileMenuOpen.value = !isMobileMenuOpen.value
+}
+
+const closeMobileMenu = () => {
+  isMobileMenuOpen.value = false
+}
+
+const handleMobilePortfolioClick = () => {
+  closeMobileMenu()
+  scrollToPortfolio(new Event('click'))
+}
+
 const checkPortfolioVisibility = () => {
   if (route.path !== '/') {
     isPortfolioVisible.value = false
@@ -92,10 +160,28 @@ const checkPortfolioVisibility = () => {
 onMounted(() => {
   window.addEventListener('scroll', checkPortfolioVisibility)
   checkPortfolioVisibility() // Initial check
+
+  // Close mobile menu on escape key
+  const handleEscape = (e: KeyboardEvent) => {
+    if (e.key === 'Escape') {
+      closeMobileMenu()
+    }
+  }
+  window.addEventListener('keydown', handleEscape)
+
+  // Cleanup function will remove this listener
+  onUnmounted(() => {
+    window.removeEventListener('keydown', handleEscape)
+  })
 })
 
 onUnmounted(() => {
   window.removeEventListener('scroll', checkPortfolioVisibility)
+})
+
+// Watch for route changes to close mobile menu
+watch(route, () => {
+  closeMobileMenu()
 })
 </script>
 
@@ -111,12 +197,10 @@ header {
 }
 
 header.over-video .page-title {
-  /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); */
   color: white;
 }
 
 header.over-video .nav-link {
-  /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); */
   color: white;
 }
 
@@ -153,85 +237,141 @@ nav ul {
   align-items: center;
 }
 
-/* Responsive Design */
-@media (max-width: 1200px) {
+/* Mobile Menu Toggle Button */
+.mobile-menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 24px;
+  height: 24px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001;
+}
+
+.hamburger-line {
+  width: 100%;
+  height: 2px;
+  background-color: #000;
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+header.over-video .hamburger-line {
+  background-color: white;
+}
+
+/* Hamburger animation when menu is open */
+.mobile-menu-toggle.menu-open .hamburger-line:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.mobile-menu-toggle.menu-open .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-toggle.menu-open .hamburger-line:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Mobile Navigation Overlay */
+.mobile-nav-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.mobile-nav-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-nav {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border-radius: 8px;
+  padding: 40px;
+  min-width: 250px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.mobile-nav ul {
+  flex-direction: column;
+  gap: 25px;
+  text-align: center;
+}
+
+.mobile-nav .nav-link {
+  font-size: 18px;
+  color: #000;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+}
+
+.mobile-nav .nav-link:hover,
+.mobile-nav .nav-link.active {
+  background-color: #f5f5f5;
+}
+
+/* Responsive Styles */
+@media (max-width: 950px) {
   header {
-    padding: 20px 30px;
+    padding: 20px 25px;
   }
 
   .header-content {
-    gap: 40px;
-  }
-
-  .page-title {
-    font-size: 3rem;
-  }
-
-  .search-container {
-    width: 280px;
-  }
-
-  nav ul {
-    gap: 25px;
-  }
-}
-
-@media (max-width: 900px) {
-  header {
-    padding: 15px 20px;
-  }
-
-  .header-content {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 25px;
-  }
-
-  .left-section {
-    justify-content: center;
-  }
-  .right-section {
-    justify-content: center;
-  }
-
-  .page-title {
-    font-size: 2.5rem;
-    text-align: center;
-  }
-
-  .right-section {
-    flex-direction: column;
     gap: 20px;
-  }
-
-  .search-container {
-    width: 100%;
-    max-width: 350px;
-  }
-
-  nav ul {
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-}
-
-@media (max-width: 480px) {
-  header {
-    padding: 15px;
   }
 
   .page-title {
     font-size: 2rem;
   }
 
-  .search-input {
-    padding: 10px 15px;
-    font-size: 14px;
+  .desktop-nav {
+    display: none;
   }
 
-  nav ul {
-    gap: 15px;
+  .mobile-menu-toggle {
+    display: flex;
+  }
+
+  .mobile-nav-overlay {
+    display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    padding: 15px 20px;
+  }
+
+  .page-title {
+    font-size: 1.5rem;
+  }
+
+  .mobile-nav {
+    padding: 30px;
+    min-width: 200px;
+  }
+
+  .mobile-nav .nav-link {
+    font-size: 16px;
   }
 }
 </style>
