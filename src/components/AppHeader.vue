@@ -237,6 +237,28 @@ nav ul {
   align-items: center;
 }
 
+/* Component styles */
+.nav-link {
+  color: black;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 17px;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  padding: 8px 0;
+}
+
+.nav-link:hover {
+  color: rgba(255, 182, 193, 0.8);
+  transform: translateY(-3px);
+}
+
+.nav-link.active {
+  font-weight: 600;
+  color: rgba(255, 182, 193, 0.8);
+}
+
 /* Mobile Menu Toggle Button */
 .mobile-menu-toggle {
   display: none;
@@ -324,9 +346,8 @@ header.over-video .hamburger-line {
   cursor: pointer;
 }
 
-.mobile-nav .nav-link:hover,
-.mobile-nav .nav-link.active {
-  background-color: #f5f5f5;
+.mobile-nav .nav-link:hover {
+  transform: translateY(0);
 }
 
 /* Responsive Styles */
