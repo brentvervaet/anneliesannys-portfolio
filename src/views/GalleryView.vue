@@ -3,7 +3,7 @@
     <section class="gallery-content">
       <div class="gallery-header">
         <h1>Gallery</h1>
-        <p>A collection of studies and collections</p>
+        <p>Collections & studies</p>
       </div>
 
       <!-- Gallery Grid -->
