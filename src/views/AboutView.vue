@@ -24,6 +24,7 @@
           attempt to hold onto what might otherwise be lost, while allowing it to transform into
           something new.
         </p>
+
       </div>
 
       <div class="timeline-section">
