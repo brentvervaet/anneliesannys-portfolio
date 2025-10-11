@@ -355,7 +355,7 @@ header.over-video .hamburger-line {
 /* Responsive Styles */
 @media (max-width: 950px) {
   header {
-    padding: 20px 25px;
+    padding: 20px 30px;
   }
 
   .header-content {
@@ -380,6 +380,10 @@ header.over-video .hamburger-line {
 }
 
 @media (max-width: 480px) {
+  header {
+    padding: 15px 20px;
+  }
+
   .page-title {
     font-size: 1.5rem;
   }

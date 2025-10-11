@@ -3,7 +3,7 @@
     <section class="gallery-content">
       <div class="gallery-header">
         <h1>Gallery</h1>
-        <p>A collection of studies and collections</p>
+        <p>Collections & studies</p>
       </div>
 
       <!-- Gallery Grid -->
@@ -260,7 +260,6 @@ onUnmounted(() => {
 <style scoped>
 .gallery {
   min-height: 100vh;
-  padding-top: 20px;
   background: white;
 }
 
@@ -290,7 +289,7 @@ onUnmounted(() => {
 
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(8, 1fr);
   /* TODO: mabye gap */
   gap: 0px;
   margin-bottom: 80px;
@@ -468,16 +467,12 @@ onUnmounted(() => {
   }
 
   .gallery-grid {
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(6, 1fr);
     gap: 0px;
   }
 }
 
 @media (max-width: 900px) {
-  .gallery {
-    padding-top: 70px;
-  }
-
   .gallery-content {
     padding: 0 20px;
   }
@@ -487,7 +482,7 @@ onUnmounted(() => {
   }
 
   .gallery-grid {
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 0px;
   }
 
@@ -504,12 +499,16 @@ onUnmounted(() => {
 }
 
 @media (max-width: 480px) {
+  .gallery {
+    padding-top: 0px;
+  }
+
   .gallery-header h1 {
     font-size: 2rem;
   }
 
   .gallery-grid {
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 0px;
   }
 
