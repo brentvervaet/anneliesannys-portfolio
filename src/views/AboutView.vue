@@ -24,7 +24,6 @@
           attempt to hold onto what might otherwise be lost, while allowing it to transform into
           something new.
         </p>
-
       </div>
 
       <div class="timeline-section">
@@ -117,8 +116,7 @@
 }
 
 .profile-image img {
-  width: 300px;
-  min-width: 200px;
+  width: 200px;
   height: auto;
   object-fit: cover;
 }
@@ -164,9 +162,81 @@
   line-height: 1.4;
 }
 
-/* TODO: welke decoratie? */
 .highlight {
   color: rgba(255, 182, 193);
   font-weight: 400;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column;
+    gap: 40px;
+    padding: 40px 20px;
+  }
+
+  .about-text {
+    order: 1;
+  }
+
+  .timeline-section {
+    order: 2;
+  }
+
+  .profile-image {
+    /* float: none;
+    margin-right: 0;
+    margin-bottom: 20px; */
+    text-align: center;
+  }
+
+  .profile-image img {
+    width: 170px;
+    min-width: 150px;
+  }
+
+  .timeline {
+    margin-left: 15px;
+    padding-left: 15px;
+  }
+
+  .timeline-item::before {
+    left: -21px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-content {
+    padding: 30px 15px;
+    gap: 30px;
+  }
+
+  .about-text {
+    font-size: 14px;
+  }
+
+  .profile-image img {
+    width: 140px;
+    min-width: 120px;
+  }
+
+  .timeline-year {
+    font-size: 16px;
+  }
+
+  .timeline-event {
+    font-size: 14px;
+  }
+
+  .timeline {
+    margin-left: 10px;
+    padding-left: 10px;
+  }
+
+  .timeline-item::before {
+    left: -16px;
+    width: 6px;
+    height: 6px;
+  }
 }
 </style>
