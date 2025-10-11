@@ -195,6 +195,7 @@ onUnmounted(() => {
   padding: 120px 0;
 }
 
+/* TODO: only load in when in viewport */
 .project-card {
   opacity: 0;
   animation: fadeIn 0.8s ease-out forwards;

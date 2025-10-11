@@ -26,6 +26,10 @@ const router = createRouter({
       props: true,
     },
   ],
+  scrollBehavior() {
+    // Always load page from the top when navigating to a new route
+    return { top: 0, behavior: 'instant' }
+  },
 })
 
 export default router
