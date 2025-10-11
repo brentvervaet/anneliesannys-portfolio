@@ -45,7 +45,18 @@
               &#8250;
             </button>
           </div>
-          <img :src="currentModalImage?.src" :alt="currentModalImage?.alt" class="modal-image" />
+          <div class="modal-image-container">
+            <div v-if="modalImageLoading" class="modal-loading">
+              <div class="loading-spinner"></div>
+            </div>
+            <img 
+              :src="currentModalImage?.srcLarge" 
+              :alt="currentModalImage?.alt" 
+              class="modal-image" 
+              @load="onModalImageLoad"
+              :class="{ 'loading': modalImageLoading }"
+            />
+          </div>
           <div class="modal-info">
             <h3>{{ currentModalImage?.title }}</h3>
             <p>{{ currentModalImage?.category }}</p>
@@ -57,10 +68,12 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, onUnmounted, ref } from 'vue'
+import projectsData from '@/data/projects.json'
+import { computed, onMounted, onUnmounted, ref } from 'vue'
 
 interface GalleryImage {
   src: string
+  srcLarge: string
   alt: string
   title: string
   category: string
@@ -69,158 +82,58 @@ interface GalleryImage {
 const modalOpen = ref(false)
 const currentModalIndex = ref(0)
 const currentModalImage = ref<GalleryImage | null>(null)
+const modalImageLoading = ref(false)
 
-// Gallery images data
-const allImages = ref<GalleryImage[]>([
-  // BA3/lg Images
-  { src: '/images/BA3/lg/lbm01.webp', alt: 'LBM 01', title: '01', category: 'Lost before morning' },
-  { src: '/images/BA3/lg/lbm02.webp', alt: 'LBM 02', title: '02', category: 'Lost before morning' },
-  { src: '/images/BA3/lg/lbm03.webp', alt: 'LBM 03', title: '03', category: 'Lost before morning' },
-  { src: '/images/BA3/lg/lbm04.webp', alt: 'LBM 04', title: '04', category: 'Lost before morning' },
-  { src: '/images/BA3/lg/lbm05.webp', alt: 'LBM 05', title: '05', category: 'Lost before morning' },
-  { src: '/images/BA3/lg/lbm06.webp', alt: 'LBM 06', title: '06', category: 'Lost before morning' },
-  { src: '/images/BA3/lg/lbm07.webp', alt: 'LBM 07', title: '07', category: 'Lost before morning' },
-  { src: '/images/BA3/lg/lbm08.webp', alt: 'LBM 08', title: '08', category: 'Lost before morning' },
-  { src: '/images/BA3/lg/lbm09.webp', alt: 'LBM 09', title: '09', category: 'Lost before morning' },
-  { src: '/images/BA3/lg/lbm10.webp', alt: 'LBM 10', title: '10', category: 'Lost before morning' },
-  { src: '/images/BA3/lg/lbm11.webp', alt: 'LBM 11', title: '11', category: 'Lost before morning' },
-  { src: '/images/BA3/lg/lbm12.webp', alt: 'LBM 12', title: '12', category: 'Lost before morning' },
-  { src: '/images/BA3/lg/lbm13.webp', alt: 'LBM 13', title: '13', category: 'Lost before morning' },
-  { src: '/images/BA3/lg/lbm14.webp', alt: 'LBM 14', title: '14', category: 'Lost before morning' },
-  { src: '/images/BA3/lg/lbm15.webp', alt: 'LBM 15', title: '15', category: 'Lost before morning' },
-  { src: '/images/BA3/lg/lbm16.webp', alt: 'LBM 16', title: '16', category: 'Lost before morning' },
-  { src: '/images/BA3/lg/lbm17.webp', alt: 'LBM 17', title: '17', category: 'Lost before morning' },
+// Generate gallery images from projects data
+const allImages = computed<GalleryImage[]>(() => {
+  const images: GalleryImage[] = []
 
-  // BA2/lg Images
-  {
-    src: '/images/BA2/lg/smsit01.webp',
-    alt: 'SMSIT 01',
-    title: '01',
-    category: 'Split myself in two',
-  },
-  {
-    src: '/images/BA2/lg/smsit02.webp',
-    alt: 'SMSIT 02',
-    title: '02',
-    category: 'Split myself in two',
-  },
-  {
-    src: '/images/BA2/lg/smsit03.webp',
-    alt: 'SMSIT 03',
-    title: '03',
-    category: 'Split myself in two',
-  },
-  {
-    src: '/images/BA2/lg/smsit04.webp',
-    alt: 'SMSIT 04',
-    title: '04',
-    category: 'Split myself in two',
-  },
-  {
-    src: '/images/BA2/lg/smsit05.webp',
-    alt: 'SMSIT 05',
-    title: '05',
-    category: 'Split myself in two',
-  },
-  {
-    src: '/images/BA2/lg/smsit06.webp',
-    alt: 'SMSIT 06',
-    title: '06',
-    category: 'Split myself in two',
-  },
-  {
-    src: '/images/BA2/lg/smsit07.webp',
-    alt: 'SMSIT 07',
-    title: '07',
-    category: 'Split myself in two',
-  },
-  {
-    src: '/images/BA2/lg/smsit08.webp',
-    alt: 'SMSIT 08',
-    title: '08',
-    category: 'Split myself in two',
-  },
-  {
-    src: '/images/BA2/lg/smsit09.webp',
-    alt: 'SMSIT 09',
-    title: '09',
-    category: 'Split myself in two',
-  },
+  projectsData.forEach((project) => {
+    project.images.forEach((image, index) => {
+      // Extract number from filename for title, or use index + 1
+      const filename = image.src.split('/').pop() || ''
+      const titleMatch = filename.match(/(\d+)/)
+      const title = titleMatch?.[1]?.padStart(2, '0') || String(index + 1).padStart(2, '0')
 
-  // BA1 Studies
-  {
-    src: '/images/BA1/sm/studies101.webp',
-    alt: 'Study 101',
-    title: '01',
-    category: 'Study of the dress',
-  },
-  {
-    src: '/images/BA1/sm/studies102.webp',
-    alt: 'Study 102',
-    title: '02',
-    category: 'Study of the dress',
-  },
-  {
-    src: '/images/BA1/sm/studies103.webp',
-    alt: 'Study 103',
-    title: '03',
-    category: 'Study of the dress',
-  },
-  {
-    src: '/images/BA1/sm/studies104.webp',
-    alt: 'Study 104',
-    title: '04',
-    category: 'Study of the dress',
-  },
-  {
-    src: '/images/BA1/sm/studies105.webp',
-    alt: 'Study 105',
-    title: '05',
-    category: 'Study of the dress',
-  },
-  {
-    src: '/images/BA1/sm/studies106.webp',
-    alt: 'Study 106',
-    title: '06',
-    category: 'Study of the dress',
-  },
-  {
-    src: '/images/BA1/sm/studies107.webp',
-    alt: 'Study 107',
-    title: '07',
-    category: 'Study of the dress',
-  },
-  {
-    src: '/images/BA1/sm/studies108.webp',
-    alt: 'Study 108',
-    title: '08',
-    category: 'Study of the dress',
-  },
-  {
-    src: '/images/BA1/sm/studies109.webp',
-    alt: 'Study 109',
-    title: '09',
-    category: 'Study of the dress',
-  },
-  { src: '/images/BA1/sm/studies201.webp', alt: 'Study 201', title: '01', category: 'Jeans study' },
-  { src: '/images/BA1/sm/studies202.webp', alt: 'Study 202', title: '02', category: 'Jeans study' },
-  { src: '/images/BA1/sm/studies203.webp', alt: 'Study 203', title: '03', category: 'Jeans study' },
+      // Convert the image path to use small images for gallery, large for modal
+      // Original: /images/BA1/studies101.webp -> Small: /images/BA1/sm/studies101.webp, Large: /images/BA1/lg/studies101.webp
+      const pathParts = image.src.split('/')
+      const filename_only = pathParts[pathParts.length - 1]
+      const basePath = pathParts.slice(0, -1).join('/')
+      
+      const smallSrc = `${basePath}/sm/${filename_only}`
+      const largeSrc = `${basePath}/lg/${filename_only}`
 
-  { src: '/images/BA1/sm/studies301.webp', alt: 'Study 301', title: '01', category: 'Paper study' },
-  { src: '/images/BA1/sm/studies302.webp', alt: 'Study 302', title: '02', category: 'Paper study' },
-])
+      images.push({
+        src: smallSrc,
+        srcLarge: largeSrc,
+        alt: image.alt,
+        title,
+        category: project.title,
+      })
+    })
+  })
+
+  return images
+})
 
 const openModal = (image: GalleryImage, index: number) => {
   currentModalImage.value = image
   currentModalIndex.value = index
   modalOpen.value = true
+  modalImageLoading.value = true
   document.body.style.overflow = 'hidden'
 }
 
 const closeModal = () => {
   modalOpen.value = false
   currentModalImage.value = null
+  modalImageLoading.value = false
   document.body.style.overflow = 'auto'
+}
+
+const onModalImageLoad = () => {
+  modalImageLoading.value = false
 }
 
 const navigateModal = (direction: number) => {
@@ -229,6 +142,7 @@ const navigateModal = (direction: number) => {
     currentModalIndex.value = newIndex
     const image = allImages.value[newIndex]
     if (image) {
+      modalImageLoading.value = true
       currentModalImage.value = image
     }
   }
@@ -435,10 +349,45 @@ onUnmounted(() => {
   cursor: not-allowed;
 }
 
+.modal-image-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .modal-image {
   max-width: 100%;
   max-height: 80vh;
   object-fit: contain;
+  transition: opacity 0.3s ease;
+}
+
+.modal-image.loading {
+  opacity: 0;
+}
+
+.modal-loading {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .modal-info {
