@@ -3,6 +3,8 @@ import { provide, ref, watch } from 'vue'
 import { RouterView, useRoute } from 'vue-router'
 import AppFooter from './components/AppFooter.vue'
 import AppHeader from './components/AppHeader.vue'
+import projectsData from '@/data/projects.json'
+import type { Project } from '@/types/project'
 
 // Create a ref for the hasHeroVideo state
 const hasHeroVideo = ref(false)
@@ -15,8 +17,12 @@ const route = useRoute()
 watch(
   () => route.path,
   (path) => {
-    // Set hasHeroVideo to true only if the path starts with /portfolio/
-    hasHeroVideo.value = path.startsWith('/portfolio/')
+    // Remove leading slash for comparison
+    const slug = path.startsWith('/') ? path.slice(1) : path
+    // Set hasHeroVideo to true if the current path matches any project slug
+    const projects = projectsData as Project[]
+    const currentProject = projects.find((p) => p.slug === slug)
+    hasHeroVideo.value = !!currentProject?.video
   },
   { immediate: true },
 )

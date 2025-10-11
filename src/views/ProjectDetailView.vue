@@ -20,7 +20,7 @@
   <div v-else class="project-not-found">
     <h1>Project niet gevonden</h1>
     <p>Het project dat je zoekt bestaat niet.</p>
-    <RouterLink to="/portfolio" class="back-link">← Terug naar portfolio</RouterLink>
+    <RouterLink to="/" class="back-link">← Terug naar home</RouterLink>
   </div>
 </template>
 
