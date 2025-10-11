@@ -250,13 +250,13 @@ nav ul {
 }
 
 .nav-link:hover {
-  color: rgba(255, 182, 193, 0.8);
+  color: rgba(255, 182, 193);
   transform: translateY(-3px);
 }
 
 .nav-link.active {
   font-weight: 600;
-  color: rgba(255, 182, 193, 0.8);
+  color: rgba(255, 182, 193);
 }
 
 /* Mobile Menu Toggle Button */
@@ -306,7 +306,7 @@ header.over-video .hamburger-line {
   left: 0;
   width: 100%;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.5);
   z-index: 999;
   opacity: 0;
   visibility: hidden;
@@ -324,9 +324,8 @@ header.over-video .hamburger-line {
   left: 50%;
   transform: translate(-50%, -50%);
   background: white;
-  border-radius: 8px;
   padding: 40px;
-  min-width: 250px;
+  min-width: 200px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
@@ -348,6 +347,12 @@ header.over-video .hamburger-line {
 
 .mobile-nav .nav-link:hover {
   transform: translateY(0);
+  color: rgba(255, 182, 193);
+}
+
+.mobile-nav .nav-link.active {
+  font-weight: 600;
+  color: rgba(255, 182, 193);
 }
 
 /* Responsive Styles */
@@ -378,21 +383,17 @@ header.over-video .hamburger-line {
 }
 
 @media (max-width: 480px) {
-  header {
-    padding: 15px 20px;
-  }
-
   .page-title {
     font-size: 1.5rem;
   }
 
   .mobile-nav {
-    padding: 30px;
+    padding: 1000px;
     min-width: 200px;
   }
 
   .mobile-nav .nav-link {
-    font-size: 16px;
+    font-size: 1rem;
   }
 }
 </style>
