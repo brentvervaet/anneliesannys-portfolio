@@ -1,5 +1,12 @@
 <template>
-  <header :class="{ 'over-video': hasHeroVideo }">
+  <header
+    :class="{
+      'over-video': hasHeroVideo,
+      'header-hidden': isHeaderHidden,
+      'header-visible': isHeaderVisible,
+      'header-scrolled': isScrolled,
+    }"
+  >
     <div class="header-content">
       <!-- Left side: Title -->
       <div class="left-section">
@@ -111,6 +118,13 @@ const route = useRoute()
 const isPortfolioVisible = ref(false)
 const isMobileMenuOpen = ref(false)
 
+// Header scroll behavior
+const isHeaderHidden = ref(false)
+const isHeaderVisible = ref(true)
+const isScrolled = ref(false)
+let lastScrollY = 0
+const scrollThreshold = 100 // Minimum scroll distance to trigger hide/show
+
 const scrollToPortfolio = (e: Event) => {
   e.preventDefault()
 
@@ -143,6 +157,38 @@ const handleMobilePortfolioClick = () => {
   scrollToPortfolio(new Event('click'))
 }
 
+const handleScroll = () => {
+  const currentScrollY = window.scrollY
+
+  // Update scrolled state for background styling
+  isScrolled.value = currentScrollY > scrollThreshold
+
+  // Only apply scroll behavior if user has scrolled past threshold
+  if (currentScrollY < scrollThreshold) {
+    isHeaderHidden.value = false
+    isHeaderVisible.value = true
+    lastScrollY = currentScrollY
+    return
+  }
+
+  // Scrolling down - hide header
+  if (currentScrollY > lastScrollY && !isHeaderHidden.value) {
+    isHeaderHidden.value = true
+    isHeaderVisible.value = false
+    // Close mobile menu if it's open when hiding header
+    if (isMobileMenuOpen.value) {
+      closeMobileMenu()
+    }
+  }
+  // Scrolling up - show header
+  else if (currentScrollY < lastScrollY && isHeaderHidden.value) {
+    isHeaderHidden.value = false
+    isHeaderVisible.value = true
+  }
+
+  lastScrollY = currentScrollY
+}
+
 const checkPortfolioVisibility = () => {
   if (route.path !== '/') {
     isPortfolioVisible.value = false
@@ -157,8 +203,14 @@ const checkPortfolioVisibility = () => {
   isPortfolioVisible.value = isVisible
 }
 
+// Combined scroll handler for both portfolio visibility and header behavior
+const scrollHandler = () => {
+  handleScroll()
+  checkPortfolioVisibility()
+}
+
 onMounted(() => {
-  window.addEventListener('scroll', checkPortfolioVisibility)
+  window.addEventListener('scroll', scrollHandler)
   checkPortfolioVisibility() // Initial check
 
   // Close mobile menu on escape key
@@ -176,7 +228,7 @@ onMounted(() => {
 })
 
 onUnmounted(() => {
-  window.removeEventListener('scroll', checkPortfolioVisibility)
+  window.removeEventListener('scroll', scrollHandler)
 })
 
 // Watch for route changes to close mobile menu
@@ -188,12 +240,29 @@ watch(route, () => {
 <style scoped>
 header {
   padding: 25px 40px;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
   background: transparent;
+  transform: translateY(0);
+  transition:
+    transform 0.3s ease-in-out,
+    background-color 0.3s ease;
+}
+
+header.header-hidden {
+  transform: translateY(-100%);
+}
+
+header.header-visible {
+  transform: translateY(0);
+}
+
+/* Add subtle background when header is scrolled */
+header.header-scrolled {
+  backdrop-filter: blur(10px);
 }
 
 header.over-video .page-title {
@@ -351,6 +420,8 @@ header.over-video .hamburger-line {
   font-weight: 600;
   color: rgba(255, 182, 193);
 }
+
+/* Base page title styles */
 
 /* Responsive Styles */
 @media (max-width: 950px) {
