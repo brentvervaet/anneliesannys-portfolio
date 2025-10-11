@@ -49,12 +49,12 @@
             <div v-if="modalImageLoading" class="modal-loading">
               <div class="loading-spinner"></div>
             </div>
-            <img 
-              :src="currentModalImage?.srcLarge" 
-              :alt="currentModalImage?.alt" 
-              class="modal-image" 
+            <img
+              :src="currentModalImage?.srcLarge"
+              :alt="currentModalImage?.alt"
+              class="modal-image"
               @load="onModalImageLoad"
-              :class="{ 'loading': modalImageLoading }"
+              :class="{ loading: modalImageLoading }"
             />
           </div>
           <div class="modal-info">
@@ -100,7 +100,7 @@ const allImages = computed<GalleryImage[]>(() => {
       const pathParts = image.src.split('/')
       const filename_only = pathParts[pathParts.length - 1]
       const basePath = pathParts.slice(0, -1).join('/')
-      
+
       const smallSrc = `${basePath}/sm/${filename_only}`
       const largeSrc = `${basePath}/lg/${filename_only}`
 
