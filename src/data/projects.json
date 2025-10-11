@@ -155,62 +155,80 @@
     ],
     "video": "/videos/BA1/studiesFilm.webm",
     "date": "2023",
-    "images": [
+    "studies": [
       {
-        "src": "/images/BA1/studies101.webp",
-        "alt": "Study of the dress 01"
+        "title": "Study of the Dress",
+        "description": "An exploration of form and fabric through dress construction.",
+        "images": [
+          {
+            "src": "/images/BA1/studies101.webp",
+            "alt": "Study of the dress 01"
+          },
+          {
+            "src": "/images/BA1/studies102.webp",
+            "alt": "Study of the dress 02"
+          },
+          {
+            "src": "/images/BA1/studies103.webp",
+            "alt": "Study of the dress 03"
+          },
+          {
+            "src": "/images/BA1/studies104.webp",
+            "alt": "Study of the dress 04"
+          },
+          {
+            "src": "/images/BA1/studies105.webp",
+            "alt": "Study of the dress 05"
+          },
+          {
+            "src": "/images/BA1/studies106.webp",
+            "alt": "Study of the dress 06"
+          },
+          {
+            "src": "/images/BA1/studies107.webp",
+            "alt": "Study of the dress 07"
+          },
+          {
+            "src": "/images/BA1/studies108.webp",
+            "alt": "Study of the dress 08"
+          },
+          {
+            "src": "/images/BA1/studies109.webp",
+            "alt": "Study of the dress 09"
+          }
+        ]
       },
       {
-        "src": "/images/BA1/studies102.webp",
-        "alt": "Study of the dress 02"
+        "title": "Paper Study",
+        "description": "Experimental work with paper as a medium for textile exploration.",
+        "images": [
+          {
+            "src": "/images/BA1/studies201.webp",
+            "alt": "Paper study 01"
+          },
+          {
+            "src": "/images/BA1/studies202.webp",
+            "alt": "Paper study 02"
+          },
+          {
+            "src": "/images/BA1/studies203.webp",
+            "alt": "Paper study 03"
+          }
+        ]
       },
       {
-        "src": "/images/BA1/studies103.webp",
-        "alt": "Study of the dress 03"
-      },
-      {
-        "src": "/images/BA1/studies104.webp",
-        "alt": "Study of the dress 04"
-      },
-      {
-        "src": "/images/BA1/studies105.webp",
-        "alt": "Study of the dress 05"
-      },
-      {
-        "src": "/images/BA1/studies106.webp",
-        "alt": "Study of the dress 06"
-      },
-      {
-        "src": "/images/BA1/studies107.webp",
-        "alt": "Study of the dress 07"
-      },
-      {
-        "src": "/images/BA1/studies108.webp",
-        "alt": "Study of the dress 08"
-      },
-      {
-        "src": "/images/BA1/studies109.webp",
-        "alt": "Study of the dress 09"
-      },
-      {
-        "src": "/images/BA1/studies201.webp",
-        "alt": "Paper study 01"
-      },
-      {
-        "src": "/images/BA1/studies202.webp",
-        "alt": "Paper study 02"
-      },
-      {
-        "src": "/images/BA1/studies203.webp",
-        "alt": "Paper study 03"
-      },
-      {
-        "src": "/images/BA1/studies301.webp",
-        "alt": "Recycled Denim study 01"
-      },
-      {
-        "src": "/images/BA1/studies302.webp",
-        "alt": "Recycled Denim study 02"
+        "title": "Recycled Denim",
+        "description": "Sustainable approach to denim through recycling and reconstruction.",
+        "images": [
+          {
+            "src": "/images/BA1/studies301.webp",
+            "alt": "Recycled Denim study 01"
+          },
+          {
+            "src": "/images/BA1/studies302.webp",
+            "alt": "Recycled Denim study 02"
+          }
+        ]
       }
     ],
     "thumbnailImage": "/images/BA1/med/studies101.webp"
