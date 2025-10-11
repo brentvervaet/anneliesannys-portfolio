@@ -1,10 +1,10 @@
 <script setup lang="ts">
+import projectsData from '@/data/projects.json'
+import type { Project } from '@/types/project'
 import { provide, ref, watch } from 'vue'
 import { RouterView, useRoute } from 'vue-router'
 import AppFooter from './components/AppFooter.vue'
 import AppHeader from './components/AppHeader.vue'
-import projectsData from '@/data/projects.json'
-import type { Project } from '@/types/project'
 
 // Create a ref for the hasHeroVideo state
 const hasHeroVideo = ref(false)
