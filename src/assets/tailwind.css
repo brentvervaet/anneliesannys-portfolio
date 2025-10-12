@@ -375,7 +375,7 @@ body {
 
 @media (max-width: 768px) {
   .scroll-indicator {
-    bottom: 30px;
+    bottom: 100px;
   }
 
   .scroll-arrow {
