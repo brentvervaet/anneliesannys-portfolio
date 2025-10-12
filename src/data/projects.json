@@ -149,10 +149,7 @@
   {
     "slug": "studies",
     "title": "Studies",
-    "description": [
-      "BA1: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, eu consectetur nisl nisi euismod nisi.",
-      "Morbi facilisis, sapien non commodo cursus, erat erat dictum urna, nec dictum erat erat nec urna. Etiam euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi."
-    ],
+    "description": [""],
     "video": "/videos/BA1/studiesFilm.webm",
     "date": "2023",
     "studies": [
