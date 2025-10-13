@@ -18,5 +18,6 @@ export interface Project {
   thumbnailImage: string
   video?: string
   date?: string
+  year: string // Academic year (e.g., "BA1", "BA2", "BA3", "MA1", etc.)
   details?: Record<string, string>[]
 }

@@ -1,16 +1,8 @@
 <template>
   <div v-if="project">
-    <!-- Show StudiesDetail component for projects with studies -->
-    <StudiesDetail
-      v-if="project.studies"
-      :title="project.title"
-      :description="project.description"
-      :studies="project.studies"
-      :video="project.video"
-    />
-    <!-- Show regular ProjectDetail component for projects with images -->
+    <!-- Show ProjectDetail component for all projects -->
     <ProjectDetail
-      v-else-if="project.images"
+      v-if="project.images"
       :title="project.title"
       :description="project.description"
       :images="project.images"
@@ -21,7 +13,6 @@
 
 <script setup lang="ts">
 import ProjectDetail from '@/components/ProjectDetail.vue'
-import StudiesDetail from '@/components/StudiesDetail.vue'
 import projectsData from '@/data/projects.json'
 import type { Project } from '@/types/project'
 import { computed, provide } from 'vue'

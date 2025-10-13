@@ -22,6 +22,7 @@
       }
     ],
     "date": "2025",
+    "year": "BA3",
     "video": "/videos/BA3/lbmFilm.webm",
     "images": [
       {
@@ -105,6 +106,7 @@
       "A shield. A coat. A catsuit. A silhouette without details of what must be protected. A second skin. A subtle barrier."
     ],
     "date": "2024",
+    "year": "BA2",
     "video": "/videos/BA2/smsitFilm.webm",
     "images": [
       {
@@ -146,88 +148,104 @@
     ],
     "thumbnailImage": "/images/BA2/med/smsit01.webp"
   },
+
   {
-    "slug": "studies",
-    "title": "Studies",
-    "description": [""],
-    "video": "/videos/BA1/studiesFilm.webm",
+    "slug": "study-of-the-dress",
+    "title": "Study of the Dress",
+    "description": [
+      "Tartan, rebellion, and the raw beauty of imperfection. Inspired by Vivienne Westwood and the Scottish punk movement, where identity was loud and proud.",
+      "It's about pride, rebellion, and the freedom to take up space. The shape is exaggerated, the stance strong. A tribute to individuality, to dressing as an act of resistance and pride."
+    ],
     "date": "2023",
-    "studies": [
+    "year": "BA1",
+    "images": [
       {
-        "title": "Study of the Dress",
-        "description": "Tartan, rebellion, and the raw beauty of imperfection. Inspired by Vivienne Westwood and the Scottish punk movement, where identity was loud and proud. It's about pride, rebellion, and the freedom to take up space. The shape is exaggerated, the stance strong. A tribute to individuality, to dressing as an act of resistance and pride.",
-        "images": [
-          {
-            "src": "/images/BA1/studies101.webp",
-            "alt": "Study of the dress 01"
-          },
-          {
-            "src": "/images/BA1/studies102.webp",
-            "alt": "Study of the dress 02"
-          },
-          {
-            "src": "/images/BA1/studies103.webp",
-            "alt": "Study of the dress 03"
-          },
-          {
-            "src": "/images/BA1/studies104.webp",
-            "alt": "Study of the dress 04"
-          },
-          {
-            "src": "/images/BA1/studies105.webp",
-            "alt": "Study of the dress 05"
-          },
-          {
-            "src": "/images/BA1/studies106.webp",
-            "alt": "Study of the dress 06"
-          },
-          {
-            "src": "/images/BA1/studies107.webp",
-            "alt": "Study of the dress 07"
-          },
-          {
-            "src": "/images/BA1/studies108.webp",
-            "alt": "Study of the dress 08"
-          },
-          {
-            "src": "/images/BA1/studies109.webp",
-            "alt": "Study of the dress 09"
-          }
-        ]
+        "src": "/images/BA1/Dress/dress01.webp",
+        "alt": "Study of the dress 01"
       },
       {
-        "title": "Paper Study",
-        "description": "Inspired by Día de los Muertos, where life and death meet in color. Not as an ending, but as a continuation of life. The flowers, bright and fragile, became a symbol of memory and rebirth. It's a reflection on remembrance and renewal. Through layers of soft, pleated paper, I explored how something delicate can still carry meaning, how remembering can be both light and heavy at once. The layers echo the softness of flowers — fragile, temporary, yet full of life. It's a reflection on remembrance and renewal. Paper becomes a skin for memory, light enough to breathe, strong enough to hold what has passed.",
-        "images": [
-          {
-            "src": "/images/BA1/studies201.webp",
-            "alt": "Paper study 01"
-          },
-          {
-            "src": "/images/BA1/studies202.webp",
-            "alt": "Paper study 02"
-          },
-          {
-            "src": "/images/BA1/studies203.webp",
-            "alt": "Paper study 03"
-          }
-        ]
+        "src": "/images/BA1/Dress/dress02.webp",
+        "alt": "Study of the dress 02"
       },
       {
-        "title": "Recycled Denim",
-        "description": "This work started from my thoughts about homelessness, about what it means to have, or not have, a place to feel safe. To build something protective out of what is usually thrown away: recycled denim, plastic and an old sleeping bag. Each material holds traces of use, of care, of survival. It's about warmth, dignity, and the quiet wish for a softer world.",
-        "images": [
-          {
-            "src": "/images/BA1/studies301.webp",
-            "alt": "Recycled Denim study 01"
-          },
-          {
-            "src": "/images/BA1/studies302.webp",
-            "alt": "Recycled Denim study 02"
-          }
-        ]
+        "src": "/images/BA1/Dress/dress03.webp",
+        "alt": "Study of the dress 03"
+      },
+      {
+        "src": "/images/BA1/Dress/dress04.webp",
+        "alt": "Study of the dress 04"
+      },
+      {
+        "src": "/images/BA1/Dress/dress05.webp",
+        "alt": "Study of the dress 05"
+      },
+      {
+        "src": "/images/BA1/Dress/dress06.webp",
+        "alt": "Study of the dress 06"
+      },
+      {
+        "src": "/images/BA1/Dress/dress07.webp",
+        "alt": "Study of the dress 07"
+      },
+      {
+        "src": "/images/BA1/Dress/dress08.webp",
+        "alt": "Study of the dress 08"
+      },
+      {
+        "src": "/images/BA1/Dress/dress09.webp",
+        "alt": "Study of the dress 09"
       }
     ],
-    "thumbnailImage": "/images/BA1/med/studies101.webp"
+    "thumbnailImage": "/images/BA1/Dress/med/dress01.webp"
+  },
+
+  {
+    "slug": "paper-study",
+    "title": "Paper Study",
+    "description": [
+      "Inspired by Día de los Muertos, where life and death meet in color. Not as an ending, but as a continuation of life. The flowers, bright and fragile, became a symbol of memory and rebirth.",
+      "It's a reflection on remembrance and renewal. Through layers of soft, pleated paper, I explored how something delicate can still carry meaning, how remembering can be both light and heavy at once.",
+      "The layers echo the softness of flowers — fragile, temporary, yet full of life. Paper becomes a skin for memory, light enough to breathe, strong enough to hold what has passed."
+    ],
+    "date": "2023",
+    "year": "BA1",
+    "images": [
+      {
+        "src": "/images/BA1/Paper/paper01.webp",
+        "alt": "Paper study 01"
+      },
+      {
+        "src": "/images/BA1/Paper/paper02.webp",
+        "alt": "Paper study 02"
+      },
+      {
+        "src": "/images/BA1/Paper/paper03.webp",
+        "alt": "Paper study 03"
+      }
+    ],
+    "thumbnailImage": "/images/BA1/Paper/med/paper01.webp"
+  },
+
+  {
+    "slug": "recycled-denim",
+    "title": "Recycled Denim",
+    "description": [
+      "This work started from my thoughts about homelessness, about what it means to have, or not have, a place to feel safe.",
+      "To build something protective out of what is usually thrown away: recycled denim, plastic and an old sleeping bag. Each material holds traces of use, of care, of survival.",
+      "It's about warmth, dignity, and the quiet wish for a softer world."
+    ],
+    "date": "2023",
+    "year": "BA1",
+    "images": [
+      {
+        "src": "/images/BA1/Jeans/jeans01.webp",
+        "alt": "Recycled Denim study 01"
+      },
+      {
+        "src": "/images/BA1/Jeans/jeans02.webp",
+        "alt": "Recycled Denim study 02"
+      }
+    ],
+    "thumbnailImage": "/images/BA1/Jeans/med/jeans01.webp"
   }
 ]
