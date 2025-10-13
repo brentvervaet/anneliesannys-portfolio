@@ -91,20 +91,20 @@ const seededRandom = (seed: number) => {
 }
 
 // Fisher-Yates shuffle with seed for consistent random order
-const shuffleArray = <T>(array: T[], seed: number): T[] => {
+const shuffleArray = <T,>(array: T[], seed: number): T[] => {
   const shuffled = [...array]
   let currentIndex = shuffled.length
-  
+
   while (currentIndex !== 0) {
     const randomIndex = Math.floor(seededRandom(seed + currentIndex) * currentIndex)
     currentIndex--
-    
+
     // Swap elements
     const temp = shuffled[currentIndex]!
     shuffled[currentIndex] = shuffled[randomIndex]!
     shuffled[randomIndex] = temp
   }
-  
+
   return shuffled
 }
 
@@ -260,7 +260,6 @@ onUnmounted(() => {
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
-  /* TODO: mabye gap */
   gap: 0px;
   margin-bottom: 80px;
 }
