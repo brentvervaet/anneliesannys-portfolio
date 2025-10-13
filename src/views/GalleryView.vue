@@ -12,7 +12,7 @@
           v-for="(image, index) in allImages"
           :key="image.src"
           class="gallery-item"
-          :style="{ animationDelay: `${index * 100}ms` }"
+          :style="{ animationDelay: `${index * 40}ms` }"
           @click="openModal(image, index)"
         >
           <img :src="image.src" :alt="image.alt" class="gallery-image" loading="lazy" />
@@ -245,7 +245,7 @@ onUnmounted(() => {
   aspect-ratio: 1;
   overflow: hidden;
   cursor: pointer;
-  animation: fadeInUp 0.6s ease-out forwards;
+  animation: fadeInUp 0.3s ease-out forwards;
   opacity: 0;
   transform: translateY(30px);
 }
@@ -261,7 +261,7 @@ onUnmounted(() => {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s ease;
+  transition: transform 0s ease;
 }
 
 .gallery-overlay {
