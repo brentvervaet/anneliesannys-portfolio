@@ -163,29 +163,6 @@ body {
   margin: 0;
 }
 
-
-.portfolio-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.7);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.view-project {
-  color: white;
-  font-size: 16px;
-  font-weight: 400;
-  letter-spacing: 1px;
-  font-family: var(--font-family-sans);
-}
-
 /* Responsive Design for Single Column */
 @media (max-width: 768px) {
 
@@ -207,7 +184,6 @@ body {
   bottom: 0;
   z-index: 0;
   background: white;
-  transition: opacity 0.3s ease-out;
 }
 
 /* Scroll Indicator Styles */
@@ -222,13 +198,8 @@ body {
   gap: 8px;
   cursor: pointer;
   z-index: 10;
-  transition: all 0.3s ease;
+  transition: 0.3s ease;
   opacity: 0.7;
-}
-
-.scroll-indicator:hover {
-  color: rgba(255, 182, 193);
-  transform: translateY(-10px) translateX(-50%);
 }
 
 .scroll-arrow {
@@ -237,10 +208,13 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease-in-out;
 }
 
-
+.scroll-arrow:hover {
+  color: rgba(255, 182, 193, 1);
+  transform: translateY(-5px);
+}
 
 @media (max-width: 768px) {
   .scroll-indicator {
