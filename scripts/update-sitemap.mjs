@@ -60,7 +60,7 @@ const getLastModifiedDate = (filePaths) => {
 // Define which files affect which URLs
 const urlMappings = {
   '/': [
-    'src/views/HomeView.vue',
+    '/',
     'src/App.vue',
     'src/main.ts',
     'src/components/AppHeader.vue',
@@ -71,19 +71,18 @@ const urlMappings = {
     'src/data/projects.json',
     'src/views/ProjectDetailView.vue',
     'src/components/ProjectDetail.vue',
+    'src/components/StudiesDetail.vue',
     'src/types/project.ts',
     'public/images/**',
     'public/videos/**'
   ],
   '/gallery': [
     'src/views/GalleryView.vue',
-    'src/components/CarouselComponent.vue',
-    'src/composables/useImageLoader.ts',
-    'public/images/**'
+    'public/images/**',
+    'public/videos/**'
   ],
   '/about': [
     'src/views/AboutView.vue',
-    'src/components/StudiesDetail.vue'
   ]
 };
 
