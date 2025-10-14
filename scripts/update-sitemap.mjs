@@ -60,7 +60,7 @@ const getLastModifiedDate = (filePaths) => {
 // Define which files affect which URLs
 const urlMappings = {
   '/': [
-    '/',
+    '.',
     'src/App.vue',
     'src/main.ts',
     'src/components/AppHeader.vue',
