@@ -17,27 +17,22 @@ jobs:
           fetch-depth: 0 # Fetch full history for git log analysis
           token: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+          
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'npm'
+          cache: 'pnpm'
 
-      - name: Install dependencies (if needed)
-        run: |
-          if [ -f package-lock.json ]; then
-            npm ci
-          elif [ -f pnpm-lock.yaml ]; then
-            npm install -g pnpm
-            pnpm install --frozen-lockfile
-          else
-            npm install
-          fi
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
 
       - name: Update sitemap with intelligent dates
         run: |
           echo "🚀 Running intelligent sitemap update..."
-          npm run update-sitemap
+          pnpm run update-sitemap
           echo ""
           echo "📊 Current sitemap status:"
           cat public/sitemap.xml | grep -E "(loc>|lastmod>)" | head -20
