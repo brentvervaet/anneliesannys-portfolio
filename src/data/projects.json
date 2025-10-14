@@ -144,42 +144,6 @@
       {
         "src": "/images/BA3/lbm30.webp",
         "alt": "Lost Before Morning 30"
-      },
-      {
-        "src": "/images/BA3/lbm31.webp",
-        "alt": "Lost Before Morning 31"
-      },
-      {
-        "src": "/images/BA3/lbm32.webp",
-        "alt": "Lost Before Morning 32"
-      },
-      {
-        "src": "/images/BA3/lbm33.webp",
-        "alt": "Lost Before Morning 33"
-      },
-      {
-        "src": "/images/BA3/lbm34.webp",
-        "alt": "Lost Before Morning 34"
-      },
-      {
-        "src": "/images/BA3/lbm35.webp",
-        "alt": "Lost Before Morning 35"
-      },
-      {
-        "src": "/images/BA3/lbm36.webp",
-        "alt": "Lost Before Morning 36"
-      },
-      {
-        "src": "/images/BA3/lbm37.webp",
-        "alt": "Lost Before Morning 37"
-      },
-      {
-        "src": "/images/BA3/lbm38.webp",
-        "alt": "Lost Before Morning 38"
-      },
-      {
-        "src": "/images/BA3/lbm39.webp",
-        "alt": "Lost Before Morning 39"
       }
     ],
     "thumbnailImage": "/images/BA3/med/lbm01.webp"
@@ -276,22 +240,6 @@
       {
         "src": "/images/BA2/smsit20.webp",
         "alt": "Split myself in two 20"
-      },
-      {
-        "src": "/images/BA2/smsit21.webp",
-        "alt": "Split myself in two 21"
-      },
-      {
-        "src": "/images/BA2/smsit22.webp",
-        "alt": "Split myself in two 22"
-      },
-      {
-        "src": "/images/BA2/smsit23.webp",
-        "alt": "Split myself in two 23"
-      },
-      {
-        "src": "/images/BA2/smsit24.webp",
-        "alt": "Split myself in two 24"
       }
     ],
     "thumbnailImage": "/images/BA2/med/smsit01.webp"
@@ -400,123 +348,10 @@
           {
             "src": "/images/BA1/Dress/dress22.webp",
             "alt": "Study of the dress 22"
-          },
-          {
-            "src": "/images/BA1/Dress/dress23.webp",
-            "alt": "Study of the dress 23"
-          },
-          {
-            "src": "/images/BA1/Dress/dress24.webp",
-            "alt": "Study of the dress 24"
-          },
-          {
-            "src": "/images/BA1/Dress/dress25.webp",
-            "alt": "Study of the dress 25"
-          },
-          {
-            "src": "/images/BA1/Dress/dress26.webp",
-            "alt": "Study of the dress 26"
-          },
-          {
-            "src": "/images/BA1/Dress/dress27.webp",
-            "alt": "Study of the dress 27"
           }
         ]
       },
-      {
-        "title": "Paper Study",
-        "description": "Inspired by Día de los Muertos, where life and death meet in color. Not as an ending, but as a continuation of life. The flowers, bright and fragile, became a symbol of memory and rebirth. It's a reflection on remembrance and renewal. Through layers of soft, pleated paper, I explored how something delicate can still carry meaning, how remembering can be both light and heavy at once. The layers echo the softness of flowers — fragile, temporary, yet full of life. Paper becomes a skin for memory, light enough to breathe, strong enough to hold what has passed.",
-        "images": [
-          {
-            "src": "/images/BA1/Paper/paper01.webp",
-            "alt": "Paper study 01"
-          },
-          {
-            "src": "/images/BA1/Paper/paper02.webp",
-            "alt": "Paper study 02"
-          },
-          {
-            "src": "/images/BA1/Paper/paper03.webp",
-            "alt": "Paper study 03"
-          },
-          {
-            "src": "/images/BA1/Paper/paper04.webp",
-            "alt": "Paper study 04"
-          },
-          {
-            "src": "/images/BA1/Paper/paper05.webp",
-            "alt": "Paper study 05"
-          },
-          {
-            "src": "/images/BA1/Paper/paper06.webp",
-            "alt": "Paper study 06"
-          },
-          {
-            "src": "/images/BA1/Paper/paper07.webp",
-            "alt": "Paper study 07"
-          },
-          {
-            "src": "/images/BA1/Paper/paper08.webp",
-            "alt": "Paper study 08"
-          },
-          {
-            "src": "/images/BA1/Paper/paper09.webp",
-            "alt": "Paper study 09"
-          },
-          {
-            "src": "/images/BA1/Paper/paper10.webp",
-            "alt": "Paper study 10"
-          },
-          {
-            "src": "/images/BA1/Paper/paper11.webp",
-            "alt": "Paper study 11"
-          },
-          {
-            "src": "/images/BA1/Paper/paper12.webp",
-            "alt": "Paper study 12"
-          },
-          {
-            "src": "/images/BA1/Paper/paper13.webp",
-            "alt": "Paper study 13"
-          },
-          {
-            "src": "/images/BA1/Paper/paper14.webp",
-            "alt": "Paper study 14"
-          },
-          {
-            "src": "/images/BA1/Paper/paper15.webp",
-            "alt": "Paper study 15"
-          },
-          {
-            "src": "/images/BA1/Paper/paper16.webp",
-            "alt": "Paper study 16"
-          },
-          {
-            "src": "/images/BA1/Paper/paper17.webp",
-            "alt": "Paper study 17"
-          },
-          {
-            "src": "/images/BA1/Paper/paper18.webp",
-            "alt": "Paper study 18"
-          },
-          {
-            "src": "/images/BA1/Paper/paper19.webp",
-            "alt": "Paper study 19"
-          },
-          {
-            "src": "/images/BA1/Paper/paper20.webp",
-            "alt": "Paper study 20"
-          },
-          {
-            "src": "/images/BA1/Paper/paper21.webp",
-            "alt": "Paper study 21"
-          },
-          {
-            "src": "/images/BA1/Paper/paper22.webp",
-            "alt": "Paper study 22"
-          }
-        ]
-      },
+
       {
         "title": "Recycled Denim",
         "description": "This work started from my thoughts about homelessness, about what it means to have, or not have, a place to feel safe. To build something protective out of what is usually thrown away: recycled denim, plastic and an old sleeping bag. Each material holds traces of use, of care, of survival. It's about warmth, dignity, and the quiet wish for a softer world.",
@@ -584,28 +419,73 @@
           {
             "src": "/images/BA1/Jeans/jeans16.webp",
             "alt": "Recycled Denim study 16"
+          }
+        ]
+      },
+      {
+        "title": "Paper Study",
+        "description": "Inspired by Día de los Muertos, where life and death meet in color. Not as an ending, but as a continuation of life. The flowers, bright and fragile, became a symbol of memory and rebirth. It's a reflection on remembrance and renewal. Through layers of soft, pleated paper, I explored how something delicate can still carry meaning, how remembering can be both light and heavy at once. The layers echo the softness of flowers — fragile, temporary, yet full of life. Paper becomes a skin for memory, light enough to breathe, strong enough to hold what has passed.",
+        "images": [
+          {
+            "src": "/images/BA1/Paper/paper01.webp",
+            "alt": "Paper study 01"
           },
           {
-            "src": "/images/BA1/Jeans/jeans17.webp",
-            "alt": "Recycled Denim study 17"
+            "src": "/images/BA1/Paper/paper02.webp",
+            "alt": "Paper study 02"
           },
           {
-            "src": "/images/BA1/Jeans/jeans18.webp",
-            "alt": "Recycled Denim study 18"
+            "src": "/images/BA1/Paper/paper03.webp",
+            "alt": "Paper study 03"
           },
           {
-            "src": "/images/BA1/Jeans/jeans19.webp",
-            "alt": "Recycled Denim study 19"
+            "src": "/images/BA1/Paper/paper04.webp",
+            "alt": "Paper study 04"
           },
           {
-            "src": "/images/BA1/Jeans/jeans20.webp",
-            "alt": "Recycled Denim study 20"
+            "src": "/images/BA1/Paper/paper05.webp",
+            "alt": "Paper study 05"
           },
           {
-            "src": "/images/BA1/Jeans/jeans21.webp",
-            "alt": "Recycled Denim study 21"
+            "src": "/images/BA1/Paper/paper06.webp",
+            "alt": "Paper study 06"
           },
-          { "src": "/images/BA1/Jeans/jeans22.webp", "alt": "Recycled Denim study 22" }
+          {
+            "src": "/images/BA1/Paper/paper07.webp",
+            "alt": "Paper study 07"
+          },
+          {
+            "src": "/images/BA1/Paper/paper08.webp",
+            "alt": "Paper study 08"
+          },
+          {
+            "src": "/images/BA1/Paper/paper09.webp",
+            "alt": "Paper study 09"
+          },
+          {
+            "src": "/images/BA1/Paper/paper10.webp",
+            "alt": "Paper study 10"
+          },
+          {
+            "src": "/images/BA1/Paper/paper11.webp",
+            "alt": "Paper study 11"
+          },
+          {
+            "src": "/images/BA1/Paper/paper12.webp",
+            "alt": "Paper study 12"
+          },
+          {
+            "src": "/images/BA1/Paper/paper13.webp",
+            "alt": "Paper study 13"
+          },
+          {
+            "src": "/images/BA1/Paper/paper14.webp",
+            "alt": "Paper study 14"
+          },
+          {
+            "src": "/images/BA1/Paper/paper15.webp",
+            "alt": "Paper study 15"
+          }
         ]
       }
     ],
