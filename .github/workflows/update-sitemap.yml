@@ -1,0 +1,77 @@
+name: Update Sitemap on Production Deploy
+
+on:
+  push:
+    branches:
+      - prod
+  workflow_dispatch:
+
+jobs:
+  update-sitemap:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Fetch full history for git log analysis
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies (if needed)
+        run: |
+          if [ -f package-lock.json ]; then
+            npm ci
+          elif [ -f pnpm-lock.yaml ]; then
+            npm install -g pnpm
+            pnpm install --frozen-lockfile
+          else
+            npm install
+          fi
+
+      - name: Update sitemap with intelligent dates
+        run: |
+          echo "🚀 Running intelligent sitemap update..."
+          npm run update-sitemap
+          echo ""
+          echo "📊 Current sitemap status:"
+          cat public/sitemap.xml | grep -E "(loc>|lastmod>)" | head -20
+
+      - name: Check for sitemap changes
+        id: check_changes
+        run: |
+          if git diff --quiet public/sitemap.xml; then
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+            echo "✅ No changes detected in sitemap.xml"
+          else
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+            echo "📝 Changes detected in sitemap.xml:"
+            echo ""
+            git diff --no-index /dev/null public/sitemap.xml | grep -E "^[+-].*lastmod" || true
+            echo ""
+            echo "Full diff:"
+            git diff public/sitemap.xml
+          fi
+
+      - name: Commit and push sitemap changes
+        if: steps.check_changes.outputs.has_changes == 'true'
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action Bot"
+          git add public/sitemap.xml
+          git commit -m "chore: update sitemap lastmod dates based on file changes
+
+          Updated by GitHub Actions after push to prod branch.
+          Dates reflect actual file modification times from git history.
+
+          [skip ci]"
+          git push
+
+      - name: No changes needed
+        if: steps.check_changes.outputs.has_changes == 'false'
+        run: echo "✅ Sitemap is already up to date, no commit needed"
