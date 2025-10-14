@@ -115,9 +115,10 @@ const toggleMute = (): void => {
 .video-hero {
   position: relative;
   height: 100vh;
+  /* TODO: height: 100dvh; fixes for browsers, but get weird zoom, because url bars disapear*/
   width: 100%;
   overflow: hidden;
-  margin-top: -140px; /* Compensate for the main element's padding-top */
+  margin-top: -140px;
 }
 
 .fullscreen-video {
