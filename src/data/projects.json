@@ -92,6 +92,58 @@
       {
         "src": "/images/BA3/lbm17.webp",
         "alt": "Lost Before Morning 17"
+      },
+      {
+        "src": "/images/BA3/lbm18.webp",
+        "alt": "Lost Before Morning 18"
+      },
+      {
+        "src": "/images/BA3/lbm19.webp",
+        "alt": "Lost Before Morning 19"
+      },
+      {
+        "src": "/images/BA3/lbm20.webp",
+        "alt": "Lost Before Morning 20"
+      },
+      {
+        "src": "/images/BA3/lbm21.webp",
+        "alt": "Lost Before Morning 21"
+      },
+      {
+        "src": "/images/BA3/lbm22.webp",
+        "alt": "Lost Before Morning 22"
+      },
+      {
+        "src": "/images/BA3/lbm23.webp",
+        "alt": "Lost Before Morning 23"
+      },
+      {
+        "src": "/images/BA3/lbm24.webp",
+        "alt": "Lost Before Morning 24"
+      },
+      {
+        "src": "/images/BA3/lbm25.webp",
+        "alt": "Lost Before Morning 25"
+      },
+      {
+        "src": "/images/BA3/lbm26.webp",
+        "alt": "Lost Before Morning 26"
+      },
+      {
+        "src": "/images/BA3/lbm27.webp",
+        "alt": "Lost Before Morning 27"
+      },
+      {
+        "src": "/images/BA3/lbm28.webp",
+        "alt": "Lost Before Morning 28"
+      },
+      {
+        "src": "/images/BA3/lbm29.webp",
+        "alt": "Lost Before Morning 29"
+      },
+      {
+        "src": "/images/BA3/lbm30.webp",
+        "alt": "Lost Before Morning 30"
       }
     ],
     "thumbnailImage": "/images/BA3/med/lbm01.webp"
@@ -144,6 +196,50 @@
       {
         "src": "/images/BA2/smsit09.webp",
         "alt": "Split myself in two 09"
+      },
+      {
+        "src": "/images/BA2/smsit10.webp",
+        "alt": "Split myself in two 10"
+      },
+      {
+        "src": "/images/BA2/smsit11.webp",
+        "alt": "Split myself in two 11"
+      },
+      {
+        "src": "/images/BA2/smsit12.webp",
+        "alt": "Split myself in two 12"
+      },
+      {
+        "src": "/images/BA2/smsit13.webp",
+        "alt": "Split myself in two 13"
+      },
+      {
+        "src": "/images/BA2/smsit14.webp",
+        "alt": "Split myself in two 14"
+      },
+      {
+        "src": "/images/BA2/smsit15.webp",
+        "alt": "Split myself in two 15"
+      },
+      {
+        "src": "/images/BA2/smsit16.webp",
+        "alt": "Split myself in two 16"
+      },
+      {
+        "src": "/images/BA2/smsit17.webp",
+        "alt": "Split myself in two 17"
+      },
+      {
+        "src": "/images/BA2/smsit18.webp",
+        "alt": "Split myself in two 18"
+      },
+      {
+        "src": "/images/BA2/smsit19.webp",
+        "alt": "Split myself in two 19"
+      },
+      {
+        "src": "/images/BA2/smsit20.webp",
+        "alt": "Split myself in two 20"
       }
     ],
     "thumbnailImage": "/images/BA2/med/smsit01.webp"
@@ -200,6 +296,129 @@
           {
             "src": "/images/BA1/Dress/dress09.webp",
             "alt": "Study of the dress 09"
+          },
+          {
+            "src": "/images/BA1/Dress/dress10.webp",
+            "alt": "Study of the dress 10"
+          },
+          {
+            "src": "/images/BA1/Dress/dress11.webp",
+            "alt": "Study of the dress 11"
+          },
+          {
+            "src": "/images/BA1/Dress/dress12.webp",
+            "alt": "Study of the dress 12"
+          },
+          {
+            "src": "/images/BA1/Dress/dress13.webp",
+            "alt": "Study of the dress 13"
+          },
+          {
+            "src": "/images/BA1/Dress/dress14.webp",
+            "alt": "Study of the dress 14"
+          },
+          {
+            "src": "/images/BA1/Dress/dress15.webp",
+            "alt": "Study of the dress 15"
+          },
+          {
+            "src": "/images/BA1/Dress/dress16.webp",
+            "alt": "Study of the dress 16"
+          },
+          {
+            "src": "/images/BA1/Dress/dress17.webp",
+            "alt": "Study of the dress 17"
+          },
+          {
+            "src": "/images/BA1/Dress/dress18.webp",
+            "alt": "Study of the dress 18"
+          },
+          {
+            "src": "/images/BA1/Dress/dress19.webp",
+            "alt": "Study of the dress 19"
+          },
+          {
+            "src": "/images/BA1/Dress/dress20.webp",
+            "alt": "Study of the dress 20"
+          },
+          {
+            "src": "/images/BA1/Dress/dress21.webp",
+            "alt": "Study of the dress 21"
+          },
+          {
+            "src": "/images/BA1/Dress/dress22.webp",
+            "alt": "Study of the dress 22"
+          }
+        ]
+      },
+
+      {
+        "title": "Recycled Denim",
+        "description": "This work started from my thoughts about homelessness, about what it means to have, or not have, a place to feel safe. To build something protective out of what is usually thrown away: recycled denim, plastic and an old sleeping bag. Each material holds traces of use, of care, of survival. It's about warmth, dignity, and the quiet wish for a softer world.",
+        "images": [
+          {
+            "src": "/images/BA1/Jeans/jeans01.webp",
+            "alt": "Recycled Denim study 01"
+          },
+          {
+            "src": "/images/BA1/Jeans/jeans02.webp",
+            "alt": "Recycled Denim study 02"
+          },
+          {
+            "src": "/images/BA1/Jeans/jeans03.webp",
+            "alt": "Recycled Denim study 03"
+          },
+          {
+            "src": "/images/BA1/Jeans/jeans04.webp",
+            "alt": "Recycled Denim study 04"
+          },
+          {
+            "src": "/images/BA1/Jeans/jeans05.webp",
+            "alt": "Recycled Denim study 05"
+          },
+          {
+            "src": "/images/BA1/Jeans/jeans06.webp",
+            "alt": "Recycled Denim study 06"
+          },
+          {
+            "src": "/images/BA1/Jeans/jeans07.webp",
+            "alt": "Recycled Denim study 07"
+          },
+          {
+            "src": "/images/BA1/Jeans/jeans08.webp",
+            "alt": "Recycled Denim study 08"
+          },
+          {
+            "src": "/images/BA1/Jeans/jeans09.webp",
+            "alt": "Recycled Denim study 09"
+          },
+          {
+            "src": "/images/BA1/Jeans/jeans10.webp",
+            "alt": "Recycled Denim study 10"
+          },
+          {
+            "src": "/images/BA1/Jeans/jeans11.webp",
+            "alt": "Recycled Denim study 11"
+          },
+          {
+            "src": "/images/BA1/Jeans/jeans12.webp",
+            "alt": "Recycled Denim study 12"
+          },
+          {
+            "src": "/images/BA1/Jeans/jeans13.webp",
+            "alt": "Recycled Denim study 13"
+          },
+          {
+            "src": "/images/BA1/Jeans/jeans14.webp",
+            "alt": "Recycled Denim study 14"
+          },
+          {
+            "src": "/images/BA1/Jeans/jeans15.webp",
+            "alt": "Recycled Denim study 15"
+          },
+          {
+            "src": "/images/BA1/Jeans/jeans16.webp",
+            "alt": "Recycled Denim study 16"
           }
         ]
       },
@@ -218,20 +437,54 @@
           {
             "src": "/images/BA1/Paper/paper03.webp",
             "alt": "Paper study 03"
-          }
-        ]
-      },
-      {
-        "title": "Recycled Denim",
-        "description": "This work started from my thoughts about homelessness, about what it means to have, or not have, a place to feel safe. To build something protective out of what is usually thrown away: recycled denim, plastic and an old sleeping bag. Each material holds traces of use, of care, of survival. It's about warmth, dignity, and the quiet wish for a softer world.",
-        "images": [
-          {
-            "src": "/images/BA1/Jeans/jeans01.webp",
-            "alt": "Recycled Denim study 01"
           },
           {
-            "src": "/images/BA1/Jeans/jeans02.webp",
-            "alt": "Recycled Denim study 02"
+            "src": "/images/BA1/Paper/paper04.webp",
+            "alt": "Paper study 04"
+          },
+          {
+            "src": "/images/BA1/Paper/paper05.webp",
+            "alt": "Paper study 05"
+          },
+          {
+            "src": "/images/BA1/Paper/paper06.webp",
+            "alt": "Paper study 06"
+          },
+          {
+            "src": "/images/BA1/Paper/paper07.webp",
+            "alt": "Paper study 07"
+          },
+          {
+            "src": "/images/BA1/Paper/paper08.webp",
+            "alt": "Paper study 08"
+          },
+          {
+            "src": "/images/BA1/Paper/paper09.webp",
+            "alt": "Paper study 09"
+          },
+          {
+            "src": "/images/BA1/Paper/paper10.webp",
+            "alt": "Paper study 10"
+          },
+          {
+            "src": "/images/BA1/Paper/paper11.webp",
+            "alt": "Paper study 11"
+          },
+          {
+            "src": "/images/BA1/Paper/paper12.webp",
+            "alt": "Paper study 12"
+          },
+          {
+            "src": "/images/BA1/Paper/paper13.webp",
+            "alt": "Paper study 13"
+          },
+          {
+            "src": "/images/BA1/Paper/paper14.webp",
+            "alt": "Paper study 14"
+          },
+          {
+            "src": "/images/BA1/Paper/paper15.webp",
+            "alt": "Paper study 15"
           }
         ]
       }

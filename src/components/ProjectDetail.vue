@@ -54,7 +54,7 @@
       </div>
       <div class="image-grid">
         <img
-          v-for="image in images"
+          v-for="image in limitedImages"
           :key="image.src"
           :src="getMediumImagePath(image.src)"
           :alt="image.alt"
@@ -65,7 +65,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 
 interface ProjectImage {
   src: string
@@ -84,6 +84,9 @@ const props = defineProps<Props>()
 // Reactive data for mute functionality
 const isMuted = ref(false) // Start music by default
 const videoElement = ref<HTMLVideoElement | null>(null)
+
+// Computed property to limit images to first 5
+const limitedImages = computed(() => props.images.slice(0, 6))
 
 // Convert image path to use medium-sized version
 const getMediumImagePath = (originalPath: string): string => {

@@ -139,6 +139,34 @@ const allImages = computed<GalleryImage[]>(() => {
         })
       })
     }
+
+    // Handle projects with studies
+    if (project.studies) {
+      project.studies.forEach((study) => {
+        study.images.forEach((image, index) => {
+          // Extract number from filename for title, or use index + 1
+          const filename = image.src.split('/').pop() || ''
+          const titleMatch = filename.match(/(\d+)/)
+          const title = titleMatch?.[1]?.padStart(2, '0') || String(index + 1).padStart(2, '0')
+
+          // Convert the image path to use small images for gallery, large for modal
+          const pathParts = image.src.split('/')
+          const filename_only = pathParts[pathParts.length - 1]
+          const basePath = pathParts.slice(0, -1).join('/')
+
+          const smallSrc = `${basePath}/sm/${filename_only}`
+          const largeSrc = `${basePath}/lg/${filename_only}`
+
+          images.push({
+            src: smallSrc,
+            srcLarge: largeSrc,
+            alt: image.alt,
+            title,
+            category: study.title, // Use study title as category
+          })
+        })
+      })
+    }
   })
 
   // Shuffle the images with a fixed seed for consistent random order
