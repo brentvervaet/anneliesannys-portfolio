@@ -2,6 +2,19 @@
   <div class="project-detail">
     <!-- Hero video section -->
     <div class="video-hero" v-if="video">
+      <div class="scroll-indicator" @click="scrollToContent">
+        <div class="scroll-arrow">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path
+              d="M7 10L12 15L17 10"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
+      </div>
       <video ref="videoElement" autoplay :muted="isMuted" loop playsinline class="fullscreen-video">
         <source :src="video" type="video/webm" />
         Your browser does not support the video tag.
@@ -45,7 +58,7 @@
       </button>
     </div>
 
-    <section class="project-content">
+    <section ref="projectContent" class="project-content">
       <h2 class="project-title">{{ title }}</h2>
       <div class="project-description">
         <p v-for="paragraph in description" :key="paragraph">
@@ -84,6 +97,7 @@ const props = defineProps<Props>()
 // Reactive data for mute functionality
 const isMuted = ref(false) // Start music by default
 const videoElement = ref<HTMLVideoElement | null>(null)
+const projectContent = ref<HTMLElement | null>(null)
 
 // Computed property to limit images to first 5
 const limitedImages = computed(() => props.images.slice(0, 6))
@@ -102,6 +116,16 @@ const toggleMute = (): void => {
   isMuted.value = !isMuted.value
   if (videoElement.value) {
     videoElement.value.muted = isMuted.value
+  }
+}
+
+// Smooth scroll to project content section
+const scrollToContent = (): void => {
+  if (projectContent.value) {
+    projectContent.value.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    })
   }
 }
 </script>
@@ -136,9 +160,8 @@ const toggleMute = (): void => {
   bottom: 2rem;
   right: 2rem;
   z-index: 10;
-  background: rgba(0, 0, 0, 0.6);
+  background: transparent;
   border: none;
-  border-radius: 50%;
   width: 48px;
   height: 48px;
   display: flex;
@@ -147,47 +170,15 @@ const toggleMute = (): void => {
   cursor: pointer;
   color: white;
   transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(5px);
 }
 
 .mute-button:hover {
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.3);
   transform: scale(1.1);
 }
 
-.mute-button:focus {
-  outline: 2px solid rgba(255, 255, 255, 0.5);
-  outline-offset: 2px;
-}
-
-/* Mobile responsive styles for mute button */
-@media (max-width: 768px) {
-  .mute-button {
-    width: 36px;
-    height: 36px;
-    bottom: 1rem;
-    right: 1rem;
-  }
-
-  .mute-button svg {
-    width: 18px;
-    height: 18px;
-  }
-}
-
-@media (max-width: 480px) {
-  .mute-button {
-    width: 32px;
-    height: 32px;
-    bottom: 0.75rem;
-    right: 0.75rem;
-  }
-
-  .mute-button svg {
-    width: 16px;
-    height: 16px;
-  }
-}
+/*TODO: Mobile responsive styles for mute button */
 
 .project-content {
   position: relative;
