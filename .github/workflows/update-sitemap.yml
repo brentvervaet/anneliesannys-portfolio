@@ -6,6 +6,9 @@ on:
       - prod
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   update-sitemap:
     runs-on: ubuntu-latest
@@ -14,7 +17,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0 # Fetch full history for git log analysis
+          fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup pnpm
