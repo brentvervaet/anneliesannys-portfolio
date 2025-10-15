@@ -1,5 +1,11 @@
 <template>
-  <header :class="{ 'over-video': hasHeroVideo }">
+  <header
+    :class="{
+      'over-video': hasHeroVideo,
+      'header-hidden': isHeaderHidden,
+      'header-visible': !isHeaderHidden,
+    }"
+  >
     <div class="header-content">
       <!-- Left side: Title -->
       <div class="left-section">
@@ -111,6 +117,11 @@ const route = useRoute()
 const isPortfolioVisible = ref(false)
 const isMobileMenuOpen = ref(false)
 
+// Header scroll behavior
+const isHeaderHidden = ref(false)
+const lastScrollY = ref(0)
+const scrollThreshold = 100 // Minimum scroll distance to trigger hide/show
+
 const scrollToPortfolio = (e: Event) => {
   e.preventDefault()
 
@@ -157,8 +168,38 @@ const checkPortfolioVisibility = () => {
   isPortfolioVisible.value = isVisible
 }
 
+const handleScroll = () => {
+  // Handle portfolio visibility first
+  checkPortfolioVisibility()
+
+  const currentScrollY = window.scrollY
+
+  // Don't hide header when mobile menu is open
+  if (isMobileMenuOpen.value) {
+    return
+  }
+
+  // Always show header at the top of the page
+  if (currentScrollY < scrollThreshold) {
+    isHeaderHidden.value = false
+    lastScrollY.value = currentScrollY
+    return
+  }
+
+  // Determine scroll direction
+  if (currentScrollY > lastScrollY.value && currentScrollY > scrollThreshold) {
+    // Scrolling down - hide header
+    isHeaderHidden.value = true
+  } else if (currentScrollY < lastScrollY.value) {
+    // Scrolling up - show header
+    isHeaderHidden.value = false
+  }
+
+  lastScrollY.value = currentScrollY
+}
+
 onMounted(() => {
-  window.addEventListener('scroll', checkPortfolioVisibility)
+  window.addEventListener('scroll', handleScroll)
   checkPortfolioVisibility() // Initial check
 
   // Close mobile menu on escape key
@@ -176,32 +217,64 @@ onMounted(() => {
 })
 
 onUnmounted(() => {
-  window.removeEventListener('scroll', checkPortfolioVisibility)
+  window.removeEventListener('scroll', handleScroll)
 })
 
 // Watch for route changes to close mobile menu
 watch(route, () => {
   closeMobileMenu()
 })
+
+// Ensure header is visible when mobile menu is open
+watch(isMobileMenuOpen, (isOpen) => {
+  if (isOpen) {
+    isHeaderHidden.value = false
+  }
+})
 </script>
 
 <style scoped>
 header {
   padding: 25px 40px;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  transform: translateY(0);
+  transition:
+    transform 0.3s ease-in-out,
+    background-color 0.3s ease;
+}
+
+/* Header visibility states */
+header.header-hidden {
+  transform: translateY(-100%);
+}
+
+header.header-visible {
+  transform: translateY(0);
+}
+
+/* Transparent background when over video and at top of page */
+header.over-video:not(.header-hidden) {
   background: transparent;
+  backdrop-filter: none;
 }
 
-header.over-video .page-title {
+/* Over video styling - only when at top of page */
+header.over-video:not(.header-hidden) .page-title {
   color: white;
 }
 
-header.over-video .nav-link {
+header.over-video:not(.header-hidden) .nav-link {
   color: white;
+}
+
+header.over-video:not(.header-hidden) .hamburger-line {
+  background-color: white;
 }
 
 .header-content {
@@ -279,10 +352,6 @@ nav ul {
   background-color: #000;
   transition: all 0.3s ease;
   transform-origin: center;
-}
-
-header.over-video .hamburger-line {
-  background-color: white;
 }
 
 /* Hamburger animation when menu is open */
