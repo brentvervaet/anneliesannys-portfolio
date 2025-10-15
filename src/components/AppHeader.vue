@@ -309,7 +309,7 @@ header.over-video .hamburger-line {
   z-index: 999;
   opacity: 0;
   visibility: hidden;
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(30px);
   transition: all 0.3s ease;
 }
 
@@ -342,14 +342,10 @@ header.over-video .hamburger-line {
   cursor: pointer;
 }
 
-.mobile-nav .nav-link:hover {
-  transform: translateY(0);
-  color: rgba(255, 182, 193);
-}
-
 .mobile-nav .nav-link.active {
   font-weight: 600;
   color: rgba(255, 182, 193);
+  text-shadow: 1px 1px 1px black;
 }
 
 /* Responsive Styles */
