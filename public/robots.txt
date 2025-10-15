@@ -1,4 +1,6 @@
+# Alle zoekmachines toestaan
 User-agent: *
-Allow: /
+Disallow:
 
+# Sitemap
 Sitemap: https://anneliesannys.com/sitemap.xml

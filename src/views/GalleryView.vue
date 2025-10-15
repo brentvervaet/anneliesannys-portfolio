@@ -12,7 +12,7 @@
           v-for="(image, index) in allImages"
           :key="image.src"
           class="gallery-item"
-          :style="{ animationDelay: `${index * 100}ms` }"
+          :style="{ animationDelay: `${index * 40}ms` }"
           @click="openModal(image, index)"
         >
           <img :src="image.src" :alt="image.alt" class="gallery-image" loading="lazy" />
@@ -84,41 +84,37 @@ const currentModalIndex = ref(0)
 const currentModalImage = ref<GalleryImage | null>(null)
 const modalImageLoading = ref(false)
 
+// Seeded random function for consistent shuffle
+const seededRandom = (seed: number) => {
+  let x = Math.sin(seed++) * 10000
+  return x - Math.floor(x)
+}
+
+// Fisher-Yates shuffle with seed for consistent random order
+const shuffleArray = <T,>(array: T[], seed: number): T[] => {
+  const shuffled = [...array]
+  let currentIndex = shuffled.length
+
+  while (currentIndex !== 0) {
+    const randomIndex = Math.floor(seededRandom(seed + currentIndex) * currentIndex)
+    currentIndex--
+
+    // Swap elements
+    const temp = shuffled[currentIndex]!
+    shuffled[currentIndex] = shuffled[randomIndex]!
+    shuffled[randomIndex] = temp
+  }
+
+  return shuffled
+}
+
 // Generate gallery images from projects data
 const allImages = computed<GalleryImage[]>(() => {
   const images: GalleryImage[] = []
 
   projectsData.forEach((project) => {
-    // Handle projects with studies (like the studies project)
-    if (project.studies) {
-      project.studies.forEach((study) => {
-        study.images.forEach((image, index) => {
-          // Extract number from filename for title, or use index + 1
-          const filename = image.src.split('/').pop() || ''
-          const titleMatch = filename.match(/(\d+)/)
-          const title = titleMatch?.[1]?.padStart(2, '0') || String(index + 1).padStart(2, '0')
-
-          // Convert the image path to use small images for gallery, large for modal
-          // Original: /images/BA1/studies101.webp -> Small: /images/BA1/sm/studies101.webp, Large: /images/BA1/lg/studies101.webp
-          const pathParts = image.src.split('/')
-          const filename_only = pathParts[pathParts.length - 1]
-          const basePath = pathParts.slice(0, -1).join('/')
-
-          const smallSrc = `${basePath}/sm/${filename_only}`
-          const largeSrc = `${basePath}/lg/${filename_only}`
-
-          images.push({
-            src: smallSrc,
-            srcLarge: largeSrc,
-            alt: image.alt,
-            title,
-            category: `${project.title} - ${study.title}`,
-          })
-        })
-      })
-    }
-    // Handle regular projects with images
-    else if (project.images) {
+    // Handle projects with images
+    if (project.images) {
       project.images.forEach((image, index) => {
         // Extract number from filename for title, or use index + 1
         const filename = image.src.split('/').pop() || ''
@@ -143,9 +139,38 @@ const allImages = computed<GalleryImage[]>(() => {
         })
       })
     }
+
+    // Handle projects with studies
+    if (project.studies) {
+      project.studies.forEach((study) => {
+        study.images.forEach((image, index) => {
+          // Extract number from filename for title, or use index + 1
+          const filename = image.src.split('/').pop() || ''
+          const titleMatch = filename.match(/(\d+)/)
+          const title = titleMatch?.[1]?.padStart(2, '0') || String(index + 1).padStart(2, '0')
+
+          // Convert the image path to use small images for gallery, large for modal
+          const pathParts = image.src.split('/')
+          const filename_only = pathParts[pathParts.length - 1]
+          const basePath = pathParts.slice(0, -1).join('/')
+
+          const smallSrc = `${basePath}/sm/${filename_only}`
+          const largeSrc = `${basePath}/lg/${filename_only}`
+
+          images.push({
+            src: smallSrc,
+            srcLarge: largeSrc,
+            alt: image.alt,
+            title,
+            category: study.title, // Use study title as category
+          })
+        })
+      })
+    }
   })
 
-  return images
+  // Shuffle the images with a fixed seed for consistent random order
+  return shuffleArray(images, 42)
 })
 
 const openModal = (image: GalleryImage, index: number) => {
@@ -235,7 +260,6 @@ onUnmounted(() => {
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
-  /* TODO: mabye gap */
   gap: 0px;
   margin-bottom: 80px;
 }
@@ -245,7 +269,7 @@ onUnmounted(() => {
   aspect-ratio: 1;
   overflow: hidden;
   cursor: pointer;
-  animation: fadeInUp 0.6s ease-out forwards;
+  animation: fadeInUp 0.3s ease-out forwards;
   opacity: 0;
   transform: translateY(30px);
 }
@@ -261,7 +285,7 @@ onUnmounted(() => {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s ease;
+  transition: transform 0s ease;
 }
 
 .gallery-overlay {

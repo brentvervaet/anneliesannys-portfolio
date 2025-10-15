@@ -9,18 +9,20 @@
     </div>
 
     <section class="studies-content">
-      <h2 class="studies-title">{{ title }}</h2>
+      <!-- <h2 class="studies-title">{{ title }}</h2>
       <div class="studies-description">
         <p v-for="paragraph in description" :key="paragraph">
           {{ paragraph }}
         </p>
-      </div>
+      </div> -->
 
       <!-- Individual studies -->
       <div class="studies-grid">
         <div v-for="study in studies" :key="study.title" class="study-section">
-          <h3 class="study-title">{{ study.title }}</h3>
-          <p class="study-description">{{ study.description }}</p>
+          <h2 class="project-title">{{ study.title }}</h2>
+          <div class="project-description">
+            <p>{{ study.description }}</p>
+          </div>
 
           <div class="study-images">
             <img
@@ -90,12 +92,6 @@ const getMediumImagePath = (originalPath: string): string => {
   margin: 0 auto;
 }
 
-.studies-title {
-  font-size: 2.5rem;
-  margin-bottom: 1.5rem;
-  text-align: center;
-}
-
 .studies-description {
   margin-bottom: 3rem;
   text-align: center;
@@ -122,17 +118,18 @@ const getMediumImagePath = (originalPath: string): string => {
   padding-bottom: 0;
 }
 
-.study-title {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-  color: #333;
+.project-title {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
 }
 
-.study-description {
-  font-size: 1.1rem;
-  line-height: 1.6;
+.project-description {
   margin-bottom: 2rem;
-  color: #666;
+}
+
+.project-description p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
 }
 
 .study-images {
@@ -145,12 +142,7 @@ const getMediumImagePath = (originalPath: string): string => {
   width: 100%;
   height: auto;
   object-fit: cover;
-  border-radius: 4px;
   transition: transform 0.3s ease;
-}
-
-.study-image:hover {
-  transform: scale(1.02);
 }
 
 /* Responsive design */
@@ -159,12 +151,8 @@ const getMediumImagePath = (originalPath: string): string => {
     padding: 1rem;
   }
 
-  .studies-title {
+  .project-title {
     font-size: 2rem;
-  }
-
-  .study-title {
-    font-size: 1.5rem;
   }
 
   .study-images {

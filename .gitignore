@@ -19,9 +19,13 @@ coverage
 
 # Editor directories and files
 .vscode/*
-.idea/*
 !.vscode/extensions.json
-.idea
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+.idea/*
+!.idea/codeStyles/
+!.idea/inspectionProfiles/
 *.suo
 *.ntvs*
 *.njsproj
@@ -29,3 +33,33 @@ coverage
 *.sw?
 
 *.tsbuildinfo
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Cache directories
+.cache/
+.parcel-cache/
+.next/
+.nuxt/
+.vuepress/dist
+
+# Temporary files
+*.tmp
+*.temp
+.temp/
+*.swp
+*.swo
+*~
+
+# OS generated files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Vercel
+.vercel

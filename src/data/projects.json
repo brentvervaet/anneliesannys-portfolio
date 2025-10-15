@@ -22,6 +22,7 @@
       }
     ],
     "date": "2025",
+    "year": "BA3",
     "video": "/videos/BA3/lbmFilm.webm",
     "images": [
       {
@@ -91,6 +92,58 @@
       {
         "src": "/images/BA3/lbm17.webp",
         "alt": "Lost Before Morning 17"
+      },
+      {
+        "src": "/images/BA3/lbm18.webp",
+        "alt": "Lost Before Morning 18"
+      },
+      {
+        "src": "/images/BA3/lbm19.webp",
+        "alt": "Lost Before Morning 19"
+      },
+      {
+        "src": "/images/BA3/lbm20.webp",
+        "alt": "Lost Before Morning 20"
+      },
+      {
+        "src": "/images/BA3/lbm21.webp",
+        "alt": "Lost Before Morning 21"
+      },
+      {
+        "src": "/images/BA3/lbm22.webp",
+        "alt": "Lost Before Morning 22"
+      },
+      {
+        "src": "/images/BA3/lbm23.webp",
+        "alt": "Lost Before Morning 23"
+      },
+      {
+        "src": "/images/BA3/lbm24.webp",
+        "alt": "Lost Before Morning 24"
+      },
+      {
+        "src": "/images/BA3/lbm25.webp",
+        "alt": "Lost Before Morning 25"
+      },
+      {
+        "src": "/images/BA3/lbm26.webp",
+        "alt": "Lost Before Morning 26"
+      },
+      {
+        "src": "/images/BA3/lbm27.webp",
+        "alt": "Lost Before Morning 27"
+      },
+      {
+        "src": "/images/BA3/lbm28.webp",
+        "alt": "Lost Before Morning 28"
+      },
+      {
+        "src": "/images/BA3/lbm29.webp",
+        "alt": "Lost Before Morning 29"
+      },
+      {
+        "src": "/images/BA3/lbm30.webp",
+        "alt": "Lost Before Morning 30"
       }
     ],
     "thumbnailImage": "/images/BA3/med/lbm01.webp"
@@ -105,6 +158,7 @@
       "A shield. A coat. A catsuit. A silhouette without details of what must be protected. A second skin. A subtle barrier."
     ],
     "date": "2024",
+    "year": "BA2",
     "video": "/videos/BA2/smsitFilm.webm",
     "images": [
       {
@@ -142,95 +196,299 @@
       {
         "src": "/images/BA2/smsit09.webp",
         "alt": "Split myself in two 09"
+      },
+      {
+        "src": "/images/BA2/smsit10.webp",
+        "alt": "Split myself in two 10"
+      },
+      {
+        "src": "/images/BA2/smsit11.webp",
+        "alt": "Split myself in two 11"
+      },
+      {
+        "src": "/images/BA2/smsit12.webp",
+        "alt": "Split myself in two 12"
+      },
+      {
+        "src": "/images/BA2/smsit13.webp",
+        "alt": "Split myself in two 13"
+      },
+      {
+        "src": "/images/BA2/smsit14.webp",
+        "alt": "Split myself in two 14"
+      },
+      {
+        "src": "/images/BA2/smsit15.webp",
+        "alt": "Split myself in two 15"
+      },
+      {
+        "src": "/images/BA2/smsit16.webp",
+        "alt": "Split myself in two 16"
+      },
+      {
+        "src": "/images/BA2/smsit17.webp",
+        "alt": "Split myself in two 17"
+      },
+      {
+        "src": "/images/BA2/smsit18.webp",
+        "alt": "Split myself in two 18"
+      },
+      {
+        "src": "/images/BA2/smsit19.webp",
+        "alt": "Split myself in two 19"
+      },
+      {
+        "src": "/images/BA2/smsit20.webp",
+        "alt": "Split myself in two 20"
       }
     ],
     "thumbnailImage": "/images/BA2/med/smsit01.webp"
   },
+
   {
-    "slug": "studies",
-    "title": "Studies",
+    "slug": "ba1-studies",
+    "title": "BA1 Studies",
     "description": [
-      "BA1: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, eu consectetur nisl nisi euismod nisi.",
-      "Morbi facilisis, sapien non commodo cursus, erat erat dictum urna, nec dictum erat erat nec urna. Etiam euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi."
+      "A collection of explorations from my first year, each telling a different story through fabric and form.",
+      "These studies represent my early investigations into identity, memory, and social consciousness through fashion design.",
+      "From tartan rebellion to delicate remembrance, each piece explores how clothing can carry meaning beyond its material form."
     ],
-    "video": "/videos/BA1/studiesFilm.webm",
     "date": "2023",
+    "year": "BA1",
+    "video": "/videos/BA1/studiesFilm.webm",
     "studies": [
       {
         "title": "Study of the Dress",
-        "description": "An exploration of form and fabric through dress construction.",
+        "description": "Tartan, rebellion, and the raw beauty of imperfection. Inspired by Vivienne Westwood and the Scottish punk movement, where identity was loud and proud. It's about pride, rebellion, and the freedom to take up space. The shape is exaggerated, the stance strong. A tribute to individuality, to dressing as an act of resistance and pride.",
         "images": [
           {
-            "src": "/images/BA1/studies101.webp",
+            "src": "/images/BA1/Dress/dress01.webp",
             "alt": "Study of the dress 01"
           },
           {
-            "src": "/images/BA1/studies102.webp",
+            "src": "/images/BA1/Dress/dress02.webp",
             "alt": "Study of the dress 02"
           },
           {
-            "src": "/images/BA1/studies103.webp",
+            "src": "/images/BA1/Dress/dress03.webp",
             "alt": "Study of the dress 03"
           },
           {
-            "src": "/images/BA1/studies104.webp",
+            "src": "/images/BA1/Dress/dress04.webp",
             "alt": "Study of the dress 04"
           },
           {
-            "src": "/images/BA1/studies105.webp",
+            "src": "/images/BA1/Dress/dress05.webp",
             "alt": "Study of the dress 05"
           },
           {
-            "src": "/images/BA1/studies106.webp",
+            "src": "/images/BA1/Dress/dress06.webp",
             "alt": "Study of the dress 06"
           },
           {
-            "src": "/images/BA1/studies107.webp",
+            "src": "/images/BA1/Dress/dress07.webp",
             "alt": "Study of the dress 07"
           },
           {
-            "src": "/images/BA1/studies108.webp",
+            "src": "/images/BA1/Dress/dress08.webp",
             "alt": "Study of the dress 08"
           },
           {
-            "src": "/images/BA1/studies109.webp",
+            "src": "/images/BA1/Dress/dress09.webp",
             "alt": "Study of the dress 09"
+          },
+          {
+            "src": "/images/BA1/Dress/dress10.webp",
+            "alt": "Study of the dress 10"
+          },
+          {
+            "src": "/images/BA1/Dress/dress11.webp",
+            "alt": "Study of the dress 11"
+          },
+          {
+            "src": "/images/BA1/Dress/dress12.webp",
+            "alt": "Study of the dress 12"
+          },
+          {
+            "src": "/images/BA1/Dress/dress13.webp",
+            "alt": "Study of the dress 13"
+          },
+          {
+            "src": "/images/BA1/Dress/dress14.webp",
+            "alt": "Study of the dress 14"
+          },
+          {
+            "src": "/images/BA1/Dress/dress15.webp",
+            "alt": "Study of the dress 15"
+          },
+          {
+            "src": "/images/BA1/Dress/dress16.webp",
+            "alt": "Study of the dress 16"
+          },
+          {
+            "src": "/images/BA1/Dress/dress17.webp",
+            "alt": "Study of the dress 17"
+          },
+          {
+            "src": "/images/BA1/Dress/dress18.webp",
+            "alt": "Study of the dress 18"
+          },
+          {
+            "src": "/images/BA1/Dress/dress19.webp",
+            "alt": "Study of the dress 19"
+          },
+          {
+            "src": "/images/BA1/Dress/dress20.webp",
+            "alt": "Study of the dress 20"
+          },
+          {
+            "src": "/images/BA1/Dress/dress21.webp",
+            "alt": "Study of the dress 21"
+          },
+          {
+            "src": "/images/BA1/Dress/dress22.webp",
+            "alt": "Study of the dress 22"
+          }
+        ]
+      },
+
+      {
+        "title": "Recycled Denim",
+        "description": "This work started from my thoughts about homelessness, about what it means to have, or not have, a place to feel safe. To build something protective out of what is usually thrown away: recycled denim, plastic and an old sleeping bag. Each material holds traces of use, of care, of survival. It's about warmth, dignity, and the quiet wish for a softer world.",
+        "images": [
+          {
+            "src": "/images/BA1/Jeans/jeans01.webp",
+            "alt": "Recycled Denim study 01"
+          },
+          {
+            "src": "/images/BA1/Jeans/jeans02.webp",
+            "alt": "Recycled Denim study 02"
+          },
+          {
+            "src": "/images/BA1/Jeans/jeans03.webp",
+            "alt": "Recycled Denim study 03"
+          },
+          {
+            "src": "/images/BA1/Jeans/jeans04.webp",
+            "alt": "Recycled Denim study 04"
+          },
+          {
+            "src": "/images/BA1/Jeans/jeans05.webp",
+            "alt": "Recycled Denim study 05"
+          },
+          {
+            "src": "/images/BA1/Jeans/jeans06.webp",
+            "alt": "Recycled Denim study 06"
+          },
+          {
+            "src": "/images/BA1/Jeans/jeans07.webp",
+            "alt": "Recycled Denim study 07"
+          },
+          {
+            "src": "/images/BA1/Jeans/jeans08.webp",
+            "alt": "Recycled Denim study 08"
+          },
+          {
+            "src": "/images/BA1/Jeans/jeans09.webp",
+            "alt": "Recycled Denim study 09"
+          },
+          {
+            "src": "/images/BA1/Jeans/jeans10.webp",
+            "alt": "Recycled Denim study 10"
+          },
+          {
+            "src": "/images/BA1/Jeans/jeans11.webp",
+            "alt": "Recycled Denim study 11"
+          },
+          {
+            "src": "/images/BA1/Jeans/jeans12.webp",
+            "alt": "Recycled Denim study 12"
+          },
+          {
+            "src": "/images/BA1/Jeans/jeans13.webp",
+            "alt": "Recycled Denim study 13"
+          },
+          {
+            "src": "/images/BA1/Jeans/jeans14.webp",
+            "alt": "Recycled Denim study 14"
+          },
+          {
+            "src": "/images/BA1/Jeans/jeans15.webp",
+            "alt": "Recycled Denim study 15"
+          },
+          {
+            "src": "/images/BA1/Jeans/jeans16.webp",
+            "alt": "Recycled Denim study 16"
           }
         ]
       },
       {
         "title": "Paper Study",
-        "description": "Experimental work with paper as a medium for textile exploration.",
+        "description": "Inspired by Día de los Muertos, where life and death meet in color. Not as an ending, but as a continuation of life. The flowers, bright and fragile, became a symbol of memory and rebirth. It's a reflection on remembrance and renewal. Through layers of soft, pleated paper, I explored how something delicate can still carry meaning, how remembering can be both light and heavy at once. The layers echo the softness of flowers — fragile, temporary, yet full of life. Paper becomes a skin for memory, light enough to breathe, strong enough to hold what has passed.",
         "images": [
           {
-            "src": "/images/BA1/studies201.webp",
+            "src": "/images/BA1/Paper/paper01.webp",
             "alt": "Paper study 01"
           },
           {
-            "src": "/images/BA1/studies202.webp",
+            "src": "/images/BA1/Paper/paper02.webp",
             "alt": "Paper study 02"
           },
           {
-            "src": "/images/BA1/studies203.webp",
+            "src": "/images/BA1/Paper/paper03.webp",
             "alt": "Paper study 03"
-          }
-        ]
-      },
-      {
-        "title": "Recycled Denim",
-        "description": "Sustainable approach to denim through recycling and reconstruction.",
-        "images": [
-          {
-            "src": "/images/BA1/studies301.webp",
-            "alt": "Recycled Denim study 01"
           },
           {
-            "src": "/images/BA1/studies302.webp",
-            "alt": "Recycled Denim study 02"
+            "src": "/images/BA1/Paper/paper04.webp",
+            "alt": "Paper study 04"
+          },
+          {
+            "src": "/images/BA1/Paper/paper05.webp",
+            "alt": "Paper study 05"
+          },
+          {
+            "src": "/images/BA1/Paper/paper06.webp",
+            "alt": "Paper study 06"
+          },
+          {
+            "src": "/images/BA1/Paper/paper07.webp",
+            "alt": "Paper study 07"
+          },
+          {
+            "src": "/images/BA1/Paper/paper08.webp",
+            "alt": "Paper study 08"
+          },
+          {
+            "src": "/images/BA1/Paper/paper09.webp",
+            "alt": "Paper study 09"
+          },
+          {
+            "src": "/images/BA1/Paper/paper10.webp",
+            "alt": "Paper study 10"
+          },
+          {
+            "src": "/images/BA1/Paper/paper11.webp",
+            "alt": "Paper study 11"
+          },
+          {
+            "src": "/images/BA1/Paper/paper12.webp",
+            "alt": "Paper study 12"
+          },
+          {
+            "src": "/images/BA1/Paper/paper13.webp",
+            "alt": "Paper study 13"
+          },
+          {
+            "src": "/images/BA1/Paper/paper14.webp",
+            "alt": "Paper study 14"
+          },
+          {
+            "src": "/images/BA1/Paper/paper15.webp",
+            "alt": "Paper study 15"
           }
         ]
       }
     ],
-    "thumbnailImage": "/images/BA1/med/studies101.webp"
+    "thumbnailImage": "/images/BA1/Dress/med/dress01.webp"
   }
 ]

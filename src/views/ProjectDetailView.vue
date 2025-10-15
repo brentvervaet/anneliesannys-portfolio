@@ -8,7 +8,7 @@
       :studies="project.studies"
       :video="project.video"
     />
-    <!-- Show regular ProjectDetail component for projects with images -->
+    <!-- Show ProjectDetail component for projects with images -->
     <ProjectDetail
       v-else-if="project.images"
       :title="project.title"

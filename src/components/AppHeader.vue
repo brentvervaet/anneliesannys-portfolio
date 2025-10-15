@@ -3,8 +3,7 @@
     :class="{
       'over-video': hasHeroVideo,
       'header-hidden': isHeaderHidden,
-      'header-visible': isHeaderVisible,
-      'header-scrolled': isScrolled,
+      'header-visible': !isHeaderHidden,
     }"
   >
     <div class="header-content">
@@ -120,9 +119,7 @@ const isMobileMenuOpen = ref(false)
 
 // Header scroll behavior
 const isHeaderHidden = ref(false)
-const isHeaderVisible = ref(true)
-const isScrolled = ref(false)
-let lastScrollY = 0
+const lastScrollY = ref(0)
 const scrollThreshold = 100 // Minimum scroll distance to trigger hide/show
 
 const scrollToPortfolio = (e: Event) => {
@@ -157,38 +154,6 @@ const handleMobilePortfolioClick = () => {
   scrollToPortfolio(new Event('click'))
 }
 
-const handleScroll = () => {
-  const currentScrollY = window.scrollY
-
-  // Update scrolled state for background styling
-  isScrolled.value = currentScrollY > scrollThreshold
-
-  // Only apply scroll behavior if user has scrolled past threshold
-  if (currentScrollY < scrollThreshold) {
-    isHeaderHidden.value = false
-    isHeaderVisible.value = true
-    lastScrollY = currentScrollY
-    return
-  }
-
-  // Scrolling down - hide header
-  if (currentScrollY > lastScrollY && !isHeaderHidden.value) {
-    isHeaderHidden.value = true
-    isHeaderVisible.value = false
-    // Close mobile menu if it's open when hiding header
-    if (isMobileMenuOpen.value) {
-      closeMobileMenu()
-    }
-  }
-  // Scrolling up - show header
-  else if (currentScrollY < lastScrollY && isHeaderHidden.value) {
-    isHeaderHidden.value = false
-    isHeaderVisible.value = true
-  }
-
-  lastScrollY = currentScrollY
-}
-
 const checkPortfolioVisibility = () => {
   if (route.path !== '/') {
     isPortfolioVisible.value = false
@@ -203,14 +168,38 @@ const checkPortfolioVisibility = () => {
   isPortfolioVisible.value = isVisible
 }
 
-// Combined scroll handler for both portfolio visibility and header behavior
-const scrollHandler = () => {
-  handleScroll()
+const handleScroll = () => {
+  // Handle portfolio visibility first
   checkPortfolioVisibility()
+
+  const currentScrollY = window.scrollY
+
+  // Don't hide header when mobile menu is open
+  if (isMobileMenuOpen.value) {
+    return
+  }
+
+  // Always show header at the top of the page
+  if (currentScrollY < scrollThreshold) {
+    isHeaderHidden.value = false
+    lastScrollY.value = currentScrollY
+    return
+  }
+
+  // Determine scroll direction
+  if (currentScrollY > lastScrollY.value && currentScrollY > scrollThreshold) {
+    // Scrolling down - hide header
+    isHeaderHidden.value = true
+  } else if (currentScrollY < lastScrollY.value) {
+    // Scrolling up - show header
+    isHeaderHidden.value = false
+  }
+
+  lastScrollY.value = currentScrollY
 }
 
 onMounted(() => {
-  window.addEventListener('scroll', scrollHandler)
+  window.addEventListener('scroll', handleScroll)
   checkPortfolioVisibility() // Initial check
 
   // Close mobile menu on escape key
@@ -228,12 +217,19 @@ onMounted(() => {
 })
 
 onUnmounted(() => {
-  window.removeEventListener('scroll', scrollHandler)
+  window.removeEventListener('scroll', handleScroll)
 })
 
 // Watch for route changes to close mobile menu
 watch(route, () => {
   closeMobileMenu()
+})
+
+// Ensure header is visible when mobile menu is open
+watch(isMobileMenuOpen, (isOpen) => {
+  if (isOpen) {
+    isHeaderHidden.value = false
+  }
 })
 </script>
 
@@ -245,13 +241,15 @@ header {
   left: 0;
   width: 100%;
   z-index: 1000;
-  background: transparent;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
   transform: translateY(0);
   transition:
     transform 0.3s ease-in-out,
     background-color 0.3s ease;
 }
 
+/* Header visibility states */
 header.header-hidden {
   transform: translateY(-100%);
 }
@@ -260,17 +258,23 @@ header.header-visible {
   transform: translateY(0);
 }
 
-/* Add subtle background when header is scrolled */
-header.header-scrolled {
-  backdrop-filter: blur(10px);
+/* Transparent background when over video and at top of page */
+header.over-video:not(.header-hidden) {
+  background: transparent;
+  backdrop-filter: none;
 }
 
-header.over-video .page-title {
+/* Over video styling - only when at top of page */
+header.over-video:not(.header-hidden) .page-title {
   color: white;
 }
 
-header.over-video .nav-link {
+header.over-video:not(.header-hidden) .nav-link {
   color: white;
+}
+
+header.over-video:not(.header-hidden) .hamburger-line {
+  background-color: white;
 }
 
 .header-content {
@@ -350,10 +354,6 @@ nav ul {
   transform-origin: center;
 }
 
-header.over-video .hamburger-line {
-  background-color: white;
-}
-
 /* Hamburger animation when menu is open */
 .mobile-menu-toggle.menu-open .hamburger-line:nth-child(1) {
   transform: rotate(45deg) translate(6px, 6px);
@@ -378,7 +378,7 @@ header.over-video .hamburger-line {
   z-index: 999;
   opacity: 0;
   visibility: hidden;
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(30px);
   transition: all 0.3s ease;
 }
 
@@ -411,17 +411,11 @@ header.over-video .hamburger-line {
   cursor: pointer;
 }
 
-.mobile-nav .nav-link:hover {
-  transform: translateY(0);
-  color: rgba(255, 182, 193);
-}
-
 .mobile-nav .nav-link.active {
   font-weight: 600;
   color: rgba(255, 182, 193);
+  text-shadow: 1px 1px 1px black;
 }
-
-/* Base page title styles */
 
 /* Responsive Styles */
 @media (max-width: 950px) {
