@@ -223,25 +223,6 @@ onUnmounted(() => {
   animation: scroll-right 75s linear infinite;
 }
 
-/* ===== SCROLL INDICATOR STYLES ===== */
-.scroll-indicator {
-  position: absolute;
-  bottom: 40px;
-  cursor: pointer;
-}
-
-.scroll-arrow {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease-in-out;
-}
-
-.scroll-arrow:hover {
-  color: rgba(255, 182, 193, 1);
-  transform: translateY(-5px);
-}
-
 /* ===== PORTFOLIO SECTION STYLES ===== */
 .portfolio-section {
   min-height: 100lvh;
@@ -312,27 +293,6 @@ onUnmounted(() => {
   font-family: 'Helvetica Neue', sans-serif;
 }
 
-/* ===== ANIMATIONS ===== */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
 /* ===== MEDIA QUERIES ===== */
 @media (min-width: 480px) {
   /* small phones */
@@ -384,5 +344,47 @@ onUnmounted(() => {
 
 @media (min-width: 1440px) {
   /* large desktops */
+}
+
+/* ===== KEYFRAMES/ANIMATIONS ===== */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scroll-right {
+  0% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* TODO */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 </style>

@@ -15,28 +15,26 @@ body {
   overflow-x: hidden;
 }
 
-/* ===== KEYFRAMES/ANIMATIONS ===== */
-@keyframes scroll-left {
-  0% {
-    transform: translateX(0);
-  }
-
-  100% {
-    transform: translateX(-50%);
-  }
+/* ===== SCROLL INDICATOR STYLES ===== */
+.scroll-indicator {
+  position: absolute;
+  bottom: 40px;
+  cursor: pointer;
 }
 
-@keyframes scroll-right {
-  0% {
-    transform: translateX(-50%);
-  }
-
-  100% {
-    transform: translateX(0);
-  }
+.scroll-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease-in-out;
 }
 
-@keyframes fadeInUp {
+.scroll-arrow:hover {
+  color: rgba(255, 182, 193, 1);
+  transform: translateY(-5px);
+}
+
+/* @keyframes fadeInUp {
   from {
     opacity: 0;
     transform: translateY(40px);
@@ -58,42 +56,6 @@ body {
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-/* ===== PORTFOLIO SECTION STYLES ===== */
-/* .portfolio-section {
-  position: relative;
-  z-index: 1;
-  margin-top: 100vh;
-  padding: 80px 0;
-  background: white;
-  border-top: 1px solid black;
-}
-
-.portfolio-container {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 40px;
-}
-
-.portfolio-title {
-  font-size: clamp(48px, 6vw, 80px);
-  font-weight: 200;
-  text-align: center;
-  margin-bottom: 60px;
-  color: black;
-  font-family: var(--font-family-sans);
-  letter-spacing: 2px;
-  opacity: 0;
-  animation: fadeInUp 1s ease-out 0.5s forwards;
-}
-
-.portfolio-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 40px;
-  max-width: 1200px;
-  margin: 0 auto;
 } */
 
 /* ===== PROJECT STYLES ===== */
@@ -162,26 +124,9 @@ body {
 }
 
 @media (max-width: 768px) {
-  .carousel-image {
-    height: 185px;
-    min-width: 275px;
-  }
 
   .project-description {
     font-size: 16px;
-  }
-
-  .detail-button {
-    align-self: center;
-  }
-
-  .scroll-indicator {
-    bottom: 100px;
-  }
-
-  .scroll-arrow {
-    width: 40px;
-    height: 40px;
   }
 
   .portfolio-container {

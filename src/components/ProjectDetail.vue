@@ -138,11 +138,10 @@ const scrollToContent = (): void => {
 
 .video-hero {
   position: relative;
-  /* smallest viewport height */
+  /* TODO:aanpassen voor safari etc*/
   height: 100svh;
   width: 100%;
   overflow: hidden;
-  margin-top: -140px;
 }
 
 .fullscreen-video {

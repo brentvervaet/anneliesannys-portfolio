@@ -354,7 +354,7 @@ header.over-video .hamburger-line {
 .mobile-nav .nav-link.active {
   font-weight: 600;
   color: rgba(255, 182, 193);
-  text-shadow: 1px 1px 1px black;
+  /* text-shadow: 1px 1px 1px black; */
 }
 
 /* Responsive Styles */
