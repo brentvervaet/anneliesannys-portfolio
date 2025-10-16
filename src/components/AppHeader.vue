@@ -9,7 +9,7 @@
     <div class="header-content">
       <!-- Left side: Title -->
       <div class="left-section">
-        <h1 class="page-title">
+        <h1 class="header-title">
           <RouterLink to="/">ANNELIES ANNYS</RouterLink>
         </h1>
       </div>
@@ -266,6 +266,16 @@ header.over-video:not(.header-hidden) {
 
 /* Over video styling - only when at top of page */
 header.over-video:not(.header-hidden) .page-title {
+.header-title {
+  margin: 0;
+  font-size: 3rem;
+  font-weight: bold;
+  color: black;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+header.over-video .header-title {
   color: white;
 }
 
@@ -427,7 +437,7 @@ nav ul {
     gap: 20px;
   }
 
-  .page-title {
+  .header-title {
     font-size: 2rem;
   }
 
@@ -449,7 +459,7 @@ nav ul {
     padding: 15px 20px;
   }
 
-  .page-title {
+  .header-title {
     font-size: 1.5rem;
   }
 }
