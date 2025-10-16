@@ -3,7 +3,7 @@
     <div class="header-content">
       <!-- Left side: Title -->
       <div class="left-section">
-        <h1 class="page-title">
+        <h1 class="header-title">
           <RouterLink to="/">ANNELIES ANNYS</RouterLink>
         </h1>
       </div>
@@ -196,7 +196,16 @@ header {
   background: transparent;
 }
 
-header.over-video .page-title {
+.header-title {
+  margin: 0;
+  font-size: 3rem;
+  font-weight: bold;
+  color: black;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+header.over-video .header-title {
   color: white;
 }
 
@@ -358,7 +367,7 @@ header.over-video .hamburger-line {
     gap: 20px;
   }
 
-  .page-title {
+  .header-title {
     font-size: 2rem;
   }
 
@@ -380,7 +389,7 @@ header.over-video .hamburger-line {
     padding: 15px 20px;
   }
 
-  .page-title {
+  .header-title {
     font-size: 1.5rem;
   }
 }
