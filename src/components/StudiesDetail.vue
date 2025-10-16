@@ -69,10 +69,9 @@ const getMediumImagePath = (originalPath: string): string => {
 
 .video-hero {
   position: relative;
-  height: 100vh;
+  height: 100lvh;
   width: 100%;
   overflow: hidden;
-  margin-top: -140px; /* Compensate for the main element's padding-top */
 }
 
 .fullscreen-video {
