@@ -182,13 +182,27 @@ const scrollToContent = (): void => {
 .project-content {
   position: relative;
   padding: 2rem;
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
+}
+.project-content {
+  /* flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px; */
 }
 
 .project-title {
   font-size: 2.5rem;
   margin-bottom: 1.5rem;
+}
+
+.project-title {
+  font-family: var(--font-family-sans);
+  font-size: 48px;
+  font-weight: 200;
+  margin-bottom: 30px;
+  text-align: center;
 }
 
 .project-description {
@@ -198,6 +212,23 @@ const scrollToContent = (): void => {
 .project-description p {
   margin-bottom: 1rem;
   line-height: 1.6;
+}
+.project-description p {
+  font-family: var(--font-family-sans);
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+.project-description {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #666;
+  font-family: var(--font-family-sans);
+  margin: 0;
+  margin-bottom: 50px;
 }
 
 .image-grid {
