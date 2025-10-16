@@ -265,7 +265,6 @@ header.over-video:not(.header-hidden) {
 }
 
 /* Over video styling - only when at top of page */
-header.over-video:not(.header-hidden) .page-title {
 .header-title {
   margin: 0;
   font-size: 3rem;
