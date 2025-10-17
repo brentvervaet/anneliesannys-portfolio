@@ -59,29 +59,11 @@ body {
 } */
 
 
-/* ===== PROJECT STYLES ===== */
-
-
-
-/* ===== IMAGE GRID STYLES ===== */
-.image-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  margin-bottom: 50px;
-}
-
-.image-grid img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-}
-
 /* ===== MEDIA QUERIES ===== */
 
 @media (max-width: 768px) {
 
-  .project-description {
+  /* .project-description {
     font-size: 16px;
   }
 
@@ -109,5 +91,5 @@ body {
   .image-grid {
     grid-template-columns: 1fr;
     gap: 20px;
-  }
+  } */
 }

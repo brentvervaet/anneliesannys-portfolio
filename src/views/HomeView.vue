@@ -226,7 +226,7 @@ onUnmounted(() => {
 /* ===== PORTFOLIO SECTION STYLES ===== */
 .portfolio-section {
   min-height: 100lvh;
-  padding: 2rem;
+  padding: 3rem;
   position: relative;
   z-index: 2;
   border-top: 1px solid black;
