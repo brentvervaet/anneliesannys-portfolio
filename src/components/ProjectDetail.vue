@@ -194,7 +194,7 @@ const scrollToContent = (): void => {
 }
 
 .project-title {
-  font-size: 3rem;
+  font-size: 2rem;
   margin-bottom: 1.5rem;
   font-weight: 200;
   text-align: center;
@@ -203,12 +203,13 @@ const scrollToContent = (): void => {
 .project-description {
   align-items: center;
   justify-content: center;
+  text-align: center;
   color: #666;
   /* margin-bottom: 1rem; */
 }
 
 .project-description p {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   /* margin-bottom: 1rem; */
   /* font-weight: 400; */
   /* line-height: 1.6; */
@@ -222,7 +223,7 @@ const scrollToContent = (): void => {
 }
 
 .image-grid img {
-  width: 100%;
+  width: 250px;
   height: auto;
   object-fit: cover;
 }

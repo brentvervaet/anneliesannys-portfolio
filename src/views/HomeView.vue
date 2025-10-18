@@ -69,6 +69,7 @@
                 <span class="view-text">view</span>
               </div>
             </div>
+            <p class="project-title">{{ project.title }}</p>
           </RouterLink>
         </div>
       </div>
@@ -235,7 +236,7 @@ onUnmounted(() => {
 
 .portfolio-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
   justify-items: center;
 }
@@ -291,6 +292,12 @@ onUnmounted(() => {
   letter-spacing: 1.5px;
   text-transform: uppercase;
   font-family: 'Helvetica Neue', sans-serif;
+}
+
+.project-title {
+  font-size: 0.8rem;
+  font-weight: 200;
+  text-align: center;
 }
 
 /* ===== MEDIA QUERIES ===== */
