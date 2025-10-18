@@ -175,7 +175,12 @@ const toggleMute = (): void => {
 }
 
 .project-head {
-  height: 100lvh;
+  min-height: 100lvh;
+}
+
+.project-head img {
+  display: block;
+  margin: 1.5rem auto;
 }
 
 .project-title {
@@ -194,25 +199,20 @@ const toggleMute = (): void => {
 }
 
 .project-description {
-  align-items: center;
-  justify-content: center;
   text-align: center;
-  color: #666;
-  /* margin-bottom: 1rem; */
+  font-size: 1rem;
+  font-weight: 300;
 }
 
 .project-description p {
   font-size: 1.2rem;
-  /* margin-bottom: 1rem; */
-  /* font-weight: 400; */
-  /* line-height: 1.6; */
-  /* text-align: justify; */
 }
 
 .image-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
+  padding: 2rem 0;
 }
 
 .image-grid img {

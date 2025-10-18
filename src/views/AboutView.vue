@@ -114,7 +114,7 @@
   padding-top: 2.5rem;
   color: black;
   font-size: 1rem;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.5;
   flex: 1;
 }
