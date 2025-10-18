@@ -157,11 +157,11 @@
     "video": "",
     "images": [
       {
-        "src": "https://placehold.co/800x1200",
+        "src": "/images/Stadsduif/stad01.JPG",
         "alt": "Stadsduif 01"
       }
     ],
-    "thumbnailImage": "https://placehold.co/800x1200"
+    "thumbnailImage": "/images/Stadsduif/med/stad01.JPG"
   },
 
   {

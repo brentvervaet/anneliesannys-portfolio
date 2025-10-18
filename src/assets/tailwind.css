@@ -30,7 +30,7 @@ body {
 }
 
 .scroll-arrow:hover {
-  color: rgba(255, 182, 193, 1);
+  color: rgba(255, 182, 193);
   transform: translateY(-5px);
 }
 
