@@ -5,12 +5,12 @@
         <div class="profile-image">
           <img src="/images/anneliesannys.webp" alt="Annelies Annys" />
         </div>
-        <p class="pb-4">
+        <p>
           I’m Annelies Annys, a fashion designer and student at KASK & Conservatorium in Ghent. My
           work focuses on blurring the boundaries between memory, emotion, and materiality. Through
           collage, text, and clothing, I translate personal experiences into tangible forms.
         </p>
-        <p class="pb-4">
+        <p>
           My process often begins with an inner narrative, a dream, a diary fragment, or a fleeting
           feeling, which gradually develops through experimentation with layers, textures, and form.
           By using collage as the first step in my design process, I explore composition,
@@ -27,10 +27,7 @@
       </div>
 
       <div class="timeline-section">
-        <!-- TODO: welk titel? -->
-        <!-- <h2 class="timeline-title">Projects</h2> -->
         <div class="timeline">
-          <!-- 2025 -->
           <div class="timeline-item">
             <div class="timeline-year">2025</div>
             <div class="timeline-events">
@@ -95,19 +92,8 @@
 
 <style>
 .about-content {
-  display: flex;
-  gap: 60px;
-  padding: 60px 54px;
-  align-items: flex-start;
-  position: relative;
-}
-
-.about-text {
-  color: black;
-  font-size: 16px;
-  font-weight: 300;
-  line-height: 1.5;
-  flex: 1;
+  padding: 1.5rem;
+  padding-top: 3.5rem;
 }
 
 .profile-image {
@@ -124,65 +110,46 @@
     filter 0.3s ease;
 }
 
-.profile-image img:hover {
-  transform: scale(1.02);
-  filter: brightness(1.05);
-}
-
-.timeline-section {
+.about-text {
+  padding-top: 2.5rem;
+  color: black;
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.5;
   flex: 1;
 }
 
-.timeline-title {
-  font-size: 24px;
-  font-weight: 400;
-  margin-bottom: 40px;
-  color: black;
+.about-text p {
+  margin-bottom: 1.5rem;
 }
+
+/* ===== TIMELINE ===== */
 
 .timeline {
   border-left: 2px solid #d9d9d9;
-  padding-left: 20px;
-  margin-left: 20px;
+  padding-left: 1rem;
 }
 
 .timeline-item {
-  margin-bottom: 30px;
+  margin-bottom: 1.5rem;
   position: relative;
   opacity: 0;
   animation: fadeInUp 0.6s ease forwards;
 }
 
-.timeline-item:nth-child(1) {
-  animation-delay: 0.1s;
-}
-.timeline-item:nth-child(2) {
-  animation-delay: 0.2s;
-}
-.timeline-item:nth-child(3) {
-  animation-delay: 0.3s;
-}
-.timeline-item:nth-child(4) {
-  animation-delay: 0.4s;
-}
-
 .timeline-year {
-  font-size: 18px;
+  font-size: 1.2rem;
   font-weight: 500;
   color: black;
-  margin-bottom: 8px;
-}
-
-.timeline-events {
-  margin-left: 0;
+  margin-bottom: 0.5rem;
 }
 
 .timeline-event {
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 300;
   color: black;
-  margin-bottom: 4px;
-  line-height: 1.4;
+  margin-bottom: 0.25rem;
+  line-height: 1.5;
 }
 
 .highlight {
@@ -191,20 +158,10 @@
   transition: color 0.2s ease;
 }
 
-.highlight:hover {
-  color: rgba(255, 150, 200, 1);
-}
-
-/* Animations */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* ===== ANIMATIONS ===== */
+.profile-image {
+  opacity: 0;
+  animation: fadeInUp 0.6s ease forwards;
 }
 
 .about-text p {
@@ -222,78 +179,44 @@
   animation-delay: 0.3s;
 }
 
-.profile-image {
-  opacity: 0;
-  animation: fadeInUp 0.6s ease forwards;
+.timeline-item:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.timeline-item:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.timeline-item:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.timeline-item:nth-child(4) {
+  animation-delay: 0.4s;
 }
 
-/* Mobile responsiveness */
-@media (max-width: 768px) {
-  .about-content {
-    flex-direction: column;
-    gap: 40px;
-    padding: 40px 20px;
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
-
-  .about-text {
-    order: 1;
-  }
-
-  .timeline-section {
-    order: 2;
-  }
-
-  .profile-image {
-    text-align: center;
-  }
-
-  .profile-image img {
-    width: 170px;
-    min-width: 150px;
-  }
-
-  .timeline {
-    margin-left: 15px;
-    padding-left: 15px;
-  }
-
-  .timeline-item::before {
-    left: -21px;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-@media (max-width: 480px) {
-  .about-content {
-    padding: 30px 15px;
-    gap: 30px;
-  }
+/* ===== MEDIA QUERIES ===== */
 
-  .about-text {
-    font-size: 14px;
-  }
+/* tablet */
+@media (min-width: 768px) {
+}
 
-  .profile-image img {
-    width: 140px;
-    min-width: 120px;
+/* desktop */
+@media (min-width: 1024px) {
+  .highlight:hover {
+    color: rgba(255, 150, 200, 1);
   }
+}
 
-  .timeline-year {
-    font-size: 16px;
-  }
-
-  .timeline-event {
-    font-size: 14px;
-  }
-
-  .timeline {
-    margin-left: 10px;
-    padding-left: 10px;
-  }
-
-  .timeline-item::before {
-    left: -16px;
-    width: 6px;
-    height: 6px;
-  }
+/* large desktops */
+@media (min-width: 1440px) {
 }
 </style>
