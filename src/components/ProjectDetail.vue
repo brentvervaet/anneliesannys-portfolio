@@ -243,10 +243,10 @@ const toggleMute = (): void => {
   grid-template-columns: repeat(4, 1fr);
 }
 
+/* TODO: geen aspectratio 1? */
 .collage-image {
-  width: 100%;
   aspect-ratio: 1;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 /* ===== MEDIA QUERIES ===== */
