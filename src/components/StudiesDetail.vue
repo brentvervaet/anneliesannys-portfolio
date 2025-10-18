@@ -9,17 +9,12 @@
     </div>
 
     <section class="studies-content">
-      <!-- <h2 class="studies-title">{{ title }}</h2>
-      <div class="studies-description">
-        <p v-for="paragraph in description" :key="paragraph">
-          {{ paragraph }}
-        </p>
-      </div> -->
-
       <!-- Individual studies -->
       <div class="studies-grid">
         <div v-for="study in studies" :key="study.title" class="study-section">
           <h2 class="project-title">{{ study.title }}</h2>
+          <p v-if="date" class="project-date">{{ date }}</p>
+
           <div class="project-description">
             <p>{{ study.description }}</p>
           </div>
@@ -46,6 +41,7 @@ interface Props {
   title: string
   description: string[]
   studies: Study[]
+  date?: string
   video?: string
 }
 
@@ -69,7 +65,8 @@ const getMediumImagePath = (originalPath: string): string => {
 
 .video-hero {
   position: relative;
-  height: 100lvh;
+  /* TODO:aanpassen voor safari etc*/
+  height: 100svh;
   width: 100%;
   overflow: hidden;
 }
@@ -87,18 +84,21 @@ const getMediumImagePath = (originalPath: string): string => {
 .studies-content {
   position: relative;
   padding: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
+  max-width: 1400px;
 }
 
-.studies-description {
-  margin-bottom: 3rem;
+.project-title {
+  font-size: 2rem;
+  font-weight: 200;
   text-align: center;
 }
 
-.studies-description p {
-  margin-bottom: 1rem;
-  line-height: 1.6;
+.project-date {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  color: #999;
+  text-align: center;
+  font-weight: 300;
 }
 
 .studies-grid {
@@ -117,18 +117,11 @@ const getMediumImagePath = (originalPath: string): string => {
   padding-bottom: 0;
 }
 
-.project-title {
-  font-size: 2.5rem;
-  margin-bottom: 1.5rem;
-}
-
 .project-description {
-  margin-bottom: 2rem;
-}
-
-.project-description p {
-  margin-bottom: 1rem;
-  line-height: 1.6;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 300;
+  margin: 1.5rem auto;
 }
 
 .study-images {

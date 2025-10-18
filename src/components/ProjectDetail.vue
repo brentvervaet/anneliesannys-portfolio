@@ -243,10 +243,6 @@ const toggleMute = (): void => {
   margin: 1.5rem auto;
 }
 
-.project-description p {
-  font-size: 1.2rem;
-}
-
 .image-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
