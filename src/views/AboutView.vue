@@ -35,7 +35,7 @@
             <div class="timeline-year">2025</div>
             <div class="timeline-events">
               <div class="timeline-event">
-                Iman Boot, <span class="highlight">Costume Design</span>, Belgium
+                Sneeuw (Iman Boot), <span class="highlight">Costume Design</span>, Belgium
               </div>
               <div class="timeline-event">
                 Stadsduif (Rube Vandebril), <span class="highlight">Costume Design</span>, Belgium
