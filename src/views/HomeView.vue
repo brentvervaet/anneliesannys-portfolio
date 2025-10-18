@@ -240,7 +240,7 @@ onUnmounted(() => {
 .portfolio-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
+  gap: 5rem 2rem;
 }
 
 /* ===== PROJECT CARD STYLES ===== */
@@ -299,7 +299,6 @@ onUnmounted(() => {
   font-weight: 400;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  font-family: 'Helvetica Neue', sans-serif;
 }
 
 /* ===== MEDIA QUERIES ===== */
@@ -317,9 +316,6 @@ onUnmounted(() => {
 
   .project-card:hover .project-overlay {
     opacity: 1;
-  }
-  .portfolio-grid {
-    grid-template-columns: repeat(3, 1fr);
   }
 }
 
