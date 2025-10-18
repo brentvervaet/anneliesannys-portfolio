@@ -49,6 +49,12 @@
       <div class="project-head">
         <h2 class="project-title">{{ title }}</h2>
         <p v-if="date" class="project-date">{{ date }}</p>
+        <!-- TODO: -->
+        <!-- <img
+          class="project-headImage"
+          :src="getMediumImagePath(images[0].src)"
+          :alt="images[0].alt"
+        /> -->
         <div class="project-description">
           <p v-for="paragraph in description" :key="paragraph">
             {{ paragraph }}
@@ -58,12 +64,14 @@
 
       <div class="image-grid">
         <img
-          v-for="image in limitedImages"
+          v-for="image in bottomImageGrid"
           :key="image.src"
           :src="getMediumImagePath(image.src)"
           :alt="image.alt"
         />
       </div>
+      <div>Schetsbook images coming soon</div>
+      <div>Collages coming soon</div>
     </section>
   </div>
 </template>
@@ -80,6 +88,7 @@ interface Props {
   title: string
   description: string[]
   images: ProjectImage[]
+  models?: string[]
   video?: string
   date?: string
 }
@@ -92,7 +101,7 @@ const videoElement = ref<HTMLVideoElement | null>(null)
 const projectContent = ref<HTMLElement | null>(null)
 
 // Computed property to limit images to first 5
-const limitedImages = computed(() => props.images.slice(0, 6))
+const bottomImageGrid = computed(() => props.images.slice(1, 7))
 
 // Convert image path to use medium-sized version
 const getMediumImagePath = (originalPath: string): string => {
