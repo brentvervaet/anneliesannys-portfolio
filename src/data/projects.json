@@ -150,6 +150,21 @@
   },
 
   {
+    "slug": "stadsduif",
+    "title": "Stadsduif",
+    "description": ["Coming soon..."],
+    "date": "2024",
+    "video": "",
+    "images": [
+      {
+        "src": "https://placehold.co/800x1200",
+        "alt": "Stadsduif 01"
+      }
+    ],
+    "thumbnailImage": "https://placehold.co/800x1200"
+  },
+
+  {
     "slug": "split-myself-in-two",
     "title": "Split myself in two",
     "description": [

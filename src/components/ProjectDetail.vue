@@ -2,19 +2,6 @@
   <div class="project-detail">
     <!-- Hero video section -->
     <div class="video-hero" v-if="video">
-      <div class="scroll-indicator" @click="scrollToContent">
-        <div class="scroll-arrow">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path
-              d="M7 10L12 15L17 10"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-        </div>
-      </div>
       <video ref="videoElement" autoplay :muted="isMuted" loop playsinline class="fullscreen-video">
         <source :src="video" type="video/webm" />
         Your browser does not support the video tag.
@@ -121,16 +108,6 @@ const toggleMute = (): void => {
   isMuted.value = !isMuted.value
   if (videoElement.value) {
     videoElement.value.muted = isMuted.value
-  }
-}
-
-// Smooth scroll to project content section
-const scrollToContent = (): void => {
-  if (projectContent.value) {
-    projectContent.value.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start',
-    })
   }
 }
 </script>
