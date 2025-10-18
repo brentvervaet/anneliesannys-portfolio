@@ -50,11 +50,12 @@
         <h2 class="project-title">{{ title }}</h2>
         <p v-if="date" class="project-date">{{ date }}</p>
         <!-- TODO: -->
-        <!-- <img
+        <img
+          v-if="images[0]"
           class="project-headImage"
           :src="getMediumImagePath(images[0].src)"
           :alt="images[0].alt"
-        /> -->
+        />
         <div class="project-description">
           <p v-for="paragraph in description" :key="paragraph">
             {{ paragraph }}
@@ -77,18 +78,13 @@
 </template>
 
 <script setup lang="ts">
+import type { ProjectImage } from '@/types/project'
 import { computed, ref } from 'vue'
-
-interface ProjectImage {
-  src: string
-  alt: string
-}
 
 interface Props {
   title: string
   description: string[]
   images: ProjectImage[]
-  models?: string[]
   video?: string
   date?: string
 }
