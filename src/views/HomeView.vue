@@ -56,22 +56,25 @@
     <section id="portfolio" ref="portfolioSection" class="portfolio-section">
       <!-- <div class="portfolio-container"> -->
       <div class="portfolio-grid">
-        <div
-          v-for="(project, index) in projects"
-          :key="project.id"
-          class="project-card"
-          :style="{ animationDelay: `${index * 150}ms` }"
-        >
-          <RouterLink :to="project.route" class="project-link">
-            <div class="project-image-wrapper">
-              <img :src="project.image" :alt="project.title" class="project-image" />
-              <div class="project-overlay">
-                <span class="view-text">view</span>
+        <template v-for="(project, index) in projects" :key="project.id">
+          <!-- Empty cell for zigzag pattern (even rows in 2-column layout) -->
+          <div v-if="index % 2 === 1" class="project-spacer"></div>
+
+          <div class="project-card" :style="{ animationDelay: `${index * 150}ms` }">
+            <RouterLink :to="project.route" class="project-link">
+              <div class="project-image-wrapper">
+                <img :src="project.image" :alt="project.title" class="project-image" />
+                <div class="project-overlay">
+                  <span class="view-text">view</span>
+                </div>
               </div>
-            </div>
-            <p class="project-title">{{ project.title }}</p>
-          </RouterLink>
-        </div>
+              <p class="project-title">{{ project.title }}</p>
+            </RouterLink>
+          </div>
+
+          <!-- Empty cell for zigzag pattern (odd rows in 2-column layout) -->
+          <div v-if="index % 2 === 0" class="project-spacer"></div>
+        </template>
       </div>
       <!-- </div> -->
     </section>
@@ -238,7 +241,6 @@ onUnmounted(() => {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
-  justify-items: center;
 }
 
 /* ===== PROJECT CARD STYLES ===== */
@@ -246,12 +248,6 @@ onUnmounted(() => {
   opacity: 0;
   animation: fadeIn 0.8s ease-out forwards;
   transition: transform 0.4s ease;
-}
-
-.project-link {
-  display: block;
-  text-decoration: none;
-  color: inherit;
 }
 
 .project-image-wrapper {
@@ -269,6 +265,18 @@ onUnmounted(() => {
   transition:
     transform 0.6s ease,
     filter 0.3s ease;
+}
+
+.project-title {
+  font-size: 0.7rem;
+  font-weight: 300;
+  text-align: center;
+}
+
+.project-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
 }
 
 .project-overlay {
@@ -294,12 +302,6 @@ onUnmounted(() => {
   font-family: 'Helvetica Neue', sans-serif;
 }
 
-.project-title {
-  font-size: 0.8rem;
-  font-weight: 200;
-  text-align: center;
-}
-
 /* ===== MEDIA QUERIES ===== */
 @media (min-width: 480px) {
   /* small phones */
@@ -307,23 +309,11 @@ onUnmounted(() => {
 
 /* TODO: Creative scattered positioning */
 @media (min-width: 768px) {
-  .portfolio-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  /* .project-card:nth-child(1) {
-    transform: translateX(-0.5rem) translateY(0.5rem);
-  }
-  .project-card:nth-child(2) {
-    transform: translateX(0.5rem) translateY(-1rem);
-  }
-  .project-card:nth-child(3) {
-    transform: translateX(-1rem) translateY(0.75rem);
-  } */
 }
 
 /* desktop and up: more expressive stagger */
 @media (min-width: 1024px) {
+  /* only hover effect on desktop */
   .project-card:hover .project-image {
     transform: scale(1.05);
   }
@@ -334,19 +324,6 @@ onUnmounted(() => {
   .portfolio-grid {
     grid-template-columns: repeat(3, 1fr);
   }
-  /*
-  .project-card:nth-child(1) {
-    transform: translateX(-1rem) translateY(1rem);
-  }
-  .project-card:nth-child(2) {
-    transform: translateX(1rem) translateY(-1rem);
-  }
-  .project-card:nth-child(3) {
-    transform: translateX(-1.5rem) translateY(1.25rem);
-  }
-  .project-card:nth-child(4) {
-    transform: translateX(1.25rem) translateY(-0.75rem);
-  } */
 }
 
 @media (min-width: 1440px) {
