@@ -20,5 +20,7 @@ export interface Project {
   date?: string
   details?: Record<string, string>[]
   collages?: ProjectImage[]
-  credits?: string | Record<string, string | string[]>
+  credits?: string | Record<string, string | string[] | undefined>
+  headImage?: string
+  sketchbook?: string
 }

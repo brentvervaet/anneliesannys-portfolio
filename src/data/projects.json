@@ -148,8 +148,8 @@
       }
     ],
     "credits": {
-      "Video": "Ties Kalker",
-      "Photography": "Sybi Deroo",
+      "Video": ["Ties Kalker"],
+      "Photography": ["Sybi Deroo"],
       "Models": [
         "Aimone De Zordo",
         "Luca Pop",

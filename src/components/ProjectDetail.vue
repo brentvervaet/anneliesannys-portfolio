@@ -121,7 +121,7 @@ interface Props {
   video?: string
   date?: string
   collages?: ProjectImage[]
-  credits?: string | Record<string, string | string[]>
+  credits?: string | Record<string, string | string[] | undefined>
 }
 
 const props = defineProps<Props>()
