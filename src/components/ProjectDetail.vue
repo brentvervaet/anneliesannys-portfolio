@@ -185,7 +185,6 @@ const toggleMute = (): void => {
 
 .project-title {
   font-size: 2rem;
-  margin-bottom: 1.5rem;
   font-weight: 200;
   text-align: center;
 }
@@ -202,6 +201,7 @@ const toggleMute = (): void => {
   text-align: center;
   font-size: 1rem;
   font-weight: 300;
+  padding: 1.5rem auto;
 }
 
 .project-description p {
@@ -212,7 +212,7 @@ const toggleMute = (): void => {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
-  padding: 2rem 0;
+  padding: 1.5rem 0;
 }
 
 .image-grid img {
