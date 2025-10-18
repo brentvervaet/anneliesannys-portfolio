@@ -1,8 +1,8 @@
 [
   {
+    "slug": "lost-before-morning",
     "thumbnailImage": "/images/BA3/med/lbm01.webp",
     "video": "/videos/BA3/lbmFilm.webm",
-    "slug": "lost-before-morning",
     "title": "Lost Before Morning",
     "date": "2025",
     "description": [
@@ -204,17 +204,15 @@
 
   {
     "slug": "split-myself-in-two",
+    "thumbnailImage": "/images/BA2/med/smsit01.webp",
+    "video": "/videos/BA2/smsitFilm.webm",
     "title": "Split myself in two",
     "description": [
       "Safe space. Checks. It is an intimate reflection of my comfort zone. My safe space within the fashion world. ",
       "Through this collection, I want to create a safe environment, a cocoon that protects us from this world and from others. By exaggerating everything to the extreme, the designs feel protective and reveal little of what lies beneath.",
       "A shield. A coat. A catsuit. A silhouette without details of what must be protected. A second skin. A subtle barrier."
     ],
-    "credits": "",
     "details": [],
-    "date": "2024",
-    "year": "BA2",
-    "video": "/videos/BA2/smsitFilm.webm",
     "images": [
       {
         "src": "/images/BA2/smsit01.webp",
@@ -297,7 +295,44 @@
         "alt": "Split myself in two 20"
       }
     ],
-    "thumbnailImage": "/images/BA2/med/smsit01.webp"
+    "credits": "",
+    "date": "2024",
+    "sketchbook": "",
+    "collages": [
+      {
+        "src": "/images/BA2/smsit10.webp",
+        "alt": "Split myself in two Collage 01"
+      },
+      {
+        "src": "/images/BA2/smsit11.webp",
+        "alt": "Split myself in two Collage 02"
+      },
+      {
+        "src": "/images/BA2/smsit12.webp",
+        "alt": "Split myself in two Collage 03"
+      },
+      {
+        "src": "/images/BA2/smsit13.webp",
+        "alt": "Split myself in two Collage 04"
+      },
+      {
+        "src": "/images/BA2/smsit14.webp",
+        "alt": "Split myself in two Collage 05"
+      },
+      {
+        "src": "/images/BA2/smsit15.webp",
+        "alt": "Split myself in two Collage 06"
+      },
+      {
+        "src": "/images/BA2/smsit16.webp",
+        "alt": "Split myself in two Collage 07"
+      },
+      {
+        "src": "/images/BA2/smsit17.webp",
+        "alt": "Split myself in two Collage 08"
+      }
+    ],
+    "year": "BA2"
   },
 
   {
