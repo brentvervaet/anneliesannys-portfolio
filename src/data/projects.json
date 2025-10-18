@@ -7,7 +7,7 @@
       "Embroidered into fabric, my dreams become unforgettable, a small part of the body that carries them. They’re as slow as knitting, gently resisting the speed of forgetting.",
       "A dreamscape created to hold what would otherwise be lost before morning."
     ],
-    "models": ["xxxxx xxxxxx", "xxxx xxxx", "xxx xxx", "xx xx"],
+    "credits": "",
     "details": [
       {
         "Material": " Wool - Quilted fabric - neoprene - leather - wood - nylon thread - metal hooks - EVA foam - tulle - padding - silver spraypaint"
@@ -154,6 +154,8 @@
     "slug": "stadsduif",
     "title": "Stadsduif",
     "description": ["Coming soon..."],
+    "credits": "",
+    "details": [],
     "date": "2024",
     "video": "",
     "images": [
@@ -173,6 +175,8 @@
       "Through this collection, I want to create a safe environment, a cocoon that protects us from this world and from others. By exaggerating everything to the extreme, the designs feel protective and reveal little of what lies beneath.",
       "A shield. A coat. A catsuit. A silhouette without details of what must be protected. A second skin. A subtle barrier."
     ],
+    "credits": "",
+    "details": [],
     "date": "2024",
     "year": "BA2",
     "video": "/videos/BA2/smsitFilm.webm",
@@ -269,6 +273,8 @@
       "These studies represent my early investigations into identity, memory, and social consciousness through fashion design.",
       "From tartan rebellion to delicate remembrance, each piece explores how clothing can carry meaning beyond its material form."
     ],
+    "credits": "",
+    "details": [],
     "date": "2023",
     "year": "BA1",
     "video": "/videos/BA1/studiesFilm.webm",
