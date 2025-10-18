@@ -146,7 +146,20 @@
         "alt": "Lost Before Morning 30"
       }
     ],
-    "credits": "",
+    "credits": {
+      "Video": "Ties Kalker",
+      "Photography": "Sybi Deroo",
+      "Models": [
+        "Aimone De Zordo",
+        "Luca Pop",
+        "Luca",
+        "Blue",
+        "Akrhyp",
+        "Myleta",
+        "Billie",
+        "Romée"
+      ]
+    },
     "sketchbook": "",
     "collages": [
       {
@@ -295,7 +308,29 @@
         "alt": "Split myself in two 20"
       }
     ],
-    "credits": "",
+    "credits": {
+      "Video": ["Ties Kalker"],
+      "Photography": ["Emma Ostyn"],
+      "Models": [
+        "Aimone De Zordo",
+        "Indu Devarrewaere",
+        "Nils Provoost",
+        "Ernesto",
+        "Gloire Bofanga",
+        "Hannes De Schuijmer",
+        "Louis Peeters",
+        "Luca"
+      ],
+      "Starring": [],
+      "Director": [],
+      "FirstAssistantDirector": [],
+      "DirectorOfPhotography": [],
+      "FirstAssistantCamera": [],
+      "Gaffer": [],
+      "CostumeDesigner": [],
+      "Electro": [],
+      "Equipment": []
+    },
     "date": "2024",
     "sketchbook": "",
     "collages": [

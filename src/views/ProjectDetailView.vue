@@ -17,6 +17,7 @@
       :video="project.video"
       :date="project.date"
       :collages="project.collages"
+      :credits="project.credits"
     />
   </div>
 </template>

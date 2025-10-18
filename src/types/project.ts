@@ -21,4 +21,5 @@ export interface Project {
   year?: string // Academic year (e.g., "BA1", "BA2", "BA3", "MA1", etc.)
   details?: Record<string, string>[]
   collages?: ProjectImage[]
+  credits?: string | Record<string, string | string[]>
 }
