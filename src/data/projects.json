@@ -202,7 +202,18 @@
     "slug": "stadsduif",
     "title": "Stadsduif",
     "description": ["Coming soon..."],
-    "credits": "",
+    "credits": {
+      "Director": ["Rube Vandebril", "Pati Petrykowska"],
+      "First assistant director": ["Seppe Vanden Broeck"],
+      "Director of photography": ["Liam Emmerrechts"],
+      "First assistant camera": ["Tio Kerbusch"],
+      "Gaffer": ["Billy D'Hoore"],
+      "Electro": ["Alexander Siamandi", "Mats van Paridon"],
+      "Costume designer": ["Annelies Annys"],
+      "Starring": ["Felix Braeckman", "Michelle Van Neste"],
+      "Equipment": ["Camalux Belgium"]
+    },
+
     "details": [],
     "date": "2024",
     "video": "",
@@ -320,16 +331,7 @@
         "Hannes De Schuijmer",
         "Louis Peeters",
         "Luca"
-      ],
-      "Starring": [],
-      "Director": [],
-      "FirstAssistantDirector": [],
-      "DirectorOfPhotography": [],
-      "FirstAssistantCamera": [],
-      "Gaffer": [],
-      "CostumeDesigner": [],
-      "Electro": [],
-      "Equipment": []
+      ]
     },
     "date": "2024",
     "sketchbook": "",

@@ -77,13 +77,12 @@
         v-if="credits && typeof credits === 'object' && Object.keys(credits).length > 0"
         class="credits-section"
       >
-        <h3 class="credits-title">Credits</h3>
         <div class="credits-grid">
           <div v-for="(value, key) in credits" :key="key" class="credit-item">
             <span class="credit-label">{{ key }}:</span>
             <span class="credit-value">
               <template v-if="Array.isArray(value)">
-                {{ value.join(', ') }}
+                {{ sortAlphabetically(value).join(', ') }}
               </template>
               <template v-else>
                 {{ value }}
@@ -142,6 +141,11 @@ const getMediumImagePath = (originalPath: string): string => {
   const pathParts = originalPath.split('/')
   const filename = pathParts.pop()
   return [...pathParts, 'med', filename].join('/')
+}
+
+// Sort array alphabetically (case-insensitive)
+const sortAlphabetically = (arr: string[]): string[] => {
+  return [...arr].sort((a, b) => a.localeCompare(b, undefined, { sensitivity: 'base' }))
 }
 
 // Toggle mute state
@@ -258,10 +262,9 @@ const toggleMute = (): void => {
 
 /* ===== CREDITS SECTION ===== */
 .credits-section {
-  margin: 3rem 0;
+  margin: 1.5rem 0;
   padding: 2rem;
-  background: rgba(0, 0, 0, 0.02);
-  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.05);
 }
 
 .credits-title {
