@@ -303,15 +303,12 @@ onUnmounted(() => {
 }
 
 /* ===== MEDIA QUERIES ===== */
-@media (min-width: 480px) {
-  /* small phones */
-}
 
-/* TODO: Creative scattered positioning */
+/* tablet */
 @media (min-width: 768px) {
 }
 
-/* desktop and up: more expressive stagger */
+/* desktop */
 @media (min-width: 1024px) {
   /* only hover effect on desktop */
   .project-card:hover .project-image {
@@ -326,8 +323,9 @@ onUnmounted(() => {
   }
 }
 
+/* large desktops */
+
 @media (min-width: 1440px) {
-  /* large desktops */
 }
 
 /* ===== KEYFRAMES/ANIMATIONS ===== */
