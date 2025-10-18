@@ -15,6 +15,7 @@
       :description="project.description"
       :images="project.images"
       :video="project.video"
+      :date="project.date"
     />
   </div>
 </template>

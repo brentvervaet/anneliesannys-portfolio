@@ -61,6 +61,7 @@
     <section ref="projectContent" class="project-content">
       <div class="project-head">
         <h2 class="project-title">{{ title }}</h2>
+        <p v-if="date" class="project-date">{{ date }}</p>
         <div class="project-description">
           <p v-for="paragraph in description" :key="paragraph">
             {{ paragraph }}
@@ -93,6 +94,7 @@ interface Props {
   description: string[]
   images: ProjectImage[]
   video?: string
+  date?: string
 }
 
 const props = defineProps<Props>()
@@ -139,6 +141,7 @@ const scrollToContent = (): void => {
   width: 100%;
 }
 
+/* ===== VIDEO ===== */
 .video-hero {
   position: relative;
   /* TODO:aanpassen voor safari etc*/
@@ -157,6 +160,7 @@ const scrollToContent = (): void => {
   z-index: 1; /* Ensure video is behind the header */
 }
 
+/* ===== MUTE BUTTON ===== */
 .mute-button {
   position: absolute;
   bottom: 2rem;
@@ -180,8 +184,7 @@ const scrollToContent = (): void => {
   transform: scale(1.1);
 }
 
-/*TODO: Mobile responsive styles for mute button */
-
+/* ===== PROJECT CONTENT ===== */
 .project-content {
   position: relative;
   padding: 2rem;
@@ -198,6 +201,14 @@ const scrollToContent = (): void => {
   margin-bottom: 1.5rem;
   font-weight: 200;
   text-align: center;
+}
+
+.project-date {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  color: #999;
+  text-align: center;
+  font-weight: 300;
 }
 
 .project-description {
