@@ -1,13 +1,15 @@
 [
   {
+    "thumbnailImage": "/images/BA3/med/lbm01.webp",
+    "video": "/videos/BA3/lbmFilm.webm",
     "slug": "lost-before-morning",
     "title": "Lost Before Morning",
+    "date": "2025",
     "description": [
       "An archive of dreams, born from the fear of forgetting and the quiet envy of those who remember.",
       "Embroidered into fabric, my dreams become unforgettable, a small part of the body that carries them. They’re as slow as knitting, gently resisting the speed of forgetting.",
       "A dreamscape created to hold what would otherwise be lost before morning."
     ],
-    "credits": "",
     "details": [
       {
         "Material": " Wool - Quilted fabric - neoprene - leather - wood - nylon thread - metal hooks - EVA foam - tulle - padding - silver spraypaint"
@@ -22,9 +24,6 @@
         "Shape": "Oversized – voluminous – rounded – raised shoulders – layered – contrast between rounded and sharp shapes"
       }
     ],
-    "date": "2025",
-    "year": "BA3",
-    "video": "/videos/BA3/lbmFilm.webm",
     "images": [
       {
         "src": "/images/BA3/lbm01.webp",
@@ -147,7 +146,43 @@
         "alt": "Lost Before Morning 30"
       }
     ],
-    "thumbnailImage": "/images/BA3/med/lbm01.webp"
+    "credits": "",
+    "sketchbook": "",
+    "collages": [
+      {
+        "src": "/images/BA3/lbm01.webp",
+        "alt": "Lost Before Morning Collage 01"
+      },
+      {
+        "src": "/images/BA3/lbm02.webp",
+        "alt": "Lost Before Morning Collage 02"
+      },
+      {
+        "src": "/images/BA3/lbm03.webp",
+        "alt": "Lost Before Morning Collage 03"
+      },
+      {
+        "src": "/images/BA3/lbm04.webp",
+        "alt": "Lost Before Morning Collage 04"
+      },
+      {
+        "src": "/images/BA3/lbm05.webp",
+        "alt": "Lost Before Morning Collage 05"
+      },
+      {
+        "src": "/images/BA3/lbm06.webp",
+        "alt": "Lost Before Morning Collage 06"
+      },
+      {
+        "src": "/images/BA3/lbm07.webp",
+        "alt": "Lost Before Morning Collage 07"
+      },
+      {
+        "src": "/images/BA3/lbm08.webp",
+        "alt": "Lost Before Morning Collage 08"
+      }
+    ],
+    "year": "BA3"
   },
 
   {

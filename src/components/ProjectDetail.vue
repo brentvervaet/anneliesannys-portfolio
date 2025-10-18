@@ -72,7 +72,19 @@
         />
       </div>
       <div>Schetsbook images coming soon</div>
-      <div>Collages coming soon</div>
+
+      <!-- Collages Grid -->
+      <div v-if="collages && collages.length > 0" class="collages-section">
+        <div class="collages-grid">
+          <img
+            v-for="collage in collages"
+            :key="collage.src"
+            :src="getMediumImagePath(collage.src)"
+            :alt="collage.alt"
+            class="collage-image"
+          />
+        </div>
+      </div>
     </section>
   </div>
 </template>
@@ -87,6 +99,7 @@ interface Props {
   images: ProjectImage[]
   video?: string
   date?: string
+  collages?: ProjectImage[]
 }
 
 const props = defineProps<Props>()
@@ -171,16 +184,10 @@ const toggleMute = (): void => {
   position: relative;
   padding: 2rem;
   max-width: 1400px;
-  margin: 0 auto;
 }
 
 .project-head {
   min-height: 100lvh;
-}
-
-.project-head img {
-  display: block;
-  margin: 1.5rem auto;
 }
 
 .project-title {
@@ -197,11 +204,16 @@ const toggleMute = (): void => {
   font-weight: 300;
 }
 
+.project-head img {
+  display: block;
+  margin: 1.5rem auto;
+}
+
 .project-description {
   text-align: center;
   font-size: 1rem;
   font-weight: 300;
-  padding: 1.5rem auto;
+  margin: 1.5rem auto;
 }
 
 .project-description p {
@@ -212,12 +224,38 @@ const toggleMute = (): void => {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
-  padding: 1.5rem 0;
+  margin: 1.5rem 0;
 }
 
 .image-grid img {
   width: 250px;
   height: auto;
   object-fit: cover;
+}
+
+/* ===== COLLAGES SECTION ===== */
+.collages-section {
+  margin: 1.5rem 0;
+}
+
+.collages-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.collage-image {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+/* ===== MEDIA QUERIES ===== */
+@media (max-width: 1024px) {
+}
+
+@media (max-width: 768px) {
+}
+
+@media (max-width: 480px) {
 }
 </style>
