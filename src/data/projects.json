@@ -5,6 +5,7 @@
     "video": "/videos/BA3/lbmFilm.webm",
     "title": "Lost Before Morning",
     "date": "2025",
+    "headImage": "",
     "description": [
       "An archive of dreams, born from the fear of forgetting and the quiet envy of those who remember.",
       "Embroidered into fabric, my dreams become unforgettable, a small part of the body that carries them. They’re as slow as knitting, gently resisting the speed of forgetting.",
@@ -199,8 +200,20 @@
 
   {
     "slug": "stadsduif",
+    "thumbnailImage": "/images/Stadsduif/med/stad01.JPG",
+    "video": "",
     "title": "Stadsduif",
+    "date": "2024",
+    "headImage": "",
     "description": ["Coming soon..."],
+    "details": [],
+    "images": [
+      {
+        "src": "/images/Stadsduif/stad01.JPG",
+        "alt": "Stadsduif 01"
+      }
+    ],
+
     "credits": {
       "Director": ["Rube Vandebril", "Pati Petrykowska"],
       "First assistant director": ["Seppe Vanden Broeck"],
@@ -211,18 +224,7 @@
       "Costume designer": ["Annelies Annys"],
       "Starring": ["Felix Braeckman", "Michelle Van Neste"],
       "Equipment": ["Camalux Belgium"]
-    },
-
-    "details": [],
-    "date": "2024",
-    "video": "",
-    "images": [
-      {
-        "src": "/images/Stadsduif/stad01.JPG",
-        "alt": "Stadsduif 01"
-      }
-    ],
-    "thumbnailImage": "/images/Stadsduif/med/stad01.JPG"
+    }
   },
 
   {
@@ -230,6 +232,8 @@
     "thumbnailImage": "/images/BA2/med/smsit01.webp",
     "video": "/videos/BA2/smsitFilm.webm",
     "title": "Split myself in two",
+    "date": "2024",
+    "headImage": "",
     "description": [
       "Safe space. Checks. It is an intimate reflection of my comfort zone. My safe space within the fashion world. ",
       "Through this collection, I want to create a safe environment, a cocoon that protects us from this world and from others. By exaggerating everything to the extreme, the designs feel protective and reveal little of what lies beneath.",
@@ -332,7 +336,6 @@
         "Luca"
       ]
     },
-    "date": "2024",
     "sketchbook": "",
     "collages": [
       {
@@ -372,16 +375,23 @@
 
   {
     "slug": "ba1-studies",
+    "thumbnailImage": "/images/BA1/Dress/med/dress01.webp",
+    "video": "/videos/BA1/studiesFilm.webm",
     "title": "BA1 Studies",
+
     "description": [
       "A collection of explorations from my first year, each telling a different story through fabric and form.",
       "These studies represent my early investigations into identity, memory, and social consciousness through fashion design.",
       "From tartan rebellion to delicate remembrance, each piece explores how clothing can carry meaning beyond its material form."
     ],
-    "credits": "",
-    "details": [],
     "date": "2023",
-    "video": "/videos/BA1/studiesFilm.webm",
+    "credits": {
+      "Video": ["Christphe Annys"],
+      "Photography": ["Jonathan Verschaeve"],
+      "Models": ["Quiten Declercq", "Karin Devos"]
+    },
+    "sketchbook": [],
+    "collages": [],
     "studies": [
       {
         "title": "Study of the Dress",
@@ -614,7 +624,6 @@
           }
         ]
       }
-    ],
-    "thumbnailImage": "/images/BA1/Dress/med/dress01.webp"
+    ]
   }
 ]
