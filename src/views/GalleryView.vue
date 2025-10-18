@@ -228,38 +228,31 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
-.gallery {
-  min-height: 100vh;
-  background: white;
-}
-
 .gallery-content {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 40px;
+  padding: 1.5rem;
+  padding-top: 3rem;
 }
 
 .gallery-header {
   text-align: center;
-  margin-bottom: 60px;
+  padding: 2rem;
 }
 
 .gallery-header h1 {
-  font-size: 3.5rem;
+  font-size: 2rem;
   font-weight: 300;
-  margin-bottom: 20px;
   color: #333;
 }
 
 .gallery-header p {
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: #666;
   font-weight: 300;
 }
 
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(8, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 0px;
   margin-bottom: 80px;
 }
@@ -273,6 +266,8 @@ onUnmounted(() => {
   opacity: 0;
   transform: translateY(30px);
 }
+
+/* ===== ANIMATIONS ===== */
 
 @keyframes fadeInUp {
   to {
@@ -302,12 +297,14 @@ onUnmounted(() => {
   transition: opacity 0.3s ease;
 }
 
-.gallery-item:hover .gallery-overlay {
-  opacity: 1;
+.modal-navigation {
+  left: -30px;
+  right: -30px;
 }
 
-.gallery-item:hover .gallery-image {
-  transform: scale(1.05);
+.modal-close {
+  top: -40px;
+  font-size: 1.5rem;
 }
 
 .overlay-content {
@@ -464,66 +461,16 @@ onUnmounted(() => {
   letter-spacing: 1px;
 }
 
-/* Responsive Design */
-@media (max-width: 1200px) {
-  .gallery-content {
-    padding: 0 30px;
+/* ===== MEDIA QUERIES ===== */
+/* tablet */
+/* desktop */
+@media (min-width: 1024px) {
+  .gallery-item:hover .gallery-overlay {
+    opacity: 1;
   }
 
-  .gallery-grid {
-    grid-template-columns: repeat(6, 1fr);
-    gap: 0px;
-  }
-}
-
-@media (max-width: 900px) {
-  .gallery-content {
-    padding: 0 20px;
-  }
-
-  .gallery-header h1 {
-    font-size: 2.5rem;
-  }
-
-  .gallery-grid {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 0px;
-  }
-
-  .modal-navigation {
-    left: -40px;
-    right: -40px;
-  }
-
-  .nav-btn {
-    width: 40px;
-    height: 40px;
-    font-size: 1.5rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .gallery {
-    padding-top: 0px;
-  }
-
-  .gallery-header h1 {
-    font-size: 2rem;
-  }
-
-  .gallery-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0px;
-  }
-
-  .modal-navigation {
-    left: -30px;
-    right: -30px;
-  }
-
-  .modal-close {
-    top: -40px;
-    font-size: 1.5rem;
+  .gallery-item:hover .gallery-image {
+    transform: scale(1.05);
   }
 }
 </style>
