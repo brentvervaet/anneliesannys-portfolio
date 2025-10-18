@@ -92,7 +92,7 @@ interface Props {
 const props = defineProps<Props>()
 
 // Reactive data for mute functionality
-const isMuted = ref(false) // Start music by default
+const isMuted = ref(true) // Start music by default
 const videoElement = ref<HTMLVideoElement | null>(null)
 const projectContent = ref<HTMLElement | null>(null)
 
