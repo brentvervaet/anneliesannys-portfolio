@@ -37,6 +37,12 @@
       <div class="copyright">
         &copy; {{ new Date().getFullYear() }} Annelies Annys. All rights reserved.
       </div>
+      <div class="made-by">
+        Made by
+        <a href="https://brentvervaet.dev" target="_blank" rel="noopener noreferrer"
+          >Brent Vervaet</a
+        >
+      </div>
     </div>
   </footer>
 </template>
@@ -90,17 +96,32 @@
   font-size: 14px;
   color: #52525c;
   text-align: center;
-  user-select: none;
   letter-spacing: 0.5px;
 }
 
-@media (max-width: 600px) {
-  .site-footer {
-    padding: 35px 20px 50px;
-  }
-  .social-icon {
-    width: 42px;
-    height: 42px;
-  }
+.made-by {
+  font-size: 13px;
+  color: #6b6b75;
+  text-align: center;
+  letter-spacing: 0.3px;
+}
+
+.made-by a {
+  color: #2c3e50;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  border-bottom: 1px solid transparent;
+}
+
+.made-by a:hover {
+  color: #34495e;
+  border-bottom-color: rgba(255, 192, 203, 0.5);
+}
+
+/* ===== MEDIA QUERIES ===== */
+@media (max-width: 1024px) {
+}
+
+@media (max-width: 768px) {
 }
 </style>
