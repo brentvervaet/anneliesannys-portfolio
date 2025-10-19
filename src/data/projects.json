@@ -172,8 +172,8 @@
 
   {
     "slug": "split-myself-in-two",
-    "thumbnailImage": "/images/BA2/med/smsit01.webp",
-    "video": "/videos/BA2/smsitFilm.webm",
+    "thumbnailImage": "/images/BA2/med/smit01.webp",
+    "video": "/videos/BA2/smitFilm.webm",
     "title": "Split myself in two",
     "date": "2024",
     "description": [
@@ -184,84 +184,52 @@
     "details": [],
     "images": [
       {
-        "src": "/images/BA2/smsit01.webp",
+        "src": "/images/BA2/smit01.webp",
         "alt": "Split myself in two 01"
       },
       {
-        "src": "/images/BA2/smsit02.webp",
+        "src": "/images/BA2/smit02.webp",
         "alt": "Split myself in two 02"
       },
       {
-        "src": "/images/BA2/smsit03.webp",
+        "src": "/images/BA2/smit03.webp",
         "alt": "Split myself in two 03"
       },
       {
-        "src": "/images/BA2/smsit04.webp",
+        "src": "/images/BA2/smit04.webp",
         "alt": "Split myself in two 04"
       },
       {
-        "src": "/images/BA2/smsit05.webp",
+        "src": "/images/BA2/smit05.webp",
         "alt": "Split myself in two 05"
       },
       {
-        "src": "/images/BA2/smsit06.webp",
+        "src": "/images/BA2/smit06.webp",
         "alt": "Split myself in two 06"
       },
       {
-        "src": "/images/BA2/smsit07.webp",
+        "src": "/images/BA2/smit07.webp",
         "alt": "Split myself in two 07"
       },
       {
-        "src": "/images/BA2/smsit08.webp",
+        "src": "/images/BA2/smit08.webp",
         "alt": "Split myself in two 08"
       },
       {
-        "src": "/images/BA2/smsit09.webp",
+        "src": "/images/BA2/smit09.webp",
         "alt": "Split myself in two 09"
       },
       {
-        "src": "/images/BA2/smsit10.webp",
+        "src": "/images/BA2/smit10.webp",
         "alt": "Split myself in two 10"
       },
       {
-        "src": "/images/BA2/smsit11.webp",
+        "src": "/images/BA2/smit11.webp",
         "alt": "Split myself in two 11"
       },
       {
-        "src": "/images/BA2/smsit12.webp",
+        "src": "/images/BA2/smit12.webp",
         "alt": "Split myself in two 12"
-      },
-      {
-        "src": "/images/BA2/smsit13.webp",
-        "alt": "Split myself in two 13"
-      },
-      {
-        "src": "/images/BA2/smsit14.webp",
-        "alt": "Split myself in two 14"
-      },
-      {
-        "src": "/images/BA2/smsit15.webp",
-        "alt": "Split myself in two 15"
-      },
-      {
-        "src": "/images/BA2/smsit16.webp",
-        "alt": "Split myself in two 16"
-      },
-      {
-        "src": "/images/BA2/smsit17.webp",
-        "alt": "Split myself in two 17"
-      },
-      {
-        "src": "/images/BA2/smsit18.webp",
-        "alt": "Split myself in two 18"
-      },
-      {
-        "src": "/images/BA2/smsit19.webp",
-        "alt": "Split myself in two 19"
-      },
-      {
-        "src": "/images/BA2/smsit20.webp",
-        "alt": "Split myself in two 20"
       }
     ],
     "credits": {
@@ -281,35 +249,35 @@
     "sketchbook": "",
     "collages": [
       {
-        "src": "/images/BA2/smsit10.webp",
+        "src": "/images/BA2/smit10.webp",
         "alt": "Split myself in two Collage 01"
       },
       {
-        "src": "/images/BA2/smsit11.webp",
+        "src": "/images/BA2/smit11.webp",
         "alt": "Split myself in two Collage 02"
       },
       {
-        "src": "/images/BA2/smsit12.webp",
+        "src": "/images/BA2/smit12.webp",
         "alt": "Split myself in two Collage 03"
       },
       {
-        "src": "/images/BA2/smsit13.webp",
+        "src": "/images/BA2/smit13.webp",
         "alt": "Split myself in two Collage 04"
       },
       {
-        "src": "/images/BA2/smsit14.webp",
+        "src": "/images/BA2/smit14.webp",
         "alt": "Split myself in two Collage 05"
       },
       {
-        "src": "/images/BA2/smsit15.webp",
+        "src": "/images/BA2/smit15.webp",
         "alt": "Split myself in two Collage 06"
       },
       {
-        "src": "/images/BA2/smsit16.webp",
+        "src": "/images/BA2/smit16.webp",
         "alt": "Split myself in two Collage 07"
       },
       {
-        "src": "/images/BA2/smsit17.webp",
+        "src": "/images/BA2/smit17.webp",
         "alt": "Split myself in two Collage 08"
       }
     ]
