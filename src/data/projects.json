@@ -87,7 +87,24 @@
         "Romée & Billie"
       ]
     },
-    "sketchbook": "",
+    "sketchbook": [
+      {
+        "src": "/images/BA3/sketchbook/lbm01.webp",
+        "alt": "Lost Before Morning Sketchbook 01"
+      },
+      {
+        "src": "/images/BA3/sketchbook/lbm02.webp",
+        "alt": "Lost Before Morning Sketchbook 02"
+      },
+      {
+        "src": "/images/BA3/sketchbook/lbm03.webp",
+        "alt": "Lost Before Morning Sketchbook 03"
+      },
+      {
+        "src": "/images/BA3/sketchbook/lbm04.webp",
+        "alt": "Lost Before Morning Sketchbook 04"
+      }
+    ],
     "collages": [
       {
         "src": "/images/BA3/collages/lbm01.webp",
