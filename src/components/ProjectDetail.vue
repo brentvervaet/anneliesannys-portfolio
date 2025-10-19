@@ -142,8 +142,8 @@ const isMuted = ref(true) // Start music by default
 const videoElement = ref<HTMLVideoElement | null>(null)
 const projectContent = ref<HTMLElement | null>(null)
 
-// Computed property to limit images to first 2-8
-const bottomImageGrid = computed(() => props.images.slice(2, 8))
+// Computed property to limit images to first 2-end
+const bottomImageGrid = computed(() => props.images.slice(2, props.images.length))
 
 // Convert image path to use medium-sized version
 const getMediumImagePath = (originalPath: string): string => {
@@ -228,10 +228,6 @@ const toggleMute = (): void => {
   position: relative;
   padding: 2rem;
   max-width: 1400px;
-}
-
-.project-head {
-  min-height: 100lvh;
 }
 
 .project-title {
