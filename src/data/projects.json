@@ -390,7 +390,44 @@
       "Models": ["Quiten Declercq", "Karin Devos"]
     },
     "sketchbook": [],
-    "collages": [],
+    "collages": [
+      {
+        "src": "/images/BA1/Dress/dress10.webp",
+        "alt": "Study of the dress 10"
+      },
+      {
+        "src": "/images/BA1/Dress/dress11.webp",
+        "alt": "Study of the dress 11"
+      },
+      {
+        "src": "/images/BA1/Dress/dress12.webp",
+        "alt": "Study of the dress 12"
+      },
+      {
+        "src": "/images/BA1/Dress/dress13.webp",
+        "alt": "Study of the dress 13"
+      },
+      {
+        "src": "/images/BA1/Dress/dress14.webp",
+        "alt": "Study of the dress 14"
+      },
+      {
+        "src": "/images/BA1/Dress/dress15.webp",
+        "alt": "Study of the dress 15"
+      },
+      {
+        "src": "/images/BA1/Dress/dress16.webp",
+        "alt": "Study of the dress 16"
+      },
+      {
+        "src": "/images/BA1/Dress/dress17.webp",
+        "alt": "Study of the dress 17"
+      },
+      {
+        "src": "/images/BA1/Dress/dress18.webp",
+        "alt": "Study of the dress 18"
+      }
+    ],
     "studies": [
       {
         "title": "Study of the Dress",
@@ -431,58 +468,6 @@
           {
             "src": "/images/BA1/Dress/dress09.webp",
             "alt": "Study of the dress 09"
-          },
-          {
-            "src": "/images/BA1/Dress/dress10.webp",
-            "alt": "Study of the dress 10"
-          },
-          {
-            "src": "/images/BA1/Dress/dress11.webp",
-            "alt": "Study of the dress 11"
-          },
-          {
-            "src": "/images/BA1/Dress/dress12.webp",
-            "alt": "Study of the dress 12"
-          },
-          {
-            "src": "/images/BA1/Dress/dress13.webp",
-            "alt": "Study of the dress 13"
-          },
-          {
-            "src": "/images/BA1/Dress/dress14.webp",
-            "alt": "Study of the dress 14"
-          },
-          {
-            "src": "/images/BA1/Dress/dress15.webp",
-            "alt": "Study of the dress 15"
-          },
-          {
-            "src": "/images/BA1/Dress/dress16.webp",
-            "alt": "Study of the dress 16"
-          },
-          {
-            "src": "/images/BA1/Dress/dress17.webp",
-            "alt": "Study of the dress 17"
-          },
-          {
-            "src": "/images/BA1/Dress/dress18.webp",
-            "alt": "Study of the dress 18"
-          },
-          {
-            "src": "/images/BA1/Dress/dress19.webp",
-            "alt": "Study of the dress 19"
-          },
-          {
-            "src": "/images/BA1/Dress/dress20.webp",
-            "alt": "Study of the dress 20"
-          },
-          {
-            "src": "/images/BA1/Dress/dress21.webp",
-            "alt": "Study of the dress 21"
-          },
-          {
-            "src": "/images/BA1/Dress/dress22.webp",
-            "alt": "Study of the dress 22"
           }
         ]
       },

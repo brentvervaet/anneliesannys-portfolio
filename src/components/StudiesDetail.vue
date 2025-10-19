@@ -14,7 +14,12 @@
         <div v-for="study in studies" :key="study.title" class="study-section">
           <h2 class="project-title">{{ study.title }}</h2>
           <p v-if="date" class="project-date">{{ date }}</p>
-
+          <img
+            v-if="study.images[1]"
+            class="project-headImage"
+            :src="getMediumImagePath(study.images[1].src)"
+            :alt="study.images[1].alt"
+          />
           <div class="project-description">
             <p>{{ study.description }}</p>
           </div>
@@ -28,6 +33,40 @@
               class="study-image"
             />
           </div>
+
+          <!-- <div
+            v-if="credits && typeof credits === 'object' && Object.keys(credits).length > 0"
+            class="credits-section"
+          >
+            <div class="credits-grid">
+              <div v-for="(value, key) in credits" :key="key" class="credit-item">
+                <span class="credit-label">{{ key }}:</span>
+                <span class="credit-value">
+                  <template v-if="Array.isArray(value)">
+                    {{ sortAlphabetically(value).join(', ') }}
+                  </template>
+                  <template v-else>
+                    {{ value }}
+                  </template>
+                </span>
+              </div>
+            </div>
+          </div> -->
+
+          <div>Sketch book images coming soon</div>
+
+          <!-- Collages Grid -->
+          <!-- <div v-if="collages && collages.length > 0" class="collages-section">
+            <div class="collages-grid">
+              <img
+                v-for="collage in collages"
+                :key="collage.src"
+                :src="getMediumImagePath(collage.src)"
+                :alt="collage.alt"
+                class="collage-image"
+              />
+            </div>
+          </div> -->
         </div>
       </div>
     </section>
@@ -126,51 +165,24 @@ const getMediumImagePath = (originalPath: string): string => {
 
 .study-images {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
+  margin: 1.5rem 0;
 }
 
 .study-image {
-  width: 100%;
+  width: 250px;
   height: auto;
   object-fit: cover;
-  transition: transform 0.3s ease;
 }
 
-/* Responsive design */
+/* ===== MEDIA QUERIES ===== */
+@media (max-width: 1024px) {
+}
+
 @media (max-width: 768px) {
-  .studies-content {
-    padding: 1rem;
-  }
-
-  .project-title {
-    font-size: 2rem;
-  }
-
-  .study-images {
-    grid-template-columns: 1fr;
-    gap: 0.5rem;
-  }
-
-  .studies-grid {
-    gap: 2rem;
-  }
-
-  .study-section {
-    padding-bottom: 2rem;
-  }
 }
 
-@media (min-width: 769px) and (max-width: 1024px) {
-  .study-images {
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  }
-}
-
-@media (min-width: 1025px) {
-  .study-images {
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1.5rem;
-  }
+@media (max-width: 480px) {
 }
 </style>
