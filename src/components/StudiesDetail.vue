@@ -42,7 +42,7 @@
               <img
                 v-for="collage in study.collages"
                 :key="collage.src"
-                :src="getMediumImagePath(collage.src)"
+                :src="getSmallImagePath(collage.src)"
                 :alt="collage.alt"
                 class="collage-image"
               />
@@ -95,6 +95,12 @@ const getMediumImagePath = (originalPath: string): string => {
   const pathParts = originalPath.split('/')
   const filename = pathParts.pop()
   return [...pathParts, 'med', filename].join('/')
+}
+
+const getSmallImagePath = (originalPath: string): string => {
+  const pathParts = originalPath.split('/')
+  const filename = pathParts.pop()
+  return [...pathParts, 'sm', filename].join('/')
 }
 
 // Sort array alphabetically (case-insensitive)

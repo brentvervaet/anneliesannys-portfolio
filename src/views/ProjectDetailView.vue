@@ -19,6 +19,7 @@
       :video="project.video"
       :date="project.date"
       :collages="project.collages"
+      :sketchbook="project.sketchbook"
       :credits="project.credits"
     />
   </div>
