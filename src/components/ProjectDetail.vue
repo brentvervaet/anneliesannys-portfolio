@@ -347,7 +347,4 @@ const toggleMute = (): void => {
 
 @media (max-width: 768px) {
 }
-
-@media (max-width: 480px) {
-}
 </style>
