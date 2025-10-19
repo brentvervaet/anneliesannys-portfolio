@@ -54,9 +54,9 @@
 <style scoped>
 .site-footer {
   background: #fff;
-  padding: 40px 30px 60px;
+  padding: 3rem;
   border-top: 1px solid rgba(0, 0, 0, 0.05);
-  /* margin-top: 80px; */
+  margin-top: 1rem;
 }
 .footer-inner {
   max-width: 1400px;
@@ -64,11 +64,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 25px;
+  gap: 2rem;
 }
 .social-icons {
   display: flex;
-  gap: 18px;
+  gap: 2rem;
 }
 .social-icon {
   display: flex;
