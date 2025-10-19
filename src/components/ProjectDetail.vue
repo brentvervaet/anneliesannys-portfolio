@@ -91,7 +91,7 @@
         </div>
       </div>
 
-      <div>Sketch book images coming soon</div>
+      <div>Sketchbook images coming soon</div>
 
       <!-- Collages Grid -->
       <div v-if="collages && collages.length > 0" class="collages-section">

@@ -34,7 +34,7 @@
             />
           </div>
 
-          <div>Sketch book images coming soon</div>
+          <div>Sketchbook images coming soon</div>
 
           <!-- Collages Grid -->
           <div v-if="study.collages && study.collages.length > 0" class="collages-section">
