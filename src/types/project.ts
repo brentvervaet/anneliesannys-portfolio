@@ -8,7 +8,7 @@ export interface Study {
   description: string
   images: ProjectImage[]
   collages?: ProjectImage[]
-  sketchbook?: string[]
+  sketchbook?: ProjectImage[]
 }
 
 export interface Project {
@@ -24,5 +24,5 @@ export interface Project {
   collages?: ProjectImage[]
   credits?: string | Record<string, string | string[] | undefined>
   headImage?: string
-  sketchbook?: string
+  sketchbook?: ProjectImage[]
 }
