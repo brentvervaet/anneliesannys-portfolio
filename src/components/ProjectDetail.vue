@@ -50,10 +50,10 @@
         <h2 class="project-title">{{ title }}</h2>
         <p v-if="date" class="project-date">{{ date }}</p>
         <img
-          v-if="images[0]"
+          v-if="images[1]"
           class="project-headImage"
-          :src="getMediumImagePath(images[0].src)"
-          :alt="images[0].alt"
+          :src="getMediumImagePath(images[1].src)"
+          :alt="images[1].alt"
         />
         <div class="project-description">
           <p v-for="paragraph in description" :key="paragraph">
