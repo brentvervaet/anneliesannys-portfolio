@@ -148,7 +148,7 @@
     "title": "Stadsduif",
     "date": "2024",
     "headImage": "",
-    "description": ["Coming soon..."],
+    "description": ["Movie by Rube Vandebril"],
     "details": [],
     "images": [
       {
@@ -266,35 +266,35 @@
     ],
     "collages": [
       {
-        "src": "/images/BA2/smit10.webp",
+        "src": "/images/BA2/collages/smit01.webp",
         "alt": "Split myself in two Collage 01"
       },
       {
-        "src": "/images/BA2/smit11.webp",
+        "src": "/images/BA2/collages/smit02.webp",
         "alt": "Split myself in two Collage 02"
       },
       {
-        "src": "/images/BA2/smit12.webp",
+        "src": "/images/BA2/collages/smit03.webp",
         "alt": "Split myself in two Collage 03"
       },
       {
-        "src": "/images/BA2/smit13.webp",
+        "src": "/images/BA2/collages/smit04.webp",
         "alt": "Split myself in two Collage 04"
       },
       {
-        "src": "/images/BA2/smit14.webp",
+        "src": "/images/BA2/collages/smit05.webp",
         "alt": "Split myself in two Collage 05"
       },
       {
-        "src": "/images/BA2/smit15.webp",
+        "src": "/images/BA2/collages/smit06.webp",
         "alt": "Split myself in two Collage 06"
       },
       {
-        "src": "/images/BA2/smit16.webp",
+        "src": "/images/BA2/collages/smit07.webp",
         "alt": "Split myself in two Collage 07"
       },
       {
-        "src": "/images/BA2/smit17.webp",
+        "src": "/images/BA2/collages/smit08.webp",
         "alt": "Split myself in two Collage 08"
       }
     ]
