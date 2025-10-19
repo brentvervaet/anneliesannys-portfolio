@@ -34,7 +34,18 @@
             />
           </div>
 
-          <div>Sketchbook images coming soon</div>
+          <!-- Sketchbook Section -->
+          <div v-if="study.sketchbook && study.sketchbook.length > 0" class="sketchbook-section">
+            <div class="sketchbook-grid">
+              <img
+                v-for="sketch in study.sketchbook"
+                :key="sketch.src"
+                :src="getMediumImagePath(sketch.src)"
+                :alt="sketch.alt"
+                class="sketchbook-image"
+              />
+            </div>
+          </div>
 
           <!-- Collages Grid -->
           <div v-if="study.collages && study.collages.length > 0" class="collages-section">
@@ -221,6 +232,24 @@ const sortAlphabetically = (arr: string[]): string[] => {
   font-weight: 300;
   font-size: 1rem;
   color: #333;
+}
+
+/* ===== SKETCHBOOK SECTION ===== */
+.sketchbook-section {
+  margin: 1.5rem 0;
+}
+
+.sketchbook-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  width: 100%;
+}
+
+.sketchbook-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 
 /* ===== COLLAGES SECTION ===== */
