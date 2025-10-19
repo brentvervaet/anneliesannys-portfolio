@@ -49,7 +49,6 @@
       <div class="project-head">
         <h2 class="project-title">{{ title }}</h2>
         <p v-if="date" class="project-date">{{ date }}</p>
-        <!-- TODO: -->
         <img
           v-if="images[0]"
           class="project-headImage"
@@ -92,7 +91,7 @@
         </div>
       </div>
 
-      <div>Schetsbook images coming soon</div>
+      <div>Sketch book images coming soon</div>
 
       <!-- Collages Grid -->
       <div v-if="collages && collages.length > 0" class="collages-section">
@@ -131,7 +130,7 @@ const isMuted = ref(true) // Start music by default
 const videoElement = ref<HTMLVideoElement | null>(null)
 const projectContent = ref<HTMLElement | null>(null)
 
-// Computed property to limit images to first 5
+// Computed property to limit images to first 2-8
 const bottomImageGrid = computed(() => props.images.slice(1, 7))
 
 // Convert image path to use medium-sized version
@@ -263,19 +262,13 @@ const toggleMute = (): void => {
   background: rgba(0, 0, 0, 0.05);
 }
 
-.credits-title {
-  font-size: 1.5rem;
-  font-weight: 300;
-  margin-bottom: 1.5rem;
-  text-align: center;
-}
-
 .credits-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1rem;
   max-width: 900px;
   margin: 0 auto;
+  text-align: center;
 }
 
 .credit-item {
@@ -288,7 +281,6 @@ const toggleMute = (): void => {
   font-weight: 500;
   font-size: 0.9rem;
   color: #666;
-  text-transform: capitalize;
 }
 
 .credit-value {
