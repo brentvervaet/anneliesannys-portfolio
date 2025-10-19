@@ -143,7 +143,7 @@
 
   {
     "slug": "stadsduif",
-    "thumbnailImage": "/images/Stadsduif/med/stad01.JPG",
+    "thumbnailImage": "/images/Stadsduif/med/stadsduif01.webp",
     "video": "/videos/Stadsduif/stadsduifFilm.webm",
     "title": "Stadsduif",
     "date": "2024",
@@ -152,8 +152,44 @@
     "details": [],
     "images": [
       {
-        "src": "/images/Stadsduif/stad01.JPG",
+        "src": "/images/Stadsduif/stadsduif01.webp",
         "alt": "Stadsduif 01"
+      },
+      {
+        "src": "/images/Stadsduif/stadsduif02.webp",
+        "alt": "Stadsduif 02"
+      },
+      {
+        "src": "/images/Stadsduif/stadsduif03.webp",
+        "alt": "Stadsduif 03"
+      },
+      {
+        "src": "/images/Stadsduif/stadsduif04.webp",
+        "alt": "Stadsduif 04"
+      },
+      {
+        "src": "/images/Stadsduif/stadsduif05.webp",
+        "alt": "Stadsduif 05"
+      },
+      {
+        "src": "/images/Stadsduif/stadsduif06.webp",
+        "alt": "Stadsduif 06"
+      },
+      {
+        "src": "/images/Stadsduif/stadsduif07.webp",
+        "alt": "Stadsduif 07"
+      },
+      {
+        "src": "/images/Stadsduif/stadsduif08.webp",
+        "alt": "Stadsduif 08"
+      },
+      {
+        "src": "/images/Stadsduif/stadsduif09.webp",
+        "alt": "Stadsduif 09"
+      },
+      {
+        "src": "/images/Stadsduif/stadsduif10.webp",
+        "alt": "Stadsduif 10"
       }
     ],
 
