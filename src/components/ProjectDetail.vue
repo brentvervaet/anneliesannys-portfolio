@@ -131,7 +131,7 @@ const videoElement = ref<HTMLVideoElement | null>(null)
 const projectContent = ref<HTMLElement | null>(null)
 
 // Computed property to limit images to first 2-8
-const bottomImageGrid = computed(() => props.images.slice(1, 7))
+const bottomImageGrid = computed(() => props.images.slice(2, 8))
 
 // Convert image path to use medium-sized version
 const getMediumImagePath = (originalPath: string): string => {
