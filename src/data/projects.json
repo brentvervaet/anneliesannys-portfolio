@@ -2,7 +2,7 @@
   {
     "slug": "lost-before-morning",
     "thumbnailImage": "/images/BA3/med/lbm01.webp",
-    "video": "/videos/BA3/lbmFilm.webm",
+    "video": "/videos/BA3/lbmFilm2.webm",
     "title": "Lost Before Morning",
     "date": "2025",
     "headImage": "",
@@ -200,7 +200,7 @@
   {
     "slug": "stadsduif",
     "thumbnailImage": "/images/Stadsduif/med/stad01.JPG",
-    "video": "",
+    "video": "/videos/Stadsduif/stadsduifFilm.webm",
     "title": "Stadsduif",
     "date": "2024",
     "headImage": "",
