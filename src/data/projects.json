@@ -246,7 +246,24 @@
         "Luca"
       ]
     },
-    "sketchbook": "",
+    "sketchbook": [
+      {
+        "src": "/images/BA2/sketchbook/smit01.webp",
+        "alt": "Split myself in two Sketchbook 01"
+      },
+      {
+        "src": "/images/BA2/sketchbook/smit02.webp",
+        "alt": "Split myself in two Sketchbook 02"
+      },
+      {
+        "src": "/images/BA2/sketchbook/smit03.webp",
+        "alt": "Split myself in two Sketchbook 03"
+      },
+      {
+        "src": "/images/BA2/sketchbook/smit04.webp",
+        "alt": "Split myself in two Sketchbook 04"
+      }
+    ],
     "collages": [
       {
         "src": "/images/BA2/smit10.webp",
