@@ -8,6 +8,7 @@
       :studies="project.studies"
       :video="project.video"
       :date="project.date"
+      :credits="project.credits"
     />
     <!-- Show ProjectDetail component for projects with images -->
     <ProjectDetail

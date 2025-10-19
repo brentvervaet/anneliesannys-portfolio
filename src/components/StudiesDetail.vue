@@ -34,25 +34,6 @@
             />
           </div>
 
-          <!-- <div
-            v-if="credits && typeof credits === 'object' && Object.keys(credits).length > 0"
-            class="credits-section"
-          >
-            <div class="credits-grid">
-              <div v-for="(value, key) in credits" :key="key" class="credit-item">
-                <span class="credit-label">{{ key }}:</span>
-                <span class="credit-value">
-                  <template v-if="Array.isArray(value)">
-                    {{ sortAlphabetically(value).join(', ') }}
-                  </template>
-                  <template v-else>
-                    {{ value }}
-                  </template>
-                </span>
-              </div>
-            </div>
-          </div> -->
-
           <div>Sketch book images coming soon</div>
 
           <!-- Collages Grid -->
@@ -69,6 +50,26 @@
           </div>
         </div>
       </div>
+
+      <!-- Credits Section -->
+      <div
+        v-if="credits && typeof credits === 'object' && Object.keys(credits).length > 0"
+        class="credits-section"
+      >
+        <div class="credits-grid">
+          <div v-for="(value, key) in credits" :key="key" class="credit-item">
+            <span class="credit-label">{{ key }}:</span>
+            <span class="credit-value">
+              <template v-if="Array.isArray(value)">
+                {{ sortAlphabetically(value).join(', ') }}
+              </template>
+              <template v-else>
+                {{ value }}
+              </template>
+            </span>
+          </div>
+        </div>
+      </div>
     </section>
   </div>
 </template>
@@ -82,6 +83,7 @@ interface Props {
   studies: Study[]
   date?: string
   video?: string
+  credits?: string | Record<string, string | string[] | undefined>
 }
 
 const props = defineProps<Props>()
@@ -93,6 +95,11 @@ const getMediumImagePath = (originalPath: string): string => {
   const pathParts = originalPath.split('/')
   const filename = pathParts.pop()
   return [...pathParts, 'med', filename].join('/')
+}
+
+// Sort array alphabetically (case-insensitive)
+const sortAlphabetically = (arr: string[]): string[] => {
+  return [...arr].sort((a, b) => a.localeCompare(b, undefined, { sensitivity: 'base' }))
 }
 </script>
 
@@ -174,6 +181,40 @@ const getMediumImagePath = (originalPath: string): string => {
   width: 250px;
   height: auto;
   object-fit: cover;
+}
+
+/* ===== CREDITS SECTION ===== */
+.credits-section {
+  margin: 1.5rem 0;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.credits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.credit-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.credit-label {
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.credit-value {
+  font-weight: 300;
+  font-size: 1rem;
+  color: #333;
 }
 
 /* ===== COLLAGES SECTION ===== */
