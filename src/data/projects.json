@@ -394,7 +394,28 @@
             "alt": "Study of the dress 09"
           }
         ],
-        "sketchbook": [],
+        "sketchbook": [
+          {
+            "src": "/images/BA1/Dress/sketchbook/dress01.webp",
+            "alt": "Study of the dress Sketchbook 01"
+          },
+          {
+            "src": "/images/BA1/Dress/sketchbook/dress02.webp",
+            "alt": "Study of the dress Sketchbook 02"
+          },
+          {
+            "src": "/images/BA1/Dress/sketchbook/dress03.webp",
+            "alt": "Study of the dress Sketchbook 03"
+          },
+          {
+            "src": "/images/BA1/Dress/sketchbook/dress04.webp",
+            "alt": "Study of the dress Sketchbook 04"
+          },
+          {
+            "src": "/images/BA1/Dress/sketchbook/dress05.webp",
+            "alt": "Study of the dress Sketchbook 05"
+          }
+        ],
         "collages": [
           {
             "src": "/images/BA1/Dress/dress10.webp",
@@ -444,7 +465,24 @@
             "alt": "Recycled Denim study 02"
           }
         ],
-        "sketchbook": [],
+        "sketchbook": [
+          {
+            "src": "/images/BA1/Jeans/sketchbook/jeans01.webp",
+            "alt": "Recycled Denim Sketchbook 01"
+          },
+          {
+            "src": "/images/BA1/Jeans/sketchbook/jeans02.webp",
+            "alt": "Recycled Denim Sketchbook 02"
+          },
+          {
+            "src": "/images/BA1/Jeans/sketchbook/jeans03.webp",
+            "alt": "Recycled Denim Sketchbook 03"
+          },
+          {
+            "src": "/images/BA1/Jeans/sketchbook/jeans04.webp",
+            "alt": "Recycled Denim Sketchbook 04"
+          }
+        ],
         "collages": [
           {
             "src": "/images/BA1/Jeans/jeans03.webp",
@@ -545,7 +583,24 @@
             "alt": "Paper study 15"
           }
         ],
-        "sketchbook": [],
+        "sketchbook": [
+          {
+            "src": "/images/BA1/Paper/sketchbook/paper01.webp",
+            "alt": "Paper study Sketchbook 01"
+          },
+          {
+            "src": "/images/BA1/Paper/sketchbook/paper02.webp",
+            "alt": "Paper study Sketchbook 02"
+          },
+          {
+            "src": "/images/BA1/Paper/sketchbook/paper03.webp",
+            "alt": "Paper study Sketchbook 03"
+          },
+          {
+            "src": "/images/BA1/Paper/sketchbook/paper04.webp",
+            "alt": "Paper study Sketchbook 04"
+          }
+        ],
         "collages": [
           {
             "src": "/images/BA1/Paper/paper04.webp",
