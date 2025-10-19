@@ -56,17 +56,17 @@
           <div>Sketch book images coming soon</div>
 
           <!-- Collages Grid -->
-          <!-- <div v-if="collages && collages.length > 0" class="collages-section">
+          <div v-if="study.collages && study.collages.length > 0" class="collages-section">
             <div class="collages-grid">
               <img
-                v-for="collage in collages"
+                v-for="collage in study.collages"
                 :key="collage.src"
                 :src="getMediumImagePath(collage.src)"
                 :alt="collage.alt"
                 class="collage-image"
               />
             </div>
-          </div> -->
+          </div>
         </div>
       </div>
     </section>
@@ -117,7 +117,7 @@ const getMediumImagePath = (originalPath: string): string => {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: 1; /* Ensure video is behind the header */
+  z-index: 1;
 }
 
 .studies-content {
@@ -174,6 +174,22 @@ const getMediumImagePath = (originalPath: string): string => {
   width: 250px;
   height: auto;
   object-fit: cover;
+}
+
+/* ===== COLLAGES SECTION ===== */
+.collages-section {
+  margin: 1.5rem 0;
+}
+
+.collages-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* TODO: geen aspectratio 1? */
+.collage-image {
+  aspect-ratio: 1;
+  object-fit: contain;
 }
 
 /* ===== MEDIA QUERIES ===== */

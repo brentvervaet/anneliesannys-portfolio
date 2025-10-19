@@ -389,45 +389,6 @@
       "Photography": ["Jonathan Verschaeve"],
       "Models": ["Quiten Declercq", "Karin Devos"]
     },
-    "sketchbook": [],
-    "collages": [
-      {
-        "src": "/images/BA1/Dress/dress10.webp",
-        "alt": "Study of the dress 10"
-      },
-      {
-        "src": "/images/BA1/Dress/dress11.webp",
-        "alt": "Study of the dress 11"
-      },
-      {
-        "src": "/images/BA1/Dress/dress12.webp",
-        "alt": "Study of the dress 12"
-      },
-      {
-        "src": "/images/BA1/Dress/dress13.webp",
-        "alt": "Study of the dress 13"
-      },
-      {
-        "src": "/images/BA1/Dress/dress14.webp",
-        "alt": "Study of the dress 14"
-      },
-      {
-        "src": "/images/BA1/Dress/dress15.webp",
-        "alt": "Study of the dress 15"
-      },
-      {
-        "src": "/images/BA1/Dress/dress16.webp",
-        "alt": "Study of the dress 16"
-      },
-      {
-        "src": "/images/BA1/Dress/dress17.webp",
-        "alt": "Study of the dress 17"
-      },
-      {
-        "src": "/images/BA1/Dress/dress18.webp",
-        "alt": "Study of the dress 18"
-      }
-    ],
     "studies": [
       {
         "title": "Study of the Dress",
@@ -469,6 +430,41 @@
             "src": "/images/BA1/Dress/dress09.webp",
             "alt": "Study of the dress 09"
           }
+        ],
+        "sketchbook": [],
+        "collages": [
+          {
+            "src": "/images/BA1/Dress/dress10.webp",
+            "alt": "Study of the dress 01"
+          },
+          {
+            "src": "/images/BA1/Dress/dress11.webp",
+            "alt": "Study of the dress 02"
+          },
+          {
+            "src": "/images/BA1/Dress/dress12.webp",
+            "alt": "Study of the dress 03"
+          },
+          {
+            "src": "/images/BA1/Dress/dress13.webp",
+            "alt": "Study of the dress 04"
+          },
+          {
+            "src": "/images/BA1/Dress/dress14.webp",
+            "alt": "Study of the dress 05"
+          },
+          {
+            "src": "/images/BA1/Dress/dress15.webp",
+            "alt": "Study of the dress 06"
+          },
+          {
+            "src": "/images/BA1/Dress/dress16.webp",
+            "alt": "Study of the dress 07"
+          },
+          {
+            "src": "/images/BA1/Dress/dress17.webp",
+            "alt": "Study of the dress 08"
+          }
         ]
       },
 
@@ -483,62 +479,41 @@
           {
             "src": "/images/BA1/Jeans/jeans02.webp",
             "alt": "Recycled Denim study 02"
-          },
+          }
+        ],
+        "sketchbook": [],
+        "collages": [
           {
             "src": "/images/BA1/Jeans/jeans03.webp",
-            "alt": "Recycled Denim study 03"
+            "alt": "Recycled Denim study 01"
           },
           {
             "src": "/images/BA1/Jeans/jeans04.webp",
-            "alt": "Recycled Denim study 04"
+            "alt": "Recycled Denim study 02"
           },
           {
             "src": "/images/BA1/Jeans/jeans05.webp",
-            "alt": "Recycled Denim study 05"
+            "alt": "Recycled Denim study 03"
           },
           {
             "src": "/images/BA1/Jeans/jeans06.webp",
-            "alt": "Recycled Denim study 06"
+            "alt": "Recycled Denim study 04"
           },
           {
             "src": "/images/BA1/Jeans/jeans07.webp",
-            "alt": "Recycled Denim study 07"
+            "alt": "Recycled Denim study 05"
           },
           {
             "src": "/images/BA1/Jeans/jeans08.webp",
-            "alt": "Recycled Denim study 08"
+            "alt": "Recycled Denim study 06"
           },
           {
             "src": "/images/BA1/Jeans/jeans09.webp",
-            "alt": "Recycled Denim study 09"
+            "alt": "Recycled Denim study 07"
           },
           {
             "src": "/images/BA1/Jeans/jeans10.webp",
-            "alt": "Recycled Denim study 10"
-          },
-          {
-            "src": "/images/BA1/Jeans/jeans11.webp",
-            "alt": "Recycled Denim study 11"
-          },
-          {
-            "src": "/images/BA1/Jeans/jeans12.webp",
-            "alt": "Recycled Denim study 12"
-          },
-          {
-            "src": "/images/BA1/Jeans/jeans13.webp",
-            "alt": "Recycled Denim study 13"
-          },
-          {
-            "src": "/images/BA1/Jeans/jeans14.webp",
-            "alt": "Recycled Denim study 14"
-          },
-          {
-            "src": "/images/BA1/Jeans/jeans15.webp",
-            "alt": "Recycled Denim study 15"
-          },
-          {
-            "src": "/images/BA1/Jeans/jeans16.webp",
-            "alt": "Recycled Denim study 16"
+            "alt": "Recycled Denim study 08"
           }
         ]
       },
@@ -605,6 +580,41 @@
           {
             "src": "/images/BA1/Paper/paper15.webp",
             "alt": "Paper study 15"
+          }
+        ],
+        "sketchbook": [],
+        "collages": [
+          {
+            "src": "/images/BA1/Paper/paper04.webp",
+            "alt": "Paper study Collage 01"
+          },
+          {
+            "src": "/images/BA1/Paper/paper05.webp",
+            "alt": "Paper study Collage 02"
+          },
+          {
+            "src": "/images/BA1/Paper/paper06.webp",
+            "alt": "Paper study Collage 03"
+          },
+          {
+            "src": "/images/BA1/Paper/paper07.webp",
+            "alt": "Paper study Collage 04"
+          },
+          {
+            "src": "/images/BA1/Paper/paper08.webp",
+            "alt": "Paper study Collage 05"
+          },
+          {
+            "src": "/images/BA1/Paper/paper09.webp",
+            "alt": "Paper study Collage 06"
+          },
+          {
+            "src": "/images/BA1/Paper/paper10.webp",
+            "alt": "Paper study Collage 07"
+          },
+          {
+            "src": "/images/BA1/Paper/paper11.webp",
+            "alt": "Paper study Collage 08"
           }
         ]
       }

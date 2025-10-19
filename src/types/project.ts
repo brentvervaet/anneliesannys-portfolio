@@ -7,6 +7,8 @@ export interface Study {
   title: string
   description: string
   images: ProjectImage[]
+  collages?: ProjectImage[]
+  sketchbook?: string[]
 }
 
 export interface Project {
