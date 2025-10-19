@@ -277,7 +277,7 @@ const toggleMute = (): void => {
 .credits-section {
   margin: 1.5rem 0;
   padding: 2rem;
-  background: rgba(0, 0, 0, 0.05);
+  background: rgba(0, 0, 0, 0.02);
 }
 
 .credits-grid {
