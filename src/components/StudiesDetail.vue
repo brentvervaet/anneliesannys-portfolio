@@ -18,9 +18,10 @@
           <!-- Head image (different logic per study) -->
           <img
             v-if="getHeadImage(study)"
-            class="project-headImage"
+            class="project-headImage clickable-image"
             :src="getMediumImagePath(getHeadImage(study).src)"
             :alt="getHeadImage(study).alt"
+            @click="openStudyHeadImageModal(study)"
           />
 
           <div class="project-description">
@@ -200,6 +201,31 @@ const extractImageNumber = (src: string): string => {
   const filename = src.split('/').pop() || ''
   const match = filename.match(/(\d+)/)
   return match?.[1]?.padStart(2, '0') || '01'
+}
+
+// Open modal for study head image
+const openStudyHeadImageModal = (study: any) => {
+  const images = study.images || []
+  currentModalImages.value = images.map((image: any) => ({
+    src: getMediumImagePath(image.src),
+    srcLarge: getLargeImagePath(image.src),
+    alt: image.alt,
+    title: extractImageNumber(image.src),
+    category: study.title,
+  }))
+
+  // Determine which image index to show based on study title
+  let headImageIndex = 0
+  if (study.title === 'Study of the Dress') {
+    headImageIndex = 1 // image[1] for Dress
+  } else if (study.title === 'Paper Study') {
+    headImageIndex = 0 // image[0] for Paper
+  } else if (study.title === 'Recycled Denim') {
+    headImageIndex = 0 // image[0] for Jeans
+  }
+
+  currentModalIndex.value = headImageIndex
+  modalOpen.value = true
 }
 
 // Open modal for study images

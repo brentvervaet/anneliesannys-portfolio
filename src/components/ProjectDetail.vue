@@ -51,9 +51,10 @@
         <p v-if="date" class="project-date">{{ date }}</p>
         <img
           v-if="images[1]"
-          class="project-headImage"
+          class="project-headImage clickable-image"
           :src="getMediumImagePath(images[1].src)"
           :alt="images[1].alt"
+          @click="openModal(1)"
         />
         <div class="project-description">
           <p v-for="paragraph in description" :key="paragraph">
