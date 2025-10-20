@@ -187,7 +187,7 @@ watch(route, () => {
 
 <style scoped>
 header {
-  padding: 25px 40px;
+  padding: 1.2rem;
   position: absolute;
   top: 0;
   left: 0;
@@ -198,7 +198,7 @@ header {
 
 .header-title {
   margin: 0;
-  font-size: 3rem;
+  font-size: 1.5rem;
   font-weight: bold;
   color: black;
   letter-spacing: 0.02em;
@@ -293,7 +293,8 @@ header.over-video .hamburger-line {
   background-color: white;
 }
 
-/* Hamburger animation when menu is open */
+/* ===== ANIMATIONS ===== */
+/* hamburger */
 .mobile-menu-toggle.menu-open .hamburger-line:nth-child(1) {
   transform: rotate(45deg) translate(6px, 6px);
 }
@@ -306,7 +307,7 @@ header.over-video .hamburger-line {
   transform: rotate(-45deg) translate(6px, -6px);
 }
 
-/* Mobile Navigation Overlay */
+/* ===== MOBILE NAV OVERLAY ===== */
 .mobile-nav-overlay {
   display: none;
   position: fixed;
@@ -356,20 +357,25 @@ header.over-video .hamburger-line {
   /* text-shadow: 1px 1px 1px black; */
 }
 
-/* Responsive Styles */
-@media (max-width: 950px) {
-  header {
-    padding: 20px 30px;
-  }
+/* ===== MEDIA QUERIES ===== */
 
-  .header-content {
-    gap: 20px;
-  }
+/* ===== MEDIA QUERIES ===== */
 
-  .header-title {
-    font-size: 2rem;
-  }
+/* tablet */
+@media (min-width: 768px) {
+}
 
+/* desktop */
+@media (min-width: 1024px) {
+}
+
+/* large desktops */
+
+@media (min-width: 1440px) {
+}
+
+/* Show mobile menu on screens < 850px */
+@media (max-width: 55rem) {
   .desktop-nav {
     display: none;
   }
@@ -380,16 +386,6 @@ header.over-video .hamburger-line {
 
   .mobile-nav-overlay {
     display: block;
-  }
-}
-
-@media (max-width: 480px) {
-  header {
-    padding: 15px 20px;
-  }
-
-  .header-title {
-    font-size: 1.5rem;
   }
 }
 </style>
