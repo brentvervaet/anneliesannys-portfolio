@@ -342,7 +342,7 @@ header.over-video .hamburger-line {
 }
 
 .mobile-nav .nav-link {
-  font-size: 18px;
+  font-size: 1.2rem;
   color: #000;
   text-decoration: none;
   padding: 10px 20px;
@@ -367,6 +367,10 @@ header.over-video .hamburger-line {
 
   .header-title {
     font-size: 2.2rem;
+  }
+
+  .mobile-nav .nav-link {
+    font-size: 1.5rem;
   }
 }
 
