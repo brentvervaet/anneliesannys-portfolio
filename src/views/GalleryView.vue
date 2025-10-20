@@ -323,7 +323,7 @@ const onModalNavigate = (index: number) => {
 /* desktop */
 @media (min-width: 1024px) {
   .gallery-grid {
-    grid-template-columns: repeat(10, 1fr);
+    grid-template-columns: repeat(8, 1fr);
   }
 
   .gallery-item:hover .gallery-image {
