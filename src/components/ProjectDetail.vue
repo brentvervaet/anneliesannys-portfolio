@@ -346,14 +346,14 @@ const onModalNavigate = (index: number) => {
   text-align: center;
   font-size: 1rem;
   font-weight: 300;
-  margin: 1.5rem auto;
+  margin: 8rem auto;
 }
 
 .image-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
-  margin: 1.5rem 0;
+  margin: 8rem auto;
 }
 
 .image-grid img {
@@ -371,14 +371,13 @@ const onModalNavigate = (index: number) => {
 
 /* ===== CREDITS SECTION ===== */
 .credits-section {
-  margin: 1.5rem 0;
+  margin: 8rem auto;
   padding: 2rem;
   background: rgba(0, 0, 0, 0.02);
 }
 
 .credits-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1rem;
   max-width: 900px;
   margin: 0 auto;
@@ -405,7 +404,7 @@ const onModalNavigate = (index: number) => {
 
 /* ===== SKETCHBOOK SECTION ===== */
 .sketchbook-section {
-  margin: 1.5rem 0;
+  margin: 8rem 0;
 }
 
 .sketchbook-grid {
@@ -423,7 +422,7 @@ const onModalNavigate = (index: number) => {
 
 /* ===== COLLAGES SECTION ===== */
 .collages-section {
-  margin: 1.5rem 0;
+  margin: 8rem 0 0 0;
 }
 
 .collages-grid {
@@ -438,18 +437,153 @@ const onModalNavigate = (index: number) => {
 }
 
 /* ===== MEDIA QUERIES ===== */
+
+/* tablet */
+@media (min-width: 768px) {
+  .project-content {
+    padding: 3rem 4rem;
+  }
+
+  .project-title {
+    font-size: 3rem;
+  }
+
+  .project-date {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .project-head img {
+    max-width: 500px;
+  }
+
+  .project-description {
+    font-size: 1.1rem;
+    max-width: 700px;
+  }
+
+  .image-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .image-grid img {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .credits-section {
+    padding: 2.5rem;
+  }
+
+  .credits-grid {
+    gap: 1.5rem;
+  }
+
+  .credit-label {
+    font-size: 1rem;
+  }
+
+  .credit-value {
+    font-size: 1.1rem;
+  }
+
+  .sketchbook-grid {
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .collages-grid {
+    grid-template-columns: repeat(8, 1fr);
+    gap: 0.5rem;
+  }
+}
+
+/* desktop */
 @media (min-width: 1024px) {
+  .project-content {
+    padding: 4rem 6rem;
+  }
+
+  .project-title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .project-date {
+    font-size: 1.2rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .project-head img {
+    margin: 2.5rem auto;
+    max-width: 500px;
+  }
+
+  .project-description {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin: 2.5rem auto;
+    max-width: 800px;
+  }
+
+  .image-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin: 3rem 0;
+    justify-items: center;
+  }
+
+  .image-grid img {
+    width: 100%;
+    max-width: 450px;
+  }
+
+  .credits-section {
+    margin: 4rem 0;
+    padding: 3rem;
+  }
+
+  .credits-grid {
+    gap: 2rem;
+    max-width: 1000px;
+  }
+
+  .credit-label {
+    font-size: 1.1rem;
+  }
+
+  .credit-value {
+    font-size: 1.2rem;
+  }
+
+  .sketchbook-section {
+    margin: 4rem 0;
+  }
+
+  .sketchbook-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .collages-section {
+    margin: 4rem 0;
+  }
+
+  .collages-grid {
+    grid-template-columns: repeat(8, 1fr);
+    gap: 0.75rem;
+  }
+
   /* hovers */
   .clickable-image:hover {
     transform: scale(1.02);
     opacity: 0.9;
   }
+
   .mute-button:hover {
     background: rgba(0, 0, 0, 0.3);
     transform: scale(1.1);
   }
-}
-
-@media (min-width: 768px) {
 }
 </style>
