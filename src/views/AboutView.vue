@@ -207,16 +207,87 @@
 
 /* tablet */
 @media (min-width: 768px) {
+  .about-content {
+    padding: 2rem 4rem;
+    padding-top: 5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .profile-image {
+    margin-right: 30px;
+  }
+
+  .profile-image img {
+    width: 250px;
+  }
+
+  .about-text {
+    font-size: 1.1rem;
+    line-height: 1.5;
+  }
+
+  .about-text p {
+    margin-bottom: 2rem;
+  }
+
+  .timeline {
+    padding-left: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .timeline-year {
+    font-size: 1.4rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .timeline-event {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.7;
+  }
+
+  .timeline-item {
+    margin-bottom: 2rem;
+  }
 }
 
 /* desktop */
 @media (min-width: 1024px) {
+  .about-content {
+    padding: 3rem 6rem;
+    padding-top: 6rem;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .profile-image {
+    margin-right: 35px;
+    margin-bottom: 20px;
+  }
+
+  .profile-image img {
+    width: 280px;
+  }
+
+  .about-text p {
+    margin-bottom: 2.5rem;
+  }
+
+  .timeline-section {
+    position: sticky;
+    top: 120px;
+  }
+
+  .timeline {
+    padding-left: 2rem;
+    margin-top: 0;
+  }
+
   .highlight:hover {
     color: rgba(255, 150, 200, 1);
   }
-}
-
-/* large desktops */
-@media (min-width: 1440px) {
 }
 </style>
