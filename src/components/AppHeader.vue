@@ -132,10 +132,19 @@ const scrollToPortfolio = (e: Event) => {
 
 const toggleMobileMenu = () => {
   isMobileMenuOpen.value = !isMobileMenuOpen.value
+
+  // Toggle scroll lock on body
+  if (isMobileMenuOpen.value) {
+    document.body.style.overflow = 'hidden'
+  } else {
+    document.body.style.overflow = ''
+  }
 }
 
 const closeMobileMenu = () => {
   isMobileMenuOpen.value = false
+  // Remove scroll lock
+  document.body.style.overflow = ''
 }
 
 const handleMobilePortfolioClick = () => {
@@ -177,11 +186,22 @@ onMounted(() => {
 
 onUnmounted(() => {
   window.removeEventListener('scroll', checkPortfolioVisibility)
+  // Ensure scroll lock is removed when component unmounts
+  document.body.style.overflow = ''
 })
 
-// Watch for route changes to close mobile menu
+// Watch for route changes to close mobile menu and remove scroll lock
 watch(route, () => {
   closeMobileMenu()
+})
+
+// Watch for mobile menu state changes to ensure scroll lock is applied/removed
+watch(isMobileMenuOpen, (isOpen) => {
+  if (isOpen) {
+    document.body.style.overflow = 'hidden'
+  } else {
+    document.body.style.overflow = ''
+  }
 })
 </script>
 
@@ -318,6 +338,7 @@ header.over-video .hamburger-line {
   z-index: 999;
   opacity: 0;
   visibility: hidden;
+  background: rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(30px);
   transition: all 0.3s ease;
 }
