@@ -19,6 +19,7 @@
             src="/images/collages.webp"
             alt="Project collage"
             class="carousel-image"
+            fetchpriority="high"
           />
         </div>
       </div>
@@ -32,6 +33,7 @@
             src="/images/collages.webp"
             alt="Project collage"
             class="carousel-image"
+            fetchpriority="high"
           />
         </div>
       </div>
