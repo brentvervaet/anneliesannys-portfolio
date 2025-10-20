@@ -361,15 +361,57 @@ header.over-video .hamburger-line {
 
 /* tablet */
 @media (min-width: 768px) {
+  header {
+    padding: 1.5rem 2rem;
+  }
+
+  .header-title {
+    font-size: 2.2rem;
+  }
 }
 
 /* desktop */
 @media (min-width: 1024px) {
-}
+  header {
+    padding: 2rem 3rem;
+  }
 
-/* large desktops */
+  .header-title {
+    font-size: 2rem;
+  }
 
-@media (min-width: 1440px) {
+  .header-content {
+    gap: 80px;
+    max-width: 1600px;
+  }
+
+  .right-section {
+    gap: 50px;
+  }
+
+  nav ul {
+    gap: 50px;
+  }
+
+  .nav-link {
+    font-size: 1rem;
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: rgba(255, 182, 193, 0.8);
+    transition: width 0.3s ease;
+  }
+
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    width: 100%;
+  }
 }
 
 /* Show mobile menu on screens < 850px */
