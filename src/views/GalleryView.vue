@@ -12,7 +12,8 @@
           v-for="(image, index) in allImages"
           :key="image.src"
           class="gallery-item"
-          :style="{ animationDelay: `${index * 40}ms` }"
+          :class="{ 'animate-item': index < allImages.length / 2 }"
+          :style="index < allImages.length / 2 ? { animationDelay: `${index * 40}ms` } : {}"
           @click="openModal(image, index)"
         >
           <img :src="image.src" :alt="image.alt" class="gallery-image" loading="lazy" />
@@ -320,6 +321,9 @@ onUnmounted(() => {
   aspect-ratio: 1;
   overflow: hidden;
   cursor: pointer;
+}
+
+.gallery-item.animate-item {
   animation: fadeInUp 0.3s ease-out forwards;
   opacity: 0;
   transform: translateY(30px);
