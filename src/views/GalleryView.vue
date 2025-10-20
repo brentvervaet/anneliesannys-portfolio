@@ -301,8 +301,31 @@ const onModalNavigate = (index: number) => {
 }
 
 /* ===== MEDIA QUERIES ===== */
+/* tablet */
+@media (min-width: 768px) {
+  .gallery-header {
+    text-align: center;
+    padding: 3rem;
+  }
+
+  .gallery-header h1 {
+    font-size: 2.5rem;
+  }
+
+  .gallery-header p {
+    font-size: 1.2rem;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
 /* desktop */
 @media (min-width: 1024px) {
+  .gallery-grid {
+    grid-template-columns: repeat(10, 1fr);
+  }
+
   .gallery-item:hover .gallery-image {
     transform: scale(1.05);
   }
