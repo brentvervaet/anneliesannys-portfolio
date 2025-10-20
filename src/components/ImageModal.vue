@@ -29,7 +29,10 @@
       </div>
       <div class="modal-info">
         <h3>{{ currentImage?.title }}</h3>
-        <p>{{ currentImage?.category }}</p>
+        <p v-if="currentImage?.projectSlug" class="modal-category-link" @click="navigateToProject">
+          {{ currentImage?.category }}
+        </p>
+        <p v-else class="modal-category">{{ currentImage?.category }}</p>
       </div>
     </div>
   </div>
@@ -37,6 +40,7 @@
 
 <script setup lang="ts">
 import { computed, onMounted, onUnmounted, ref, watch } from 'vue'
+import { useRouter } from 'vue-router'
 
 export interface ModalImage {
   src: string
@@ -44,6 +48,7 @@ export interface ModalImage {
   alt: string
   title: string
   category: string
+  projectSlug?: string // Optional: slug to navigate to project
 }
 
 interface Props {
@@ -59,11 +64,19 @@ interface Emits {
 
 const props = defineProps<Props>()
 const emit = defineEmits<Emits>()
+const router = useRouter()
 
 const imageLoading = ref(false)
 const currentIndex = ref(props.initialIndex)
 
 const currentImage = computed(() => props.images[currentIndex.value])
+
+// Navigate to project when category is clicked
+const navigateToProject = () => {
+  if (currentImage.value?.projectSlug) {
+    router.push(`/${currentImage.value.projectSlug}`)
+  }
+}
 
 // Watch for changes in isOpen and initialIndex
 watch(
@@ -268,6 +281,20 @@ onUnmounted(() => {
   opacity: 0.8;
   text-transform: uppercase;
   letter-spacing: 1px;
+}
+
+.modal-category-link {
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.modal-category-link:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+.modal-category {
+  cursor: default;
 }
 
 /* ===== MEDIA QUERIES ===== */

@@ -27,6 +27,7 @@ interface ModalImage {
   alt: string // Alt text for accessibility
   title: string // Display title
   category: string // Display category/subtitle
+  projectSlug?: string // Optional: Project slug for navigation (makes category clickable)
 }
 ```
 
@@ -116,6 +117,7 @@ const getLargeImagePath = (originalPath: string): string => {
 - **Accessible**: Proper ARIA labels and keyboard support
 - **Click Outside to Close**: Click on overlay to close modal
 - **Navigation Buttons**: Previous/Next buttons with disabled states at boundaries
+- **Project Navigation**: Click on category text to navigate to the project (when projectSlug is provided)
 
 ## Where It's Used
 

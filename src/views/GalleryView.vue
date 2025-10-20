@@ -98,6 +98,7 @@ const allImages = computed<ModalImage[]>(() => {
           alt: image.alt,
           title,
           category: project.title,
+          projectSlug: project.slug,
         })
       })
     }
@@ -155,6 +156,7 @@ const allImages = computed<ModalImage[]>(() => {
               alt: image.alt,
               title,
               category: study.title, // Use study title as category
+              projectSlug: project.slug,
             })
           })
         }
