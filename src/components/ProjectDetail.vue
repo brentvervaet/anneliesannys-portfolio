@@ -121,18 +121,18 @@
 </template>
 
 <script setup lang="ts">
-import type { ProjectImage } from '@/types/project'
+import type { Project, ProjectImage } from '@/types/project'
 import { computed, ref } from 'vue'
 
 interface Props {
-  title: string
-  description: string[]
+  title: Project['title']
+  description: Project['description']
   images: ProjectImage[]
-  video?: string
-  date?: string
-  collages?: ProjectImage[]
-  sketchbook?: ProjectImage[]
-  credits?: string | Record<string, string | string[] | undefined>
+  video?: Project['video']
+  date?: Project['date']
+  collages?: Project['collages']
+  sketchbook?: Project['sketchbook']
+  credits?: Project['credits']
 }
 
 const props = defineProps<Props>()
