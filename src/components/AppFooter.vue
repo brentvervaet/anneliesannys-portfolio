@@ -57,6 +57,7 @@
   padding: 3rem;
   border-top: 1px solid rgba(0, 0, 0, 0.05);
   margin-top: 1rem;
+  min-height: 200px; /* Prevent layout shift by reserving space */
 }
 .footer-inner {
   max-width: 1400px;
@@ -65,10 +66,12 @@
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+  min-height: 140px; /* Reserve space for content */
 }
 .social-icons {
   display: flex;
   gap: 1rem;
+  min-height: 48px; /* Reserve space for icons */
 }
 .social-icon {
   display: flex;
@@ -84,6 +87,7 @@
   transition: all 0.3s ease;
   /* border: 1px solid rgba(255, 192, 203, 0.3); */
   /* box-shadow: 0 4px 12px rgba(255, 182, 193, 0.15); */
+  flex-shrink: 0; /* Prevent icons from shrinking */
 }
 .social-icon:hover {
   background: rgba(255, 255, 255, 1);
@@ -97,6 +101,8 @@
   color: #52525c;
   text-align: center;
   letter-spacing: 0.5px;
+  min-height: 20px; /* Reserve space for text */
+  line-height: 20px; /* Prevent text shift */
 }
 
 .made-by {
@@ -104,6 +110,8 @@
   color: #6b6b75;
   text-align: center;
   letter-spacing: 0.3px;
+  min-height: 18px; /* Reserve space for text */
+  line-height: 18px; /* Prevent text shift */
 }
 
 .made-by a {
