@@ -1,8 +1,8 @@
 <template>
   <!-- Modal for enlarged view -->
-  <div v-if="isOpen" class="modal-overlay" @click="closeModal">
-    <div class="modal-content" @click.stop>
-      <!-- Close Button -->
+  <div v-if="isOpen" class="modal-overlay">
+    <div class="modal-content">
+      <!-- Close Button - Fixed Position -->
       <button class="modal-close" @click="closeModal">&times;</button>
 
       <!-- Image Container -->
@@ -22,8 +22,8 @@
         />
       </div>
 
-      <!-- Image Info -->
-      <div class="modal-info">
+      <!-- Image Info - Fixed Below Image -->
+      <div class="modal-info modal-info-bottom">
         <h3>{{ currentImage?.title }}</h3>
         <p v-if="currentImage?.projectSlug" class="modal-category-link" @click="navigateToProject">
           {{ currentImage?.category }}
@@ -31,8 +31,8 @@
         <p v-else class="modal-category">{{ currentImage?.category }}</p>
       </div>
 
-      <!-- Navigation: arrows next to counter -->
-      <div class="modal-navigation">
+      <!-- Navigation - Fixed at Bottom -->
+      <div class="modal-navigation modal-navigation-bottom">
         <button
           class="nav-btn"
           @click.stop="navigatePrevious"
@@ -113,6 +113,7 @@ const router = useRouter()
 
 const imageLoading = ref(false)
 const currentIndex = ref(props.initialIndex)
+const scrollPosition = ref(0)
 
 const currentImage = computed(() => props.images[currentIndex.value])
 
@@ -130,19 +131,26 @@ const navigateToProject = () => {
   }
 }
 
-// Prevent page jump
+// Lock scroll when modal is open
 watch(
   () => props.isOpen,
   (isOpen) => {
     if (isOpen) {
+      // Save current scroll position
+      scrollPosition.value = window.scrollY
+      // Lock body scroll without jumping
+      document.body.style.overflow = 'hidden'
       document.body.style.position = 'fixed'
-      document.body.style.top = `-${window.scrollY}px`
+      document.body.style.top = `-${scrollPosition.value}px`
       document.body.style.width = '100%'
     } else {
-      const scrollY = document.body.style.top
+      // Restore scroll
+      document.body.style.overflow = ''
       document.body.style.position = ''
       document.body.style.top = ''
-      window.scrollTo(0, parseInt(scrollY || '0') * -1)
+      document.body.style.width = ''
+      // Restore scroll position without jump
+      window.scrollTo(0, scrollPosition.value)
     }
   },
 )
@@ -202,41 +210,40 @@ const handleKeyPress = (event: KeyboardEvent) => {
 onMounted(() => document.addEventListener('keydown', handleKeyPress))
 onUnmounted(() => {
   document.removeEventListener('keydown', handleKeyPress)
+  // Clean up body styles
+  document.body.style.overflow = ''
   document.body.style.position = ''
   document.body.style.top = ''
+  document.body.style.width = ''
 })
 </script>
 
 <style scoped>
 .modal-overlay {
   position: fixed;
-  inset: 0; /* top, right, bottom, left = 0 */
-  background: rgba(0, 0, 0, 0.7);
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
   backdrop-filter: blur(10px);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 9999;
-  cursor: pointer;
+  overflow: hidden;
 }
 
 .modal-content {
   position: relative;
-  max-width: 95vw;
-  max-height: 90vh;
-  width: auto;
-  height: auto;
-  padding: 3rem;
+  width: 100vw;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   box-sizing: border-box;
   overflow: hidden;
-  cursor: auto;
 }
 
 .modal-close {
-  position: absolute;
+  position: fixed;
   top: 12px;
   right: 12px;
   background: none;
@@ -244,22 +251,36 @@ onUnmounted(() => {
   color: white;
   font-size: 1.8rem;
   cursor: pointer;
-  z-index: 10;
+  z-index: 10002;
   width: 36px;
   height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+.modal-close:hover {
+  transform: scale(1.1);
 }
 
 .modal-image-container {
-  flex: 1 1 auto;
-  width: 100%;
+  position: absolute;
+  top: 20px; /* Space from top */
+  bottom: 140px; /* Space for title + navigation at bottom */
+  left: 0;
+  right: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  position: relative;
+  padding: 0 2rem;
+}
+
+@media (max-width: 768px) {
+  .modal-image-container {
+    bottom: 160px; /* More space on mobile for text wrapping */
+  }
 }
 
 .modal-image {
@@ -301,7 +322,17 @@ onUnmounted(() => {
 .modal-info {
   text-align: center;
   color: white;
-  margin-top: 1rem;
+}
+
+.modal-info-bottom {
+  position: fixed;
+  bottom: 70px; /* Above navigation */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10001;
+  width: 100%;
+  max-width: 600px;
+  padding: 0 1rem;
 }
 
 .modal-info h3 {
@@ -315,6 +346,7 @@ onUnmounted(() => {
   opacity: 0.8;
   text-transform: uppercase;
   letter-spacing: 1px;
+  margin: 0;
 }
 
 .modal-category-link {
@@ -330,9 +362,15 @@ onUnmounted(() => {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 12px;
-  width: 100%;
   gap: 12px;
+}
+
+.modal-navigation-bottom {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10001;
 }
 
 /* Bottom nav buttons */

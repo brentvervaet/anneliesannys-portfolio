@@ -7,6 +7,7 @@
       :description="project.description"
       :studies="project.studies"
       :video="project.video"
+      :posterImage="project.videoLoadingPoster"
       :date="project.date"
       :credits="project.credits"
     />
@@ -17,6 +18,7 @@
       :description="project.description"
       :images="project.images"
       :video="project.video"
+      :posterImage="project.videoLoadingPoster"
       :date="project.date"
       :collages="project.collages"
       :sketchbook="project.sketchbook"

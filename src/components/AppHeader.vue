@@ -130,14 +130,25 @@ const scrollToPortfolio = (e: Event) => {
   }
 }
 
+// Prevent touch scroll when mobile menu is open
+const preventScroll = (e: TouchEvent) => {
+  e.preventDefault()
+}
+
 const toggleMobileMenu = () => {
   isMobileMenuOpen.value = !isMobileMenuOpen.value
 
   // Toggle scroll lock on body
   if (isMobileMenuOpen.value) {
     document.body.style.overflow = 'hidden'
+    document.body.style.position = 'fixed'
+    document.body.style.width = '100%'
+    document.body.addEventListener('touchmove', preventScroll, { passive: false })
   } else {
     document.body.style.overflow = ''
+    document.body.style.position = ''
+    document.body.style.width = ''
+    document.body.removeEventListener('touchmove', preventScroll)
   }
 }
 
@@ -145,6 +156,9 @@ const closeMobileMenu = () => {
   isMobileMenuOpen.value = false
   // Remove scroll lock
   document.body.style.overflow = ''
+  document.body.style.position = ''
+  document.body.style.width = ''
+  document.body.removeEventListener('touchmove', preventScroll)
 }
 
 const handleMobilePortfolioClick = () => {
@@ -188,6 +202,9 @@ onUnmounted(() => {
   window.removeEventListener('scroll', checkPortfolioVisibility)
   // Ensure scroll lock is removed when component unmounts
   document.body.style.overflow = ''
+  document.body.style.position = ''
+  document.body.style.width = ''
+  document.body.removeEventListener('touchmove', preventScroll)
 })
 
 // Watch for route changes to close mobile menu and remove scroll lock
@@ -199,8 +216,14 @@ watch(route, () => {
 watch(isMobileMenuOpen, (isOpen) => {
   if (isOpen) {
     document.body.style.overflow = 'hidden'
+    document.body.style.position = 'fixed'
+    document.body.style.width = '100%'
+    document.body.addEventListener('touchmove', preventScroll, { passive: false })
   } else {
     document.body.style.overflow = ''
+    document.body.style.position = ''
+    document.body.style.width = ''
+    document.body.removeEventListener('touchmove', preventScroll)
   }
 })
 </script>
