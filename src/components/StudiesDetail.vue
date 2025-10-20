@@ -149,8 +149,8 @@ const getHeadImage = (study: any) => {
 
 // Determine if image grid should be shown
 const shouldShowImageGrid = (study: any) => {
-  if (study.title === 'Recycled Denim') {
-    // No image grid for Jeans
+  // If study has 2 or fewer images, don't show grid
+  if (study.images && study.images.length <= 2) {
     return false
   }
   return true
