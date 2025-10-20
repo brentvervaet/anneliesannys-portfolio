@@ -2,7 +2,7 @@
   <div class="studies-detail">
     <!-- Hero video section -->
     <div class="video-hero" v-if="video">
-      <video autoplay muted loop playsinline class="fullscreen-video">
+      <video autoplay muted loop playsinline class="fullscreen-video" :poster="posterImage">
         <source :src="video" type="video/webm" />
         Your browser does not support the video tag.
       </video>
@@ -123,6 +123,7 @@ interface Props {
   studies: Project['studies']
   date?: Project['date']
   video?: Project['video']
+  posterImage?: string
   credits?: Project['credits']
 }
 
@@ -310,6 +311,7 @@ const onModalNavigate = (index: number) => {
   height: 100%;
   object-fit: cover;
   z-index: 1;
+  background-color: #000; /* Fallback background */
 }
 
 .studies-content {

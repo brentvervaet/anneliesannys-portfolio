@@ -2,7 +2,15 @@
   <div class="project-detail">
     <!-- Hero video section -->
     <div class="video-hero" v-if="video">
-      <video ref="videoElement" autoplay :muted="isMuted" loop playsinline class="fullscreen-video">
+      <video
+        ref="videoElement"
+        autoplay
+        :muted="isMuted"
+        loop
+        playsinline
+        class="fullscreen-video"
+        :poster="posterImage"
+      >
         <source :src="video" type="video/webm" />
         Your browser does not support the video tag.
       </video>
@@ -144,6 +152,7 @@ interface Props {
   description: Project['description']
   images: ProjectImage[]
   video?: Project['video']
+  posterImage?: string
   date?: Project['date']
   collages?: Project['collages']
   sketchbook?: Project['sketchbook']
@@ -295,6 +304,7 @@ const onModalNavigate = (index: number) => {
   height: 100%;
   object-fit: cover;
   z-index: 1; /* Ensure video is behind the header */
+  background-color: #000; /* Fallback background */
 }
 
 /* ===== MUTE BUTTON ===== */

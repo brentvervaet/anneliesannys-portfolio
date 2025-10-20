@@ -19,6 +19,7 @@ export interface Project {
   studies?: Study[]
   thumbnailImage: string
   video?: string
+  videoLoadingPoster?: string
   date?: string
   details?: Record<string, string>[]
   collages?: ProjectImage[]
