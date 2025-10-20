@@ -481,36 +481,36 @@
         ],
         "collages": [
           {
-            "src": "/images/BA1/Jeans/jeans03.webp",
-            "alt": "Recycled Denim study 01"
+            "src": "/images/BA1/Jeans/collages/jeans01.webp",
+            "alt": "Recycled Denim study collage 01"
           },
           {
-            "src": "/images/BA1/Jeans/jeans04.webp",
-            "alt": "Recycled Denim study 02"
+            "src": "/images/BA1/Jeans/collages/jeans02.webp",
+            "alt": "Recycled Denim study collage 02"
           },
           {
-            "src": "/images/BA1/Jeans/jeans05.webp",
-            "alt": "Recycled Denim study 03"
+            "src": "/images/BA1/Jeans/collages/jeans03.webp",
+            "alt": "Recycled Denim study collage 03"
           },
           {
-            "src": "/images/BA1/Jeans/jeans06.webp",
-            "alt": "Recycled Denim study 04"
+            "src": "/images/BA1/Jeans/collages/jeans04.webp",
+            "alt": "Recycled Denim study collage 04"
           },
           {
-            "src": "/images/BA1/Jeans/jeans07.webp",
-            "alt": "Recycled Denim study 05"
+            "src": "/images/BA1/Jeans/collages/jeans05.webp",
+            "alt": "Recycled Denim study collage 05"
           },
           {
-            "src": "/images/BA1/Jeans/jeans08.webp",
-            "alt": "Recycled Denim study 06"
+            "src": "/images/BA1/Jeans/collages/jeans06.webp",
+            "alt": "Recycled Denim study collage 06"
           },
           {
-            "src": "/images/BA1/Jeans/jeans09.webp",
-            "alt": "Recycled Denim study 07"
+            "src": "/images/BA1/Jeans/collages/jeans07.webp",
+            "alt": "Recycled Denim study collage 07"
           },
           {
-            "src": "/images/BA1/Jeans/jeans10.webp",
-            "alt": "Recycled Denim study 08"
+            "src": "/images/BA1/Jeans/collages/jeans08.webp",
+            "alt": "Recycled Denim study collage 08"
           }
         ]
       },
@@ -551,35 +551,35 @@
         ],
         "collages": [
           {
-            "src": "/images/BA1/Paper/paper04.webp",
+            "src": "/images/BA1/Paper/collages/paper01.webp",
             "alt": "Paper study Collage 01"
           },
           {
-            "src": "/images/BA1/Paper/paper05.webp",
+            "src": "/images/BA1/Paper/collages/paper02.webp",
             "alt": "Paper study Collage 02"
           },
           {
-            "src": "/images/BA1/Paper/paper06.webp",
+            "src": "/images/BA1/Paper/collages/paper03.webp",
             "alt": "Paper study Collage 03"
           },
           {
-            "src": "/images/BA1/Paper/paper07.webp",
+            "src": "/images/BA1/Paper/collages/paper04.webp",
             "alt": "Paper study Collage 04"
           },
           {
-            "src": "/images/BA1/Paper/paper08.webp",
+            "src": "/images/BA1/Paper/collages/paper05.webp",
             "alt": "Paper study Collage 05"
           },
           {
-            "src": "/images/BA1/Paper/paper09.webp",
+            "src": "/images/BA1/Paper/collages/paper06.webp",
             "alt": "Paper study Collage 06"
           },
           {
-            "src": "/images/BA1/Paper/paper10.webp",
+            "src": "/images/BA1/Paper/collages/paper07.webp",
             "alt": "Paper study Collage 07"
           },
           {
-            "src": "/images/BA1/Paper/paper11.webp",
+            "src": "/images/BA1/Paper/collages/paper08.webp",
             "alt": "Paper study Collage 08"
           }
         ]
