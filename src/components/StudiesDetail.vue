@@ -14,23 +14,36 @@
         <div v-for="study in studies" :key="study.title" class="study-section">
           <h2 class="project-title">{{ study.title }}</h2>
           <p v-if="date" class="project-date">{{ date }}</p>
+
+          <!-- Head image (different logic per study) -->
           <img
-            v-if="study.images[1]"
+            v-if="getHeadImage(study)"
             class="project-headImage"
-            :src="getMediumImagePath(study.images[1].src)"
-            :alt="study.images[1].alt"
+            :src="getMediumImagePath(getHeadImage(study).src)"
+            :alt="getHeadImage(study).alt"
           />
+
           <div class="project-description">
             <p>{{ study.description }}</p>
           </div>
 
-          <div class="study-images">
+          <!-- Image grid (if applicable for this study) -->
+          <div v-if="shouldShowImageGrid(study)" class="study-images">
             <img
-              v-for="image in study.images"
+              v-for="image in getGridImages(study)"
               :key="image.src"
               :src="getMediumImagePath(image.src)"
               :alt="image.alt"
               class="study-image"
+            />
+          </div>
+
+          <!-- Single image when grid is not shown -->
+          <div v-else-if="study.images[1]" class="single-image-container">
+            <img
+              :src="getMediumImagePath(study.images[1].src)"
+              :alt="study.images[1].alt"
+              class="single-image"
             />
           </div>
 
@@ -86,15 +99,15 @@
 </template>
 
 <script setup lang="ts">
-import type { Study } from '@/types/project'
+import type { Project } from '@/types/project'
 
 interface Props {
-  title: string
-  description: string[]
-  studies: Study[]
-  date?: string
-  video?: string
-  credits?: string | Record<string, string | string[] | undefined>
+  title: Project['title']
+  description: Project['description']
+  studies: Project['studies']
+  date?: Project['date']
+  video?: Project['video']
+  credits?: Project['credits']
 }
 
 const props = defineProps<Props>()
@@ -117,6 +130,42 @@ const getSmallImagePath = (originalPath: string): string => {
 // Sort array alphabetically (case-insensitive)
 const sortAlphabetically = (arr: string[]): string[] => {
   return [...arr].sort((a, b) => a.localeCompare(b, undefined, { sensitivity: 'base' }))
+}
+
+// Get the head image based on study title
+const getHeadImage = (study: any) => {
+  if (study.title === 'Study of the Dress') {
+    // Use image[1] for Dress
+    return study.images[1]
+  } else if (study.title === 'Paper Study') {
+    // Use image[0] for Paper
+    return study.images[0]
+  } else if (study.title === 'Recycled Denim') {
+    // Use image[0] for Jeans
+    return study.images[0]
+  }
+  return null
+}
+
+// Determine if image grid should be shown
+const shouldShowImageGrid = (study: any) => {
+  if (study.title === 'Recycled Denim') {
+    // No image grid for Jeans
+    return false
+  }
+  return true
+}
+
+// Get the images to display in the grid
+const getGridImages = (study: any) => {
+  if (study.title === 'Study of the Dress') {
+    // Use images[2]-end for Dress
+    return study.images.slice(2)
+  } else if (study.title === 'Paper Study') {
+    // Use images[1]-end for Paper
+    return study.images.slice(1)
+  }
+  return study.images
 }
 </script>
 
@@ -196,6 +245,19 @@ const sortAlphabetically = (arr: string[]): string[] => {
 
 .study-image {
   width: 250px;
+  height: auto;
+  object-fit: cover;
+}
+
+.single-image-container {
+  display: flex;
+  justify-content: center;
+  margin: 1.5rem 0;
+}
+
+.single-image {
+  width: auto;
+  max-width: 100%;
   height: auto;
   object-fit: cover;
 }
