@@ -199,6 +199,12 @@ const getGridImages = (study: any) => {
   max-width: 1400px;
 }
 
+.studies-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
 .project-title {
   font-size: 2rem;
   font-weight: 200;
@@ -213,10 +219,15 @@ const getGridImages = (study: any) => {
   font-weight: 300;
 }
 
-.studies-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 4rem;
+.project-headImage {
+  margin: 2rem auto;
+}
+
+.project-description {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 300;
+  margin: 6rem auto;
 }
 
 .study-section {
@@ -229,18 +240,11 @@ const getGridImages = (study: any) => {
   padding-bottom: 0;
 }
 
-.project-description {
-  text-align: center;
-  font-size: 1rem;
-  font-weight: 300;
-  margin: 1.5rem auto;
-}
-
 .study-images {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
-  margin: 1.5rem 0;
+  margin: 6rem auto;
 }
 
 .study-image {
@@ -252,7 +256,6 @@ const getGridImages = (study: any) => {
 .single-image-container {
   display: flex;
   justify-content: center;
-  margin: 1.5rem 0;
 }
 
 .single-image {
@@ -262,9 +265,41 @@ const getGridImages = (study: any) => {
   object-fit: cover;
 }
 
+/* ===== SKETCHBOOK SECTION ===== */
+
+.sketchbook-section {
+  margin: 6rem 0;
+}
+
+.sketchbook-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  width: 100%;
+}
+
+.sketchbook-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* ===== COLLAGES SECTION ===== */
+
+.collages-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* TODO: geen aspectratio 1? */
+.collage-image {
+  aspect-ratio: 1;
+  object-fit: contain;
+}
+
 /* ===== CREDITS SECTION ===== */
 .credits-section {
-  margin: 1.5rem 0;
+  margin: 6rem 0 0 0;
   padding: 2rem;
   background: rgba(0, 0, 0, 0.05);
 }
@@ -294,40 +329,6 @@ const getGridImages = (study: any) => {
   font-weight: 300;
   font-size: 1rem;
   color: #333;
-}
-
-/* ===== SKETCHBOOK SECTION ===== */
-.sketchbook-section {
-  margin: 1.5rem 0;
-}
-
-.sketchbook-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
-  width: 100%;
-}
-
-.sketchbook-image {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-}
-
-/* ===== COLLAGES SECTION ===== */
-.collages-section {
-  margin: 1.5rem 0;
-}
-
-.collages-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-}
-
-/* TODO: geen aspectratio 1? */
-.collage-image {
-  aspect-ratio: 1;
-  object-fit: contain;
 }
 
 /* ===== MEDIA QUERIES ===== */
