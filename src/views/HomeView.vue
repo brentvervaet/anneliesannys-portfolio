@@ -195,7 +195,6 @@ onUnmounted(() => {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-bottom: 10rem;
 }
 
 /* ===== CAROUSEL STYLES ===== */
@@ -269,6 +268,7 @@ onUnmounted(() => {
 
 .project-title {
   font-size: 0.7rem;
+  margin-top: 0.5rem;
   font-weight: 300;
   text-align: center;
 }
@@ -303,12 +303,64 @@ onUnmounted(() => {
 
 /* ===== MEDIA QUERIES ===== */
 
+@media (min-width: 320px) {
+  .hero-carousel {
+    margin-bottom: 10rem;
+  }
+}
+
 /* tablet */
 @media (min-width: 768px) {
+  .carousel-image {
+    height: 300px;
+    /* min-width: 350px; */
+  }
+
+  .portfolio-section {
+    padding: 4rem;
+  }
+
+  .portfolio-grid {
+    gap: 24rem 3rem;
+  }
+
+  .project-image-wrapper {
+    max-width: 400px;
+  }
+
+  .project-title {
+    font-size: 1rem;
+    margin-top: 1rem;
+  }
 }
 
 /* desktop */
 @media (min-width: 1024px) {
+  .carousel-image {
+    height: 250px;
+    min-width: 400px;
+  }
+
+  .carousel-row:first-child {
+    margin-bottom: 1.5rem;
+  }
+
+  .portfolio-grid {
+    gap: 4rem 4rem;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .project-image-wrapper {
+    /* size images */
+    max-width: 400px;
+  }
+
+  .project-title {
+    font-size: 1rem;
+    margin-top: 1rem;
+  }
+
   /* only hover effect on desktop */
   .project-card:hover .project-image {
     transform: scale(1.05);
@@ -317,11 +369,6 @@ onUnmounted(() => {
   .project-card:hover .project-overlay {
     opacity: 1;
   }
-}
-
-/* large desktops */
-
-@media (min-width: 1440px) {
 }
 
 /* ===== KEYFRAMES/ANIMATIONS ===== */
