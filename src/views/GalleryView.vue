@@ -12,8 +12,8 @@
           v-for="(image, index) in allImages"
           :key="image.src"
           class="gallery-item"
-          :class="{ 'animate-item': index < allImages.length / 2 }"
-          :style="index < allImages.length / 2 ? { animationDelay: `${index * 40}ms` } : {}"
+          :class="{ 'animate-item': index < 40 }"
+          :style="{ animationDelay: `${index * 20}ms` }"
           @click="openModal(index)"
         >
           <img :src="image.src" :alt="image.alt" class="gallery-image" loading="lazy" />
