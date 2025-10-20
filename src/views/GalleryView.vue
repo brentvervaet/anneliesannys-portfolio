@@ -263,7 +263,7 @@ const onModalNavigate = (index: number) => {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0s ease;
+  transition: transform 0.3s ease;
 }
 
 .gallery-overlay {
