@@ -140,7 +140,7 @@ const allImages = computed<GalleryImage[]>(() => {
       })
     }
 
-    // Handle projects with collages
+    //TODO: Handle projects with collages
     // if (project.collages) {
     //   project.collages.forEach((image, index) => {
     //     // Extract number from filename for title, or use index + 1
