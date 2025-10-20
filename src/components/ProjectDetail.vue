@@ -316,11 +316,6 @@ const onModalNavigate = (index: number) => {
   backdrop-filter: blur(5px);
 }
 
-.mute-button:hover {
-  background: rgba(0, 0, 0, 0.3);
-  transform: scale(1.1);
-}
-
 /* ===== PROJECT CONTENT ===== */
 .project-content {
   position: relative;
@@ -372,11 +367,6 @@ const onModalNavigate = (index: number) => {
   transition:
     transform 0.2s ease,
     opacity 0.2s ease;
-}
-
-.clickable-image:hover {
-  transform: scale(1.02);
-  opacity: 0.9;
 }
 
 /* ===== CREDITS SECTION ===== */
@@ -448,9 +438,18 @@ const onModalNavigate = (index: number) => {
 }
 
 /* ===== MEDIA QUERIES ===== */
-@media (max-width: 1024px) {
+@media (min-width: 1024px) {
+  /* hovers */
+  .clickable-image:hover {
+    transform: scale(1.02);
+    opacity: 0.9;
+  }
+  .mute-button:hover {
+    background: rgba(0, 0, 0, 0.3);
+    transform: scale(1.1);
+  }
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) {
 }
 </style>

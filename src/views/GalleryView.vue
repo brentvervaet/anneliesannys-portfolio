@@ -301,12 +301,11 @@ const onModalNavigate = (index: number) => {
 /* ===== MEDIA QUERIES ===== */
 /* desktop */
 @media (min-width: 1024px) {
-  .gallery-item:hover .gallery-overlay {
-    opacity: 1;
-  }
-
   .gallery-item:hover .gallery-image {
     transform: scale(1.05);
+  }
+  .gallery-item:hover .gallery-overlay {
+    opacity: 1;
   }
 }
 </style>
