@@ -2,19 +2,10 @@
   <!-- Modal for enlarged view -->
   <div v-if="isOpen" class="modal-overlay" @click="closeModal">
     <div class="modal-content" @click.stop>
+      <!-- Close Button -->
       <button class="modal-close" @click="closeModal">&times;</button>
-      <div class="modal-navigation">
-        <button class="nav-btn prev-btn" @click="navigatePrevious" :disabled="currentIndex === 0">
-          &#8249;
-        </button>
-        <button
-          class="nav-btn next-btn"
-          @click="navigateNext"
-          :disabled="currentIndex === images.length - 1"
-        >
-          &#8250;
-        </button>
-      </div>
+
+      <!-- Image Container -->
       <div class="modal-image-container">
         <div v-if="imageLoading" class="modal-loading">
           <div class="loading-spinner"></div>
@@ -27,12 +18,29 @@
           :class="{ loading: imageLoading }"
         />
       </div>
+
+      <!-- Image Info -->
       <div class="modal-info">
         <h3>{{ currentImage?.title }}</h3>
         <p v-if="currentImage?.projectSlug" class="modal-category-link" @click="navigateToProject">
           {{ currentImage?.category }}
         </p>
         <p v-else class="modal-category">{{ currentImage?.category }}</p>
+      </div>
+
+      <!-- Navigation -->
+      <div class="modal-navigation">
+        <button class="nav-btn prev-btn" @click="navigatePrevious" :disabled="currentIndex === 0">
+          ←
+        </button>
+        <span class="image-counter">{{ currentIndex + 1 }} / {{ images.length }}</span>
+        <button
+          class="nav-btn next-btn"
+          @click="navigateNext"
+          :disabled="currentIndex === images.length - 1"
+        >
+          →
+        </button>
       </div>
     </div>
   </div>
@@ -48,7 +56,7 @@ export interface ModalImage {
   alt: string
   title: string
   category: string
-  projectSlug?: string // Optional: slug to navigate to project
+  projectSlug?: string
 }
 
 interface Props {
@@ -71,22 +79,25 @@ const currentIndex = ref(props.initialIndex)
 
 const currentImage = computed(() => props.images[currentIndex.value])
 
-// Navigate to project when category is clicked
 const navigateToProject = () => {
   if (currentImage.value?.projectSlug) {
     router.push(`/${currentImage.value.projectSlug}`)
   }
 }
 
-// Watch for changes in isOpen and initialIndex
+// Prevent page jump
 watch(
   () => props.isOpen,
-  (newVal) => {
-    if (newVal) {
-      imageLoading.value = true
-      document.body.style.overflow = 'hidden'
+  (isOpen) => {
+    if (isOpen) {
+      document.body.style.position = 'fixed'
+      document.body.style.top = `-${window.scrollY}px`
+      document.body.style.width = '100%'
     } else {
-      document.body.style.overflow = 'auto'
+      const scrollY = document.body.style.top
+      document.body.style.position = ''
+      document.body.style.top = ''
+      window.scrollTo(0, parseInt(scrollY || '0') * -1)
     }
   },
 )
@@ -99,14 +110,8 @@ watch(
   },
 )
 
-const closeModal = () => {
-  emit('close')
-}
-
-const onImageLoad = () => {
-  imageLoading.value = false
-}
-
+const closeModal = () => emit('close')
+const onImageLoad = () => (imageLoading.value = false)
 const navigatePrevious = () => {
   if (currentIndex.value > 0) {
     currentIndex.value--
@@ -114,7 +119,6 @@ const navigatePrevious = () => {
     emit('navigate', currentIndex.value)
   }
 }
-
 const navigateNext = () => {
   if (currentIndex.value < props.images.length - 1) {
     currentIndex.value++
@@ -123,116 +127,80 @@ const navigateNext = () => {
   }
 }
 
-// Handle keyboard navigation
+// Keyboard navigation
 const handleKeyPress = (event: KeyboardEvent) => {
   if (!props.isOpen) return
-
-  if (event.key === 'Escape') {
-    closeModal()
-  } else if (event.key === 'ArrowLeft') {
-    navigatePrevious()
-  } else if (event.key === 'ArrowRight') {
-    navigateNext()
-  }
+  if (event.key === 'Escape') closeModal()
+  else if (event.key === 'ArrowLeft') navigatePrevious()
+  else if (event.key === 'ArrowRight') navigateNext()
 }
 
-onMounted(() => {
-  document.addEventListener('keydown', handleKeyPress)
-})
-
+onMounted(() => document.addEventListener('keydown', handleKeyPress))
 onUnmounted(() => {
   document.removeEventListener('keydown', handleKeyPress)
-  document.body.style.overflow = 'auto'
+  document.body.style.position = ''
+  document.body.style.top = ''
 })
 </script>
 
 <style scoped>
-/* Modal Styles */
 .modal-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.9);
+  inset: 0; /* top, right, bottom, left = 0 */
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 2000;
+  z-index: 9999;
   cursor: pointer;
 }
 
 .modal-content {
   position: relative;
-  max-width: 90vw;
+  max-width: 95vw;
   max-height: 90vh;
+  width: auto;
+  height: auto;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  overflow: hidden;
   cursor: auto;
 }
 
 .modal-close {
   position: absolute;
-  top: -50px;
-  right: 0;
+  top: 12px;
+  right: 12px;
   background: none;
   border: none;
   color: white;
-  font-size: 2rem;
+  font-size: 1.8rem;
   cursor: pointer;
-  z-index: 2001;
-  width: 40px;
-  height: 40px;
+  z-index: 10;
+  width: 36px;
+  height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.modal-navigation {
-  position: absolute;
-  top: 50%;
-  left: -60px;
-  right: -60px;
-  transform: translateY(-50%);
-  display: flex;
-  justify-content: space-between;
-  pointer-events: none;
-  z-index: 2001;
-}
-
-.nav-btn {
-  background: rgba(255, 255, 255, 0.2);
-  border: none;
-  color: white;
-  font-size: 2rem;
-  width: 50px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  pointer-events: auto;
-  transition: background 0.3s ease;
-  border-radius: 50%;
-}
-
-.nav-btn:hover:not(:disabled) {
-  background: rgba(255, 255, 255, 0.4);
-}
-
-.nav-btn:disabled {
-  opacity: 0.3;
-  cursor: not-allowed;
 }
 
 .modal-image-container {
-  position: relative;
+  flex: 1 1 auto;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+  position: relative;
 }
 
 .modal-image {
   max-width: 100%;
-  max-height: 80vh;
+  max-height: 70vh;
   object-fit: contain;
   transition: opacity 0.3s ease;
 }
@@ -246,16 +214,15 @@ onUnmounted(() => {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
 }
 
 .loading-spinner {
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   border: 3px solid rgba(255, 255, 255, 0.3);
-  border-radius: 50%;
   border-top-color: white;
-  animation: spin 1s ease-in-out infinite;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
 }
 
 @keyframes spin {
@@ -267,17 +234,17 @@ onUnmounted(() => {
 .modal-info {
   text-align: center;
   color: white;
-  margin-top: 20px;
+  margin-top: 1rem;
 }
 
 .modal-info h3 {
-  font-size: 1.5rem;
-  margin-bottom: 8px;
+  font-size: 1.3rem;
+  margin-bottom: 6px;
   font-weight: 300;
 }
 
 .modal-info p {
-  font-size: 1rem;
+  font-size: 0.95rem;
   opacity: 0.8;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -287,26 +254,42 @@ onUnmounted(() => {
   cursor: pointer;
   transition: opacity 0.2s ease;
 }
-
 .modal-category-link:hover {
   opacity: 1;
   text-decoration: underline;
 }
 
-.modal-category {
-  cursor: default;
+.modal-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+  width: 100%;
+  gap: 8px;
 }
 
-/* ===== MEDIA QUERIES ===== */
-@media (max-width: 768px) {
-  .modal-close {
-    top: -40px;
-    font-size: 1.5rem;
-  }
+.nav-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  font-size: 1.3rem;
+  padding: 6px 12px;
+  cursor: pointer;
+  border-radius: 6px;
+  min-width: 40px;
+}
+.nav-btn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+.nav-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
 
-  .modal-navigation {
-    left: -30px;
-    right: -30px;
-  }
+.image-counter {
+  color: white;
+  font-size: 0.85rem;
+  opacity: 0.8;
 }
 </style>

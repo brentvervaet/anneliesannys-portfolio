@@ -359,8 +359,6 @@ header.over-video .hamburger-line {
 
 /* ===== MEDIA QUERIES ===== */
 
-/* ===== MEDIA QUERIES ===== */
-
 /* tablet */
 @media (min-width: 768px) {
 }
