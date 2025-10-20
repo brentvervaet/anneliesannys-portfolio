@@ -5,15 +5,6 @@
       <!-- Close Button - Fixed Position -->
       <button class="modal-close" @click="closeModal">&times;</button>
 
-      <!-- Image Info - Fixed at Top -->
-      <div class="modal-info modal-info-top">
-        <h3>{{ currentImage?.title }}</h3>
-        <p v-if="currentImage?.projectSlug" class="modal-category-link" @click="navigateToProject">
-          {{ currentImage?.category }}
-        </p>
-        <p v-else class="modal-category">{{ currentImage?.category }}</p>
-      </div>
-
       <!-- Image Container -->
       <div class="modal-image-container">
         <div v-if="imageLoading" class="modal-loading">
@@ -29,6 +20,15 @@
           :height="naturalSize?.h"
           :style="aspectRatio ? { aspectRatio: String(aspectRatio) } : undefined"
         />
+      </div>
+
+      <!-- Image Info - Fixed Below Image -->
+      <div class="modal-info modal-info-bottom">
+        <h3>{{ currentImage?.title }}</h3>
+        <p v-if="currentImage?.projectSlug" class="modal-category-link" @click="navigateToProject">
+          {{ currentImage?.category }}
+        </p>
+        <p v-else class="modal-category">{{ currentImage?.category }}</p>
       </div>
 
       <!-- Navigation - Fixed at Bottom -->
@@ -243,7 +243,7 @@ onUnmounted(() => {
 }
 
 .modal-close {
-  position: absolute;
+  position: fixed;
   top: 12px;
   right: 12px;
   background: none;
@@ -251,18 +251,23 @@ onUnmounted(() => {
   color: white;
   font-size: 1.8rem;
   cursor: pointer;
-  z-index: 10;
+  z-index: 10002;
   width: 36px;
   height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+.modal-close:hover {
+  transform: scale(1.1);
 }
 
 .modal-image-container {
   position: absolute;
-  top: 80px; /* Space for title/category at top */
-  bottom: 60px; /* Space for navigation at bottom */
+  top: 20px; /* Space from top */
+  bottom: 140px; /* Space for title + navigation at bottom */
   left: 0;
   right: 0;
   display: flex;
@@ -270,6 +275,12 @@ onUnmounted(() => {
   justify-content: center;
   overflow: hidden;
   padding: 0 2rem;
+}
+
+@media (max-width: 768px) {
+  .modal-image-container {
+    bottom: 160px; /* More space on mobile for text wrapping */
+  }
 }
 
 .modal-image {
@@ -313,9 +324,9 @@ onUnmounted(() => {
   color: white;
 }
 
-.modal-info-top {
+.modal-info-bottom {
   position: fixed;
-  top: 20px;
+  bottom: 70px; /* Above navigation */
   left: 50%;
   transform: translateX(-50%);
   z-index: 10001;
@@ -335,6 +346,7 @@ onUnmounted(() => {
   opacity: 0.8;
   text-transform: uppercase;
   letter-spacing: 1px;
+  margin: 0;
 }
 
 .modal-category-link {
