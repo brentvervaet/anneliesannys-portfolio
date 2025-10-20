@@ -16,6 +16,9 @@
           class="modal-image"
           @load="onImageLoad"
           :class="{ loading: imageLoading }"
+          :width="naturalSize?.w"
+          :height="naturalSize?.h"
+          :style="aspectRatio ? { aspectRatio: String(aspectRatio) } : undefined"
         />
       </div>
 
@@ -28,18 +31,52 @@
         <p v-else class="modal-category">{{ currentImage?.category }}</p>
       </div>
 
-      <!-- Navigation -->
+      <!-- Navigation: arrows next to counter -->
       <div class="modal-navigation">
-        <button class="nav-btn prev-btn" @click="navigatePrevious" :disabled="currentIndex === 0">
-          ←
+        <button
+          class="nav-btn"
+          @click.stop="navigatePrevious"
+          :disabled="currentIndex === 0"
+          aria-label="Previous image"
+        >
+          <svg
+            class="nav-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <path
+              d="M15 6l-6 6 6 6"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
         </button>
         <span class="image-counter">{{ currentIndex + 1 }} / {{ images.length }}</span>
         <button
-          class="nav-btn next-btn"
-          @click="navigateNext"
+          class="nav-btn"
+          @click.stop="navigateNext"
           :disabled="currentIndex === images.length - 1"
+          aria-label="Next image"
         >
-          →
+          <svg
+            class="nav-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <path
+              d="M9 6l6 6-6 6"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
         </button>
       </div>
     </div>
@@ -79,6 +116,14 @@ const currentIndex = ref(props.initialIndex)
 
 const currentImage = computed(() => props.images[currentIndex.value])
 
+// Keep and communicate the intrinsic aspect ratio to the browser to avoid stretching
+const naturalSize = ref<{ w: number; h: number } | null>(null)
+const aspectRatio = computed(() => {
+  if (!naturalSize.value) return null
+  const { w, h } = naturalSize.value
+  return h ? w / h : null
+})
+
 const navigateToProject = () => {
   if (currentImage.value?.projectSlug) {
     router.push(`/${currentImage.value.projectSlug}`)
@@ -108,6 +153,25 @@ watch(
     currentIndex.value = newVal
     imageLoading.value = true
   },
+)
+
+// When the current image changes, preload to obtain natural dimensions (aspect ratio)
+watch(
+  () => currentImage.value?.srcLarge,
+  (src) => {
+    naturalSize.value = null
+    if (!src) return
+    const img = new Image()
+    img.src = src
+    if (img.complete) {
+      naturalSize.value = { w: img.naturalWidth, h: img.naturalHeight }
+    } else {
+      img.onload = () => {
+        naturalSize.value = { w: img.naturalWidth, h: img.naturalHeight }
+      }
+    }
+  },
+  { immediate: true },
 )
 
 const closeModal = () => emit('close')
@@ -199,8 +263,10 @@ onUnmounted(() => {
 }
 
 .modal-image {
+  width: auto;
+  height: auto;
   max-width: 100%;
-  max-height: 70vh;
+  max-height: 100%;
   object-fit: contain;
   transition: opacity 0.3s ease;
 }
@@ -211,6 +277,7 @@ onUnmounted(() => {
 
 .modal-loading {
   position: absolute;
+  inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -261,29 +328,27 @@ onUnmounted(() => {
 
 .modal-navigation {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   margin-top: 12px;
   width: 100%;
-  gap: 8px;
+  gap: 12px;
 }
 
+/* Bottom nav buttons */
 .nav-btn {
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.3);
   color: white;
-  font-size: 1.3rem;
-  padding: 6px 12px;
+  padding: 0.5rem;
   cursor: pointer;
-  border-radius: 6px;
-  min-width: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 .nav-btn:hover:not(:disabled) {
-  background: rgba(255, 255, 255, 0.2);
-  border-color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 182, 193);
 }
 .nav-btn:disabled {
-  opacity: 0.3;
+  opacity: 0.4;
   cursor: not-allowed;
 }
 
@@ -291,5 +356,17 @@ onUnmounted(() => {
   color: white;
   font-size: 0.85rem;
   opacity: 0.8;
+}
+
+/* SVG icon sizing */
+.nav-icon {
+  width: 24px;
+  height: 24px;
+}
+
+/* Keyboard focus style */
+.nav-btn:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.8);
+  outline-offset: 2px;
 }
 </style>
