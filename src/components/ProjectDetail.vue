@@ -321,6 +321,7 @@ const onModalNavigate = (index: number) => {
   position: relative;
   padding: 2rem;
   max-width: 1400px;
+  margin: 0 auto;
 }
 
 .project-title {
@@ -346,14 +347,14 @@ const onModalNavigate = (index: number) => {
   text-align: center;
   font-size: 1rem;
   font-weight: 300;
-  margin: 8rem auto;
+  margin: 6rem auto;
 }
 
 .image-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
-  margin: 8rem auto;
+  margin: 6rem auto;
 }
 
 .image-grid img {
@@ -371,7 +372,7 @@ const onModalNavigate = (index: number) => {
 
 /* ===== CREDITS SECTION ===== */
 .credits-section {
-  margin: 8rem auto;
+  margin: 6rem auto;
   padding: 2rem;
   background: rgba(0, 0, 0, 0.02);
 }
@@ -404,7 +405,7 @@ const onModalNavigate = (index: number) => {
 
 /* ===== SKETCHBOOK SECTION ===== */
 .sketchbook-section {
-  margin: 8rem 0;
+  margin: 6rem 0;
 }
 
 .sketchbook-grid {
@@ -421,9 +422,6 @@ const onModalNavigate = (index: number) => {
 }
 
 /* ===== COLLAGES SECTION ===== */
-.collages-section {
-  margin: 8rem 0 0 0;
-}
 
 .collages-grid {
   display: grid;
@@ -449,7 +447,7 @@ const onModalNavigate = (index: number) => {
   }
 
   .project-date {
-    font-size: 1.5rem;
+    font-size: 1.1rem;
     margin-bottom: 2rem;
   }
 
@@ -460,11 +458,13 @@ const onModalNavigate = (index: number) => {
   .project-description {
     font-size: 1.1rem;
     max-width: 700px;
+    margin: 7rem auto;
   }
 
   .image-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+    margin: 7rem auto;
   }
 
   .image-grid img {
@@ -474,6 +474,7 @@ const onModalNavigate = (index: number) => {
 
   .credits-section {
     padding: 2.5rem;
+    margin: 7rem auto;
   }
 
   .credits-grid {
@@ -491,11 +492,11 @@ const onModalNavigate = (index: number) => {
   .sketchbook-grid {
     grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
     gap: 1.5rem;
+    margin: 7rem auto;
   }
 
   .collages-grid {
     grid-template-columns: repeat(8, 1fr);
-    gap: 0.5rem;
   }
 }
 
@@ -517,20 +518,20 @@ const onModalNavigate = (index: number) => {
 
   .project-head img {
     margin: 2.5rem auto;
-    max-width: 500px;
+    max-width: 350px;
   }
 
   .project-description {
     font-size: 1.2rem;
     line-height: 1.8;
-    margin: 2.5rem auto;
+    margin: 8rem auto;
     max-width: 800px;
+    margin: 8rem auto;
   }
 
   .image-grid {
-    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
-    margin: 3rem 0;
+    margin: 8rem auto;
     justify-items: center;
   }
 
@@ -540,7 +541,7 @@ const onModalNavigate = (index: number) => {
   }
 
   .credits-section {
-    margin: 4rem 0;
+    margin: 8rem auto;
     padding: 3rem;
   }
 
@@ -558,21 +559,11 @@ const onModalNavigate = (index: number) => {
   }
 
   .sketchbook-section {
-    margin: 4rem 0;
+    margin: 8rem auto;
   }
 
   .sketchbook-grid {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-  }
-
-  .collages-section {
-    margin: 4rem 0;
-  }
-
-  .collages-grid {
-    grid-template-columns: repeat(8, 1fr);
-    gap: 0.75rem;
   }
 
   /* hovers */
