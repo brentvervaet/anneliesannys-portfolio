@@ -7,6 +7,8 @@
       :description="project.description"
       :studies="project.studies"
       :video="project.video"
+      :date="project.date"
+      :credits="project.credits"
     />
     <!-- Show ProjectDetail component for projects with images -->
     <ProjectDetail
@@ -15,6 +17,10 @@
       :description="project.description"
       :images="project.images"
       :video="project.video"
+      :date="project.date"
+      :collages="project.collages"
+      :sketchbook="project.sketchbook"
+      :credits="project.credits"
     />
   </div>
 </template>

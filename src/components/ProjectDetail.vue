@@ -2,19 +2,6 @@
   <div class="project-detail">
     <!-- Hero video section -->
     <div class="video-hero" v-if="video">
-      <div class="scroll-indicator" @click="scrollToContent">
-        <div class="scroll-arrow">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path
-              d="M7 10L12 15L17 10"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-        </div>
-      </div>
       <video ref="videoElement" autoplay :muted="isMuted" loop playsinline class="fullscreen-video">
         <source :src="video" type="video/webm" />
         Your browser does not support the video tag.
@@ -59,48 +46,124 @@
     </div>
 
     <section ref="projectContent" class="project-content">
-      <h2 class="project-title">{{ title }}</h2>
-      <div class="project-description">
-        <p v-for="paragraph in description" :key="paragraph">
-          {{ paragraph }}
-        </p>
+      <div class="project-head">
+        <h2 class="project-title">{{ title }}</h2>
+        <p v-if="date" class="project-date">{{ date }}</p>
+        <img
+          v-if="images[1]"
+          class="project-headImage clickable-image"
+          :src="getMediumImagePath(images[1].src)"
+          :alt="images[1].alt"
+          @click="openModal(1)"
+        />
+        <div class="project-description">
+          <p v-for="paragraph in description" :key="paragraph">
+            {{ paragraph }}
+          </p>
+        </div>
       </div>
+
       <div class="image-grid">
         <img
-          v-for="image in limitedImages"
+          v-for="(image, index) in bottomImageGrid"
           :key="image.src"
           :src="getMediumImagePath(image.src)"
           :alt="image.alt"
+          @click="openModal(index + 2)"
+          class="clickable-image"
         />
       </div>
+
+      <!-- Credits Section -->
+      <div
+        v-if="credits && typeof credits === 'object' && Object.keys(credits).length > 0"
+        class="credits-section"
+      >
+        <div class="credits-grid">
+          <div v-for="(value, key) in credits" :key="key" class="credit-item">
+            <span class="credit-label">{{ key }}:</span>
+            <span class="credit-value">
+              <template v-if="Array.isArray(value)">
+                {{ sortAlphabetically(value).join(', ') }}
+              </template>
+              <template v-else>
+                {{ value }}
+              </template>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sketchbook Section -->
+      <div v-if="sketchbook && sketchbook.length > 0" class="sketchbook-section">
+        <div class="sketchbook-grid">
+          <img
+            v-for="(sketch, index) in sketchbook"
+            :key="sketch.src"
+            :src="getMediumImagePath(sketch.src)"
+            :alt="sketch.alt"
+            class="sketchbook-image clickable-image"
+            @click="openSketchbookModal(index)"
+          />
+        </div>
+      </div>
+
+      <!-- Collages Grid -->
+      <div v-if="collages && collages.length > 0" class="collages-section">
+        <div class="collages-grid">
+          <img
+            v-for="(collage, index) in collages"
+            :key="collage.src"
+            :src="getSmallImagePath(collage.src)"
+            :alt="collage.alt"
+            class="collage-image clickable-image"
+            @click="openCollageModal(index)"
+          />
+        </div>
+      </div>
     </section>
+
+    <!-- Image Modal -->
+    <ImageModal
+      :isOpen="modalOpen"
+      :images="currentModalImages"
+      :initialIndex="currentModalIndex"
+      @close="closeModal"
+      @navigate="onModalNavigate"
+    />
   </div>
 </template>
 
 <script setup lang="ts">
+import ImageModal, { type ModalImage } from '@/components/ImageModal.vue'
+import type { Project, ProjectImage } from '@/types/project'
 import { computed, ref } from 'vue'
 
-interface ProjectImage {
-  src: string
-  alt: string
-}
-
 interface Props {
-  title: string
-  description: string[]
+  title: Project['title']
+  description: Project['description']
   images: ProjectImage[]
-  video?: string
+  video?: Project['video']
+  date?: Project['date']
+  collages?: Project['collages']
+  sketchbook?: Project['sketchbook']
+  credits?: Project['credits']
 }
 
 const props = defineProps<Props>()
 
 // Reactive data for mute functionality
-const isMuted = ref(false) // Start music by default
+const isMuted = ref(true) // Start music by default
 const videoElement = ref<HTMLVideoElement | null>(null)
 const projectContent = ref<HTMLElement | null>(null)
 
-// Computed property to limit images to first 5
-const limitedImages = computed(() => props.images.slice(0, 6))
+// Modal state
+const modalOpen = ref(false)
+const currentModalIndex = ref(0)
+const currentModalImages = ref<ModalImage[]>([])
+
+// Computed property to limit images to first 2-end
+const bottomImageGrid = computed(() => props.images.slice(2, props.images.length))
 
 // Convert image path to use medium-sized version
 const getMediumImagePath = (originalPath: string): string => {
@@ -111,6 +174,17 @@ const getMediumImagePath = (originalPath: string): string => {
   return [...pathParts, 'med', filename].join('/')
 }
 
+const getSmallImagePath = (originalPath: string): string => {
+  const pathParts = originalPath.split('/')
+  const filename = pathParts.pop()
+  return [...pathParts, 'sm', filename].join('/')
+}
+
+// Sort array alphabetically (case-insensitive)
+const sortAlphabetically = (arr: string[]): string[] => {
+  return [...arr].sort((a, b) => a.localeCompare(b, undefined, { sensitivity: 'base' }))
+}
+
 // Toggle mute state
 const toggleMute = (): void => {
   isMuted.value = !isMuted.value
@@ -119,14 +193,82 @@ const toggleMute = (): void => {
   }
 }
 
-// Smooth scroll to project content section
-const scrollToContent = (): void => {
-  if (projectContent.value) {
-    projectContent.value.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start',
-    })
-  }
+// Helper function to get large image path
+const getLargeImagePath = (originalPath: string): string => {
+  const pathParts = originalPath.split('/')
+  const filename = pathParts.pop()
+  return [...pathParts, 'lg', filename].join('/')
+}
+
+// Helper function to extract number from filename
+const extractImageNumber = (src: string): string => {
+  const filename = src.split('/').pop() || ''
+  const match = filename.match(/(\d+)/)
+  return match?.[1]?.padStart(2, '0') || '01'
+}
+
+// Transform all images to ModalImage format
+const allModalImages = computed<ModalImage[]>(() => {
+  return props.images.map((image) => ({
+    src: getMediumImagePath(image.src),
+    srcLarge: getLargeImagePath(image.src),
+    alt: image.alt,
+    title: extractImageNumber(image.src),
+    category: props.title,
+  }))
+})
+
+// Transform sketchbook images to ModalImage format
+const sketchbookModalImages = computed<ModalImage[]>(() => {
+  if (!props.sketchbook) return []
+  return props.sketchbook.map((image) => ({
+    src: getMediumImagePath(image.src),
+    srcLarge: getLargeImagePath(image.src),
+    alt: image.alt,
+    title: extractImageNumber(image.src),
+    category: `${props.title} - Sketchbook`,
+  }))
+})
+
+// Transform collage images to ModalImage format
+const collageModalImages = computed<ModalImage[]>(() => {
+  if (!props.collages) return []
+  return props.collages.map((image) => ({
+    src: getMediumImagePath(image.src),
+    srcLarge: getLargeImagePath(image.src),
+    alt: image.alt,
+    title: extractImageNumber(image.src),
+    category: `${props.title} - Collages`,
+  }))
+})
+
+// Open modal for main images
+const openModal = (index: number) => {
+  currentModalImages.value = allModalImages.value
+  currentModalIndex.value = index
+  modalOpen.value = true
+}
+
+// Open modal for sketchbook images
+const openSketchbookModal = (index: number) => {
+  currentModalImages.value = sketchbookModalImages.value
+  currentModalIndex.value = index
+  modalOpen.value = true
+}
+
+// Open modal for collage images
+const openCollageModal = (index: number) => {
+  currentModalImages.value = collageModalImages.value
+  currentModalIndex.value = index
+  modalOpen.value = true
+}
+
+const closeModal = () => {
+  modalOpen.value = false
+}
+
+const onModalNavigate = (index: number) => {
+  currentModalIndex.value = index
 }
 </script>
 
@@ -136,13 +278,13 @@ const scrollToContent = (): void => {
   width: 100%;
 }
 
+/* ===== VIDEO ===== */
 .video-hero {
   position: relative;
-  /* smallest viewport height */
+  /* TODO:aanpassen voor safari etc*/
   height: 100svh;
   width: 100%;
   overflow: hidden;
-  margin-top: -140px;
 }
 
 .fullscreen-video {
@@ -155,6 +297,7 @@ const scrollToContent = (): void => {
   z-index: 1; /* Ensure video is behind the header */
 }
 
+/* ===== MUTE BUTTON ===== */
 .mute-button {
   position: absolute;
   bottom: 2rem;
@@ -173,43 +316,266 @@ const scrollToContent = (): void => {
   backdrop-filter: blur(5px);
 }
 
-.mute-button:hover {
-  background: rgba(0, 0, 0, 0.3);
-  transform: scale(1.1);
-}
-
-/*TODO: Mobile responsive styles for mute button */
-
+/* ===== PROJECT CONTENT ===== */
 .project-content {
   position: relative;
   padding: 2rem;
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
 }
 
 .project-title {
-  font-size: 2.5rem;
+  font-size: 2rem;
+  font-weight: 200;
+  text-align: center;
+}
+
+.project-date {
+  font-size: 1rem;
   margin-bottom: 1.5rem;
+  color: #999;
+  text-align: center;
+  font-weight: 300;
+}
+
+.project-head img {
+  display: block;
+  margin: 3rem auto;
 }
 
 .project-description {
-  margin-bottom: 2rem;
-}
-
-.project-description p {
-  margin-bottom: 1rem;
-  line-height: 1.6;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 300;
+  margin: 6rem auto;
 }
 
 .image-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin: 6rem auto;
 }
 
 .image-grid img {
+  width: 250px;
+  height: auto;
+  object-fit: cover;
+}
+
+.clickable-image {
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+/* ===== CREDITS SECTION ===== */
+.credits-section {
+  margin: 6rem auto;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.credits-grid {
+  display: grid;
+  gap: 1rem;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.credit-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.credit-label {
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.credit-value {
+  font-weight: 300;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* ===== SKETCHBOOK SECTION ===== */
+.sketchbook-section {
+  margin: 6rem 0;
+}
+
+.sketchbook-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  width: 100%;
+}
+
+.sketchbook-image {
   width: 100%;
   height: auto;
   object-fit: cover;
+}
+
+/* ===== COLLAGES SECTION ===== */
+
+.collages-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* TODO: geen aspectratio 1? */
+.collage-image {
+  aspect-ratio: 1;
+  object-fit: contain;
+}
+
+/* ===== MEDIA QUERIES ===== */
+
+/* tablet */
+@media (min-width: 768px) {
+  .project-content {
+    padding: 3rem 4rem;
+  }
+
+  .project-title {
+    font-size: 3rem;
+  }
+
+  .project-date {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+  }
+
+  .project-head img {
+    margin: 3.5rem auto;
+    max-width: 500px;
+  }
+
+  .project-description {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 7rem auto;
+  }
+
+  .image-grid {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+    margin: 7rem auto;
+  }
+
+  .image-grid img {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .credits-section {
+    padding: 2.5rem;
+    margin: 7rem auto;
+  }
+
+  .credits-grid {
+    gap: 1.5rem;
+  }
+
+  .credit-label {
+    font-size: 1rem;
+  }
+
+  .credit-value {
+    font-size: 1.1rem;
+  }
+
+  .sketchbook-grid {
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+    gap: 1.5rem;
+    margin: 7rem auto;
+  }
+
+  .collages-grid {
+    grid-template-columns: repeat(8, 1fr);
+  }
+}
+
+/* desktop */
+@media (min-width: 1024px) {
+  .project-content {
+    padding: 4rem 6rem;
+  }
+
+  .project-title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .project-date {
+    font-size: 1.2rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .project-head img {
+    margin: 4rem auto;
+    max-width: 350px;
+  }
+
+  .project-description {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin: 8rem auto;
+    max-width: 800px;
+    margin: 8rem auto;
+  }
+
+  .image-grid {
+    gap: 2rem;
+    margin: 8rem auto;
+    justify-items: center;
+  }
+
+  .image-grid img {
+    width: 100%;
+    max-width: 450px;
+  }
+
+  .credits-section {
+    margin: 8rem auto;
+    padding: 3rem;
+  }
+
+  .credits-grid {
+    gap: 2rem;
+    max-width: 1000px;
+  }
+
+  .credit-label {
+    font-size: 1.1rem;
+  }
+
+  .credit-value {
+    font-size: 1.2rem;
+  }
+
+  .sketchbook-section {
+    margin: 8rem auto;
+  }
+
+  .sketchbook-grid {
+    gap: 2rem;
+  }
+
+  /* hovers */
+  .clickable-image:hover {
+    transform: scale(1.02);
+    opacity: 0.9;
+  }
+
+  .mute-button:hover {
+    background: rgba(0, 0, 0, 0.3);
+    transform: scale(1.1);
+  }
 }
 </style>

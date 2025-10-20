@@ -37,6 +37,12 @@
       <div class="copyright">
         &copy; {{ new Date().getFullYear() }} Annelies Annys. All rights reserved.
       </div>
+      <div class="made-by">
+        Made by
+        <a href="https://brentvervaet.dev" target="_blank" rel="noopener noreferrer"
+          >Brent Vervaet</a
+        >
+      </div>
     </div>
   </footer>
 </template>
@@ -48,9 +54,9 @@
 <style scoped>
 .site-footer {
   background: #fff;
-  padding: 40px 30px 60px;
+  padding: 3rem;
   border-top: 1px solid rgba(0, 0, 0, 0.05);
-  margin-top: 80px;
+  margin-top: 1rem;
 }
 .footer-inner {
   max-width: 1400px;
@@ -58,11 +64,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 25px;
+  gap: 1rem;
 }
 .social-icons {
   display: flex;
-  gap: 18px;
+  gap: 1rem;
 }
 .social-icon {
   display: flex;
@@ -70,37 +76,51 @@
   justify-content: center;
   width: 48px;
   height: 48px;
-  color: #2c3e50;
+  color: black;
   text-decoration: none;
-  background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(15px);
-  border-radius: 50%;
+  /* background: rgba(255, 255, 255, 0.9); */
+  /* backdrop-filter: blur(15px); */
+  /* border-radius: 50%; */
   transition: all 0.3s ease;
-  border: 1px solid rgba(255, 192, 203, 0.3);
-  box-shadow: 0 4px 12px rgba(255, 182, 193, 0.15);
+  /* border: 1px solid rgba(255, 192, 203, 0.3); */
+  /* box-shadow: 0 4px 12px rgba(255, 182, 193, 0.15); */
 }
 .social-icon:hover {
   background: rgba(255, 255, 255, 1);
   transform: translateY(-3px);
   box-shadow: 0 8px 25px rgba(255, 182, 193, 0.3);
-  color: #34495e;
+  color: rgba(255, 182, 193);
 }
 
 .copyright {
   font-size: 14px;
   color: #52525c;
   text-align: center;
-  user-select: none;
   letter-spacing: 0.5px;
 }
 
-@media (max-width: 600px) {
-  .site-footer {
-    padding: 35px 20px 50px;
-  }
-  .social-icon {
-    width: 42px;
-    height: 42px;
-  }
+.made-by {
+  font-size: 13px;
+  color: #6b6b75;
+  text-align: center;
+  letter-spacing: 0.3px;
+}
+
+.made-by a {
+  color: #2c3e50;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  border-bottom: 1px solid transparent;
+}
+
+.made-by a:hover {
+  color: rgba(255, 182, 193);
+}
+
+/* ===== MEDIA QUERIES ===== */
+@media (max-width: 1024px) {
+}
+
+@media (max-width: 768px) {
 }
 </style>

@@ -53,8 +53,6 @@ watch(
 
 main {
   flex: 1;
-  text-align: left;
-  padding: 140px 0 0 0;
   background: #fff;
 }
 </style>

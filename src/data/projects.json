@@ -1,7 +1,10 @@
 [
   {
     "slug": "lost-before-morning",
+    "thumbnailImage": "/images/BA3/med/lbm01.webp",
+    "video": "/videos/BA3/lbmFilm.webm",
     "title": "Lost Before Morning",
+    "date": "2025",
     "description": [
       "An archive of dreams, born from the fear of forgetting and the quiet envy of those who remember.",
       "Embroidered into fabric, my dreams become unforgettable, a small part of the body that carries them. They’re as slow as knitting, gently resisting the speed of forgetting.",
@@ -21,9 +24,6 @@
         "Shape": "Oversized – voluminous – rounded – raised shoulders – layered – contrast between rounded and sharp shapes"
       }
     ],
-    "date": "2025",
-    "year": "BA3",
-    "video": "/videos/BA3/lbmFilm.webm",
     "images": [
       {
         "src": "/images/BA3/lbm01.webp",
@@ -72,181 +72,274 @@
       {
         "src": "/images/BA3/lbm12.webp",
         "alt": "Lost Before Morning 12"
-      },
-      {
-        "src": "/images/BA3/lbm13.webp",
-        "alt": "Lost Before Morning 13"
-      },
-      {
-        "src": "/images/BA3/lbm14.webp",
-        "alt": "Lost Before Morning 14"
-      },
-      {
-        "src": "/images/BA3/lbm15.webp",
-        "alt": "Lost Before Morning 15"
-      },
-      {
-        "src": "/images/BA3/lbm16.webp",
-        "alt": "Lost Before Morning 16"
-      },
-      {
-        "src": "/images/BA3/lbm17.webp",
-        "alt": "Lost Before Morning 17"
-      },
-      {
-        "src": "/images/BA3/lbm18.webp",
-        "alt": "Lost Before Morning 18"
-      },
-      {
-        "src": "/images/BA3/lbm19.webp",
-        "alt": "Lost Before Morning 19"
-      },
-      {
-        "src": "/images/BA3/lbm20.webp",
-        "alt": "Lost Before Morning 20"
-      },
-      {
-        "src": "/images/BA3/lbm21.webp",
-        "alt": "Lost Before Morning 21"
-      },
-      {
-        "src": "/images/BA3/lbm22.webp",
-        "alt": "Lost Before Morning 22"
-      },
-      {
-        "src": "/images/BA3/lbm23.webp",
-        "alt": "Lost Before Morning 23"
-      },
-      {
-        "src": "/images/BA3/lbm24.webp",
-        "alt": "Lost Before Morning 24"
-      },
-      {
-        "src": "/images/BA3/lbm25.webp",
-        "alt": "Lost Before Morning 25"
-      },
-      {
-        "src": "/images/BA3/lbm26.webp",
-        "alt": "Lost Before Morning 26"
-      },
-      {
-        "src": "/images/BA3/lbm27.webp",
-        "alt": "Lost Before Morning 27"
-      },
-      {
-        "src": "/images/BA3/lbm28.webp",
-        "alt": "Lost Before Morning 28"
-      },
-      {
-        "src": "/images/BA3/lbm29.webp",
-        "alt": "Lost Before Morning 29"
-      },
-      {
-        "src": "/images/BA3/lbm30.webp",
-        "alt": "Lost Before Morning 30"
       }
     ],
-    "thumbnailImage": "/images/BA3/med/lbm01.webp"
+    "credits": {
+      "Video": ["Ties Kalker"],
+      "Photography": ["Sybi Deroo"],
+      "Models": [
+        "Aimone De Zordo",
+        "Luca Pop",
+        "Luca",
+        "Blue",
+        "Akrhyp",
+        "Myleta",
+        "Romée & Billie"
+      ]
+    },
+    "sketchbook": [
+      {
+        "src": "/images/BA3/sketchbook/lbm01.webp",
+        "alt": "Lost Before Morning sketchbook 01"
+      },
+      {
+        "src": "/images/BA3/sketchbook/lbm02.webp",
+        "alt": "Lost Before Morning sketchbook 02"
+      },
+      {
+        "src": "/images/BA3/sketchbook/lbm03.webp",
+        "alt": "Lost Before Morning sketchbook 03"
+      },
+      {
+        "src": "/images/BA3/sketchbook/lbm04.webp",
+        "alt": "Lost Before Morning sketchbook 04"
+      }
+    ],
+    "collages": [
+      {
+        "src": "/images/BA3/collages/lbm01.webp",
+        "alt": "Lost Before Morning collage 01"
+      },
+      {
+        "src": "/images/BA3/collages/lbm02.webp",
+        "alt": "Lost Before Morning collage 02"
+      },
+      {
+        "src": "/images/BA3/collages/lbm03.webp",
+        "alt": "Lost Before Morning collage 03"
+      },
+      {
+        "src": "/images/BA3/collages/lbm04.webp",
+        "alt": "Lost Before Morning collage 04"
+      },
+      {
+        "src": "/images/BA3/collages/lbm05.webp",
+        "alt": "Lost Before Morning collage 05"
+      },
+      {
+        "src": "/images/BA3/collages/lbm06.webp",
+        "alt": "Lost Before Morning collage 06"
+      },
+      {
+        "src": "/images/BA3/collages/lbm07.webp",
+        "alt": "Lost Before Morning collage 07"
+      },
+      {
+        "src": "/images/BA3/collages/lbm08.webp",
+        "alt": "Lost Before Morning collage 08"
+      }
+    ]
+  },
+
+  {
+    "slug": "stadsduif",
+    "thumbnailImage": "/images/Stadsduif/med/stadsduif01.webp",
+    "video": "/videos/Stadsduif/stadsduifFilm.webm",
+    "title": "Stadsduif",
+    "date": "2024",
+    "headImage": "",
+    "description": ["Movie by Rube Vandebril"],
+    "details": [],
+    "images": [
+      {
+        "src": "/images/Stadsduif/stadsduif01.webp",
+        "alt": "Stadsduif 01"
+      },
+      {
+        "src": "/images/Stadsduif/stadsduif02.webp",
+        "alt": "Stadsduif 02"
+      },
+      {
+        "src": "/images/Stadsduif/stadsduif03.webp",
+        "alt": "Stadsduif 03"
+      },
+      {
+        "src": "/images/Stadsduif/stadsduif04.webp",
+        "alt": "Stadsduif 04"
+      },
+      {
+        "src": "/images/Stadsduif/stadsduif05.webp",
+        "alt": "Stadsduif 05"
+      },
+      {
+        "src": "/images/Stadsduif/stadsduif06.webp",
+        "alt": "Stadsduif 06"
+      },
+      {
+        "src": "/images/Stadsduif/stadsduif07.webp",
+        "alt": "Stadsduif 07"
+      },
+      {
+        "src": "/images/Stadsduif/stadsduif08.webp",
+        "alt": "Stadsduif 08"
+      },
+      {
+        "src": "/images/Stadsduif/stadsduif09.webp",
+        "alt": "Stadsduif 09"
+      },
+      {
+        "src": "/images/Stadsduif/stadsduif10.webp",
+        "alt": "Stadsduif 10"
+      }
+    ],
+
+    "credits": {
+      "Director": ["Rube Vandebril", "Pati Petrykowska"],
+      "First assistant director": ["Seppe Vanden Broeck"],
+      "Director of photography": ["Liam Emmerrechts"],
+      "First assistant camera": ["Tio Kerbusch"],
+      "Gaffer": ["Billy D'Hoore"],
+      "Electro": ["Alexander Siamandi", "Mats van Paridon"],
+      "Costume designer": ["Annelies Annys"],
+      "Starring": ["Felix Braeckman", "Michelle Van Neste"],
+      "Equipment": ["Camalux Belgium"]
+    }
   },
 
   {
     "slug": "split-myself-in-two",
+    "thumbnailImage": "/images/BA2/med/smit01.webp",
+    "video": "/videos/BA2/smitFilm.webm",
     "title": "Split myself in two",
+    "date": "2024",
     "description": [
       "Safe space. Checks. It is an intimate reflection of my comfort zone. My safe space within the fashion world. ",
       "Through this collection, I want to create a safe environment, a cocoon that protects us from this world and from others. By exaggerating everything to the extreme, the designs feel protective and reveal little of what lies beneath.",
       "A shield. A coat. A catsuit. A silhouette without details of what must be protected. A second skin. A subtle barrier."
     ],
-    "date": "2024",
-    "year": "BA2",
-    "video": "/videos/BA2/smsitFilm.webm",
+    "details": [],
     "images": [
       {
-        "src": "/images/BA2/smsit01.webp",
+        "src": "/images/BA2/smit01.webp",
         "alt": "Split myself in two 01"
       },
       {
-        "src": "/images/BA2/smsit02.webp",
+        "src": "/images/BA2/smit02.webp",
         "alt": "Split myself in two 02"
       },
       {
-        "src": "/images/BA2/smsit03.webp",
+        "src": "/images/BA2/smit03.webp",
         "alt": "Split myself in two 03"
       },
       {
-        "src": "/images/BA2/smsit04.webp",
+        "src": "/images/BA2/smit04.webp",
         "alt": "Split myself in two 04"
       },
       {
-        "src": "/images/BA2/smsit05.webp",
+        "src": "/images/BA2/smit05.webp",
         "alt": "Split myself in two 05"
       },
       {
-        "src": "/images/BA2/smsit06.webp",
+        "src": "/images/BA2/smit06.webp",
         "alt": "Split myself in two 06"
       },
       {
-        "src": "/images/BA2/smsit07.webp",
+        "src": "/images/BA2/smit07.webp",
         "alt": "Split myself in two 07"
       },
       {
-        "src": "/images/BA2/smsit08.webp",
+        "src": "/images/BA2/smit08.webp",
         "alt": "Split myself in two 08"
       },
       {
-        "src": "/images/BA2/smsit09.webp",
+        "src": "/images/BA2/smit09.webp",
         "alt": "Split myself in two 09"
       },
       {
-        "src": "/images/BA2/smsit10.webp",
+        "src": "/images/BA2/smit10.webp",
         "alt": "Split myself in two 10"
       },
       {
-        "src": "/images/BA2/smsit11.webp",
+        "src": "/images/BA2/smit11.webp",
         "alt": "Split myself in two 11"
       },
       {
-        "src": "/images/BA2/smsit12.webp",
+        "src": "/images/BA2/smit12.webp",
         "alt": "Split myself in two 12"
-      },
-      {
-        "src": "/images/BA2/smsit13.webp",
-        "alt": "Split myself in two 13"
-      },
-      {
-        "src": "/images/BA2/smsit14.webp",
-        "alt": "Split myself in two 14"
-      },
-      {
-        "src": "/images/BA2/smsit15.webp",
-        "alt": "Split myself in two 15"
-      },
-      {
-        "src": "/images/BA2/smsit16.webp",
-        "alt": "Split myself in two 16"
-      },
-      {
-        "src": "/images/BA2/smsit17.webp",
-        "alt": "Split myself in two 17"
-      },
-      {
-        "src": "/images/BA2/smsit18.webp",
-        "alt": "Split myself in two 18"
-      },
-      {
-        "src": "/images/BA2/smsit19.webp",
-        "alt": "Split myself in two 19"
-      },
-      {
-        "src": "/images/BA2/smsit20.webp",
-        "alt": "Split myself in two 20"
       }
     ],
-    "thumbnailImage": "/images/BA2/med/smsit01.webp"
+    "credits": {
+      "Video": ["Ties Kalker"],
+      "Photography": ["Emma Ostyn"],
+      "Models": [
+        "Aimone De Zordo",
+        "Indu Devarrewaere",
+        "Nils Provoost",
+        "Ernesto",
+        "Gloire Bofanga",
+        "Hannes De Schuijmer",
+        "Louis Peeters",
+        "Luca"
+      ]
+    },
+    "sketchbook": [
+      {
+        "src": "/images/BA2/sketchbook/smit01.webp",
+        "alt": "Split myself in two sketchbook 01"
+      },
+      {
+        "src": "/images/BA2/sketchbook/smit02.webp",
+        "alt": "Split myself in two sketchbook 02"
+      },
+      {
+        "src": "/images/BA2/sketchbook/smit03.webp",
+        "alt": "Split myself in two sketchbook 03"
+      },
+      {
+        "src": "/images/BA2/sketchbook/smit04.webp",
+        "alt": "Split myself in two sketchbook 04"
+      }
+    ],
+    "collages": [
+      {
+        "src": "/images/BA2/collages/smit01.webp",
+        "alt": "Split myself in two collage 01"
+      },
+      {
+        "src": "/images/BA2/collages/smit02.webp",
+        "alt": "Split myself in two collage 02"
+      },
+      {
+        "src": "/images/BA2/collages/smit03.webp",
+        "alt": "Split myself in two collage 03"
+      },
+      {
+        "src": "/images/BA2/collages/smit04.webp",
+        "alt": "Split myself in two collage 04"
+      },
+      {
+        "src": "/images/BA2/collages/smit05.webp",
+        "alt": "Split myself in two collage 05"
+      },
+      {
+        "src": "/images/BA2/collages/smit06.webp",
+        "alt": "Split myself in two collage 06"
+      },
+      {
+        "src": "/images/BA2/collages/smit07.webp",
+        "alt": "Split myself in two collage 07"
+      },
+      {
+        "src": "/images/BA2/collages/smit08.webp",
+        "alt": "Split myself in two collage 08"
+      }
+    ]
   },
 
   {
     "slug": "ba1-studies",
+    "thumbnailImage": "/images/BA1/Dress/med/dress01.webp",
+    "video": "/videos/BA1/studiesFilm.webm",
     "title": "BA1 Studies",
     "description": [
       "A collection of explorations from my first year, each telling a different story through fabric and form.",
@@ -254,8 +347,11 @@
       "From tartan rebellion to delicate remembrance, each piece explores how clothing can carry meaning beyond its material form."
     ],
     "date": "2023",
-    "year": "BA1",
-    "video": "/videos/BA1/studiesFilm.webm",
+    "credits": {
+      "Video": ["Christphe Annys"],
+      "Photography": ["Jonathan Verschaeve"],
+      "Models": ["Quiten Declercq", "Karin Devos"]
+    },
     "studies": [
       {
         "title": "Study of the Dress",
@@ -292,62 +388,62 @@
           {
             "src": "/images/BA1/Dress/dress08.webp",
             "alt": "Study of the dress 08"
+          }
+        ],
+        "sketchbook": [
+          {
+            "src": "/images/BA1/Dress/sketchbook/dress01.webp",
+            "alt": "Study of the dress sketchbook 01"
           },
           {
-            "src": "/images/BA1/Dress/dress09.webp",
-            "alt": "Study of the dress 09"
+            "src": "/images/BA1/Dress/sketchbook/dress02.webp",
+            "alt": "Study of the dress sketchbook 02"
           },
           {
-            "src": "/images/BA1/Dress/dress10.webp",
-            "alt": "Study of the dress 10"
+            "src": "/images/BA1/Dress/sketchbook/dress03.webp",
+            "alt": "Study of the dress sketchbook 03"
           },
           {
-            "src": "/images/BA1/Dress/dress11.webp",
-            "alt": "Study of the dress 11"
+            "src": "/images/BA1/Dress/sketchbook/dress04.webp",
+            "alt": "Study of the dress sketchbook 04"
           },
           {
-            "src": "/images/BA1/Dress/dress12.webp",
-            "alt": "Study of the dress 12"
+            "src": "/images/BA1/Dress/sketchbook/dress05.webp",
+            "alt": "Study of the dress sketchbook 05"
+          }
+        ],
+        "collages": [
+          {
+            "src": "/images/BA1/Dress/collages/dress01.webp",
+            "alt": "Study of the dress collage 01"
           },
           {
-            "src": "/images/BA1/Dress/dress13.webp",
-            "alt": "Study of the dress 13"
+            "src": "/images/BA1/Dress/collages/dress02.webp",
+            "alt": "Study of the dress collage 02"
           },
           {
-            "src": "/images/BA1/Dress/dress14.webp",
-            "alt": "Study of the dress 14"
+            "src": "/images/BA1/Dress/collages/dress03.webp",
+            "alt": "Study of the dress collage 03"
           },
           {
-            "src": "/images/BA1/Dress/dress15.webp",
-            "alt": "Study of the dress 15"
+            "src": "/images/BA1/Dress/collages/dress04.webp",
+            "alt": "Study of the dress collage 04"
           },
           {
-            "src": "/images/BA1/Dress/dress16.webp",
-            "alt": "Study of the dress 16"
+            "src": "/images/BA1/Dress/collages/dress05.webp",
+            "alt": "Study of the dress collage 05"
           },
           {
-            "src": "/images/BA1/Dress/dress17.webp",
-            "alt": "Study of the dress 17"
+            "src": "/images/BA1/Dress/collages/dress06.webp",
+            "alt": "Study of the dress collage 06"
           },
           {
-            "src": "/images/BA1/Dress/dress18.webp",
-            "alt": "Study of the dress 18"
+            "src": "/images/BA1/Dress/collages/dress07.webp",
+            "alt": "Study of the dress collage 07"
           },
           {
-            "src": "/images/BA1/Dress/dress19.webp",
-            "alt": "Study of the dress 19"
-          },
-          {
-            "src": "/images/BA1/Dress/dress20.webp",
-            "alt": "Study of the dress 20"
-          },
-          {
-            "src": "/images/BA1/Dress/dress21.webp",
-            "alt": "Study of the dress 21"
-          },
-          {
-            "src": "/images/BA1/Dress/dress22.webp",
-            "alt": "Study of the dress 22"
+            "src": "/images/BA1/Dress/collages/dress08.webp",
+            "alt": "Study of the dress collage 08"
           }
         ]
       },
@@ -363,65 +459,62 @@
           {
             "src": "/images/BA1/Jeans/jeans02.webp",
             "alt": "Recycled Denim study 02"
+          }
+        ],
+        "sketchbook": [
+          {
+            "src": "/images/BA1/Jeans/sketchbook/jeans01.webp",
+            "alt": "Recycled Denim sketchbook 01"
           },
           {
-            "src": "/images/BA1/Jeans/jeans03.webp",
-            "alt": "Recycled Denim study 03"
+            "src": "/images/BA1/Jeans/sketchbook/jeans02.webp",
+            "alt": "Recycled Denim sketchbook 02"
           },
           {
-            "src": "/images/BA1/Jeans/jeans04.webp",
-            "alt": "Recycled Denim study 04"
+            "src": "/images/BA1/Jeans/sketchbook/jeans03.webp",
+            "alt": "Recycled Denim sketchbook 03"
           },
           {
-            "src": "/images/BA1/Jeans/jeans05.webp",
-            "alt": "Recycled Denim study 05"
+            "src": "/images/BA1/Jeans/sketchbook/jeans04.webp",
+            "alt": "Recycled Denim sketchbook 04"
+          }
+        ],
+        "collages": [
+          {
+            "src": "/images/BA1/Jeans/collages/jeans01.webp",
+            "alt": "Recycled Denim study collage 01"
           },
           {
-            "src": "/images/BA1/Jeans/jeans06.webp",
-            "alt": "Recycled Denim study 06"
+            "src": "/images/BA1/Jeans/collages/jeans02.webp",
+            "alt": "Recycled Denim study collage 02"
           },
           {
-            "src": "/images/BA1/Jeans/jeans07.webp",
-            "alt": "Recycled Denim study 07"
+            "src": "/images/BA1/Jeans/collages/jeans03.webp",
+            "alt": "Recycled Denim study collage 03"
           },
           {
-            "src": "/images/BA1/Jeans/jeans08.webp",
-            "alt": "Recycled Denim study 08"
+            "src": "/images/BA1/Jeans/collages/jeans04.webp",
+            "alt": "Recycled Denim study collage 04"
           },
           {
-            "src": "/images/BA1/Jeans/jeans09.webp",
-            "alt": "Recycled Denim study 09"
+            "src": "/images/BA1/Jeans/collages/jeans05.webp",
+            "alt": "Recycled Denim study collage 05"
           },
           {
-            "src": "/images/BA1/Jeans/jeans10.webp",
-            "alt": "Recycled Denim study 10"
+            "src": "/images/BA1/Jeans/collages/jeans06.webp",
+            "alt": "Recycled Denim study collage 06"
           },
           {
-            "src": "/images/BA1/Jeans/jeans11.webp",
-            "alt": "Recycled Denim study 11"
+            "src": "/images/BA1/Jeans/collages/jeans07.webp",
+            "alt": "Recycled Denim study collage 07"
           },
           {
-            "src": "/images/BA1/Jeans/jeans12.webp",
-            "alt": "Recycled Denim study 12"
-          },
-          {
-            "src": "/images/BA1/Jeans/jeans13.webp",
-            "alt": "Recycled Denim study 13"
-          },
-          {
-            "src": "/images/BA1/Jeans/jeans14.webp",
-            "alt": "Recycled Denim study 14"
-          },
-          {
-            "src": "/images/BA1/Jeans/jeans15.webp",
-            "alt": "Recycled Denim study 15"
-          },
-          {
-            "src": "/images/BA1/Jeans/jeans16.webp",
-            "alt": "Recycled Denim study 16"
+            "src": "/images/BA1/Jeans/collages/jeans08.webp",
+            "alt": "Recycled Denim study collage 08"
           }
         ]
       },
+
       {
         "title": "Paper Study",
         "description": "Inspired by Día de los Muertos, where life and death meet in color. Not as an ending, but as a continuation of life. The flowers, bright and fragile, became a symbol of memory and rebirth. It's a reflection on remembrance and renewal. Through layers of soft, pleated paper, I explored how something delicate can still carry meaning, how remembering can be both light and heavy at once. The layers echo the softness of flowers — fragile, temporary, yet full of life. Paper becomes a skin for memory, light enough to breathe, strong enough to hold what has passed.",
@@ -437,58 +530,61 @@
           {
             "src": "/images/BA1/Paper/paper03.webp",
             "alt": "Paper study 03"
+          }
+        ],
+        "sketchbook": [
+          {
+            "src": "/images/BA1/Paper/sketchbook/paper01.webp",
+            "alt": "Paper study sketchbook 01"
           },
           {
-            "src": "/images/BA1/Paper/paper04.webp",
-            "alt": "Paper study 04"
+            "src": "/images/BA1/Paper/sketchbook/paper02.webp",
+            "alt": "Paper study sketchbook 02"
           },
           {
-            "src": "/images/BA1/Paper/paper05.webp",
-            "alt": "Paper study 05"
+            "src": "/images/BA1/Paper/sketchbook/paper03.webp",
+            "alt": "Paper study sketchbook 03"
           },
           {
-            "src": "/images/BA1/Paper/paper06.webp",
-            "alt": "Paper study 06"
+            "src": "/images/BA1/Paper/sketchbook/paper04.webp",
+            "alt": "Paper study sketchbook 04"
+          }
+        ],
+        "collages": [
+          {
+            "src": "/images/BA1/Paper/collages/paper01.webp",
+            "alt": "Paper study collage 01"
           },
           {
-            "src": "/images/BA1/Paper/paper07.webp",
-            "alt": "Paper study 07"
+            "src": "/images/BA1/Paper/collages/paper02.webp",
+            "alt": "Paper study collage 02"
           },
           {
-            "src": "/images/BA1/Paper/paper08.webp",
-            "alt": "Paper study 08"
+            "src": "/images/BA1/Paper/collages/paper03.webp",
+            "alt": "Paper study collage 03"
           },
           {
-            "src": "/images/BA1/Paper/paper09.webp",
-            "alt": "Paper study 09"
+            "src": "/images/BA1/Paper/collages/paper04.webp",
+            "alt": "Paper study collage 04"
           },
           {
-            "src": "/images/BA1/Paper/paper10.webp",
-            "alt": "Paper study 10"
+            "src": "/images/BA1/Paper/collages/paper05.webp",
+            "alt": "Paper study collage 05"
           },
           {
-            "src": "/images/BA1/Paper/paper11.webp",
-            "alt": "Paper study 11"
+            "src": "/images/BA1/Paper/collages/paper06.webp",
+            "alt": "Paper study collage 06"
           },
           {
-            "src": "/images/BA1/Paper/paper12.webp",
-            "alt": "Paper study 12"
+            "src": "/images/BA1/Paper/collages/paper07.webp",
+            "alt": "Paper study collage 07"
           },
           {
-            "src": "/images/BA1/Paper/paper13.webp",
-            "alt": "Paper study 13"
-          },
-          {
-            "src": "/images/BA1/Paper/paper14.webp",
-            "alt": "Paper study 14"
-          },
-          {
-            "src": "/images/BA1/Paper/paper15.webp",
-            "alt": "Paper study 15"
+            "src": "/images/BA1/Paper/collages/paper08.webp",
+            "alt": "Paper study collage 08"
           }
         ]
       }
-    ],
-    "thumbnailImage": "/images/BA1/Dress/med/dress01.webp"
+    ]
   }
 ]

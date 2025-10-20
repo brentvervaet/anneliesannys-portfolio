@@ -3,11 +3,15 @@
     <!-- Hero Section with Carousel -->
     <section
       ref="heroSection"
-      class="hero-carousel flex flex-col items-center justify-center min-h-screen overflow-hidden"
-      :style="{ opacity: heroOpacity }"
+      class="hero-carousel overflow-hidden"
+      :style="{
+        opacity: heroOpacity,
+        transform: `translateY(${(1 - heroOpacity) * -50}px)`,
+        transition: 'opacity 0.3s ease-out, transform 0.3s ease-out',
+      }"
     >
       <!-- First carousel row - left to right -->
-      <div class="carousel-row mb-8">
+      <div class="carousel-row">
         <div class="carousel-track animate-scroll-left">
           <img
             v-for="n in 8"
@@ -50,14 +54,13 @@
 
     <!-- Portfolio Section -->
     <section id="portfolio" ref="portfolioSection" class="portfolio-section">
-      <div class="portfolio-container">
-        <div class="portfolio-grid">
-          <div
-            v-for="(project, index) in projects"
-            :key="project.id"
-            class="project-card"
-            :style="{ animationDelay: `${index * 150}ms` }"
-          >
+      <!-- <div class="portfolio-container"> -->
+      <div class="portfolio-grid">
+        <template v-for="(project, index) in projects" :key="project.id">
+          <!-- Empty cell for zigzag pattern (even rows in 2-column layout) -->
+          <div v-if="index % 2 === 1" class="project-spacer"></div>
+
+          <div class="project-card" :style="{ animationDelay: `${index * 150}ms` }">
             <RouterLink :to="project.route" class="project-link">
               <div class="project-image-wrapper">
                 <img :src="project.image" :alt="project.title" class="project-image" />
@@ -65,10 +68,15 @@
                   <span class="view-text">view</span>
                 </div>
               </div>
+              <p class="project-title">{{ project.title }}</p>
             </RouterLink>
           </div>
-        </div>
+
+          <!-- Empty cell for zigzag pattern (odd rows in 2-column layout) -->
+          <div v-if="index % 2 === 0" class="project-spacer"></div>
+        </template>
       </div>
+      <!-- </div> -->
     </section>
   </div>
 </template>
@@ -97,10 +105,10 @@ const handleScroll = () => {
   const scrollY = window.scrollY
   const viewportHeight = window.innerHeight
 
-  // Start fading when we're 60% through the viewport height
-  const fadeStart = viewportHeight * 0.6
-  // Complete fade when we reach 90% of viewport height
-  const fadeEnd = viewportHeight * 0.9
+  // Start fading when we're 70% through the hero section
+  const fadeStart = viewportHeight * 0.7
+  // Complete fade when we reach the end of hero section
+  const fadeEnd = viewportHeight
 
   if (scrollY <= fadeStart) {
     heroOpacity.value = 1
@@ -134,7 +142,7 @@ const handleScrollSnap = () => {
 
   const scrollY = window.scrollY
   const viewportHeight = window.innerHeight
-  const snapThreshold = viewportHeight * 0.3 // 30% of viewport height
+  const snapThreshold = viewportHeight * 0.4 // 40% of viewport height
 
   // Clear existing timer
   if (scrollTimer) {
@@ -143,7 +151,7 @@ const handleScrollSnap = () => {
 
   // Set a timer to trigger snap after scrolling stops
   scrollTimer = setTimeout(() => {
-    if (scrollY > snapThreshold && scrollY < viewportHeight) {
+    if (scrollY > snapThreshold && scrollY < viewportHeight * 0.8) {
       isScrolling = true
       scrollToPortfolio()
       setTimeout(() => {
@@ -173,88 +181,79 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
-/* Portfolio Section Styles */
-.portfolio-section {
-  min-height: 100vh;
-  background: white;
-  padding: 100px 0;
-  margin-top: 100vh;
+/* ===== HOME PAGE STYLES ===== */
+.home {
+  position: relative;
 }
 
-.portfolio-container {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 60px;
+/* ===== HERO SECTION STYLES ===== */
+.hero-carousel {
+  height: 100svh;
+  background: white;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===== CAROUSEL STYLES ===== */
+.carousel-row {
+  width: 100vw;
+}
+
+.carousel-row:first-child {
+  margin-bottom: 1rem;
+}
+
+.carousel-track {
+  display: flex;
+  width: fit-content;
+}
+
+.carousel-image {
+  height: 200px;
+  object-fit: cover;
+  flex-shrink: 0;
+  min-width: 300px;
+}
+
+.animate-scroll-left {
+  animation: scroll-left 90s linear infinite;
+}
+
+.animate-scroll-right {
+  animation: scroll-right 75s linear infinite;
+}
+
+/* ===== PORTFOLIO SECTION STYLES ===== */
+.portfolio-section {
+  min-height: 100lvh;
+  padding: 3rem;
+  position: relative;
+  z-index: 2;
+  border-top: 1px solid black;
+  align-content: center;
 }
 
 .portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 200px 120px;
-  align-items: start;
-  padding: 120px 0;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5rem 2rem;
 }
 
-/* TODO: only load in when in viewport */
+/* ===== PROJECT CARD STYLES ===== */
 .project-card {
   opacity: 0;
   animation: fadeIn 0.8s ease-out forwards;
   transition: transform 0.4s ease;
-}
-/* TODO */
-/* Creative scattered positioning */
-.project-card:nth-child(1) {
-  transform: translateX(0px) translateY(0px);
-}
-
-.project-card:nth-child(2) {
-  transform: translateX(0px) translateY(0px);
-}
-
-.project-card:nth-child(3) {
-  transform: translateX(0px) translateY(0px);
-}
-
-/* TODO */
-/*
-.project-card:nth-child(4) {
-  transform: translateX(-90px) translateY(60px);
-}
-
-.project-card:nth-child(5) {
-  transform: translateX(100px) translateY(-80px);
-}
-
-.project-card:nth-child(6) {
-  transform: translateX(-50px) translateY(100px);
-}
-
-.project-card:nth-child(7) {
-  transform: translateX(70px) translateY(-120px);
-}
-
-.project-card:nth-child(8) {
-  transform: translateX(-80px) translateY(40px);
-}
-
-.project-card:nth-child(9) {
-  transform: translateX(90px) translateY(-60px);
-} */
-
-.project-link {
-  display: block;
-  text-decoration: none;
-  color: inherit;
 }
 
 .project-image-wrapper {
   position: relative;
   aspect-ratio: 3 / 4;
   overflow: hidden;
-  background: #f5f5f5;
-  margin-bottom: 24px;
-  border-radius: 2px;
-  max-width: 280px;
+  max-width: 300px;
   margin: 0 auto;
 }
 
@@ -267,8 +266,17 @@ onUnmounted(() => {
     filter 0.3s ease;
 }
 
-.project-card:hover .project-image {
-  transform: scale(1.05);
+.project-title {
+  font-size: 0.7rem;
+  margin-top: 0.5rem;
+  font-weight: 300;
+  text-align: center;
+}
+
+.project-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
 }
 
 .project-overlay {
@@ -285,20 +293,106 @@ onUnmounted(() => {
   transition: opacity 0.3s ease;
 }
 
-.project-card:hover .project-overlay {
-  opacity: 1;
-}
-
 .view-text {
   color: white;
   font-size: 1rem;
   font-weight: 400;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  font-family: 'Helvetica Neue', sans-serif;
 }
 
-/* Animations */
+/* ===== MEDIA QUERIES ===== */
+
+@media (min-width: 320px) {
+  .hero-carousel {
+    margin-bottom: 10rem;
+  }
+}
+
+/* tablet */
+@media (min-width: 768px) {
+  .carousel-image {
+    height: 300px;
+    /* min-width: 350px; */
+  }
+
+  .portfolio-section {
+    padding: 4rem;
+  }
+
+  .portfolio-grid {
+    gap: 24rem 3rem;
+  }
+
+  .project-image-wrapper {
+    max-width: 400px;
+  }
+
+  .project-title {
+    font-size: 1rem;
+    margin-top: 1rem;
+  }
+}
+
+/* desktop */
+@media (min-width: 1024px) {
+  .carousel-image {
+    height: 250px;
+    min-width: 400px;
+  }
+
+  .carousel-row:first-child {
+    margin-bottom: 1.5rem;
+  }
+
+  .portfolio-grid {
+    gap: 4rem 4rem;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .project-image-wrapper {
+    /* size images */
+    max-width: 400px;
+  }
+
+  .project-title {
+    font-size: 1rem;
+    margin-top: 1rem;
+  }
+
+  /* only hover effect on desktop */
+  .project-card:hover .project-image {
+    transform: scale(1.05);
+  }
+
+  .project-card:hover .project-overlay {
+    opacity: 1;
+  }
+}
+
+/* ===== KEYFRAMES/ANIMATIONS ===== */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scroll-right {
+  0% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* TODO */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -316,22 +410,6 @@ onUnmounted(() => {
   }
   to {
     opacity: 1;
-  }
-}
-
-/* Responsive - Mobile styles will be added later */
-@media (max-width: 768px) {
-  .portfolio-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  .portfolio-container {
-    padding: 0 20px;
-  }
-
-  .portfolio-title {
-    font-size: 2.5rem;
   }
 }
 </style>
