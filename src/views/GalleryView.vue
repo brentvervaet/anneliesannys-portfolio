@@ -14,7 +14,7 @@
           class="gallery-item"
           :class="{ 'animate-item': index < allImages.length / 2 }"
           :style="index < allImages.length / 2 ? { animationDelay: `${index * 40}ms` } : {}"
-          @click="openModal(image, index)"
+          @click="openModal(index)"
         >
           <img :src="image.src" :alt="image.alt" class="gallery-image" loading="lazy" />
           <div class="gallery-overlay">
@@ -27,63 +27,24 @@
       </div>
 
       <!-- Modal for enlarged view -->
-      <div v-if="modalOpen" class="modal-overlay" @click="closeModal">
-        <div class="modal-content" @click.stop>
-          <button class="modal-close" @click="closeModal">&times;</button>
-          <div class="modal-navigation">
-            <button
-              class="nav-btn prev-btn"
-              @click="navigateModal(-1)"
-              :disabled="currentModalIndex === 0"
-            >
-              &#8249;
-            </button>
-            <button
-              class="nav-btn next-btn"
-              @click="navigateModal(1)"
-              :disabled="currentModalIndex === allImages.length - 1"
-            >
-              &#8250;
-            </button>
-          </div>
-          <div class="modal-image-container">
-            <div v-if="modalImageLoading" class="modal-loading">
-              <div class="loading-spinner"></div>
-            </div>
-            <img
-              :src="currentModalImage?.srcLarge"
-              :alt="currentModalImage?.alt"
-              class="modal-image"
-              @load="onModalImageLoad"
-              :class="{ loading: modalImageLoading }"
-            />
-          </div>
-          <div class="modal-info">
-            <h3>{{ currentModalImage?.title }}</h3>
-            <p>{{ currentModalImage?.category }}</p>
-          </div>
-        </div>
-      </div>
+      <ImageModal
+        :isOpen="modalOpen"
+        :images="allImages"
+        :initialIndex="currentModalIndex"
+        @close="closeModal"
+        @navigate="onModalNavigate"
+      />
     </section>
   </div>
 </template>
 
 <script setup lang="ts">
+import ImageModal, { type ModalImage } from '@/components/ImageModal.vue'
 import projectsData from '@/data/projects.json'
-import { computed, onMounted, onUnmounted, ref } from 'vue'
-
-interface GalleryImage {
-  src: string
-  srcLarge: string
-  alt: string
-  title: string
-  category: string
-}
+import { computed, ref } from 'vue'
 
 const modalOpen = ref(false)
 const currentModalIndex = ref(0)
-const currentModalImage = ref<GalleryImage | null>(null)
-const modalImageLoading = ref(false)
 
 // Seeded random function for consistent shuffle
 const seededRandom = (seed: number) => {
@@ -110,8 +71,8 @@ const shuffleArray = <T,>(array: T[], seed: number): T[] => {
 }
 
 // Generate gallery images from projects data
-const allImages = computed<GalleryImage[]>(() => {
-  const images: GalleryImage[] = []
+const allImages = computed<ModalImage[]>(() => {
+  const images: ModalImage[] = []
 
   projectsData.forEach((project) => {
     // Handle projects with images
@@ -232,58 +193,18 @@ const allImages = computed<GalleryImage[]>(() => {
   return shuffleArray(images, 69)
 })
 
-const openModal = (image: GalleryImage, index: number) => {
-  currentModalImage.value = image
+const openModal = (index: number) => {
   currentModalIndex.value = index
   modalOpen.value = true
-  modalImageLoading.value = true
-  document.body.style.overflow = 'hidden'
 }
 
 const closeModal = () => {
   modalOpen.value = false
-  currentModalImage.value = null
-  modalImageLoading.value = false
-  document.body.style.overflow = 'auto'
 }
 
-const onModalImageLoad = () => {
-  modalImageLoading.value = false
+const onModalNavigate = (index: number) => {
+  currentModalIndex.value = index
 }
-
-const navigateModal = (direction: number) => {
-  const newIndex = currentModalIndex.value + direction
-  if (newIndex >= 0 && newIndex < allImages.value.length) {
-    currentModalIndex.value = newIndex
-    const image = allImages.value[newIndex]
-    if (image) {
-      modalImageLoading.value = true
-      currentModalImage.value = image
-    }
-  }
-}
-
-// Handle keyboard navigation
-const handleKeyPress = (event: KeyboardEvent) => {
-  if (!modalOpen.value) return
-
-  if (event.key === 'Escape') {
-    closeModal()
-  } else if (event.key === 'ArrowLeft') {
-    navigateModal(-1)
-  } else if (event.key === 'ArrowRight') {
-    navigateModal(1)
-  }
-}
-
-onMounted(() => {
-  document.addEventListener('keydown', handleKeyPress)
-})
-
-onUnmounted(() => {
-  document.removeEventListener('keydown', handleKeyPress)
-  document.body.style.overflow = 'auto'
-})
 </script>
 
 <style scoped>
@@ -359,16 +280,6 @@ onUnmounted(() => {
   transition: opacity 0.3s ease;
 }
 
-.modal-navigation {
-  left: -30px;
-  right: -30px;
-}
-
-.modal-close {
-  top: -40px;
-  font-size: 1.5rem;
-}
-
 .overlay-content {
   text-align: center;
   color: white;
@@ -387,144 +298,7 @@ onUnmounted(() => {
   letter-spacing: 1px;
 }
 
-/* Modal Styles */
-.modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.9);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 2000;
-  cursor: pointer;
-}
-
-.modal-content {
-  position: relative;
-  max-width: 90vw;
-  max-height: 90vh;
-  cursor: auto;
-}
-
-.modal-close {
-  position: absolute;
-  top: -50px;
-  right: 0;
-  background: none;
-  border: none;
-  color: white;
-  font-size: 2rem;
-  cursor: pointer;
-  z-index: 2001;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.modal-navigation {
-  position: absolute;
-  top: 50%;
-  left: -60px;
-  right: -60px;
-  transform: translateY(-50%);
-  display: flex;
-  justify-content: space-between;
-  pointer-events: none;
-  z-index: 2001;
-}
-
-.nav-btn {
-  background: rgba(255, 255, 255, 0.2);
-  border: none;
-  color: white;
-  font-size: 2rem;
-  width: 50px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  pointer-events: auto;
-  transition: background 0.3s ease;
-  border-radius: 50%;
-}
-
-.nav-btn:hover:not(:disabled) {
-  background: rgba(255, 255, 255, 0.4);
-}
-
-.nav-btn:disabled {
-  opacity: 0.3;
-  cursor: not-allowed;
-}
-
-.modal-image-container {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.modal-image {
-  max-width: 100%;
-  max-height: 80vh;
-  object-fit: contain;
-  transition: opacity 0.3s ease;
-}
-
-.modal-image.loading {
-  opacity: 0;
-}
-
-.modal-loading {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-}
-
-.loading-spinner {
-  width: 40px;
-  height: 40px;
-  border: 3px solid rgba(255, 255, 255, 0.3);
-  border-radius: 50%;
-  border-top-color: white;
-  animation: spin 1s ease-in-out infinite;
-}
-
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.modal-info {
-  text-align: center;
-  color: white;
-  margin-top: 20px;
-}
-
-.modal-info h3 {
-  font-size: 1.5rem;
-  margin-bottom: 8px;
-  font-weight: 300;
-}
-
-.modal-info p {
-  font-size: 1rem;
-  opacity: 0.8;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
 /* ===== MEDIA QUERIES ===== */
-/* tablet */
 /* desktop */
 @media (min-width: 1024px) {
   .gallery-item:hover .gallery-overlay {
