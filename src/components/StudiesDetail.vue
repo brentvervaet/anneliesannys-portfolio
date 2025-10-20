@@ -18,9 +18,10 @@
           <!-- Head image (different logic per study) -->
           <img
             v-if="getHeadImage(study)"
-            class="project-headImage"
+            class="project-headImage clickable-image"
             :src="getMediumImagePath(getHeadImage(study).src)"
             :alt="getHeadImage(study).alt"
+            @click="openStudyHeadImageModal(study)"
           />
 
           <div class="project-description">
@@ -30,11 +31,12 @@
           <!-- Image grid (if applicable for this study) -->
           <div v-if="shouldShowImageGrid(study)" class="study-images">
             <img
-              v-for="image in getGridImages(study)"
+              v-for="(image, imageIndex) in getGridImages(study)"
               :key="image.src"
               :src="getMediumImagePath(image.src)"
               :alt="image.alt"
-              class="study-image"
+              class="study-image clickable-image"
+              @click="openStudyImageModal(study, imageIndex)"
             />
           </div>
 
@@ -43,7 +45,8 @@
             <img
               :src="getMediumImagePath(study.images[1].src)"
               :alt="study.images[1].alt"
-              class="single-image"
+              class="single-image clickable-image"
+              @click="openStudyImageModal(study, 1)"
             />
           </div>
 
@@ -51,11 +54,12 @@
           <div v-if="study.sketchbook && study.sketchbook.length > 0" class="sketchbook-section">
             <div class="sketchbook-grid">
               <img
-                v-for="sketch in study.sketchbook"
+                v-for="(sketch, sketchIndex) in study.sketchbook"
                 :key="sketch.src"
                 :src="getMediumImagePath(sketch.src)"
                 :alt="sketch.alt"
-                class="sketchbook-image"
+                class="sketchbook-image clickable-image"
+                @click="openStudySketchbookModal(study, sketchIndex)"
               />
             </div>
           </div>
@@ -64,11 +68,12 @@
           <div v-if="study.collages && study.collages.length > 0" class="collages-section">
             <div class="collages-grid">
               <img
-                v-for="collage in study.collages"
+                v-for="(collage, collageIndex) in study.collages"
                 :key="collage.src"
                 :src="getSmallImagePath(collage.src)"
                 :alt="collage.alt"
-                class="collage-image"
+                class="collage-image clickable-image"
+                @click="openStudyCollageModal(study, collageIndex)"
               />
             </div>
           </div>
@@ -95,11 +100,22 @@
         </div>
       </div>
     </section>
+
+    <!-- Image Modal -->
+    <ImageModal
+      :isOpen="modalOpen"
+      :images="currentModalImages"
+      :initialIndex="currentModalIndex"
+      @close="closeModal"
+      @navigate="onModalNavigate"
+    />
   </div>
 </template>
 
 <script setup lang="ts">
+import ImageModal, { type ModalImage } from '@/components/ImageModal.vue'
 import type { Project } from '@/types/project'
+import { ref } from 'vue'
 
 interface Props {
   title: Project['title']
@@ -111,6 +127,11 @@ interface Props {
 }
 
 const props = defineProps<Props>()
+
+// Modal state
+const modalOpen = ref(false)
+const currentModalIndex = ref(0)
+const currentModalImages = ref<ModalImage[]>([])
 
 // Convert image path to use medium-sized version
 const getMediumImagePath = (originalPath: string): string => {
@@ -166,6 +187,104 @@ const getGridImages = (study: any) => {
     return study.images.slice(1)
   }
   return study.images
+}
+
+// Helper function to get large image path
+const getLargeImagePath = (originalPath: string): string => {
+  const pathParts = originalPath.split('/')
+  const filename = pathParts.pop()
+  return [...pathParts, 'lg', filename].join('/')
+}
+
+// Helper function to extract number from filename
+const extractImageNumber = (src: string): string => {
+  const filename = src.split('/').pop() || ''
+  const match = filename.match(/(\d+)/)
+  return match?.[1]?.padStart(2, '0') || '01'
+}
+
+// Open modal for study head image
+const openStudyHeadImageModal = (study: any) => {
+  const images = study.images || []
+  currentModalImages.value = images.map((image: any) => ({
+    src: getMediumImagePath(image.src),
+    srcLarge: getLargeImagePath(image.src),
+    alt: image.alt,
+    title: extractImageNumber(image.src),
+    category: study.title,
+  }))
+
+  // Determine which image index to show based on study title
+  let headImageIndex = 0
+  if (study.title === 'Study of the Dress') {
+    headImageIndex = 1 // image[1] for Dress
+  } else if (study.title === 'Paper Study') {
+    headImageIndex = 0 // image[0] for Paper
+  } else if (study.title === 'Recycled Denim') {
+    headImageIndex = 0 // image[0] for Jeans
+  }
+
+  currentModalIndex.value = headImageIndex
+  modalOpen.value = true
+}
+
+// Open modal for study images
+const openStudyImageModal = (study: any, imageIndex: number) => {
+  const images = study.images || []
+  currentModalImages.value = images.map((image: any) => ({
+    src: getMediumImagePath(image.src),
+    srcLarge: getLargeImagePath(image.src),
+    alt: image.alt,
+    title: extractImageNumber(image.src),
+    category: study.title,
+  }))
+
+  // Adjust index based on which images are shown in the grid
+  let actualIndex = imageIndex
+  if (study.title === 'Study of the Dress') {
+    actualIndex = imageIndex + 2
+  } else if (study.title === 'Paper Study') {
+    actualIndex = imageIndex + 1
+  }
+
+  currentModalIndex.value = actualIndex
+  modalOpen.value = true
+}
+
+// Open modal for study sketchbook images
+const openStudySketchbookModal = (study: any, sketchIndex: number) => {
+  const sketchbook = study.sketchbook || []
+  currentModalImages.value = sketchbook.map((image: any) => ({
+    src: getMediumImagePath(image.src),
+    srcLarge: getLargeImagePath(image.src),
+    alt: image.alt,
+    title: extractImageNumber(image.src),
+    category: `${study.title} - Sketchbook`,
+  }))
+  currentModalIndex.value = sketchIndex
+  modalOpen.value = true
+}
+
+// Open modal for study collage images
+const openStudyCollageModal = (study: any, collageIndex: number) => {
+  const collages = study.collages || []
+  currentModalImages.value = collages.map((image: any) => ({
+    src: getMediumImagePath(image.src),
+    srcLarge: getLargeImagePath(image.src),
+    alt: image.alt,
+    title: extractImageNumber(image.src),
+    category: `${study.title} - Collages`,
+  }))
+  currentModalIndex.value = collageIndex
+  modalOpen.value = true
+}
+
+const closeModal = () => {
+  modalOpen.value = false
+}
+
+const onModalNavigate = (index: number) => {
+  currentModalIndex.value = index
 }
 </script>
 
@@ -263,6 +382,18 @@ const getGridImages = (study: any) => {
   max-width: 100%;
   height: auto;
   object-fit: cover;
+}
+
+.clickable-image {
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.clickable-image:hover {
+  transform: scale(1.02);
+  opacity: 0.9;
 }
 
 /* ===== SKETCHBOOK SECTION ===== */
