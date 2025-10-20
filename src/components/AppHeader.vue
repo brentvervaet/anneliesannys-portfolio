@@ -218,7 +218,6 @@ header.over-video .nav-link {
   align-items: center;
   justify-content: space-between;
   gap: 50px;
-  max-width: 1400px;
   margin: 0 auto;
   width: 100%;
 }
