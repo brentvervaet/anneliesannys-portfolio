@@ -340,7 +340,7 @@ const onModalNavigate = (index: number) => {
 
 .project-head img {
   display: block;
-  margin: 1.5rem auto;
+  margin: 3rem auto;
 }
 
 .project-description {
@@ -452,6 +452,7 @@ const onModalNavigate = (index: number) => {
   }
 
   .project-head img {
+    margin: 3.5rem auto;
     max-width: 500px;
   }
 
@@ -517,7 +518,7 @@ const onModalNavigate = (index: number) => {
   }
 
   .project-head img {
-    margin: 2.5rem auto;
+    margin: 4rem auto;
     max-width: 350px;
   }
 

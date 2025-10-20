@@ -316,6 +316,7 @@ const onModalNavigate = (index: number) => {
   position: relative;
   padding: 2rem;
   max-width: 1400px;
+  margin: 0 auto;
 }
 
 .studies-grid {
@@ -339,7 +340,7 @@ const onModalNavigate = (index: number) => {
 }
 
 .project-headImage {
-  margin: 2rem auto;
+  margin: 3rem auto;
 }
 
 .project-description {
@@ -352,6 +353,7 @@ const onModalNavigate = (index: number) => {
 .study-section {
   border-bottom: 1px solid #e5e5e5;
   padding-bottom: 3rem;
+  margin: 0 auto;
 }
 
 .study-section:last-child {
@@ -389,11 +391,6 @@ const onModalNavigate = (index: number) => {
   transition:
     transform 0.2s ease,
     opacity 0.2s ease;
-}
-
-.clickable-image:hover {
-  transform: scale(1.02);
-  opacity: 0.9;
 }
 
 /* ===== SKETCHBOOK SECTION ===== */
@@ -437,7 +434,6 @@ const onModalNavigate = (index: number) => {
 
 .credits-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1rem;
   max-width: 900px;
   margin: 0 auto;
@@ -463,12 +459,164 @@ const onModalNavigate = (index: number) => {
 }
 
 /* ===== MEDIA QUERIES ===== */
-@media (max-width: 1024px) {
+
+/* tablet */
+@media (min-width: 768px) {
+  .studies-content {
+    padding: 3rem 4rem;
+  }
+
+  .project-title {
+    font-size: 3rem;
+  }
+
+  .project-date {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+  }
+
+  .project-headImage {
+    max-width: 600px;
+    margin: 3.5rem auto;
+  }
+
+  .project-description {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 7rem auto;
+  }
+
+  .studies-grid {
+    gap: 4rem;
+  }
+
+  .study-section {
+    padding-bottom: 4rem;
+  }
+
+  .study-images {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 7rem auto;
+  }
+
+  .study-image {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .single-image {
+    max-width: 600px;
+  }
+
+  .credits-section {
+    padding: 2.5rem;
+    margin: 7rem 0 0 0;
+  }
+
+  .credits-grid {
+    gap: 1.5rem;
+  }
+
+  .credit-label {
+    font-size: 1rem;
+  }
+
+  .credit-value {
+    font-size: 1.1rem;
+  }
+
+  .sketchbook-section {
+    margin: 7rem 0;
+  }
+
+  .sketchbook-grid {
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .collages-grid {
+    grid-template-columns: repeat(8, 1fr);
+  }
 }
 
-@media (max-width: 768px) {
-}
+/* desktop */
+@media (min-width: 1024px) {
+  .studies-content {
+    padding: 4rem 6rem;
+  }
 
-@media (max-width: 480px) {
+  .project-title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .project-date {
+    font-size: 1.2rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .project-headImage {
+    margin: 4rem auto;
+  }
+
+  .project-description {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 8rem auto;
+  }
+
+  .studies-grid {
+    gap: 5rem;
+  }
+
+  .study-section {
+    padding-bottom: 5rem;
+  }
+
+  .study-images {
+    gap: 2rem;
+    margin: 8rem auto;
+    justify-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+
+  .study-image {
+    width: 100%;
+    max-width: 450px;
+  }
+
+  .credits-section {
+    margin: 8rem 0 0 0;
+    padding: 3rem;
+  }
+
+  .credits-grid {
+    gap: 2rem;
+    max-width: 1000px;
+  }
+
+  .credit-label {
+    font-size: 1.1rem;
+  }
+
+  .credit-value {
+    font-size: 1.2rem;
+  }
+
+  .sketchbook-section {
+    margin: 8rem 0;
+  }
+
+  .sketchbook-grid {
+    gap: 2rem;
+  }
+
+  /* hovers */
+  .clickable-image:hover {
+    transform: scale(1.02);
+    opacity: 0.9;
+  }
 }
 </style>
