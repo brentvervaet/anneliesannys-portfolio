@@ -120,8 +120,8 @@ const getLargeImagePath = (originalPath: string): string => {
 ## Where It's Used
 
 - ✅ `GalleryView.vue` - Gallery page with shuffled images
-- 🔄 `ProjectDetail.vue` - Can be added for image viewing
-- 🔄 `StudiesDetail.vue` - Can be added for image viewing
+- ✅ `ProjectDetail.vue` - Project detail pages (main images, sketchbook, and collages)
+- ✅ `StudiesDetail.vue` - Studies detail pages (study images, sketchbook, and collages)
 
 ## Notes
 

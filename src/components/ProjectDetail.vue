@@ -64,10 +64,12 @@
 
       <div class="image-grid">
         <img
-          v-for="image in bottomImageGrid"
+          v-for="(image, index) in bottomImageGrid"
           :key="image.src"
           :src="getMediumImagePath(image.src)"
           :alt="image.alt"
+          @click="openModal(index + 2)"
+          class="clickable-image"
         />
       </div>
 
@@ -95,11 +97,12 @@
       <div v-if="sketchbook && sketchbook.length > 0" class="sketchbook-section">
         <div class="sketchbook-grid">
           <img
-            v-for="sketch in sketchbook"
+            v-for="(sketch, index) in sketchbook"
             :key="sketch.src"
             :src="getMediumImagePath(sketch.src)"
             :alt="sketch.alt"
-            class="sketchbook-image"
+            class="sketchbook-image clickable-image"
+            @click="openSketchbookModal(index)"
           />
         </div>
       </div>
@@ -108,19 +111,30 @@
       <div v-if="collages && collages.length > 0" class="collages-section">
         <div class="collages-grid">
           <img
-            v-for="collage in collages"
+            v-for="(collage, index) in collages"
             :key="collage.src"
             :src="getSmallImagePath(collage.src)"
             :alt="collage.alt"
-            class="collage-image"
+            class="collage-image clickable-image"
+            @click="openCollageModal(index)"
           />
         </div>
       </div>
     </section>
+
+    <!-- Image Modal -->
+    <ImageModal
+      :isOpen="modalOpen"
+      :images="currentModalImages"
+      :initialIndex="currentModalIndex"
+      @close="closeModal"
+      @navigate="onModalNavigate"
+    />
   </div>
 </template>
 
 <script setup lang="ts">
+import ImageModal, { type ModalImage } from '@/components/ImageModal.vue'
 import type { Project, ProjectImage } from '@/types/project'
 import { computed, ref } from 'vue'
 
@@ -141,6 +155,11 @@ const props = defineProps<Props>()
 const isMuted = ref(true) // Start music by default
 const videoElement = ref<HTMLVideoElement | null>(null)
 const projectContent = ref<HTMLElement | null>(null)
+
+// Modal state
+const modalOpen = ref(false)
+const currentModalIndex = ref(0)
+const currentModalImages = ref<ModalImage[]>([])
 
 // Computed property to limit images to first 2-end
 const bottomImageGrid = computed(() => props.images.slice(2, props.images.length))
@@ -171,6 +190,84 @@ const toggleMute = (): void => {
   if (videoElement.value) {
     videoElement.value.muted = isMuted.value
   }
+}
+
+// Helper function to get large image path
+const getLargeImagePath = (originalPath: string): string => {
+  const pathParts = originalPath.split('/')
+  const filename = pathParts.pop()
+  return [...pathParts, 'lg', filename].join('/')
+}
+
+// Helper function to extract number from filename
+const extractImageNumber = (src: string): string => {
+  const filename = src.split('/').pop() || ''
+  const match = filename.match(/(\d+)/)
+  return match?.[1]?.padStart(2, '0') || '01'
+}
+
+// Transform all images to ModalImage format
+const allModalImages = computed<ModalImage[]>(() => {
+  return props.images.map((image) => ({
+    src: getMediumImagePath(image.src),
+    srcLarge: getLargeImagePath(image.src),
+    alt: image.alt,
+    title: extractImageNumber(image.src),
+    category: props.title,
+  }))
+})
+
+// Transform sketchbook images to ModalImage format
+const sketchbookModalImages = computed<ModalImage[]>(() => {
+  if (!props.sketchbook) return []
+  return props.sketchbook.map((image) => ({
+    src: getMediumImagePath(image.src),
+    srcLarge: getLargeImagePath(image.src),
+    alt: image.alt,
+    title: extractImageNumber(image.src),
+    category: `${props.title} - Sketchbook`,
+  }))
+})
+
+// Transform collage images to ModalImage format
+const collageModalImages = computed<ModalImage[]>(() => {
+  if (!props.collages) return []
+  return props.collages.map((image) => ({
+    src: getMediumImagePath(image.src),
+    srcLarge: getLargeImagePath(image.src),
+    alt: image.alt,
+    title: extractImageNumber(image.src),
+    category: `${props.title} - Collages`,
+  }))
+})
+
+// Open modal for main images
+const openModal = (index: number) => {
+  currentModalImages.value = allModalImages.value
+  currentModalIndex.value = index
+  modalOpen.value = true
+}
+
+// Open modal for sketchbook images
+const openSketchbookModal = (index: number) => {
+  currentModalImages.value = sketchbookModalImages.value
+  currentModalIndex.value = index
+  modalOpen.value = true
+}
+
+// Open modal for collage images
+const openCollageModal = (index: number) => {
+  currentModalImages.value = collageModalImages.value
+  currentModalIndex.value = index
+  modalOpen.value = true
+}
+
+const closeModal = () => {
+  modalOpen.value = false
+}
+
+const onModalNavigate = (index: number) => {
+  currentModalIndex.value = index
 }
 </script>
 
@@ -267,6 +364,18 @@ const toggleMute = (): void => {
   width: 250px;
   height: auto;
   object-fit: cover;
+}
+
+.clickable-image {
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.clickable-image:hover {
+  transform: scale(1.02);
+  opacity: 0.9;
 }
 
 /* ===== CREDITS SECTION ===== */
