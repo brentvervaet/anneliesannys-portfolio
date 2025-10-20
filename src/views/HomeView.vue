@@ -65,7 +65,13 @@
           <div class="project-card" :style="{ animationDelay: `${index * 150}ms` }">
             <RouterLink :to="project.route" class="project-link">
               <div class="project-image-wrapper">
-                <img :src="project.image" :alt="project.title" class="project-image" />
+                <img
+                  :src="project.image"
+                  :srcset="`${project.imageSmall} 480w, ${project.image} 768w`"
+                  sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 400px"
+                  :alt="project.title"
+                  class="project-image"
+                />
                 <div class="project-overlay">
                   <span class="view-text">view</span>
                 </div>
@@ -99,6 +105,7 @@ const projects = computed(() => {
     title: project.title.toUpperCase(),
     route: `/${project.slug}`,
     image: project.thumbnailImage,
+    imageSmall: project.thumbnailImage.replace('/med/', '/sm/'),
     description: Array.isArray(project.description) ? project.description[0] : project.description,
   }))
 })
