@@ -66,9 +66,9 @@
             <RouterLink :to="project.route" class="project-link">
               <div class="project-image-wrapper">
                 <img
-                  :src="project.image"
-                  :srcset="`${project.imageSmall} 480w, ${project.image} 768w`"
-                  sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 400px"
+                  :src="project.imageSmall"
+                  :srcset="`${project.imageSmall} 300w, ${project.image} 400w`"
+                  sizes="(max-width: 767px) 300px, 400px"
                   :alt="project.title"
                   class="project-image"
                 />
