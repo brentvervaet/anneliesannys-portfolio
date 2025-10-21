@@ -76,8 +76,12 @@
       }
     ],
     "credits": {
-      "Video": ["Ties Kalker"],
-      "Photography": ["Sybi Deroo"],
+      "Video": [
+        "Ties Kalker"
+      ],
+      "Photography": [
+        "Sybi Deroo"
+      ],
       "Models": [
         "Aimone De Zordo",
         "Luca Pop",
@@ -141,17 +145,17 @@
       }
     ]
   },
-
   {
     "slug": "stadsduif",
     "thumbnailImage": "/images/Stadsduif/stadsduif01.webp",
     "video": "/videos/Stadsduif/stadsduifFilm.webm",
     "videoLoadingPoster": "/videos/Stadsduif/stadsduif.webp",
-
     "title": "Stadsduif",
     "date": "2024",
     "headImage": "",
-    "description": ["Movie by Rube Vandebril"],
+    "description": [
+      "Movie by Rube Vandebril"
+    ],
     "details": [],
     "images": [
       {
@@ -195,26 +199,44 @@
         "alt": "Stadsduif 10"
       }
     ],
-
     "credits": {
-      "Director": ["Rube Vandebril", "Pati Petrykowska"],
-      "First assistant director": ["Seppe Vanden Broeck"],
-      "Director of photography": ["Liam Emmerrechts"],
-      "First assistant camera": ["Tio Kerbusch"],
-      "Gaffer": ["Billy D'Hoore"],
-      "Electro": ["Alexander Siamandi", "Mats van Paridon"],
-      "Costume designer": ["Annelies Annys"],
-      "Starring": ["Felix Braeckman", "Michelle Van Neste"],
-      "Equipment": ["Camalux Belgium"]
+      "Director": [
+        "Rube Vandebril",
+        "Pati Petrykowska"
+      ],
+      "First assistant director": [
+        "Seppe Vanden Broeck"
+      ],
+      "Director of photography": [
+        "Liam Emmerrechts"
+      ],
+      "First assistant camera": [
+        "Tio Kerbusch"
+      ],
+      "Gaffer": [
+        "Billy D'Hoore"
+      ],
+      "Electro": [
+        "Alexander Siamandi",
+        "Mats van Paridon"
+      ],
+      "Costume designer": [
+        "Annelies Annys"
+      ],
+      "Starring": [
+        "Felix Braeckman",
+        "Michelle Van Neste"
+      ],
+      "Equipment": [
+        "Camalux Belgium"
+      ]
     }
   },
-
   {
     "slug": "split-myself-in-two",
     "thumbnailImage": "/images/BA2/smit01.webp",
     "video": "/videos/BA2/smitFilm.webm",
     "videoLoadingPoster": "/videos/BA2/smit.webp",
-
     "title": "Split myself in two",
     "date": "2024",
     "description": [
@@ -274,8 +296,12 @@
       }
     ],
     "credits": {
-      "Video": ["Ties Kalker"],
-      "Photography": ["Emma Ostyn"],
+      "Video": [
+        "Ties Kalker"
+      ],
+      "Photography": [
+        "Emma Ostyn"
+      ],
       "Models": [
         "Aimone De Zordo",
         "Indu Devarrewaere",
@@ -340,13 +366,11 @@
       }
     ]
   },
-
   {
     "slug": "ba1-studies",
     "thumbnailImage": "/images/BA1/Dress/dress01.webp",
     "video": "/videos/BA1/studiesFilm.webm",
     "videoLoadingPoster": "/videos/BA1/studies.webp",
-
     "title": "BA1 Studies",
     "description": [
       "A collection of explorations from my first year, each telling a different story through fabric and form.",
@@ -355,9 +379,16 @@
     ],
     "date": "2023",
     "credits": {
-      "Video": ["Christphe Annys"],
-      "Photography": ["Jonathan Verschaeve"],
-      "Models": ["Quiten Declercq", "Karin Devos"]
+      "Video": [
+        "Christphe Annys"
+      ],
+      "Photography": [
+        "Jonathan Verschaeve"
+      ],
+      "Models": [
+        "Quiten Declercq",
+        "Karin Devos"
+      ]
     },
     "studies": [
       {
@@ -454,7 +485,6 @@
           }
         ]
       },
-
       {
         "title": "Recycled Denim",
         "description": "This work started from my thoughts about homelessness, about what it means to have, or not have, a place to feel safe. To build something protective out of what is usually thrown away: recycled denim, plastic and an old sleeping bag. Each material holds traces of use, of care, of survival. It's about warmth, dignity, and the quiet wish for a softer world.",
@@ -521,7 +551,6 @@
           }
         ]
       },
-
       {
         "title": "Paper Study",
         "description": "Inspired by Día de los Muertos, where life and death meet in color. Not as an ending, but as a continuation of life. The flowers, bright and fragile, became a symbol of memory and rebirth. It's a reflection on remembrance and renewal. Through layers of soft, pleated paper, I explored how something delicate can still carry meaning, how remembering can be both light and heavy at once. The layers echo the softness of flowers — fragile, temporary, yet full of life. Paper becomes a skin for memory, light enough to breathe, strong enough to hold what has passed.",
