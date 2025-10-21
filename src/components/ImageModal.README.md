@@ -131,3 +131,4 @@ const getLargeImagePath = (originalPath: string): string => {
 - Images fade in smoothly with loading states
 - Navigation is disabled at array boundaries
 - The component is fully typed with TypeScript
+- test

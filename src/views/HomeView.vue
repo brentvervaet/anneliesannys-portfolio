@@ -1,4 +1,6 @@
 <template>
+  <!-- Preload LCP image -->
+  <link rel="preload" as="image" href="/images/collages.webp" fetchpriority="high" />
   <div class="home">
     <!-- Hero Section with Carousel -->
     <section
@@ -16,9 +18,10 @@
           <img
             v-for="n in 8"
             :key="`row1-${n}`"
-            src="/images/collages.webp"
+            :src="carouselImage"
             alt="Project collage"
             class="carousel-image"
+            fetchpriority="high"
           />
         </div>
       </div>
@@ -29,9 +32,10 @@
           <img
             v-for="n in 8"
             :key="`row2-${n}`"
-            src="/images/collages.webp"
+            :src="carouselImage"
             alt="Project collage"
             class="carousel-image"
+            fetchpriority="high"
           />
         </div>
       </div>
@@ -89,14 +93,49 @@ import { RouterLink } from 'vue-router'
 const heroSection = ref<HTMLElement>()
 const portfolioSection = ref<HTMLElement>()
 const heroOpacity = ref(1)
+const windowWidth = ref(typeof window !== 'undefined' ? window.innerWidth : 1024)
+
+// Computed property for responsive carousel image
+const carouselImage = computed(() => {
+  return '/images/collages.webp'
+})
+
+// Helper functions to get responsive image paths
+const getMediumImage = (imagePath: string): string => {
+  const parts = imagePath.split('/')
+  const fileName = parts.pop()
+  return [...parts, 'med', fileName].join('/')
+}
+
+const getSmallImage = (imagePath: string): string => {
+  const parts = imagePath.split('/')
+  const fileName = parts.pop()
+  return [...parts, 'sm', fileName].join('/')
+}
+
+const getExtraSmallImage = (imagePath: string): string => {
+  const parts = imagePath.split('/')
+  const fileName = parts.pop()
+  return [...parts, 'xs', fileName].join('/')
+}
+
+// Get responsive image based on window width
+const getResponsiveImage = (imagePath: string): string => {
+  if (windowWidth.value < 480) {
+    return getExtraSmallImage(imagePath)
+  } else if (windowWidth.value < 768) {
+    return getSmallImage(imagePath)
+  }
+  return getMediumImage(imagePath)
+}
 
 // Transform projects data from JSON to match the format needed for the view
 const projects = computed(() => {
   return projectsData.map((project, index) => ({
     id: index + 1,
     title: project.title.toUpperCase(),
-    route: `/${project.slug}`,
-    image: project.thumbnailImage,
+    route: `/portfolio/${project.slug}`,
+    image: getResponsiveImage(project.thumbnailImage),
     description: Array.isArray(project.description) ? project.description[0] : project.description,
   }))
 })
@@ -167,13 +206,20 @@ const handleAllScrollEvents = () => {
   handleScrollSnap()
 }
 
+// Handle window resize
+const handleResize = () => {
+  windowWidth.value = window.innerWidth
+}
+
 onMounted(() => {
   window.addEventListener('scroll', handleAllScrollEvents)
+  window.addEventListener('resize', handleResize)
   handleScroll() // Initial calculation
 })
 
 onUnmounted(() => {
   window.removeEventListener('scroll', handleAllScrollEvents)
+  window.removeEventListener('resize', handleResize)
   if (scrollTimer) {
     clearTimeout(scrollTimer)
   }

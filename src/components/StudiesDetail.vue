@@ -299,6 +299,7 @@ const onModalNavigate = (index: number) => {
   position: relative;
   /* TODO:aanpassen voor safari etc*/
   height: 100svh;
+  min-height: 500px; /* Prevent collapse during load */
   width: 100%;
   overflow: hidden;
 }
@@ -343,6 +344,10 @@ const onModalNavigate = (index: number) => {
 
 .project-headImage {
   margin: 3rem auto;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3/4; /* Reserve space to prevent shift */
+  object-fit: contain;
 }
 
 .project-description {
@@ -350,12 +355,14 @@ const onModalNavigate = (index: number) => {
   font-size: 1rem;
   font-weight: 300;
   margin: 6rem auto;
+  min-height: 80px; /* Reserve space for text */
 }
 
 .study-section {
   border-bottom: 1px solid #e5e5e5;
   padding-bottom: 3rem;
   margin: 0 auto;
+  min-height: 400px; /* Reserve space for each study section */
 }
 
 .study-section:last-child {
@@ -368,17 +375,20 @@ const onModalNavigate = (index: number) => {
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
   margin: 6rem auto;
+  min-height: 200px; /* Reserve space for grid */
 }
 
 .study-image {
   width: 250px;
   height: auto;
   object-fit: cover;
+  aspect-ratio: 3/4; /* Prevent shift as images load */
 }
 
 .single-image-container {
   display: flex;
   justify-content: center;
+  min-height: 300px; /* Reserve space */
 }
 
 .single-image {
@@ -386,6 +396,7 @@ const onModalNavigate = (index: number) => {
   max-width: 100%;
   height: auto;
   object-fit: cover;
+  aspect-ratio: 3/4; /* Prevent shift */
 }
 
 .clickable-image {
@@ -399,6 +410,7 @@ const onModalNavigate = (index: number) => {
 
 .sketchbook-section {
   margin: 6rem 0;
+  min-height: 200px; /* Reserve space */
 }
 
 .sketchbook-grid {
@@ -412,9 +424,14 @@ const onModalNavigate = (index: number) => {
   width: 100%;
   height: auto;
   object-fit: cover;
+  aspect-ratio: 3/2;
 }
 
 /* ===== COLLAGES SECTION ===== */
+
+.collages-section {
+  min-height: 200px; /* Reserve space */
+}
 
 .collages-grid {
   display: grid;
@@ -425,6 +442,8 @@ const onModalNavigate = (index: number) => {
 .collage-image {
   aspect-ratio: 1;
   object-fit: contain;
+  width: 100%; /* Ensure consistent sizing */
+  height: auto;
 }
 
 /* ===== CREDITS SECTION ===== */
@@ -432,6 +451,7 @@ const onModalNavigate = (index: number) => {
   margin: 6rem 0 0 0;
   padding: 2rem;
   background: rgba(0, 0, 0, 0.05);
+  min-height: 150px; /* Reserve space */
 }
 
 .credits-grid {

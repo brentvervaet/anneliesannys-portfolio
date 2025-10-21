@@ -292,6 +292,7 @@ const onModalNavigate = (index: number) => {
   position: relative;
   /* TODO:aanpassen voor safari etc*/
   height: 100svh;
+  min-height: 500px;
   width: 100%;
   overflow: hidden;
 }
@@ -351,6 +352,10 @@ const onModalNavigate = (index: number) => {
 .project-head img {
   display: block;
   margin: 3rem auto;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3/4; /* Reserve space to prevent shift */
+  object-fit: contain;
 }
 
 .project-description {
@@ -358,6 +363,7 @@ const onModalNavigate = (index: number) => {
   font-size: 1rem;
   font-weight: 300;
   margin: 6rem auto;
+  min-height: 100px; /* Reserve space for text */
 }
 
 .image-grid {
@@ -365,12 +371,14 @@ const onModalNavigate = (index: number) => {
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
   margin: 6rem auto;
+  min-height: 200px;
 }
 
 .image-grid img {
   width: 250px;
   height: auto;
   object-fit: cover;
+  aspect-ratio: 3/4;
 }
 
 .clickable-image {
@@ -385,6 +393,7 @@ const onModalNavigate = (index: number) => {
   margin: 6rem auto;
   padding: 2rem;
   background: rgba(0, 0, 0, 0.02);
+  min-height: 150px; /* Reserve space */
 }
 
 .credits-grid {
@@ -416,6 +425,7 @@ const onModalNavigate = (index: number) => {
 /* ===== SKETCHBOOK SECTION ===== */
 .sketchbook-section {
   margin: 6rem 0;
+  min-height: 100px;
 }
 
 .sketchbook-grid {
@@ -429,9 +439,14 @@ const onModalNavigate = (index: number) => {
   width: 100%;
   height: auto;
   object-fit: cover;
+  aspect-ratio: 3/2;
 }
 
 /* ===== COLLAGES SECTION ===== */
+
+.collages-section {
+  min-height: 100px;
+}
 
 .collages-grid {
   display: grid;
@@ -442,6 +457,8 @@ const onModalNavigate = (index: number) => {
 .collage-image {
   aspect-ratio: 1;
   object-fit: contain;
+  /* width: 100%; Ensure consistent sizing */
+  height: auto;
 }
 
 /* ===== MEDIA QUERIES ===== */
@@ -463,7 +480,7 @@ const onModalNavigate = (index: number) => {
 
   .project-head img {
     margin: 3.5rem auto;
-    max-width: 500px;
+    max-height: 750px;
   }
 
   .project-description {
@@ -529,7 +546,7 @@ const onModalNavigate = (index: number) => {
 
   .project-head img {
     margin: 4rem auto;
-    max-width: 350px;
+    max-height: 500px;
   }
 
   .project-description {

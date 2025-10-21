@@ -12,6 +12,10 @@ const router = createRouter({
       component: HomeView,
     },
     {
+      path: '/portfolio',
+      redirect: '/#portfolio',
+    },
+    {
       path: '/about',
       name: 'about',
       component: () => import('../views/AboutView.vue'),
@@ -22,7 +26,7 @@ const router = createRouter({
       component: () => import('../views/GalleryView.vue'),
     },
     {
-      path: '/:slug',
+      path: '/portfolio/:slug',
       name: 'project-detail',
       component: () => import('../views/ProjectDetailView.vue'),
       props: true,

@@ -12,7 +12,7 @@
           v-for="(image, index) in allImages"
           :key="image.src"
           class="gallery-item"
-          :class="{ 'animate-item': index < 40 }"
+          :class="{ 'animate-item': index }"
           :style="{ animationDelay: `${index * 20}ms` }"
           @click="openModal(index)"
         >
@@ -323,7 +323,7 @@ const onModalNavigate = (index: number) => {
 /* desktop */
 @media (min-width: 1024px) {
   .gallery-grid {
-    grid-template-columns: repeat(10, 1fr);
+    grid-template-columns: repeat(8, 1fr);
   }
 
   .gallery-item:hover .gallery-image {
