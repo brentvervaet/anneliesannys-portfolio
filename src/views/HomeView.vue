@@ -113,9 +113,17 @@ const getSmallImage = (imagePath: string): string => {
   return [...parts, 'sm', fileName].join('/')
 }
 
+const getExtraSmallImage = (imagePath: string): string => {
+  const parts = imagePath.split('/')
+  const fileName = parts.pop()
+  return [...parts, 'xs', fileName].join('/')
+}
+
 // Get responsive image based on window width
 const getResponsiveImage = (imagePath: string): string => {
-  if (windowWidth.value < 768) {
+  if (windowWidth.value < 480) {
+    return getExtraSmallImage(imagePath)
+  } else if (windowWidth.value < 768) {
     return getSmallImage(imagePath)
   }
   return getMediumImage(imagePath)
