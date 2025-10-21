@@ -1,4 +1,6 @@
 <template>
+  <!-- Preload LCP image -->
+  <link rel="preload" as="image" href="/images/collages.webp" fetchpriority="high" />
   <div class="home">
     <!-- Hero Section with Carousel -->
     <section
