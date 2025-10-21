@@ -56,7 +56,6 @@
   background: #fff;
   padding: 3rem;
   border-top: 1px solid rgba(0, 0, 0, 0.05);
-  margin-top: 1rem;
   min-height: 200px; /* Prevent layout shift by reserving space */
 }
 .footer-inner {
@@ -126,9 +125,4 @@
 }
 
 /* ===== MEDIA QUERIES ===== */
-@media (max-width: 1024px) {
-}
-
-@media (max-width: 768px) {
-}
 </style>
