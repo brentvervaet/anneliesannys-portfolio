@@ -18,7 +18,7 @@
           <img
             v-for="n in 8"
             :key="`row1-${n}`"
-            src="/images/collages.webp"
+            :src="carouselImage"
             alt="Project collage"
             class="carousel-image"
             fetchpriority="high"
@@ -32,7 +32,7 @@
           <img
             v-for="n in 8"
             :key="`row2-${n}`"
-            src="/images/collages.webp"
+            :src="carouselImage"
             alt="Project collage"
             class="carousel-image"
             fetchpriority="high"
@@ -94,6 +94,11 @@ const heroSection = ref<HTMLElement>()
 const portfolioSection = ref<HTMLElement>()
 const heroOpacity = ref(1)
 const windowWidth = ref(typeof window !== 'undefined' ? window.innerWidth : 1024)
+
+// Computed property for responsive carousel image
+const carouselImage = computed(() => {
+  return windowWidth.value < 768 ? '/images/collagesSm.webp' : '/images/collages.webp'
+})
 
 // Helper functions to get responsive image paths
 const getMediumImage = (imagePath: string): string => {
