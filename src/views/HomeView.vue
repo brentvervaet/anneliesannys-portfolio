@@ -93,6 +93,28 @@ import { RouterLink } from 'vue-router'
 const heroSection = ref<HTMLElement>()
 const portfolioSection = ref<HTMLElement>()
 const heroOpacity = ref(1)
+const windowWidth = ref(typeof window !== 'undefined' ? window.innerWidth : 1024)
+
+// Helper functions to get responsive image paths
+const getMediumImage = (imagePath: string): string => {
+  const parts = imagePath.split('/')
+  const fileName = parts.pop()
+  return [...parts, 'med', fileName].join('/')
+}
+
+const getSmallImage = (imagePath: string): string => {
+  const parts = imagePath.split('/')
+  const fileName = parts.pop()
+  return [...parts, 'sm', fileName].join('/')
+}
+
+// Get responsive image based on window width
+const getResponsiveImage = (imagePath: string): string => {
+  if (windowWidth.value < 768) {
+    return getSmallImage(imagePath)
+  }
+  return getMediumImage(imagePath)
+}
 
 // Transform projects data from JSON to match the format needed for the view
 const projects = computed(() => {
@@ -100,8 +122,7 @@ const projects = computed(() => {
     id: index + 1,
     title: project.title.toUpperCase(),
     route: `/${project.slug}`,
-    image: project.thumbnailImage,
-    // imageSmall: project.thumbnailImage.replace('/med/', '/sm/'),
+    image: getResponsiveImage(project.thumbnailImage),
     description: Array.isArray(project.description) ? project.description[0] : project.description,
   }))
 })
@@ -172,13 +193,20 @@ const handleAllScrollEvents = () => {
   handleScrollSnap()
 }
 
+// Handle window resize
+const handleResize = () => {
+  windowWidth.value = window.innerWidth
+}
+
 onMounted(() => {
   window.addEventListener('scroll', handleAllScrollEvents)
+  window.addEventListener('resize', handleResize)
   handleScroll() // Initial calculation
 })
 
 onUnmounted(() => {
   window.removeEventListener('scroll', handleAllScrollEvents)
+  window.removeEventListener('resize', handleResize)
   if (scrollTimer) {
     clearTimeout(scrollTimer)
   }

@@ -1,7 +1,7 @@
 [
   {
     "slug": "lost-before-morning",
-    "thumbnailImage": "/images/BA3/med/lbm01.webp",
+    "thumbnailImage": "/images/BA3/lbm01.webp",
     "video": "/videos/BA3/lbmFilm.webm",
     "videoLoadingPoster": "/videos/BA3/lbm.webp",
     "title": "Lost Before Morning",
@@ -144,7 +144,7 @@
 
   {
     "slug": "stadsduif",
-    "thumbnailImage": "/images/Stadsduif/med/stadsduif01.webp",
+    "thumbnailImage": "/images/Stadsduif/stadsduif01.webp",
     "video": "/videos/Stadsduif/stadsduifFilm.webm",
     "videoLoadingPoster": "/videos/Stadsduif/stadsduif.webp",
 
@@ -211,7 +211,7 @@
 
   {
     "slug": "split-myself-in-two",
-    "thumbnailImage": "/images/BA2/med/smit01.webp",
+    "thumbnailImage": "/images/BA2/smit01.webp",
     "video": "/videos/BA2/smitFilm.webm",
     "videoLoadingPoster": "/videos/BA2/smit.webp",
 
@@ -343,7 +343,7 @@
 
   {
     "slug": "ba1-studies",
-    "thumbnailImage": "/images/BA1/Dress/med/dress01.webp",
+    "thumbnailImage": "/images/BA1/Dress/dress01.webp",
     "video": "/videos/BA1/studiesFilm.webm",
     "videoLoadingPoster": "/videos/BA1/studies.webp",
 
