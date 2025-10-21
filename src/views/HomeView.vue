@@ -126,7 +126,7 @@ const projects = computed(() => {
   return projectsData.map((project, index) => ({
     id: index + 1,
     title: project.title.toUpperCase(),
-    route: `/${project.slug}`,
+    route: `/portfolio/${project.slug}`,
     image: getResponsiveImage(project.thumbnailImage),
     description: Array.isArray(project.description) ? project.description[0] : project.description,
   }))
