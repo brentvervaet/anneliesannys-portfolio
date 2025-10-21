@@ -286,6 +286,7 @@ nav ul {
   display: flex;
   gap: 35px;
   align-items: center;
+  cursor: pointer;
 }
 
 /* Component styles */
