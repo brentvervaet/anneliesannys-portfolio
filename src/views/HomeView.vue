@@ -97,7 +97,7 @@ const windowWidth = ref(typeof window !== 'undefined' ? window.innerWidth : 1024
 
 // Computed property for responsive carousel image
 const carouselImage = computed(() => {
-  return windowWidth.value < 768 ? '/images/collagesSm.webp' : '/images/collages.webp'
+  return '/images/collages.webp'
 })
 
 // Helper functions to get responsive image paths
