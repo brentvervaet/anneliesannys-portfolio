@@ -15,44 +15,44 @@ provide('hasHeroVideo', hasHeroVideo)
 // Update hasHeroVideo based on route changes
 const route = useRoute()
 watch(
-  () => route.path,
-  (path) => {
-    // Remove leading slash for comparison
-    const slug = path.startsWith('/') ? path.slice(1) : path
-    // Set hasHeroVideo to true if the current path matches any project slug
-    const projects = projectsData as Project[]
-    const currentProject = projects.find((p) => p.slug === slug)
-    hasHeroVideo.value = !!currentProject?.video
-  },
-  { immediate: true },
+	() => route.path,
+	(path) => {
+		// Remove leading slash for comparison
+		const slug = path.startsWith('/') ? path.slice(1) : path
+		// Set hasHeroVideo to true if the current path matches any project slug
+		const projects = projectsData as Project[]
+		const currentProject = projects.find((p) => p.slug === slug)
+		hasHeroVideo.value = !!currentProject?.video
+	},
+	{ immediate: true },
 )
 </script>
 
 <template>
-  <div id="app">
-    <AppHeader />
-    <main>
-      <RouterView />
-    </main>
-    <AppFooter />
-  </div>
+	<div id="app">
+		<AppHeader />
+		<main>
+			<RouterView />
+		</main>
+		<AppFooter />
+	</div>
 </template>
 
 <style scoped>
 #app {
-  margin: 0;
-  overflow-x: hidden;
-  padding: 0;
-  background-color: #fff;
-  color: #333;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  max-width: none;
+	margin: 0;
+	overflow-x: hidden;
+	padding: 0;
+	background-color: #fff;
+	color: #333;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	max-width: none;
 }
 
 main {
-  flex: 1;
-  background: #fff;
+	flex: 1;
+	background: #fff;
 }
 </style>

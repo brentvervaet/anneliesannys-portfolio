@@ -1,37 +1,37 @@
 @import "tailwindcss";
 
 @theme {
-  --color-pink-custom: rgba(255, 182, 193, 0.8);
-  --font-family-sans: 'Helvetica Neue', sans-serif;
+	--color-pink-custom: rgba(255, 182, 193, 0.8);
+	--font-family-sans: 'Helvetica Neue', sans-serif;
 }
 
 /* ===== BASE STYLES ===== */
 html {
-  scroll-behavior: smooth;
+	scroll-behavior: smooth;
 }
 
 body {
-  font-family: var(--font-family-sans);
-  overflow-x: hidden;
+	font-family: var(--font-family-sans);
+	overflow-x: hidden;
 }
 
 /* ===== SCROLL INDICATOR STYLES ===== */
 .scroll-indicator {
-  position: absolute;
-  bottom: 40px;
-  cursor: pointer;
+	position: absolute;
+	bottom: 40px;
+	cursor: pointer;
 }
 
 .scroll-arrow {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease-in-out;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: all 0.3s ease-in-out;
 }
 
 .scroll-arrow:hover {
-  color: rgba(255, 182, 193);
-  transform: translateY(-5px);
+	color: rgba(255, 182, 193);
+	transform: translateY(-5px);
 }
 
 /* @keyframes fadeInUp {
@@ -63,33 +63,33 @@ body {
 
 @media (max-width: 768px) {
 
-  /* .project-description {
-    font-size: 16px;
-  }
+	/* .project-description {
+	  font-size: 16px;
+	}
 
-  .portfolio-container {
-    padding: 0 20px;
-  }
+	.portfolio-container {
+	  padding: 0 20px;
+	}
 
-  .portfolio-grid {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
+	.portfolio-grid {
+	  grid-template-columns: 1fr;
+	  gap: 30px;
+	}
 
-  .project-content {
-    padding: 0 20px;
-  }
+	.project-content {
+	  padding: 0 20px;
+	}
 
-  .project-title {
-    font-size: 36px;
-  }
+	.project-title {
+	  font-size: 36px;
+	}
 
-  .project-description p {
-    font-size: 20px;
-  }
+	.project-description p {
+	  font-size: 20px;
+	}
 
-  .image-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  } */
+	.image-grid {
+	  grid-template-columns: 1fr;
+	  gap: 20px;
+	} */
 }

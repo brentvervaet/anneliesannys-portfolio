@@ -1,102 +1,110 @@
 <template>
-  <header :class="{ 'over-video': hasHeroVideo }">
-    <div class="header-content">
-      <!-- Left side: Title -->
-      <div class="left-section">
-        <h1 class="header-title">
-          <RouterLink to="/">ANNELIES ANNYS</RouterLink>
-        </h1>
-      </div>
+	<header :class="{ 'over-video': hasHeroVideo }">
+		<div class="header-content">
+			<!-- Left side: Title -->
+			<div class="left-section">
+				<h1 class="header-title">
+					<RouterLink to="/">ANNELIES ANNYS</RouterLink>
+				</h1>
+			</div>
 
-      <!-- Right side: Navigation -->
-      <div class="right-section">
-        <!-- Desktop Navigation -->
-        <nav class="desktop-nav">
-          <ul>
-            <li>
-              <RouterLink to="/" class="nav-link" :class="{ active: $route.path === '/' }">
-                home
-              </RouterLink>
-            </li>
-            <li>
-              <div @click="scrollToPortfolio" class="nav-link">portfolio</div>
-            </li>
-            <li>
-              <RouterLink
-                to="/gallery"
-                class="nav-link"
-                :class="{ active: $route.path === '/gallery' }"
-              >
-                gallery
-              </RouterLink>
-            </li>
-            <li>
-              <RouterLink
-                to="/about"
-                class="nav-link"
-                :class="{ active: $route.path === '/about' }"
-              >
-                about
-              </RouterLink>
-            </li>
-          </ul>
-        </nav>
+			<!-- Right side: Navigation -->
+			<div class="right-section">
+				<!-- Desktop Navigation -->
+				<nav class="desktop-nav">
+					<ul>
+						<li>
+							<RouterLink
+								to="/"
+								class="nav-link"
+								:class="{ active: $route.path === '/' }"
+							>
+								home
+							</RouterLink>
+						</li>
+						<li>
+							<div @click="scrollToPortfolio" class="nav-link">portfolio</div>
+						</li>
+						<li>
+							<RouterLink
+								to="/gallery"
+								class="nav-link"
+								:class="{ active: $route.path === '/gallery' }"
+							>
+								gallery
+							</RouterLink>
+						</li>
+						<li>
+							<RouterLink
+								to="/about"
+								class="nav-link"
+								:class="{ active: $route.path === '/about' }"
+							>
+								about
+							</RouterLink>
+						</li>
+					</ul>
+				</nav>
 
-        <!-- Mobile Hamburger Menu -->
-        <button
-          class="mobile-menu-toggle"
-          @click="toggleMobileMenu"
-          :class="{ 'menu-open': isMobileMenuOpen }"
-          aria-label="Toggle navigation menu"
-        >
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-        </button>
-      </div>
-    </div>
+				<!-- Mobile Hamburger Menu -->
+				<button
+					class="mobile-menu-toggle"
+					@click="toggleMobileMenu"
+					:class="{ 'menu-open': isMobileMenuOpen }"
+					aria-label="Toggle navigation menu"
+				>
+					<span class="hamburger-line"></span>
+					<span class="hamburger-line"></span>
+					<span class="hamburger-line"></span>
+				</button>
+			</div>
+		</div>
 
-    <!-- Mobile Navigation Overlay -->
-    <div class="mobile-nav-overlay" :class="{ active: isMobileMenuOpen }" @click="closeMobileMenu">
-      <nav class="mobile-nav" @click.stop>
-        <ul>
-          <li>
-            <RouterLink
-              to="/"
-              class="nav-link"
-              :class="{ active: $route.path === '/' }"
-              @click="closeMobileMenu"
-            >
-              home
-            </RouterLink>
-          </li>
-          <li>
-            <div @click="handleMobilePortfolioClick" class="nav-link">portfolio</div>
-          </li>
-          <li>
-            <RouterLink
-              to="/gallery"
-              class="nav-link"
-              :class="{ active: $route.path === '/gallery' }"
-              @click="closeMobileMenu"
-            >
-              gallery
-            </RouterLink>
-          </li>
-          <li>
-            <RouterLink
-              to="/about"
-              class="nav-link"
-              :class="{ active: $route.path === '/about' }"
-              @click="closeMobileMenu"
-            >
-              about
-            </RouterLink>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+		<!-- Mobile Navigation Overlay -->
+		<div
+			class="mobile-nav-overlay"
+			:class="{ active: isMobileMenuOpen }"
+			@click="closeMobileMenu"
+		>
+			<nav class="mobile-nav" @click.stop>
+				<ul>
+					<li>
+						<RouterLink
+							to="/"
+							class="nav-link"
+							:class="{ active: $route.path === '/' }"
+							@click="closeMobileMenu"
+						>
+							home
+						</RouterLink>
+					</li>
+					<li>
+						<div @click="handleMobilePortfolioClick" class="nav-link">portfolio</div>
+					</li>
+					<li>
+						<RouterLink
+							to="/gallery"
+							class="nav-link"
+							:class="{ active: $route.path === '/gallery' }"
+							@click="closeMobileMenu"
+						>
+							gallery
+						</RouterLink>
+					</li>
+					<li>
+						<RouterLink
+							to="/about"
+							class="nav-link"
+							:class="{ active: $route.path === '/about' }"
+							@click="closeMobileMenu"
+						>
+							about
+						</RouterLink>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</header>
 </template>
 
 <script setup lang="ts">
@@ -112,369 +120,369 @@ const isPortfolioVisible = ref(false)
 const isMobileMenuOpen = ref(false)
 
 const scrollToPortfolio = (e: Event) => {
-  e.preventDefault()
+	e.preventDefault()
 
-  // If not on home page, navigate to home first
-  if (route.path !== '/') {
-    window.location.href = '/#portfolio'
-    return
-  }
+	// If not on home page, navigate to home first
+	if (route.path !== '/') {
+		window.location.href = '/#portfolio'
+		return
+	}
 
-  // Smooth scroll to portfolio section
-  const portfolioSection = document.querySelector('.portfolio-section')
-  if (portfolioSection) {
-    portfolioSection.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start',
-    })
-  }
+	// Smooth scroll to portfolio section
+	const portfolioSection = document.querySelector('.portfolio-section')
+	if (portfolioSection) {
+		portfolioSection.scrollIntoView({
+			behavior: 'smooth',
+			block: 'start',
+		})
+	}
 }
 
 // Prevent touch scroll when mobile menu is open
 const preventScroll = (e: TouchEvent) => {
-  e.preventDefault()
+	e.preventDefault()
 }
 
 const toggleMobileMenu = () => {
-  isMobileMenuOpen.value = !isMobileMenuOpen.value
+	isMobileMenuOpen.value = !isMobileMenuOpen.value
 
-  // Toggle scroll lock on body
-  if (isMobileMenuOpen.value) {
-    document.body.style.overflow = 'hidden'
-    document.body.style.position = 'fixed'
-    document.body.style.width = '100%'
-    document.body.addEventListener('touchmove', preventScroll, { passive: false })
-  } else {
-    document.body.style.overflow = ''
-    document.body.style.position = ''
-    document.body.style.width = ''
-    document.body.removeEventListener('touchmove', preventScroll)
-  }
+	// Toggle scroll lock on body
+	if (isMobileMenuOpen.value) {
+		document.body.style.overflow = 'hidden'
+		document.body.style.position = 'fixed'
+		document.body.style.width = '100%'
+		document.body.addEventListener('touchmove', preventScroll, { passive: false })
+	} else {
+		document.body.style.overflow = ''
+		document.body.style.position = ''
+		document.body.style.width = ''
+		document.body.removeEventListener('touchmove', preventScroll)
+	}
 }
 
 const closeMobileMenu = () => {
-  isMobileMenuOpen.value = false
-  // Remove scroll lock
-  document.body.style.overflow = ''
-  document.body.style.position = ''
-  document.body.style.width = ''
-  document.body.removeEventListener('touchmove', preventScroll)
+	isMobileMenuOpen.value = false
+	// Remove scroll lock
+	document.body.style.overflow = ''
+	document.body.style.position = ''
+	document.body.style.width = ''
+	document.body.removeEventListener('touchmove', preventScroll)
 }
 
 const handleMobilePortfolioClick = () => {
-  closeMobileMenu()
-  scrollToPortfolio(new Event('click'))
+	closeMobileMenu()
+	scrollToPortfolio(new Event('click'))
 }
 
 const checkPortfolioVisibility = () => {
-  if (route.path !== '/') {
-    isPortfolioVisible.value = false
-    return
-  }
+	if (route.path !== '/') {
+		isPortfolioVisible.value = false
+		return
+	}
 
-  const portfolioSection = document.querySelector('.portfolio-section')
-  if (!portfolioSection) return
+	const portfolioSection = document.querySelector('.portfolio-section')
+	if (!portfolioSection) return
 
-  const rect = portfolioSection.getBoundingClientRect()
-  const isVisible = rect.top < window.innerHeight * 0.5 && rect.bottom > 0
-  isPortfolioVisible.value = isVisible
+	const rect = portfolioSection.getBoundingClientRect()
+	const isVisible = rect.top < window.innerHeight * 0.5 && rect.bottom > 0
+	isPortfolioVisible.value = isVisible
 }
 
 onMounted(() => {
-  window.addEventListener('scroll', checkPortfolioVisibility)
-  checkPortfolioVisibility() // Initial check
+	window.addEventListener('scroll', checkPortfolioVisibility)
+	checkPortfolioVisibility() // Initial check
 
-  // Close mobile menu on escape key
-  const handleEscape = (e: KeyboardEvent) => {
-    if (e.key === 'Escape') {
-      closeMobileMenu()
-    }
-  }
-  window.addEventListener('keydown', handleEscape)
+	// Close mobile menu on escape key
+	const handleEscape = (e: KeyboardEvent) => {
+		if (e.key === 'Escape') {
+			closeMobileMenu()
+		}
+	}
+	window.addEventListener('keydown', handleEscape)
 
-  // Cleanup function will remove this listener
-  onUnmounted(() => {
-    window.removeEventListener('keydown', handleEscape)
-  })
+	// Cleanup function will remove this listener
+	onUnmounted(() => {
+		window.removeEventListener('keydown', handleEscape)
+	})
 })
 
 onUnmounted(() => {
-  window.removeEventListener('scroll', checkPortfolioVisibility)
-  // Ensure scroll lock is removed when component unmounts
-  document.body.style.overflow = ''
-  document.body.style.position = ''
-  document.body.style.width = ''
-  document.body.removeEventListener('touchmove', preventScroll)
+	window.removeEventListener('scroll', checkPortfolioVisibility)
+	// Ensure scroll lock is removed when component unmounts
+	document.body.style.overflow = ''
+	document.body.style.position = ''
+	document.body.style.width = ''
+	document.body.removeEventListener('touchmove', preventScroll)
 })
 
 // Watch for route changes to close mobile menu and remove scroll lock
 watch(route, () => {
-  closeMobileMenu()
+	closeMobileMenu()
 })
 
 // Watch for mobile menu state changes to ensure scroll lock is applied/removed
 watch(isMobileMenuOpen, (isOpen) => {
-  if (isOpen) {
-    document.body.style.overflow = 'hidden'
-    document.body.style.position = 'fixed'
-    document.body.style.width = '100%'
-    document.body.addEventListener('touchmove', preventScroll, { passive: false })
-  } else {
-    document.body.style.overflow = ''
-    document.body.style.position = ''
-    document.body.style.width = ''
-    document.body.removeEventListener('touchmove', preventScroll)
-  }
+	if (isOpen) {
+		document.body.style.overflow = 'hidden'
+		document.body.style.position = 'fixed'
+		document.body.style.width = '100%'
+		document.body.addEventListener('touchmove', preventScroll, { passive: false })
+	} else {
+		document.body.style.overflow = ''
+		document.body.style.position = ''
+		document.body.style.width = ''
+		document.body.removeEventListener('touchmove', preventScroll)
+	}
 })
 </script>
 
 <style scoped>
 header {
-  padding: 1.2rem;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  background: transparent;
+	padding: 1.2rem;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 1000;
+	background: transparent;
 }
 
 .header-title {
-  margin: 0;
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: black;
-  letter-spacing: 0.02em;
-  white-space: nowrap;
+	margin: 0;
+	font-size: 1.5rem;
+	font-weight: bold;
+	color: black;
+	letter-spacing: 0.02em;
+	white-space: nowrap;
 }
 
 header.over-video .header-title {
-  color: white;
+	color: white;
 }
 
 header.over-video .nav-link {
-  color: white;
+	color: white;
 }
 
 .header-content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 50px;
-  margin: 0 auto;
-  width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 50px;
+	margin: 0 auto;
+	width: 100%;
 }
 
 .left-section {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
 }
 
 .right-section {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 35px;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	gap: 35px;
 }
 
 /* Navigation Styles */
 nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  gap: 35px;
-  align-items: center;
-  cursor: pointer;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	gap: 35px;
+	align-items: center;
+	cursor: pointer;
 }
 
 /* Component styles */
 .nav-link {
-  color: black;
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 17px;
-  transition: all 0.3s ease;
-  position: relative;
-  display: inline-block;
-  padding: 8px 0;
+	color: black;
+	text-decoration: none;
+	font-weight: 500;
+	font-size: 17px;
+	transition: all 0.3s ease;
+	position: relative;
+	display: inline-block;
+	padding: 8px 0;
 }
 
 .nav-link:hover {
-  color: rgba(255, 182, 193);
-  transform: translateY(-3px);
+	color: rgba(255, 182, 193);
+	transform: translateY(-3px);
 }
 
 .nav-link.active {
-  font-weight: 600;
-  color: rgba(255, 182, 193);
+	font-weight: 600;
+	color: rgba(255, 182, 193);
 }
 
 /* Mobile Menu Toggle Button */
 .mobile-menu-toggle {
-  display: none;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 24px;
-  height: 24px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  z-index: 1001;
+	display: none;
+	flex-direction: column;
+	justify-content: space-around;
+	width: 24px;
+	height: 24px;
+	background: transparent;
+	border: none;
+	cursor: pointer;
+	padding: 0;
+	z-index: 1001;
 }
 
 .hamburger-line {
-  width: 100%;
-  height: 2px;
-  background-color: #000;
-  transition: all 0.3s ease;
-  transform-origin: center;
+	width: 100%;
+	height: 2px;
+	background-color: #000;
+	transition: all 0.3s ease;
+	transform-origin: center;
 }
 
 header.over-video .hamburger-line {
-  background-color: white;
+	background-color: white;
 }
 
 /* ===== ANIMATIONS ===== */
 /* hamburger */
 .mobile-menu-toggle.menu-open .hamburger-line:nth-child(1) {
-  transform: rotate(45deg) translate(6px, 6px);
+	transform: rotate(45deg) translate(6px, 6px);
 }
 
 .mobile-menu-toggle.menu-open .hamburger-line:nth-child(2) {
-  opacity: 0;
+	opacity: 0;
 }
 
 .mobile-menu-toggle.menu-open .hamburger-line:nth-child(3) {
-  transform: rotate(-45deg) translate(6px, -6px);
+	transform: rotate(-45deg) translate(6px, -6px);
 }
 
 /* ===== MOBILE NAV OVERLAY ===== */
 .mobile-nav-overlay {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 999;
-  opacity: 0;
-  visibility: hidden;
-  background: rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(30px);
-  transition: all 0.3s ease;
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 999;
+	opacity: 0;
+	visibility: hidden;
+	background: rgba(0, 0, 0, 0.2);
+	backdrop-filter: blur(30px);
+	transition: all 0.3s ease;
 }
 
 .mobile-nav-overlay.active {
-  opacity: 1;
-  visibility: visible;
+	opacity: 1;
+	visibility: visible;
 }
 
 .mobile-nav {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  min-width: 200px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	min-width: 200px;
 }
 
 .mobile-nav ul {
-  flex-direction: column;
-  gap: 25px;
-  text-align: center;
+	flex-direction: column;
+	gap: 25px;
+	text-align: center;
 }
 
 .mobile-nav .nav-link {
-  font-size: 1.2rem;
-  color: #000;
-  text-decoration: none;
-  padding: 10px 20px;
-  border-radius: 4px;
-  transition: background-color 0.2s ease;
-  cursor: pointer;
+	font-size: 1.2rem;
+	color: #000;
+	text-decoration: none;
+	padding: 10px 20px;
+	border-radius: 4px;
+	transition: background-color 0.2s ease;
+	cursor: pointer;
 }
 
 .mobile-nav .nav-link.active {
-  font-weight: 600;
-  color: rgba(255, 182, 193);
-  /* text-shadow: 1px 1px 1px black; */
+	font-weight: 600;
+	color: rgba(255, 182, 193);
+	/* text-shadow: 1px 1px 1px black; */
 }
 
 /* ===== MEDIA QUERIES ===== */
 
 /* tablet */
 @media (min-width: 768px) {
-  header {
-    padding: 1.5rem 2rem;
-  }
+	header {
+		padding: 1.5rem 2rem;
+	}
 
-  .header-title {
-    font-size: 2.2rem;
-  }
+	.header-title {
+		font-size: 2.2rem;
+	}
 
-  .mobile-nav .nav-link {
-    font-size: 1.5rem;
-  }
+	.mobile-nav .nav-link {
+		font-size: 1.5rem;
+	}
 }
 
 /* desktop */
 @media (min-width: 1024px) {
-  header {
-    padding: 2rem 3rem;
-  }
+	header {
+		padding: 2rem 3rem;
+	}
 
-  .header-title {
-    font-size: 2rem;
-  }
+	.header-title {
+		font-size: 2rem;
+	}
 
-  .header-content {
-    gap: 80px;
-    max-width: 1600px;
-  }
+	.header-content {
+		gap: 80px;
+		max-width: 1600px;
+	}
 
-  .right-section {
-    gap: 50px;
-  }
+	.right-section {
+		gap: 50px;
+	}
 
-  nav ul {
-    gap: 50px;
-  }
+	nav ul {
+		gap: 50px;
+	}
 
-  .nav-link {
-    font-size: 1rem;
-  }
+	.nav-link {
+		font-size: 1rem;
+	}
 
-  .nav-link::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: rgba(255, 182, 193, 0.8);
-    transition: width 0.3s ease;
-  }
+	.nav-link::after {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 0;
+		height: 2px;
+		background-color: rgba(255, 182, 193, 0.8);
+		transition: width 0.3s ease;
+	}
 
-  .nav-link:hover::after,
-  .nav-link.active::after {
-    width: 100%;
-  }
+	.nav-link:hover::after,
+	.nav-link.active::after {
+		width: 100%;
+	}
 }
 
 /* Show mobile menu on screens < 850px */
 @media (max-width: 55rem) {
-  .desktop-nav {
-    display: none;
-  }
+	.desktop-nav {
+		display: none;
+	}
 
-  .mobile-menu-toggle {
-    display: flex;
-  }
+	.mobile-menu-toggle {
+		display: flex;
+	}
 
-  .mobile-nav-overlay {
-    display: block;
-  }
+	.mobile-nav-overlay {
+		display: block;
+	}
 }
 </style>

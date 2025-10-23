@@ -4,7 +4,8 @@ A reusable modal component for displaying images in an enlarged view with naviga
 
 ## Usage
 
-The `ImageModal` component is used across the portfolio to display images in a modal overlay with navigation between multiple images.
+The `ImageModal` component is used across the portfolio to display images in a modal overlay with navigation between
+multiple images.
 
 ### Import
 
@@ -16,18 +17,18 @@ import ImageModal, { type ModalImage } from '@/components/ImageModal.vue'
 
 ```typescript
 interface Props {
-  isOpen: boolean // Controls modal visibility
-  images: ModalImage[] // Array of images to display
-  initialIndex: number // Starting index for the modal
+	isOpen: boolean // Controls modal visibility
+	images: ModalImage[] // Array of images to display
+	initialIndex: number // Starting index for the modal
 }
 
 interface ModalImage {
-  src: string // Small/thumbnail image source
-  srcLarge: string // Large image source for modal view
-  alt: string // Alt text for accessibility
-  title: string // Display title
-  category: string // Display category/subtitle
-  projectSlug?: string // Optional: Project slug for navigation (makes category clickable)
+	src: string // Small/thumbnail image source
+	srcLarge: string // Large image source for modal view
+	alt: string // Alt text for accessibility
+	title: string // Display title
+	category: string // Display category/subtitle
+	projectSlug?: string // Optional: Project slug for navigation (makes category clickable)
 }
 ```
 
@@ -39,73 +40,74 @@ interface ModalImage {
 ### Example Implementation
 
 ```vue
-<template>
-  <div>
-    <!-- Gallery/Images Grid -->
-    <div class="image-grid">
-      <img
-        v-for="(image, index) in images"
-        :key="image.src"
-        :src="getMediumImagePath(image.src)"
-        :alt="image.alt"
-        @click="openModal(index)"
-      />
-    </div>
 
-    <!-- Modal -->
-    <ImageModal
-      :isOpen="modalOpen"
-      :images="modalImages"
-      :initialIndex="currentModalIndex"
-      @close="closeModal"
-      @navigate="onModalNavigate"
-    />
-  </div>
+<template>
+	<div>
+		<!-- Gallery/Images Grid -->
+		<div class="image-grid">
+			<img
+				v-for="(image, index) in images"
+				:key="image.src"
+				:src="getMediumImagePath(image.src)"
+				:alt="image.alt"
+				@click="openModal(index)"
+			/>
+		</div>
+
+		<!-- Modal -->
+		<ImageModal
+			:isOpen="modalOpen"
+			:images="modalImages"
+			:initialIndex="currentModalIndex"
+			@close="closeModal"
+			@navigate="onModalNavigate"
+		/>
+	</div>
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue'
-import ImageModal, { type ModalImage } from '@/components/ImageModal.vue'
+	import { ref, computed } from 'vue'
+	import ImageModal, { type ModalImage } from '@/components/ImageModal.vue'
 
-const modalOpen = ref(false)
-const currentModalIndex = ref(0)
+	const modalOpen = ref(false)
+	const currentModalIndex = ref(0)
 
-// Transform your images to ModalImage format
-const modalImages = computed<ModalImage[]>(() => {
-  return yourImages.map((image, index) => ({
-    src: getMediumImagePath(image.src),
-    srcLarge: getLargeImagePath(image.src),
-    alt: image.alt,
-    title: `Image ${index + 1}`, // or extract from filename
-    category: 'Your Category',
-  }))
-})
+	// Transform your images to ModalImage format
+	const modalImages = computed<ModalImage[]>(() => {
+		return yourImages.map((image, index) => ({
+			src: getMediumImagePath(image.src),
+			srcLarge: getLargeImagePath(image.src),
+			alt: image.alt,
+			title: `Image ${index + 1}`, // or extract from filename
+			category: 'Your Category',
+		}))
+	})
 
-const openModal = (index: number) => {
-  currentModalIndex.value = index
-  modalOpen.value = true
-}
+	const openModal = (index: number) => {
+		currentModalIndex.value = index
+		modalOpen.value = true
+	}
 
-const closeModal = () => {
-  modalOpen.value = false
-}
+	const closeModal = () => {
+		modalOpen.value = false
+	}
 
-const onModalNavigate = (index: number) => {
-  currentModalIndex.value = index
-}
+	const onModalNavigate = (index: number) => {
+		currentModalIndex.value = index
+	}
 
-// Helper functions to transform image paths
-const getMediumImagePath = (originalPath: string): string => {
-  const pathParts = originalPath.split('/')
-  const filename = pathParts.pop()
-  return [...pathParts, 'med', filename].join('/')
-}
+	// Helper functions to transform image paths
+	const getMediumImagePath = (originalPath: string): string => {
+		const pathParts = originalPath.split('/')
+		const filename = pathParts.pop()
+		return [...pathParts, 'med', filename].join('/')
+	}
 
-const getLargeImagePath = (originalPath: string): string => {
-  const pathParts = originalPath.split('/')
-  const filename = pathParts.pop()
-  return [...pathParts, 'lg', filename].join('/')
-}
+	const getLargeImagePath = (originalPath: string): string => {
+		const pathParts = originalPath.split('/')
+		const filename = pathParts.pop()
+		return [...pathParts, 'lg', filename].join('/')
+	}
 </script>
 ```
 
