@@ -1,11 +1,11 @@
 {
 	"name": "annelies-portfolio-vue",
-	"version": "0.0.0",
+	"version": "3.2.2",
 	"private": true,
 	"type": "module",
 	"packageManager": "pnpm@10.18.2",
 	"engines": {
-		"node": "^20.19.0 || >=22.12.0"
+		"node": ">=20.19.0"
 	},
 	"scripts": {
 		"dev": "vite",
