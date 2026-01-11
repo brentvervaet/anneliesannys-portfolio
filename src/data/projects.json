@@ -76,12 +76,8 @@
 			}
 		],
 		"credits": {
-			"Video": [
-				"Ties Kalker"
-			],
-			"Photography": [
-				"Sybi Deroo"
-			],
+			"Video": ["Ties Kalker"],
+			"Photography": ["Sybi Deroo"],
 			"Models": [
 				"Aimone De Zordo",
 				"Luca Pop",
@@ -152,9 +148,7 @@
 		"title": "Stadsduif",
 		"date": "2024",
 		"headImage": "",
-		"description": [
-			"Movie by Rube Vandebril"
-		],
+		"description": ["Movie by Rube Vandebril"],
 		"details": [],
 		"images": [
 			{
@@ -199,36 +193,15 @@
 			}
 		],
 		"credits": {
-			"Director": [
-				"Rube Vandebril",
-				"Pati Petrykowska"
-			],
-			"First assistant director": [
-				"Seppe Vanden Broeck"
-			],
-			"Director of photography": [
-				"Liam Emmerrechts"
-			],
-			"First assistant camera": [
-				"Tio Kerbusch"
-			],
-			"Gaffer": [
-				"Billy D'Hoore"
-			],
-			"Electro": [
-				"Alexander Siamandi",
-				"Mats van Paridon"
-			],
-			"Costume designer": [
-				"Annelies Annys"
-			],
-			"Starring": [
-				"Felix Braeckman",
-				"Michelle Van Neste"
-			],
-			"Equipment": [
-				"Camalux Belgium"
-			]
+			"Director": ["Rube Vandebril", "Pati Petrykowska"],
+			"First assistant director": ["Seppe Vanden Broeck"],
+			"Director of photography": ["Liam Emmerrechts"],
+			"First assistant camera": ["Tio Kerbusch"],
+			"Gaffer": ["Billy D'Hoore"],
+			"Electro": ["Alexander Siamandi", "Mats van Paridon"],
+			"Costume designer": ["Annelies Annys"],
+			"Starring": ["Felix Braeckman", "Michelle Van Neste"],
+			"Equipment": ["Camalux Belgium"]
 		}
 	},
 	{
@@ -295,12 +268,8 @@
 			}
 		],
 		"credits": {
-			"Video": [
-				"Ties Kalker"
-			],
-			"Photography": [
-				"Emma Ostyn"
-			],
+			"Video": ["Ties Kalker"],
+			"Photography": ["Emma Ostyn"],
 			"Models": [
 				"Aimone De Zordo",
 				"Indu Devarrewaere",
@@ -366,11 +335,11 @@
 		]
 	},
 	{
-		"slug": "ba1-studies",
+		"slug": "studies",
 		"thumbnailImage": "/images/BA1/Dress/dress01.webp",
 		"video": "/videos/BA1/studiesFilm.webm",
 		"videoLoadingPoster": "/videos/BA1/studies.webp",
-		"title": "BA1 Studies",
+		"title": "Studies",
 		"description": [
 			"A collection of explorations from my first year, each telling a different story through fabric and form.",
 			"These studies represent my early investigations into identity, memory, and social consciousness through fashion design.",
@@ -378,17 +347,9 @@
 		],
 		"date": "2023",
 		"credits": {
-			"Video": [
-				"Christophe Annys"
-			],
-			"Photography": [
-				"Jonathan Verschaeve"
-			],
-			"Models": [
-				"Quiten Declercq",
-				"Karin Devos",
-				"Bort"
-			]
+			"Video": ["Christophe Annys"],
+			"Photography": ["Jonathan Verschaeve"],
+			"Models": ["Quiten Declercq", "Karin Devos", "Bort"]
 		},
 		"studies": [
 			{
