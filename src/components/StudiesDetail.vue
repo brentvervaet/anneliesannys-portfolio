@@ -36,7 +36,7 @@
 							:alt="image.alt"
 							:src="getMediumImagePath(image.src)"
 							class="study-image clickable-image"
-							@click="openStudyImageModal(study, imageIndex)"
+							@click="openStudyImageModal(study, Number(imageIndex))"
 						/>
 					</div>
 
