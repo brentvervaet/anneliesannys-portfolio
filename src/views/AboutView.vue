@@ -3,7 +3,7 @@
 		<section class="about-content">
 			<div class="about-text">
 				<div class="profile-image">
-					<img src="/images/anneliesannys.webp" alt="Annelies Annys" />
+					<img alt="Annelies Annys" src="/images/anneliesannys.webp" />
 				</div>
 				<p>
 					I’m Annelies Annys, a fashion designer and student at KASK & Conservatorium in
@@ -92,12 +92,11 @@
 	</div>
 </template>
 
-<script setup lang="ts"></script>
+<script lang="ts" setup></script>
 
 <style>
 .about-content {
-	padding: 1.5rem;
-	padding-top: 3.5rem;
+	padding: 3.5rem 1.5rem 1.5rem;
 }
 
 .profile-image {
@@ -212,8 +211,7 @@
 /* tablet */
 @media (min-width: 768px) {
 	.about-content {
-		padding: 2rem 4rem;
-		padding-top: 5rem;
+		padding: 5rem 4rem 2rem;
 		max-width: 1400px;
 		margin: 0 auto;
 	}
@@ -259,8 +257,7 @@
 /* desktop */
 @media (min-width: 1024px) {
 	.about-content {
-		padding: 3rem 6rem;
-		padding-top: 6rem;
+		padding: 6rem 6rem 3rem;
 		display: grid;
 		grid-template-columns: 1.2fr 1fr;
 		gap: 4rem;

@@ -4,18 +4,18 @@
 		<div class="carousel-wrapper" @mouseenter="pauseAnimation" @mouseleave="resumeAnimation">
 			<div
 				ref="track"
-				class="carousel-track-enhanced"
 				:class="{
 					paused: isPaused,
 					'scroll-left': direction === 'left',
 					'scroll-right': direction === 'right',
 				}"
+				class="carousel-track-enhanced"
 			>
 				<img
 					v-for="(image, index) in duplicatedImages"
 					:key="`img-${index}`"
-					:src="image.src"
 					:alt="image.alt"
+					:src="image.src"
 					class="carousel-slide"
 					@click="() => onImageClick?.(image, index)"
 				/>
@@ -27,31 +27,31 @@
 			<button
 				v-for="(_, index) in originalImages"
 				:key="`dot-${index}`"
-				class="carousel-dot"
-				:class="{ active: index === currentSlide }"
-				@click="goToSlide(index)"
 				:aria-label="`Go to slide ${index + 1}`"
+				:class="{ active: index === currentSlide }"
+				class="carousel-dot"
+				@click="goToSlide(index)"
 			/>
 		</div>
 
 		<!-- Optional controls -->
 		<div v-if="showControls" class="carousel-controls">
 			<button
+				:aria-label="'Previous slide'"
 				class="carousel-control prev"
 				@click="previousSlide"
-				:aria-label="'Previous slide'"
 			>
 				&#8249;
 			</button>
-			<button class="carousel-control next" @click="nextSlide" :aria-label="'Next slide'">
+			<button :aria-label="'Next slide'" class="carousel-control next" @click="nextSlide">
 				&#8250;
 			</button>
 		</div>
 	</div>
 </template>
 
-<script setup lang="ts">
-import { computed, onMounted, onUnmounted, ref, type PropType } from 'vue'
+<script lang="ts" setup>
+import { computed, onMounted, onUnmounted, type PropType, ref } from 'vue'
 
 export interface CarouselImage {
 	src: string

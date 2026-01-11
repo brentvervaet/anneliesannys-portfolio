@@ -4,12 +4,12 @@
 			<h1>404</h1>
 			<h2>Page Not Found</h2>
 			<p>The page you're looking for doesn't exist or has been moved.</p>
-			<RouterLink to="/" class="back-home-link">← Back to Home</RouterLink>
+			<RouterLink class="back-home-link" to="/">← Back to Home</RouterLink>
 		</div>
 	</div>
 </template>
 
-<script setup lang="ts">
+<script lang="ts" setup>
 // No script needed for this simple component
 </script>
 

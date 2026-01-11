@@ -11,14 +11,14 @@
 					<div class="loading-spinner"></div>
 				</div>
 				<img
-					:src="currentImage?.srcLarge"
 					:alt="currentImage?.alt"
+					:class="{ loading: imageLoading }"
+					:height="naturalSize?.h"
+					:src="currentImage?.srcLarge"
+					:style="aspectRatio ? { aspectRatio: String(aspectRatio) } : undefined"
+					:width="naturalSize?.w"
 					class="modal-image"
 					@load="onImageLoad"
-					:class="{ loading: imageLoading }"
-					:width="naturalSize?.w"
-					:height="naturalSize?.h"
-					:style="aspectRatio ? { aspectRatio: String(aspectRatio) } : undefined"
 				/>
 			</div>
 
@@ -38,47 +38,47 @@
 			<!-- Navigation - Fixed at Bottom -->
 			<div class="modal-navigation modal-navigation-bottom">
 				<button
-					class="nav-btn"
-					@click.stop="navigatePrevious"
 					:disabled="currentIndex === 0"
 					aria-label="Previous image"
+					class="nav-btn"
+					@click.stop="navigatePrevious"
 				>
 					<svg
-						class="nav-icon"
-						viewBox="0 0 24 24"
-						fill="none"
-						xmlns="http://www.w3.org/2000/svg"
 						aria-hidden="true"
+						class="nav-icon"
+						fill="none"
+						viewBox="0 0 24 24"
+						xmlns="http://www.w3.org/2000/svg"
 					>
 						<path
 							d="M15 6l-6 6 6 6"
 							stroke="currentColor"
-							stroke-width="2"
 							stroke-linecap="round"
 							stroke-linejoin="round"
+							stroke-width="2"
 						/>
 					</svg>
 				</button>
 				<span class="image-counter">{{ currentIndex + 1 }} / {{ images.length }}</span>
 				<button
-					class="nav-btn"
-					@click.stop="navigateNext"
 					:disabled="currentIndex === images.length - 1"
 					aria-label="Next image"
+					class="nav-btn"
+					@click.stop="navigateNext"
 				>
 					<svg
-						class="nav-icon"
-						viewBox="0 0 24 24"
-						fill="none"
-						xmlns="http://www.w3.org/2000/svg"
 						aria-hidden="true"
+						class="nav-icon"
+						fill="none"
+						viewBox="0 0 24 24"
+						xmlns="http://www.w3.org/2000/svg"
 					>
 						<path
 							d="M9 6l6 6-6 6"
 							stroke="currentColor"
-							stroke-width="2"
 							stroke-linecap="round"
 							stroke-linejoin="round"
+							stroke-width="2"
 						/>
 					</svg>
 				</button>
@@ -87,7 +87,7 @@
 	</div>
 </template>
 
-<script setup lang="ts">
+<script lang="ts" setup>
 import { computed, onMounted, onUnmounted, ref, watch } from 'vue'
 import { useRouter } from 'vue-router'
 

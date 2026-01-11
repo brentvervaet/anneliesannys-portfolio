@@ -11,7 +11,7 @@ html {
 }
 
 body {
-	font-family: var(--font-family-sans);
+	font-family: var(--font-family-sans), sans-serif;
 	overflow-x: hidden;
 }
 

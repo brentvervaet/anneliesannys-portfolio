@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import projectsData from '@/data/projects.json'
 import type { Project } from '@/types/project'
 import { provide, ref, watch } from 'vue'

@@ -11,12 +11,12 @@
 				<div
 					v-for="(image, index) in allImages"
 					:key="image.src"
-					class="gallery-item"
 					:class="{ 'animate-item': index }"
 					:style="{ animationDelay: `${index * 20}ms` }"
+					class="gallery-item"
 					@click="openModal(index)"
 				>
-					<img :src="image.src" :alt="image.alt" class="gallery-image" loading="lazy" />
+					<img :alt="image.alt" :src="image.src" class="gallery-image" loading="lazy" />
 					<div class="gallery-overlay">
 						<div class="overlay-content">
 							<h3>{{ image.title }}</h3>
@@ -28,9 +28,9 @@
 
 			<!-- Modal for enlarged view -->
 			<ImageModal
-				:isOpen="modalOpen"
 				:images="allImages"
 				:initialIndex="currentModalIndex"
+				:isOpen="modalOpen"
 				@close="closeModal"
 				@navigate="onModalNavigate"
 			/>
@@ -38,7 +38,7 @@
 	</div>
 </template>
 
-<script setup lang="ts">
+<script lang="ts" setup>
 import ImageModal, { type ModalImage } from '@/components/ImageModal.vue'
 import projectsData from '@/data/projects.json'
 import { computed, ref } from 'vue'
@@ -48,7 +48,7 @@ const currentModalIndex = ref(0)
 
 // Seeded random function for consistent shuffle
 const seededRandom = (seed: number) => {
-	let x = Math.sin(seed++) * 10000
+	const x = Math.sin(seed++) * 10000
 	return x - Math.floor(x)
 }
 
@@ -213,8 +213,7 @@ const onModalNavigate = (index: number) => {
 
 <style scoped>
 .gallery-content {
-	padding: 1.5rem;
-	padding-top: 3rem;
+	padding: 3rem 1.5rem 1.5rem;
 }
 
 .gallery-header {
@@ -237,7 +236,7 @@ const onModalNavigate = (index: number) => {
 .gallery-grid {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
-	gap: 0px;
+	gap: 0;
 	margin-bottom: 80px;
 }
 

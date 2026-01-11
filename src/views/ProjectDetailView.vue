@@ -3,31 +3,31 @@
 		<!-- Show StudiesDetail component for projects with studies -->
 		<StudiesDetail
 			v-if="project.studies"
-			:title="project.title"
-			:description="project.description"
-			:studies="project.studies"
-			:video="project.video"
-			:posterImage="project.videoLoadingPoster"
-			:date="project.date"
 			:credits="project.credits"
+			:date="project.date"
+			:description="project.description"
+			:posterImage="project.videoLoadingPoster"
+			:studies="project.studies"
+			:title="project.title"
+			:video="project.video"
 		/>
 		<!-- Show ProjectDetail component for projects with images -->
 		<ProjectDetail
 			v-else-if="project.images"
-			:title="project.title"
+			:collages="project.collages"
+			:credits="project.credits"
+			:date="project.date"
 			:description="project.description"
 			:images="project.images"
-			:video="project.video"
 			:posterImage="project.videoLoadingPoster"
-			:date="project.date"
-			:collages="project.collages"
 			:sketchbook="project.sketchbook"
-			:credits="project.credits"
+			:title="project.title"
+			:video="project.video"
 		/>
 	</div>
 </template>
 
-<script setup lang="ts">
+<script lang="ts" setup>
 import ProjectDetail from '@/components/ProjectDetail.vue'
 import StudiesDetail from '@/components/StudiesDetail.vue'
 import projectsData from '@/data/projects.json'

@@ -1,8 +1,8 @@
 <template>
 	<div class="studies-detail">
 		<!-- Hero video section -->
-		<div class="video-hero" v-if="video">
-			<video autoplay muted loop playsinline class="fullscreen-video" :poster="posterImage">
+		<div v-if="video" class="video-hero">
+			<video :poster="posterImage" autoplay class="fullscreen-video" loop muted playsinline>
 				<source :src="video" type="video/webm" />
 				Your browser does not support the video tag.
 			</video>
@@ -18,9 +18,9 @@
 					<!-- Head image (different logic per study) -->
 					<img
 						v-if="getHeadImage(study)"
-						class="project-headImage clickable-image"
-						:src="getMediumImagePath(getHeadImage(study).src)"
 						:alt="getHeadImage(study).alt"
+						:src="getMediumImagePath(getHeadImage(study).src)"
+						class="project-headImage clickable-image"
 						@click="openStudyHeadImageModal(study)"
 					/>
 
@@ -33,8 +33,8 @@
 						<img
 							v-for="(image, imageIndex) in getGridImages(study)"
 							:key="image.src"
-							:src="getMediumImagePath(image.src)"
 							:alt="image.alt"
+							:src="getMediumImagePath(image.src)"
 							class="study-image clickable-image"
 							@click="openStudyImageModal(study, imageIndex)"
 						/>
@@ -43,8 +43,8 @@
 					<!-- Single image when grid is not shown -->
 					<div v-else-if="study.images[1]" class="single-image-container">
 						<img
-							:src="getMediumImagePath(study.images[1].src)"
 							:alt="study.images[1].alt"
+							:src="getMediumImagePath(study.images[1].src)"
 							class="single-image clickable-image"
 							@click="openStudyImageModal(study, 1)"
 						/>
@@ -59,8 +59,8 @@
 							<img
 								v-for="(sketch, sketchIndex) in study.sketchbook"
 								:key="sketch.src"
-								:src="getMediumImagePath(sketch.src)"
 								:alt="sketch.alt"
+								:src="getMediumImagePath(sketch.src)"
 								class="sketchbook-image clickable-image"
 								@click="openStudySketchbookModal(study, sketchIndex)"
 							/>
@@ -76,8 +76,8 @@
 							<img
 								v-for="(collage, collageIndex) in study.collages"
 								:key="collage.src"
-								:src="getSmallImagePath(collage.src)"
 								:alt="collage.alt"
+								:src="getSmallImagePath(collage.src)"
 								class="collage-image clickable-image"
 								@click="openStudyCollageModal(study, collageIndex)"
 							/>
@@ -109,16 +109,16 @@
 
 		<!-- Image Modal -->
 		<ImageModal
-			:isOpen="modalOpen"
 			:images="currentModalImages"
 			:initialIndex="currentModalIndex"
+			:isOpen="modalOpen"
 			@close="closeModal"
 			@navigate="onModalNavigate"
 		/>
 	</div>
 </template>
 
-<script setup lang="ts">
+<script lang="ts" setup>
 import ImageModal, { type ModalImage } from '@/components/ImageModal.vue'
 import type { Project } from '@/types/project'
 import { ref } from 'vue'
@@ -178,10 +178,7 @@ const getHeadImage = (study: any) => {
 // Determine if image grid should be shown
 const shouldShowImageGrid = (study: any) => {
 	// If study has 2 or fewer images, don't show grid
-	if (study.images && study.images.length <= 2) {
-		return false
-	}
-	return true
+	return !(study.images && study.images.length <= 2)
 }
 
 // Get the images to display in the grid

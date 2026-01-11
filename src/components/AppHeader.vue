@@ -15,30 +15,30 @@
 					<ul>
 						<li>
 							<RouterLink
-								to="/"
-								class="nav-link"
 								:class="{ active: $route.path === '/' }"
+								class="nav-link"
+								to="/"
 							>
 								home
 							</RouterLink>
 						</li>
 						<li>
-							<div @click="scrollToPortfolio" class="nav-link">portfolio</div>
+							<div class="nav-link" @click="scrollToPortfolio">portfolio</div>
 						</li>
 						<li>
 							<RouterLink
-								to="/gallery"
-								class="nav-link"
 								:class="{ active: $route.path === '/gallery' }"
+								class="nav-link"
+								to="/gallery"
 							>
 								gallery
 							</RouterLink>
 						</li>
 						<li>
 							<RouterLink
-								to="/about"
-								class="nav-link"
 								:class="{ active: $route.path === '/about' }"
+								class="nav-link"
+								to="/about"
 							>
 								about
 							</RouterLink>
@@ -48,10 +48,10 @@
 
 				<!-- Mobile Hamburger Menu -->
 				<button
-					class="mobile-menu-toggle"
-					@click="toggleMobileMenu"
 					:class="{ 'menu-open': isMobileMenuOpen }"
 					aria-label="Toggle navigation menu"
+					class="mobile-menu-toggle"
+					@click="toggleMobileMenu"
 				>
 					<span class="hamburger-line"></span>
 					<span class="hamburger-line"></span>
@@ -62,30 +62,30 @@
 
 		<!-- Mobile Navigation Overlay -->
 		<div
-			class="mobile-nav-overlay"
 			:class="{ active: isMobileMenuOpen }"
+			class="mobile-nav-overlay"
 			@click="closeMobileMenu"
 		>
 			<nav class="mobile-nav" @click.stop>
 				<ul>
 					<li>
 						<RouterLink
-							to="/"
-							class="nav-link"
 							:class="{ active: $route.path === '/' }"
+							class="nav-link"
+							to="/"
 							@click="closeMobileMenu"
 						>
 							home
 						</RouterLink>
 					</li>
 					<li>
-						<div @click="handleMobilePortfolioClick" class="nav-link">portfolio</div>
+						<div class="nav-link" @click="handleMobilePortfolioClick">portfolio</div>
 					</li>
 					<li>
 						<RouterLink
-							to="/gallery"
-							class="nav-link"
 							:class="{ active: $route.path === '/gallery' }"
+							class="nav-link"
+							to="/gallery"
 							@click="closeMobileMenu"
 						>
 							gallery
@@ -93,9 +93,9 @@
 					</li>
 					<li>
 						<RouterLink
-							to="/about"
-							class="nav-link"
 							:class="{ active: $route.path === '/about' }"
+							class="nav-link"
+							to="/about"
 							@click="closeMobileMenu"
 						>
 							about
@@ -107,7 +107,7 @@
 	</header>
 </template>
 
-<script setup lang="ts">
+<script lang="ts" setup>
 import { inject, onMounted, onUnmounted, ref, watch } from 'vue'
 import { RouterLink, useRoute } from 'vue-router'
 
@@ -184,8 +184,7 @@ const checkPortfolioVisibility = () => {
 	if (!portfolioSection) return
 
 	const rect = portfolioSection.getBoundingClientRect()
-	const isVisible = rect.top < window.innerHeight * 0.5 && rect.bottom > 0
-	isPortfolioVisible.value = isVisible
+	isPortfolioVisible.value = rect.top < window.innerHeight * 0.5 && rect.bottom > 0
 }
 
 onMounted(() => {

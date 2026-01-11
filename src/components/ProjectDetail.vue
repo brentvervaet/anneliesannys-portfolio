@@ -1,15 +1,15 @@
 <template>
 	<div class="project-detail">
 		<!-- Hero video section -->
-		<div class="video-hero" v-if="video">
+		<div v-if="video" class="video-hero">
 			<video
 				ref="videoElement"
-				autoplay
 				:muted="isMuted"
+				:poster="posterImage"
+				autoplay
+				class="fullscreen-video"
 				loop
 				playsinline
-				class="fullscreen-video"
-				:poster="posterImage"
 			>
 				<source :src="video" type="video/webm" />
 				Your browser does not support the video tag.
@@ -17,17 +17,17 @@
 
 			<!-- Mute button -->
 			<button
-				@click="toggleMute"
-				class="mute-button"
 				:aria-label="isMuted ? 'Unmute video' : 'Mute video'"
+				class="mute-button"
+				@click="toggleMute"
 			>
 				<!-- Mute icon (when video is muted) -->
 				<svg
 					v-if="isMuted"
-					width="24"
+					fill="none"
 					height="24"
 					viewBox="0 0 24 24"
-					fill="none"
+					width="24"
 					xmlns="http://www.w3.org/2000/svg"
 				>
 					<path
@@ -39,10 +39,10 @@
 				<!-- Unmute icon (when video has sound) -->
 				<svg
 					v-else
-					width="24"
+					fill="none"
 					height="24"
 					viewBox="0 0 24 24"
-					fill="none"
+					width="24"
 					xmlns="http://www.w3.org/2000/svg"
 				>
 					<path
@@ -59,9 +59,9 @@
 				<p v-if="date" class="project-date">{{ date }}</p>
 				<img
 					v-if="images[1]"
-					class="project-headImage clickable-image"
-					:src="getMediumImagePath(images[1].src)"
 					:alt="images[1].alt"
+					:src="getMediumImagePath(images[1].src)"
+					class="project-headImage clickable-image"
 					@click="openModal(1)"
 				/>
 				<div class="project-description">
@@ -75,10 +75,10 @@
 				<img
 					v-for="(image, index) in bottomImageGrid"
 					:key="image.src"
-					:src="getMediumImagePath(image.src)"
 					:alt="image.alt"
-					@click="openModal(index + 2)"
+					:src="getMediumImagePath(image.src)"
 					class="clickable-image"
+					@click="openModal(index + 2)"
 				/>
 			</div>
 
@@ -108,8 +108,8 @@
 					<img
 						v-for="(sketch, index) in sketchbook"
 						:key="sketch.src"
-						:src="getMediumImagePath(sketch.src)"
 						:alt="sketch.alt"
+						:src="getMediumImagePath(sketch.src)"
 						class="sketchbook-image clickable-image"
 						@click="openSketchbookModal(index)"
 					/>
@@ -122,8 +122,8 @@
 					<img
 						v-for="(collage, index) in collages"
 						:key="collage.src"
-						:src="getSmallImagePath(collage.src)"
 						:alt="collage.alt"
+						:src="getSmallImagePath(collage.src)"
 						class="collage-image clickable-image"
 						@click="openCollageModal(index)"
 					/>
@@ -133,16 +133,16 @@
 
 		<!-- Image Modal -->
 		<ImageModal
-			:isOpen="modalOpen"
 			:images="currentModalImages"
 			:initialIndex="currentModalIndex"
+			:isOpen="modalOpen"
 			@close="closeModal"
 			@navigate="onModalNavigate"
 		/>
 	</div>
 </template>
 
-<script setup lang="ts">
+<script lang="ts" setup>
 import ImageModal, { type ModalImage } from '@/components/ImageModal.vue'
 import type { Project, ProjectImage } from '@/types/project'
 import { computed, ref } from 'vue'
@@ -554,7 +554,6 @@ const onModalNavigate = (index: number) => {
 		line-height: 1.8;
 		margin: 8rem auto;
 		max-width: 800px;
-		margin: 8rem auto;
 	}
 
 	.image-grid {

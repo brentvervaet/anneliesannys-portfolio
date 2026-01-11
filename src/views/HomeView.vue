@@ -1,16 +1,16 @@
 <template>
 	<!-- Preload LCP image -->
-	<link rel="preload" as="image" href="/images/collages.webp" fetchpriority="high" />
+	<link as="image" fetchpriority="high" href="/images/collages.webp" rel="preload" />
 	<div class="home">
 		<!-- Hero Section with Carousel -->
 		<section
 			ref="heroSection"
-			class="hero-carousel overflow-hidden"
 			:style="{
 				opacity: heroOpacity,
 				transform: `translateY(${(1 - heroOpacity) * -50}px)`,
 				transition: 'opacity 0.3s ease-out, transform 0.3s ease-out',
 			}"
+			class="hero-carousel overflow-hidden"
 		>
 			<!-- First carousel row - left to right -->
 			<div class="carousel-row">
@@ -43,13 +43,13 @@
 			<!-- Scroll indicator arrow -->
 			<div class="scroll-indicator" @click="scrollToPortfolio">
 				<div class="scroll-arrow">
-					<svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+					<svg fill="none" height="24" viewBox="0 0 24 24" width="24">
 						<path
 							d="M7 10L12 15L17 10"
 							stroke="currentColor"
-							stroke-width="2"
 							stroke-linecap="round"
 							stroke-linejoin="round"
+							stroke-width="2"
 						/>
 					</svg>
 				</div>
@@ -64,12 +64,12 @@
 					<!-- Empty cell for zigzag pattern (even rows in 2-column layout) -->
 					<div v-if="index % 2 === 1" class="project-spacer"></div>
 
-					<div class="project-card" :style="{ animationDelay: `${index * 150}ms` }">
+					<div :style="{ animationDelay: `${index * 150}ms` }" class="project-card">
 						<RouterLink :to="project.route" class="project-link">
 							<div class="project-image-wrapper">
 								<img
-									:src="project.image"
 									:alt="project.title"
+									:src="project.image"
 									class="project-image"
 								/>
 								<div class="project-overlay">
@@ -89,7 +89,7 @@
 	</div>
 </template>
 
-<script setup lang="ts">
+<script lang="ts" setup>
 import projectsData from '@/data/projects.json'
 import { computed, onMounted, onUnmounted, ref } from 'vue'
 import { RouterLink } from 'vue-router'
