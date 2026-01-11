@@ -80,12 +80,7 @@
 	height: 48px;
 	color: black;
 	text-decoration: none;
-	/* background: rgba(255, 255, 255, 0.9); */
-	/* backdrop-filter: blur(15px); */
-	/* border-radius: 50%; */
 	transition: all 0.3s ease;
-	/* border: 1px solid rgba(255, 192, 203, 0.3); */
-	/* box-shadow: 0 4px 12px rgba(255, 182, 193, 0.15); */
 	flex-shrink: 0; /* Prevent icons from shrinking */
 }
 .social-icon:hover {

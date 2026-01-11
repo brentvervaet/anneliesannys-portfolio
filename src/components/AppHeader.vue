@@ -11,7 +11,7 @@
 			<!-- Right side: Navigation -->
 			<div class="right-section">
 				<!-- Desktop Navigation -->
-				<nav class="desktop-nav">
+				<nav aria-label="navigation menu" class="desktop-nav">
 					<ul>
 						<li>
 							<RouterLink
@@ -66,7 +66,7 @@
 			class="mobile-nav-overlay"
 			@click="closeMobileMenu"
 		>
-			<nav class="mobile-nav" @click.stop>
+			<nav aria-label="navigation menu" class="mobile-nav" @click.stop>
 				<ul>
 					<li>
 						<RouterLink
@@ -115,7 +115,6 @@ import { RouterLink, useRoute } from 'vue-router'
 const hasHeroVideo = inject('hasHeroVideo', ref(false))
 
 const route = useRoute()
-// const router = useRouter()
 const isPortfolioVisible = ref(false)
 const isMobileMenuOpen = ref(false)
 
@@ -124,7 +123,7 @@ const scrollToPortfolio = (e: Event) => {
 
 	// If not on home page, navigate to home first
 	if (route.path !== '/') {
-		window.location.href = '/#portfolio'
+		globalThis.location.href = '/#portfolio'
 		return
 	}
 
@@ -197,11 +196,11 @@ onMounted(() => {
 			closeMobileMenu()
 		}
 	}
-	window.addEventListener('keydown', handleEscape)
+	globalThis.addEventListener('keydown', handleEscape)
 
 	// Cleanup function will remove this listener
 	onUnmounted(() => {
-		window.removeEventListener('keydown', handleEscape)
+		globalThis.removeEventListener('keydown', handleEscape)
 	})
 })
 
@@ -406,7 +405,6 @@ header.over-video .hamburger-line {
 .mobile-nav .nav-link.active {
 	font-weight: 600;
 	color: rgba(255, 182, 193);
-	/* text-shadow: 1px 1px 1px black; */
 }
 
 /* ===== MEDIA QUERIES ===== */
