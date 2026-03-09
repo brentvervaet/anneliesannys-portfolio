@@ -5,7 +5,7 @@
 	"type": "module",
 	"packageManager": "pnpm@10.18.2",
 	"engines": {
-		"node": "24.x"
+		"node": "25.x"
 	},
 	"scripts": {
 		"dev": "vite",
@@ -18,28 +18,28 @@
 		"update-sitemap": "node scripts/update-sitemap.mjs"
 	},
 	"dependencies": {
-		"vue": "^3.5.26",
+		"vue": "^3.5.30",
 		"vue-router": "^4.6.4"
 	},
 	"devDependencies": {
-		"@tailwindcss/postcss": "^4.1.18",
+		"@tailwindcss/postcss": "^4.2.1",
 		"@tsconfig/node22": "^22.0.5",
-		"@types/node": "^24.10.7",
-		"@vitejs/plugin-vue": "^6.0.3",
+		"@types/node": "^24.12.0",
+		"@vitejs/plugin-vue": "^6.0.4",
 		"@vue/eslint-config-prettier": "^10.2.0",
-		"@vue/eslint-config-typescript": "^14.6.0",
+		"@vue/eslint-config-typescript": "^14.7.0",
 		"@vue/tsconfig": "^0.8.1",
-		"autoprefixer": "^10.4.23",
-		"eslint": "^9.39.2",
+		"autoprefixer": "^10.4.27",
+		"eslint": "^9.39.4",
 		"eslint-plugin-vue": "~10.5.1",
 		"jiti": "^2.6.1",
 		"npm-run-all2": "^8.0.4",
-		"postcss": "^8.5.6",
+		"postcss": "^8.5.8",
 		"prettier": "3.6.2",
-		"tailwindcss": "^4.1.18",
+		"tailwindcss": "^4.2.1",
 		"typescript": "~5.9.3",
 		"vite": "^7.3.1",
-		"vite-plugin-vue-devtools": "^8.0.5",
-		"vue-tsc": "^3.2.2"
+		"vite-plugin-vue-devtools": "^8.0.7",
+		"vue-tsc": "^3.2.5"
 	}
 }
