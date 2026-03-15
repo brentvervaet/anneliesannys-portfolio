@@ -26,16 +26,36 @@
         </p>
       </div>
 
-      <div class="timeline-section">
-        <div class="timeline">
-          <!--<div class="timeline-item">
-            <div class="timeline-year">2026</div>
-            <div class="timeline-events">
-              <div class="timeline-event">
-                Internship @ Jeffrey Charles Loverboy <span class="highlight">Costume Design</span>, London
-              </div>
-            </div>
-          </div>-->
+			<div class="timeline-section">
+				<div class="timeline">
+					<div class="timeline-item">
+						<div class="timeline-year">2026</div>
+						<div class="timeline-events">
+							<div class="timeline-event">
+								Comming soon ...
+							</div>
+						</div>
+					</div>
+
+					<div class="timeline-item">
+						<div class="timeline-year">2025</div>
+						<div class="timeline-events">
+							<div class="timeline-event">
+								Sneeuw (Iman Boot), <span class="highlight">Costume Design</span>,
+								Belgium
+							</div>
+							<div class="timeline-event">
+								Stadsduif (Rube Vandebril),
+								<span class="highlight">Costume Design</span>, Belgium
+							</div>
+							<div class="timeline-event">
+								<span class="highlight">POP-UP</span> Shop ChopinChopin, Belgium
+							</div>
+							<div class="timeline-event">
+								KASK <span class="highlight"> fashion show</span>, Belgium
+							</div>
+						</div>
+					</div>
 
           <div class="timeline-item">
             <div class="timeline-year">2025</div>
@@ -105,10 +125,10 @@
 }
 
 .profile-image {
-  float: left;
-  margin-right: 20px;
-  opacity: 0;
-  animation: fadeInUp 0.6s ease forwards;
+	float: left;
+	margin-right: 20px;
+	opacity: 0;
+	animation: fadeInUp 0.6s ease forwards;
 }
 
 .profile-image img {
@@ -130,9 +150,9 @@
 }
 
 .about-text p {
-  margin-bottom: 1.5rem;
-  opacity: 0;
-  animation: fadeInUp 0.6s ease forwards;
+	margin-bottom: 1.5rem;
+	opacity: 0;
+	animation: fadeInUp 0.6s ease forwards;
 }
 
 /* ===== TIMELINE ===== */
