@@ -28,7 +28,7 @@
 
       <div class="timeline-section">
         <div class="timeline">
-          <!--          <div class="timeline-item">
+          <!--<div class="timeline-item">
             <div class="timeline-year">2026</div>
             <div class="timeline-events">
               <div class="timeline-event">
@@ -101,13 +101,14 @@
 
 <style>
 .about-content {
-  padding: 1.5rem;
-  padding-top: 3.5rem;
+  padding: 3.5rem 1.5rem 1.5rem;
 }
 
 .profile-image {
   float: left;
   margin-right: 20px;
+  opacity: 0;
+  animation: fadeInUp 0.6s ease forwards;
 }
 
 .profile-image img {
@@ -130,6 +131,8 @@
 
 .about-text p {
   margin-bottom: 1.5rem;
+  opacity: 0;
+  animation: fadeInUp 0.6s ease forwards;
 }
 
 /* ===== TIMELINE ===== */
@@ -168,16 +171,6 @@
 }
 
 /* ===== ANIMATIONS ===== */
-.profile-image {
-  opacity: 0;
-  animation: fadeInUp 0.6s ease forwards;
-}
-
-.about-text p {
-  opacity: 0;
-  animation: fadeInUp 0.6s ease forwards;
-}
-
 .about-text p:nth-child(2) {
   animation-delay: 0.1s;
 }
@@ -217,8 +210,7 @@
 /* tablet */
 @media (min-width: 768px) {
   .about-content {
-    padding: 2rem 4rem;
-    padding-top: 5rem;
+    padding: 5rem 4rem 2rem;
     max-width: 1400px;
     margin: 0 auto;
   }
@@ -264,8 +256,7 @@
 /* desktop */
 @media (min-width: 1024px) {
   .about-content {
-    padding: 3rem 6rem;
-    padding-top: 6rem;
+    padding: 6rem 6rem 3rem;
     display: grid;
     grid-template-columns: 1.2fr 1fr;
     gap: 4rem;
