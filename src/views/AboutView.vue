@@ -28,6 +28,15 @@
 
       <div class="timeline-section">
         <div class="timeline">
+          <!--          <div class="timeline-item">
+            <div class="timeline-year">2026</div>
+            <div class="timeline-events">
+              <div class="timeline-event">
+                Internship @ Jeffrey Charles Loverboy <span class="highlight">Costume Design</span>, London
+              </div>
+            </div>
+          </div>-->
+
           <div class="timeline-item">
             <div class="timeline-year">2025</div>
             <div class="timeline-events">
