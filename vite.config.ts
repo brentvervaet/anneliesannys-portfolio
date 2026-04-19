@@ -16,14 +16,4 @@ export default defineConfig(({ mode }) => ({
 			'@': fileURLToPath(new URL('./src', import.meta.url)),
 		},
 	},
-	build: {
-		// Improve build performance and reduce bundle size
-		rollupOptions: {
-			output: {
-				manualChunks: {
-					'vue-vendor': ['vue', 'vue-router'],
-				},
-			},
-		},
-	},
 }))
