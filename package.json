@@ -18,11 +18,11 @@
 		"update-sitemap": "node scripts/update-sitemap.mjs"
 	},
 	"dependencies": {
-		"vue": "^3.5.32",
-		"vue-router": "^5.0.4"
+		"vue": "^3.5.33",
+		"vue-router": "^5.0.6"
 	},
 	"devDependencies": {
-		"@tailwindcss/postcss": "^4.2.2",
+		"@tailwindcss/postcss": "^4.2.4",
 		"@tsconfig/node22": "^22.0.5",
 		"@types/node": "^25.6.0",
 		"@vitejs/plugin-vue": "^6.0.6",
@@ -31,14 +31,14 @@
 		"@vue/tsconfig": "^0.9.1",
 		"autoprefixer": "^10.5.0",
 		"eslint": "^10.2.1",
-		"eslint-plugin-vue": "~10.8.0",
+		"eslint-plugin-vue": "~10.9.0",
 		"jiti": "^2.6.1",
 		"npm-run-all2": "^8.0.4",
 		"postcss": "^8.5.10",
 		"prettier": "3.8.3",
-		"tailwindcss": "^4.2.2",
+		"tailwindcss": "^4.2.4",
 		"typescript": "~6.0.3",
-		"vite": "^8.0.8",
+		"vite": "^8.0.10",
 		"vite-plugin-vue-devtools": "^8.1.1",
 		"vue-tsc": "^3.2.7"
 	}
