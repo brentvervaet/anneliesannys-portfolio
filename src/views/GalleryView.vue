@@ -39,12 +39,45 @@
 </template>
 
 <script lang="ts" setup>
+import { useHead } from '@unhead/vue'
 import ImageModal, { type ModalImage } from '@/components/ImageModal.vue'
 import projectsData from '@/data/projects.json'
 import { computed, ref } from 'vue'
 
 const modalOpen = ref(false)
 const currentModalIndex = ref(0)
+
+// Dynamic meta tags
+useHead({
+	title: 'Gallery - Annelies Annys',
+	meta: [
+		{
+			name: 'description',
+			content: 'Explore the gallery of Annelies Annys featuring fashion design collections, studies, and creative work.',
+		},
+		{ name: 'keywords', content: 'Annelies Annys, gallery, fashion, collections, studies, design' },
+		// Open Graph
+		{ property: 'og:title', content: 'Gallery - Annelies Annys' },
+		{
+			property: 'og:description',
+			content: 'Explore the gallery of Annelies Annys featuring fashion design collections, studies, and creative work.',
+		},
+		{ property: 'og:type', content: 'website' },
+		{ property: 'og:url', content: 'https://anneliesannys.com/gallery' },
+		{ property: 'og:image', content: 'https://anneliesannys.com/og-image.jpg' },
+		{ property: 'og:image:width', content: '1200' },
+		{ property: 'og:image:height', content: '630' },
+		// Twitter
+		{ name: 'twitter:card', content: 'summary_large_image' },
+		{ name: 'twitter:title', content: 'Gallery - Annelies Annys' },
+		{
+			name: 'twitter:description',
+			content: 'Explore the gallery of Annelies Annys featuring fashion design collections, studies, and creative work.',
+		},
+		{ name: 'twitter:image', content: 'https://anneliesannys.com/og-image.jpg' },
+	],
+	link: [{ rel: 'canonical', href: 'https://anneliesannys.com/gallery' }],
+})
 
 // Seeded random function for consistent shuffle
 const seededRandom = (seed: number) => {

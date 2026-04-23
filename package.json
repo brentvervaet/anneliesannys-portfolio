@@ -18,6 +18,8 @@
 		"update-sitemap": "node scripts/update-sitemap.mjs"
 	},
 	"dependencies": {
+		"@unhead/vue": "^3.0.5",
+		"unhead": "^3.0.5",
 		"vue": "^3.5.33",
 		"vue-router": "^5.0.6",
 		"web-vitals": "^5.2.0"

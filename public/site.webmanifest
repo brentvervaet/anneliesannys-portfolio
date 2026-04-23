@@ -1,0 +1,19 @@
+{
+  "name": "Annelies Annys - Fashion Designer",
+  "short_name": "Annelies A.",
+  "description": "Portfolio of Annelies Annys showcasing fashion design projects and creative work",
+  "icons": [
+    {
+      "src": "/favicon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "theme_color": "#000000",
+  "background_color": "#000000",
+  "display": "standalone",
+  "start_url": "/",
+  "scope": "/",
+  "categories": ["portfolio", "fashion", "design", "art"]
+}

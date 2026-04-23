@@ -89,11 +89,44 @@
 </template>
 
 <script lang="ts" setup>
+import { useHead } from '@unhead/vue'
 import projectsData from '@/data/projects.json'
 import { getResponsiveImage } from '@/utils/imageUtils'
 import { rafThrottle } from '@/utils/performanceUtils'
 import { computed, onMounted, onUnmounted, ref } from 'vue'
 import { RouterLink } from 'vue-router'
+
+// Dynamic meta tags for home page
+useHead({
+	title: 'Annelies Annys - Fashion Designer',
+	meta: [
+		{
+			name: 'description',
+			content: 'Portfolio of Annelies Annys showcasing projects and creative work in fashion.',
+		},
+		{ name: 'keywords', content: 'Annelies Annys, portfolio, fashion, creative work, projects' },
+		// Open Graph
+		{ property: 'og:title', content: 'Annelies Annys' },
+		{
+			property: 'og:description',
+			content: 'Portfolio of Annelies Annys showcasing projects and creative work in fashion.',
+		},
+		{ property: 'og:type', content: 'website' },
+		{ property: 'og:url', content: 'https://anneliesannys.com/' },
+		{ property: 'og:image', content: 'https://anneliesannys.com/og-image.jpg' },
+		{ property: 'og:image:width', content: '1200' },
+		{ property: 'og:image:height', content: '630' },
+		// Twitter
+		{ name: 'twitter:card', content: 'summary_large_image' },
+		{ name: 'twitter:title', content: 'Annelies Annys' },
+		{
+			name: 'twitter:description',
+			content: 'Portfolio of Annelies Annys showcasing projects and creative work in fashion.',
+		},
+		{ name: 'twitter:image', content: 'https://anneliesannys.com/og-image.jpg' },
+	],
+	link: [{ rel: 'canonical', href: 'https://anneliesannys.com/' }],
+})
 
 const heroSection = ref<HTMLElement>()
 const portfolioSection = ref<HTMLElement>()

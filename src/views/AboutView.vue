@@ -117,7 +117,37 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useHead } from '@unhead/vue'
+
+const description =
+	"I'm Annelies Annys, a fashion designer and student at KASK & Conservatorium in Ghent. My work focuses on blurring the boundaries between memory, emotion, and materiality."
+
+useHead({
+	title: 'About - Annelies Annys',
+	meta: [
+		{ name: 'description', content: description },
+		{
+			name: 'keywords',
+			content: 'Annelies Annys, about, fashion designer, KASK, Ghent, biography, timeline',
+		},
+		// Open Graph
+		{ property: 'og:title', content: 'About - Annelies Annys' },
+		{ property: 'og:description', content: description },
+		{ property: 'og:type', content: 'profile' },
+		{ property: 'og:url', content: 'https://anneliesannys.com/about' },
+		{ property: 'og:image', content: 'https://anneliesannys.com/og-image.jpg' },
+		{ property: 'og:image:width', content: '1200' },
+		{ property: 'og:image:height', content: '630' },
+		// Twitter
+		{ name: 'twitter:card', content: 'summary_large_image' },
+		{ name: 'twitter:title', content: 'About - Annelies Annys' },
+		{ name: 'twitter:description', content: description },
+		{ name: 'twitter:image', content: 'https://anneliesannys.com/og-image.jpg' },
+	],
+	link: [{ rel: 'canonical', href: 'https://anneliesannys.com/about' }],
+})
+</script>
 
 <style>
 .about-content {
