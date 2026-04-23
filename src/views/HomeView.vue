@@ -16,7 +16,7 @@
 			<div class="carousel-row">
 				<div class="carousel-track animate-scroll-left">
 					<img
-						v-for="n in 8"
+						v-for="n in 3"
 						:key="`row1-${n}`"
 						:src="carouselImage"
 						alt="Project collage"
@@ -30,7 +30,7 @@
 			<div class="carousel-row">
 				<div class="carousel-track animate-scroll-right">
 					<img
-						v-for="n in 8"
+						v-for="n in 3"
 						:key="`row2-${n}`"
 						:src="carouselImage"
 						alt="Project collage"
@@ -58,7 +58,6 @@
 
 		<!-- Portfolio Section -->
 		<section id="portfolio" ref="portfolioSection" class="portfolio-section">
-			<!-- <div class="portfolio-container"> -->
 			<div class="portfolio-grid">
 				<template v-for="(project, index) in projects" :key="project.id">
 					<!-- Empty cell for zigzag pattern (even rows in 2-column layout) -->
@@ -71,6 +70,7 @@
 									:alt="project.title"
 									:src="project.image"
 									class="project-image"
+									loading="lazy"
 								/>
 								<div class="project-overlay">
 									<span class="view-text">view</span>
@@ -84,13 +84,14 @@
 					<div v-if="index % 2 === 0" class="project-spacer"></div>
 				</template>
 			</div>
-			<!-- </div> -->
 		</section>
 	</div>
 </template>
 
 <script lang="ts" setup>
 import projectsData from '@/data/projects.json'
+import { getResponsiveImage } from '@/utils/imageUtils'
+import { rafThrottle } from '@/utils/performanceUtils'
 import { computed, onMounted, onUnmounted, ref } from 'vue'
 import { RouterLink } from 'vue-router'
 
@@ -104,34 +105,13 @@ const carouselImage = computed(() => {
 	return '/images/collages.webp'
 })
 
-// Helper functions to get responsive image paths
-const getMediumImage = (imagePath: string): string => {
-	const parts = imagePath.split('/')
-	const fileName = parts.pop()
-	return [...parts, 'med', fileName].join('/')
-}
-
-const getSmallImage = (imagePath: string): string => {
-	const parts = imagePath.split('/')
-	const fileName = parts.pop()
-	return [...parts, 'sm', fileName].join('/')
-}
-
-// Get responsive image based on window width
-const getResponsiveImage = (imagePath: string): string => {
-	if (windowWidth.value < 768) {
-		return getSmallImage(imagePath)
-	}
-	return getMediumImage(imagePath)
-}
-
 // Transform projects data from JSON to match the format needed for the view
 const projects = computed(() => {
 	return projectsData.map((project, index) => ({
 		id: index + 1,
 		title: project.title.toUpperCase(),
 		route: `/portfolio/${project.slug}`,
-		image: getResponsiveImage(project.thumbnailImage),
+		image: getResponsiveImage(project.thumbnailImage, windowWidth.value),
 		description: Array.isArray(project.description)
 			? project.description[0]
 			: project.description,
@@ -172,7 +152,7 @@ const scrollToPortfolio = () => {
 
 // Auto-scroll snap functionality
 let isScrolling = false
-let scrollTimer: number | null = null
+let scrollTimer: ReturnType<typeof setTimeout> | null = null
 
 const handleScrollSnap = () => {
 	if (isScrolling) return
@@ -198,11 +178,11 @@ const handleScrollSnap = () => {
 	}, 150) // Wait 150ms after scroll stops
 }
 
-// Combined scroll handler
-const handleAllScrollEvents = () => {
+// Combined scroll handler with performance optimization
+const handleAllScrollEvents = rafThrottle(() => {
 	handleScroll()
 	handleScrollSnap()
-}
+})
 
 // Handle window resize
 const handleResize = () => {
@@ -263,11 +243,11 @@ onUnmounted(() => {
 }
 
 .animate-scroll-left {
-	animation: scroll-left 90s linear infinite;
+	animation: scroll-left 30s linear infinite;
 }
 
 .animate-scroll-right {
-	animation: scroll-right 75s linear infinite;
+	animation: scroll-right 25s linear infinite;
 }
 
 /* ===== PORTFOLIO SECTION STYLES ===== */
@@ -422,29 +402,17 @@ onUnmounted(() => {
 	}
 
 	100% {
-		transform: translateX(-50%);
+		transform: translateX(-33.33%);
 	}
 }
 
 @keyframes scroll-right {
 	0% {
-		transform: translateX(-50%);
+		transform: translateX(-33.33%);
 	}
 
 	100% {
 		transform: translateX(0);
-	}
-}
-
-/* TODO */
-@keyframes fadeInUp {
-	from {
-		opacity: 0;
-		transform: translateY(30px);
-	}
-	to {
-		opacity: 1;
-		transform: translateY(0);
 	}
 }
 

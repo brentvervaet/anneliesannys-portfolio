@@ -16,4 +16,25 @@ export default defineConfig(({ mode }) => ({
 			'@': fileURLToPath(new URL('./src', import.meta.url)),
 		},
 	},
+	build: {
+		// Report compressed size
+		reportCompressedSize: true,
+		// Warn on chunks larger than 500kb
+		chunkSizeWarningLimit: 500,
+		rollupOptions: {
+			output: {
+				// Manual chunking strategy
+				manualChunks: (id) => {
+					// Split vue-router into separate chunk
+					if (id.includes('vue-router')) {
+						return 'vue-router'
+					}
+					// Split project data
+					if (id.includes('projects.json')) {
+						return 'project-data'
+					}
+				},
+			},
+		},
+	},
 }))

@@ -2,6 +2,11 @@
 	<div class="project-detail">
 		<!-- Hero video section -->
 		<div v-if="video" class="video-hero">
+			<!-- Loading skeleton -->
+			<div v-if="videoLoading" class="video-loading-skeleton">
+				<div class="skeleton-pulse"></div>
+			</div>
+
 			<video
 				ref="videoElement"
 				:muted="isMuted"
@@ -10,6 +15,8 @@
 				class="fullscreen-video"
 				loop
 				playsinline
+				preload="metadata"
+				@loadeddata="onVideoLoaded"
 			>
 				<source :src="video" type="video/webm" />
 				Your browser does not support the video tag.
@@ -62,6 +69,7 @@
 					:alt="images[1].alt"
 					:src="getMediumImagePath(images[1].src)"
 					class="project-headImage clickable-image"
+					loading="eager"
 					@click="openModal(1)"
 				/>
 				<div class="project-description">
@@ -78,6 +86,7 @@
 					:alt="image.alt"
 					:src="getMediumImagePath(image.src)"
 					class="clickable-image"
+					loading="lazy"
 					@click="openModal(index + 2)"
 				/>
 			</div>
@@ -111,6 +120,7 @@
 						:alt="sketch.alt"
 						:src="getMediumImagePath(sketch.src)"
 						class="sketchbook-image clickable-image"
+						loading="lazy"
 						@click="openSketchbookModal(index)"
 					/>
 				</div>
@@ -125,6 +135,7 @@
 						:alt="collage.alt"
 						:src="getSmallImagePath(collage.src)"
 						class="collage-image clickable-image"
+						loading="lazy"
 						@click="openCollageModal(index)"
 					/>
 				</div>
@@ -132,19 +143,28 @@
 		</section>
 
 		<!-- Image Modal -->
-		<ImageModal
-			:images="currentModalImages"
-			:initialIndex="currentModalIndex"
-			:isOpen="modalOpen"
-			@close="closeModal"
-			@navigate="onModalNavigate"
-		/>
+		<ErrorBoundary>
+			<ImageModal
+				:images="currentModalImages"
+				:initialIndex="currentModalIndex"
+				:isOpen="modalOpen"
+				@close="closeModal"
+				@navigate="onModalNavigate"
+			/>
+		</ErrorBoundary>
 	</div>
 </template>
 
 <script lang="ts" setup>
+import ErrorBoundary from '@/components/ErrorBoundary.vue'
 import ImageModal, { type ModalImage } from '@/components/ImageModal.vue'
 import type { Project, ProjectImage } from '@/types/project'
+import {
+	extractImageNumber,
+	getLargeImagePath,
+	getMediumImagePath,
+	getSmallImagePath,
+} from '@/utils/imageUtils'
 import { computed, ref } from 'vue'
 
 interface Props {
@@ -162,9 +182,10 @@ interface Props {
 const props = defineProps<Props>()
 
 // Reactive data for mute functionality
-const isMuted = ref(true) // Start music by default
+const isMuted = ref(true) // Start muted by default
 const videoElement = ref<HTMLVideoElement | null>(null)
 const projectContent = ref<HTMLElement | null>(null)
+const videoLoading = ref(true)
 
 // Modal state
 const modalOpen = ref(false)
@@ -173,21 +194,6 @@ const currentModalImages = ref<ModalImage[]>([])
 
 // Computed property to limit images to first 2-end
 const bottomImageGrid = computed(() => props.images.slice(2, props.images.length))
-
-// Convert image path to use medium-sized version
-const getMediumImagePath = (originalPath: string): string => {
-	// Split the path and insert 'med' before the filename
-	// e.g., "/images/BA3/lbm01.webp" -> "/images/BA3/med/lbm01.webp"
-	const pathParts = originalPath.split('/')
-	const filename = pathParts.pop()
-	return [...pathParts, 'med', filename].join('/')
-}
-
-const getSmallImagePath = (originalPath: string): string => {
-	const pathParts = originalPath.split('/')
-	const filename = pathParts.pop()
-	return [...pathParts, 'sm', filename].join('/')
-}
 
 // Sort array alphabetically (case-insensitive)
 const sortAlphabetically = (arr: string[]): string[] => {
@@ -202,18 +208,9 @@ const toggleMute = (): void => {
 	}
 }
 
-// Helper function to get large image path
-const getLargeImagePath = (originalPath: string): string => {
-	const pathParts = originalPath.split('/')
-	const filename = pathParts.pop()
-	return [...pathParts, 'lg', filename].join('/')
-}
-
-// Helper function to extract number from filename
-const extractImageNumber = (src: string): string => {
-	const filename = src.split('/').pop() || ''
-	const match = filename.match(/(\d+)/)
-	return match?.[1]?.padStart(2, '0') || '01'
+// Handle video loaded
+const onVideoLoaded = (): void => {
+	videoLoading.value = false
 }
 
 // Transform all images to ModalImage format
@@ -290,7 +287,6 @@ const onModalNavigate = (index: number) => {
 /* ===== VIDEO ===== */
 .video-hero {
 	position: relative;
-	/* TODO:aanpassen voor safari etc*/
 	height: 100svh;
 	min-height: 500px;
 	width: 100%;
@@ -304,8 +300,40 @@ const onModalNavigate = (index: number) => {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
-	z-index: 1; /* Ensure video is behind the header */
-	background-color: #000; /* Fallback background */
+	z-index: 1;
+	background-color: #000;
+}
+
+.video-loading-skeleton {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #1a1a1a;
+	z-index: 2;
+}
+
+.skeleton-pulse {
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(
+		90deg,
+		#1a1a1a 25%,
+		#2a2a2a 50%,
+		#1a1a1a 75%
+	);
+	background-size: 200% 100%;
+	animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+	0% {
+		background-position: 200% 0;
+	}
+	100% {
+		background-position: -200% 0;
+	}
 }
 
 /* ===== MUTE BUTTON ===== */
@@ -453,11 +481,9 @@ const onModalNavigate = (index: number) => {
 	grid-template-columns: repeat(4, 1fr);
 }
 
-/* TODO: geen aspectratio 1? */
 .collage-image {
 	aspect-ratio: 1;
 	object-fit: contain;
-	/* width: 100%; Ensure consistent sizing */
 	height: auto;
 }
 
