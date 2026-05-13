@@ -36,70 +36,67 @@
 						</div>
 					</div>
 
+					<!--					2025-->
 					<div class="timeline-item">
 						<div class="timeline-year">2025</div>
 						<div class="timeline-events">
 							<div class="timeline-event">
-								Sneeuw (Iman Boot), <span class="highlight">Costume Design</span>,
+								Sneeuw (Iman Boot) | <span class="highlight">Costume Design</span> |
 								Belgium
 							</div>
 							<div class="timeline-event">
-								Stadsduif (Rube Vandebril),
-								<span class="highlight">Costume Design</span>, Belgium
+								Stadsduif (Rube Vandebril) |
+								<span class="highlight"
+									><a href="http://localhost:5173/portfolio/stadsduif"
+										>Costume Design</a
+									></span
+								>
+								| Belgium
 							</div>
 							<div class="timeline-event">
-								<span class="highlight">POP-UP</span> Shop ChopinChopin, Belgium
+								<span class="highlight">POP-UP</span> | Shop ChopinChopin | Belgium
 							</div>
 							<div class="timeline-event">
-								KASK <span class="highlight"> fashion show</span>, Belgium
+								<a href="http://localhost:5173/portfolio/lost-before-morning"
+									><span class="highlight">Lost Before Morning</span></a
+								>
+								| KASK fashion show | Belgium
 							</div>
 						</div>
 					</div>
 
-					<div class="timeline-item">
-						<div class="timeline-year">2025</div>
-						<div class="timeline-events">
-							<div class="timeline-event">
-								Sneeuw (Iman Boot), <span class="highlight">Costume Design</span>,
-								Belgium
-							</div>
-							<div class="timeline-event">
-								Stadsduif (Rube Vandebril),
-								<span class="highlight">Costume Design</span>, Belgium
-							</div>
-							<div class="timeline-event">
-								<span class="highlight">POP-UP</span> Shop ChopinChopin, Belgium
-							</div>
-							<div class="timeline-event">
-								KASK <span class="highlight"> fashion show</span>, Belgium
-							</div>
-						</div>
-					</div>
-
+					<!--					2024-->
 					<div class="timeline-item">
 						<div class="timeline-year">2024</div>
 						<div class="timeline-events">
 							<div class="timeline-event">
-								<span class="highlight">POP-UP</span> Shop Shelter, Belgium
+								<span class="highlight">POP-UP</span> | Shop Shelter | Belgium
 							</div>
 							<div class="timeline-event">
-								Show window Ida, <span class="highlight">Exhibition</span> , Belgium
+								Show window Ida | <span class="highlight">Exhibition</span> |
+								Belgium
 							</div>
 							<div class="timeline-event">
-								Show window Vi-drie-ne, <span class="highlight">Exhibition</span> ,
-								Galerie Drie, Belgium
+								Show window Vi-drie-ne | <span class="highlight">Exhibition</span> ,
+								Galerie Drie | Belgium
 							</div>
 							<div class="timeline-event">
-								KASK <span class="highlight"> fashion show</span>, Belgium
+								<span class="highlight"
+									><a href="http://localhost:5173/portfolio/split-myself-in-two"
+										>Split Myself In Two</a
+									></span
+								>
+								| KASK Fashion Show | Belgium
 							</div>
 						</div>
 					</div>
 
+					<!--					2023-->
 					<div class="timeline-item">
 						<div class="timeline-year">2023</div>
 						<div class="timeline-events">
 							<div class="timeline-event">
-								KASK <span class="highlight"> fashion show</span>, Belgium
+								KASK <span class="highlight"> fashion show</span> | Belgium
 							</div>
 						</div>
 					</div>
